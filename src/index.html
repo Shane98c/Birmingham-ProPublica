@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Tragedy of North Birmingham</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollama"></script>
+    <script type="text/javascript" src="libav-3.8.5.1-default.js"></script>
+    <script
+      type="text/javascript"
+      src="libavjs-webcodecs-polyfill.min.js"
+    ></script>
+    <script defer src="scrolly-video.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #mapVidGraphic {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+      #map {
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+        position: sticky;
+        z-index: 1;
+      }
+      #vidContainer {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #features {
+        pointer-events: none;
+        padding-bottom: 10vh;
+        transform: translate3d(0, 0, 0);
+        z-index: 100;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+      .centered {
+        width: 90vw;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+      .lefty {
+        width: 33vw;
+        max-width: 550px;
+        margin-left: 5vw;
+      }
+      .step {
+        z-index: 100;
+
+        padding-bottom: 90vh;
+        opacity: 0.95;
+      }
+      .step div {
+        pointer-events: auto;
+        padding: 15px 25px;
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+        font-family: "Tiempos Text", serif;
+        box-shadow: 2px 3px 10px rgb(0 0 0 / 50%);
+        color: #c3bfb5;
+        background-color: rgba(29, 29, 29);
+        border-radius: 6px;
+      }
+      .step p {
+        margin: 0px;
+      }
+
+      .step a {
+        color: #c3bfb5;
+      }
+
+      .step div .toxMeter {
+        color: #fff;
+        display: flex;
+        width: 100%;
+        height: 10px;
+        margin-top: 1rem;
+        margin-bottom: 0.1rem;
+        position: relative;
+        box-sizing: border-box;
+      }
+      .step div .tox-meter-marker {
+        position: absolute;
+        border-left: 1px solid #fff;
+        height: 10px;
+        left: 60.5872%;
+        width: 10px;
+      }
+      .step div .tox-meter-label-wrap {
+        line-height: 1rem;
+        font-family: Graphik, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        height: 10px;
+        width: 100%;
+        padding: 0px;
+        box-shadow: none;
+        position: relative;
+      }
+      .step div .tox-meter-label {
+        font-size: 0.7rem;
+      }
+      .step div .tox-meter-label-mid {
+        position: absolute;
+      }
+      .step div .legend-label {
+        margin: 5px 0px;
+        line-height: 2em;
+        background-color: rgb(0 0 0 / 0%);
+      }
+
+      .sfSite {
+        color: #866b2d;
+        font-weight: 600;
+        font-family: Graphik, sans-serif;
+      }
+      .redline {
+        color: #954655;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+          2px 2px 0 #000;
+        font-weight: 600;
+        font-family: Graphik, sans-serif;
+      }
+
+      @media (max-width: 750px), (max-height: 750px) {
+        .centered,
+        .lefty,
+        .righty,
+        .fully {
+          width: 95vw;
+          margin: 0 auto;
+        }
+        .step div {
+          line-height: 1.2em;
+          padding: 10px 15px;
+          font-size: 1em;
+        }
+      }
+
+      /* Fix issue on mobile browser where scroll breaks  */
+      .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
+      .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan
+        .mapboxgl-canvas {
+        touch-action: unset;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapVidGraphic">
+      <div id="map"></div>
+      <div id="vidContainer"></div>
+    </div>
+
+    <div id="story"></div>
+
+    <script src="./config.js"></script>
+    <script src="./SF_Site_Coords.js"></script>
+
+    <script>
+      const layerTypes = {
+        fill: ["fill-opacity"],
+        line: ["line-opacity"],
+        circle: ["circle-opacity", "circle-stroke-opacity"],
+        symbol: ["icon-opacity", "text-opacity"],
+        raster: ["raster-opacity"],
+      };
+
+      const alignments = {
+        left: "lefty",
+        center: "centered",
+        full: "fully",
+      };
+      function changeZ() {
+        const isReduced =
+          window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+          window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ===
+            true;
+        if (!isReduced) {
+          document.getElementById("vidContainer").style.opacity = "1";
+        }
+      }
+      function revertZ() {
+        document.getElementById("vidContainer").style.opacity = "0";
+      }
+
+      let animateTimeouts = [];
+      function animateLine(line, source) {
+        let speed = 3;
+        let lineCoords = [];
+        for (let i = 0; i <= line.length - 1; i++) {
+          (function (index) {
+            animateTimeouts.push(
+              setTimeout(function () {
+                lineCoords.push(line[index]);
+                if (i >= 1) {
+                  let newLine = {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                      type: "LineString",
+                      coordinates: lineCoords,
+                    },
+                  };
+                  map.getSource(source).setData(newLine);
+                }
+              }, i * speed)
+            );
+          })(i);
+        }
+      }
+
+      function animateSF() {
+        animateLine(SF_Site_Coords, "35th-SFsite");
+      }
+
+      function clearSF() {
+        //reset line
+        animateTimeouts.forEach((to) => clearTimeout(to));
+        let newLine = {
+          type: "Feature",
+          properties: {},
+          geometry: {
+            type: "LineString",
+            coordinates: [],
+          },
+        };
+        map.getSource("35th-SFsite").setData(newLine);
+      }
+
+      function addAnimateLayers() {
+        const source = "35th-SFsite";
+        map.addSource(source, {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: [],
+            },
+          },
+        });
+        map.addLayer(
+          {
+            id: source,
+            type: "line",
+            source: source,
+            layout: {
+              "line-join": "round",
+              "line-cap": "round",
+            },
+            paint: {
+              "line-color": "#866b2d",
+              "line-width": 3,
+            },
+          },
+          "1947"
+        );
+      }
+
+      function getLayerPaintType(layer) {
+        const layerType = map.getLayer(layer).type;
+        return layerTypes[layerType];
+      }
+
+      function setLayerOpacity(layer) {
+        const paintProps = getLayerPaintType(layer.layer);
+        paintProps.forEach(function (prop) {
+          let options = {};
+          if (layer.duration) {
+            const transitionProp = prop + "-transition";
+            options = { duration: layer.duration };
+            map.setPaintProperty(layer.layer, transitionProp, options);
+          }
+          map.setPaintProperty(layer.layer, prop, layer.opacity, options);
+        });
+      }
+
+      const story = document.getElementById("story");
+      const features = document.createElement("div");
+      features.setAttribute("id", "features");
+
+      config.chapters.forEach((record, idx) => {
+        const container = document.createElement("div");
+        const chapter = document.createElement("div");
+
+        if (record.description) {
+          const story = document.createElement("p");
+          story.innerHTML = record.description;
+          chapter.appendChild(story);
+        }
+
+        container.setAttribute("id", record.id);
+        container.classList.add("step");
+
+        container.appendChild(chapter);
+        container.classList.add(alignments[record.alignment] || "centered");
+        if (record.hidden) {
+          container.classList.add("hidden");
+        }
+        features.appendChild(container);
+      });
+
+      story.appendChild(features);
+
+      function getVidLocations() {
+        const startVid =
+          document.getElementById("startVid").parentElement.parentElement
+            .parentElement;
+        const startheight =
+          startVid.getBoundingClientRect().top + window.scrollY;
+        const endheight =
+          startVid.getBoundingClientRect().bottom + window.scrollY;
+        return {
+          startheight,
+          endheight,
+        };
+      }
+
+      const startVid =
+        document.getElementById("startVid").parentElement.parentElement
+          .parentElement;
+      const startheight = startVid.getBoundingClientRect().top + window.scrollY;
+      const endheight =
+        startVid.getBoundingClientRect().bottom + window.scrollY;
+
+      const vidContainer = document.getElementById("vidContainer");
+      const vid = document.createElement("scrolly-video");
+      vid.setAttribute("src", "DJI_0951_trimmed_encode_smaller.mp4");
+      vid.setAttribute("debug", "true");
+      // vid.setAttribute("usewebcodecs", true);
+      vid.setAttribute("startheight", getVidLocations().startheight);
+      vid.setAttribute("endheight", getVidLocations().endheight);
+      vid.setAttribute("id", "scrolly-vid");
+
+      vidContainer.appendChild(vid);
+
+      mapboxgl.accessToken = config.accessToken;
+
+      const map = new mapboxgl.Map({
+        container: "map",
+        style: config.style,
+        projection: {
+          name: "lambertConformalConic",
+          center: config.start.center,
+          parallels: [30, 36],
+        },
+        bounds: config.start.bounds,
+        interactive: false,
+        attributionControl: false,
+      });
+      map.addControl(
+        new mapboxgl.AttributionControl({
+          customAttribution: "ProPublica, EPA, Mapping Inequality, USGS ",
+          compact: true,
+        })
+      );
+
+      const scroller = scrollama();
+
+      map.on("load", function () {
+        addAnimateLayers();
+        scroller
+          .setup({
+            step: ".step",
+            offset: 1,
+            progress: false,
+          })
+          .onStepEnter((response) => {
+            const chapter = config.chapters.find(
+              (chap) => chap.id === response.element.id
+            );
+            //handle mobile
+            let location = { ...chapter.location };
+            if (window.innerWidth <= 750 || window.innerHeight <= 750) {
+              // if (!["neighborhood", "z"].includes(chapter.id)) {
+              location.zoom = location.zoom - 0.7;
+              // }
+            }
+            map[chapter.mapAnimation || "flyTo"](location);
+            if (chapter.callback) {
+              window[chapter.callback]();
+            }
+            if (chapter.onChapterEnter.length > 0) {
+              try {
+                chapter.onChapterEnter.forEach(setLayerOpacity);
+              } catch {
+                console.error("missing layer");
+              }
+            }
+          })
+          .onStepExit((response) => {
+            const chapter = config.chapters.find(
+              (chap) => chap.id === response.element.id
+            );
+            if (chapter.onChapterExit.length > 0) {
+              chapter.onChapterExit.forEach(setLayerOpacity);
+            }
+            if (chapter.exitCallback) {
+              window[chapter.exitCallback]();
+            }
+            if (response.index === 0 && response.direction === "up") {
+              map.fitBounds(config.start.bounds);
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
