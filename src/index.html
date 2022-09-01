@@ -402,7 +402,6 @@
                 location.zoom = location.zoom - 0.7;
               }
             }
-            console.log(location.zoom);
             map[chapter.mapAnimation || "flyTo"](location);
             if (chapter.callback) {
               window[chapter.callback]();
