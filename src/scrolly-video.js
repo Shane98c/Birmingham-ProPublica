@@ -1,2 +1,10217 @@
-!function(){"use strict";function t(){}function e(t,e){for(const i in e)t[i]=e[i];return t}function i(t){return t()}function s(){return Object.create(null)}function r(t){t.forEach(i)}function n(t){return"function"==typeof t}function a(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function o(t){const e={};for(const i in t)"$"!==i[0]&&(e[i]=t[i]);return e}let h,d="undefined"!=typeof window?t=>requestAnimationFrame(t):t;function l(t,e,i){t.insertBefore(e,i||null)}function p(t){t.parentNode.removeChild(t)}function f(t){return document.createElement(t)}function u(){return t="",document.createTextNode(t);var t}function c(t,e,i,s){return t.addEventListener(e,i,s),()=>t.removeEventListener(e,i,s)}function m(t,e,i){null==i?t.removeAttribute(e):t.getAttribute(e)!==i&&t.setAttribute(e,i)}function _(t,e){const i=Object.getOwnPropertyDescriptors(t.__proto__);for(const s in e)null==e[s]?t.removeAttribute(s):"style"===s?t.style.cssText=e[s]:"__value"===s?t.value=t[s]=e[s]:i[s]&&i[s].set?t[s]=e[s]:m(t,s,e[s])}function g(t,e,i){t.classList[i?"add":"remove"](e)}function y(t){const e={};for(const i of t)e[i.name]=i.value;return e}function b(t){h=t}const w=[],v=[],x=[],U=[],S=Promise.resolve();let E=!1;function A(t){x.push(t)}const B=new Set;let z=0;function T(){const t=h;do{for(;z<w.length;){const t=w[z];z++,b(t),k(t.$$)}for(b(null),w.length=0,z=0;v.length;)v.pop()();for(let t=0;t<x.length;t+=1){const e=x[t];B.has(e)||(B.add(e),e())}x.length=0}while(w.length);for(;U.length;)U.pop()();E=!1,B.clear(),b(t)}function k(t){if(null!==t.fragment){t.update(),r(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(A)}}const I=new Set;function C(t,e){-1===t.$$.dirty[0]&&(w.push(t),E||(E=!0,S.then(T)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function F(e,a,o,d,l,f,u,c=[-1]){const m=h;b(e);const _=e.$$={fragment:null,ctx:null,props:f,update:t,not_equal:l,bound:s(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(a.context||(m?m.$$.context:[])),callbacks:s(),dirty:c,skip_bound:!1,root:a.target||m.$$.root};u&&u(_.root);let g=!1;if(_.ctx=o?o(e,a.props||{},((t,i,...s)=>{const r=s.length?s[0]:i;return _.ctx&&l(_.ctx[t],_.ctx[t]=r)&&(!_.skip_bound&&_.bound[t]&&_.bound[t](r),g&&C(e,t)),i})):[],_.update(),g=!0,r(_.before_update),_.fragment=!!d&&d(_.ctx),a.target){if(a.hydrate){const t=function(t){return Array.from(t.childNodes)}(a.target);_.fragment&&_.fragment.l(t),t.forEach(p)}else _.fragment&&_.fragment.c();a.intro&&((y=e.$$.fragment)&&y.i&&(I.delete(y),y.i(w))),function(t,e,s,a){const{fragment:o,on_mount:h,on_destroy:d,after_update:l}=t.$$;o&&o.m(e,s),a||A((()=>{const e=h.map(i).filter(n);d?d.push(...e):r(e),t.$$.on_mount=[]})),l.forEach(A)}(e,a.target,a.anchor,a.customElement),T()}var y,w;b(m)}let P;"function"==typeof HTMLElement&&(P=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){const{on_mount:t}=this.$$;this.$$.on_disconnect=t.map(i).filter(n);for(const t in this.$$.slotted)this.appendChild(this.$$.slotted[t])}attributeChangedCallback(t,e,i){this[t]=i}disconnectedCallback(){r(this.$$.on_disconnect)}$destroy(){!function(t,e){const i=t.$$;null!==i.fragment&&(r(i.on_destroy),i.fragment&&i.fragment.d(e),i.on_destroy=i.fragment=null,i.ctx=[])}(this,1),this.$destroy=t}$on(t,e){const i=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return i.push(e),()=>{const t=i.indexOf(e);-1!==t&&i.splice(t,1)}}$set(t){var e;this.$$set&&(e=t,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}});var L,D,R="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{},N={exports:{}};L=N,D=N.exports,function(t,e){var i="function",s="undefined",r="object",n="string",a="model",o="name",h="type",d="vendor",l="version",p="architecture",f="console",u="mobile",c="tablet",m="smarttv",_="wearable",g="embedded",y="Amazon",b="Apple",w="ASUS",v="BlackBerry",x="Firefox",U="Google",S="Huawei",E="LG",A="Microsoft",B="Motorola",z="Opera",T="Samsung",k="Sony",I="Xiaomi",C="Zebra",F="Facebook",P=function(t){for(var e={},i=0;i<t.length;i++)e[t[i].toUpperCase()]=t[i];return e},R=function(t,e){return typeof t===n&&-1!==N(e).indexOf(N(t))},N=function(t){return t.toLowerCase()},O=function(t,e){if(typeof t===n)return t=t.replace(/^\s\s*/,"").replace(/\s\s*$/,""),typeof e===s?t:t.substring(0,255)},M=function(t,s){for(var n,a,o,h,d,l,p=0;p<s.length&&!d;){var f=s[p],u=s[p+1];for(n=a=0;n<f.length&&!d;)if(d=f[n++].exec(t))for(o=0;o<u.length;o++)l=d[++a],typeof(h=u[o])===r&&h.length>0?2===h.length?typeof h[1]==i?this[h[0]]=h[1].call(this,l):this[h[0]]=h[1]:3===h.length?typeof h[1]!==i||h[1].exec&&h[1].test?this[h[0]]=l?l.replace(h[1],h[2]):e:this[h[0]]=l?h[1].call(this,l,h[2]):e:4===h.length&&(this[h[0]]=l?h[3].call(this,l.replace(h[1],h[2])):e):this[h]=l||e;p+=2}},G=function(t,i){for(var s in i)if(typeof i[s]===r&&i[s].length>0){for(var n=0;n<i[s].length;n++)if(R(i[s][n],t))return"?"===s?e:s}else if(R(i[s],t))return"?"===s?e:s;return t},H={ME:"4.90","NT 3.11":"NT3.51","NT 4.0":"NT4.0",2e3:"NT 5.0",XP:["NT 5.1","NT 5.2"],Vista:"NT 6.0",7:"NT 6.1",8:"NT 6.2",8.1:"NT 6.3",10:["NT 6.4","NT 10.0"],RT:"ARM"},V={browser:[[/\b(?:crmo|crios)\/([\w\.]+)/i],[l,[o,"Chrome"]],[/edg(?:e|ios|a)?\/([\w\.]+)/i],[l,[o,"Edge"]],[/(opera mini)\/([-\w\.]+)/i,/(opera [mobiletab]{3,6})\b.+version\/([-\w\.]+)/i,/(opera)(?:.+version\/|[\/ ]+)([\w\.]+)/i],[o,l],[/opios[\/ ]+([\w\.]+)/i],[l,[o,"Opera Mini"]],[/\bopr\/([\w\.]+)/i],[l,[o,z]],[/(kindle)\/([\w\.]+)/i,/(lunascape|maxthon|netfront|jasmine|blazer)[\/ ]?([\w\.]*)/i,/(avant |iemobile|slim)(?:browser)?[\/ ]?([\w\.]*)/i,/(ba?idubrowser)[\/ ]?([\w\.]+)/i,/(?:ms|\()(ie) ([\w\.]+)/i,/(flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon|rekonq|puffin|brave|whale|qqbrowserlite|qq)\/([-\w\.]+)/i,/(weibo)__([\d\.]+)/i],[o,l],[/(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i],[l,[o,"UCBrowser"]],[/\bqbcore\/([\w\.]+)/i],[l,[o,"WeChat(Win) Desktop"]],[/micromessenger\/([\w\.]+)/i],[l,[o,"WeChat"]],[/konqueror\/([\w\.]+)/i],[l,[o,"Konqueror"]],[/trident.+rv[: ]([\w\.]{1,9})\b.+like gecko/i],[l,[o,"IE"]],[/yabrowser\/([\w\.]+)/i],[l,[o,"Yandex"]],[/(avast|avg)\/([\w\.]+)/i],[[o,/(.+)/,"$1 Secure Browser"],l],[/\bfocus\/([\w\.]+)/i],[l,[o,"Firefox Focus"]],[/\bopt\/([\w\.]+)/i],[l,[o,"Opera Touch"]],[/coc_coc\w+\/([\w\.]+)/i],[l,[o,"Coc Coc"]],[/dolfin\/([\w\.]+)/i],[l,[o,"Dolphin"]],[/coast\/([\w\.]+)/i],[l,[o,"Opera Coast"]],[/miuibrowser\/([\w\.]+)/i],[l,[o,"MIUI Browser"]],[/fxios\/([-\w\.]+)/i],[l,[o,x]],[/\bqihu|(qi?ho?o?|360)browser/i],[[o,"360 Browser"]],[/(oculus|samsung|sailfish)browser\/([\w\.]+)/i],[[o,/(.+)/,"$1 Browser"],l],[/(comodo_dragon)\/([\w\.]+)/i],[[o,/_/g," "],l],[/(electron)\/([\w\.]+) safari/i,/(tesla)(?: qtcarbrowser|\/(20\d\d\.[-\w\.]+))/i,/m?(qqbrowser|baiduboxapp|2345Explorer)[\/ ]?([\w\.]+)/i],[o,l],[/(metasr)[\/ ]?([\w\.]+)/i,/(lbbrowser)/i],[o],[/((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i],[[o,F],l],[/safari (line)\/([\w\.]+)/i,/\b(line)\/([\w\.]+)\/iab/i,/(chromium|instagram)[\/ ]([-\w\.]+)/i],[o,l],[/\bgsa\/([\w\.]+) .*safari\//i],[l,[o,"GSA"]],[/headlesschrome(?:\/([\w\.]+)| )/i],[l,[o,"Chrome Headless"]],[/ wv\).+(chrome)\/([\w\.]+)/i],[[o,"Chrome WebView"],l],[/droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i],[l,[o,"Android Browser"]],[/(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i],[o,l],[/version\/([\w\.]+) .*mobile\/\w+ (safari)/i],[l,[o,"Mobile Safari"]],[/version\/([\w\.]+) .*(mobile ?safari|safari)/i],[l,o],[/webkit.+?(mobile ?safari|safari)(\/[\w\.]+)/i],[o,[l,G,{"1.0":"/8",1.2:"/1",1.3:"/3","2.0":"/412","2.0.2":"/416","2.0.3":"/417","2.0.4":"/419","?":"/"}]],[/(webkit|khtml)\/([\w\.]+)/i],[o,l],[/(navigator|netscape\d?)\/([-\w\.]+)/i],[[o,"Netscape"],l],[/mobile vr; rv:([\w\.]+)\).+firefox/i],[l,[o,"Firefox Reality"]],[/ekiohf.+(flow)\/([\w\.]+)/i,/(swiftfox)/i,/(icedragon|iceweasel|camino|chimera|fennec|maemo browser|minimo|conkeror|klar)[\/ ]?([\w\.\+]+)/i,/(seamonkey|k-meleon|icecat|iceape|firebird|phoenix|palemoon|basilisk|waterfox)\/([-\w\.]+)$/i,/(firefox)\/([\w\.]+)/i,/(mozilla)\/([\w\.]+) .+rv\:.+gecko\/\d+/i,/(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir|obigo|mosaic|(?:go|ice|up)[\. ]?browser)[-\/ ]?v?([\w\.]+)/i,/(links) \(([\w\.]+)/i],[o,l]],cpu:[[/(?:(amd|x(?:(?:86|64)[-_])?|wow|win)64)[;\)]/i],[[p,"amd64"]],[/(ia32(?=;))/i],[[p,N]],[/((?:i[346]|x)86)[;\)]/i],[[p,"ia32"]],[/\b(aarch64|arm(v?8e?l?|_?64))\b/i],[[p,"arm64"]],[/\b(arm(?:v[67])?ht?n?[fl]p?)\b/i],[[p,"armhf"]],[/windows (ce|mobile); ppc;/i],[[p,"arm"]],[/((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i],[[p,/ower/,"",N]],[/(sun4\w)[;\)]/i],[[p,"sparc"]],[/((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i],[[p,N]]],device:[[/\b(sch-i[89]0\d|shw-m380s|sm-[pt]\w{2,4}|gt-[pn]\d{2,4}|sgh-t8[56]9|nexus 10)/i],[a,[d,T],[h,c]],[/\b((?:s[cgp]h|gt|sm)-\w+|galaxy nexus)/i,/samsung[- ]([-\w]+)/i,/sec-(sgh\w+)/i],[a,[d,T],[h,u]],[/\((ip(?:hone|od)[\w ]*);/i],[a,[d,b],[h,u]],[/\((ipad);[-\w\),; ]+apple/i,/applecoremedia\/[\w\.]+ \((ipad)/i,/\b(ipad)\d\d?,\d\d?[;\]].+ios/i],[a,[d,b],[h,c]],[/\b((?:ag[rs][23]?|bah2?|sht?|btv)-a?[lw]\d{2})\b(?!.+d\/s)/i],[a,[d,S],[h,c]],[/(?:huawei|honor)([-\w ]+)[;\)]/i,/\b(nexus 6p|\w{2,4}-[atu]?[ln][01259x][012359][an]?)\b(?!.+d\/s)/i],[a,[d,S],[h,u]],[/\b(poco[\w ]+)(?: bui|\))/i,/\b; (\w+) build\/hm\1/i,/\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i,/\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i,/\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i],[[a,/_/g," "],[d,I],[h,u]],[/\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i],[[a,/_/g," "],[d,I],[h,c]],[/; (\w+) bui.+ oppo/i,/\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],[a,[d,"OPPO"],[h,u]],[/vivo (\w+)(?: bui|\))/i,/\b(v[12]\d{3}\w?[at])(?: bui|;)/i],[a,[d,"Vivo"],[h,u]],[/\b(rmx[12]\d{3})(?: bui|;|\))/i],[a,[d,"Realme"],[h,u]],[/\b(milestone|droid(?:[2-4x]| (?:bionic|x2|pro|razr))?:?( 4g)?)\b[\w ]+build\//i,/\bmot(?:orola)?[- ](\w*)/i,/((?:moto[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i],[a,[d,B],[h,u]],[/\b(mz60\d|xoom[2 ]{0,2}) build\//i],[a,[d,B],[h,c]],[/((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i],[a,[d,E],[h,c]],[/(lm(?:-?f100[nv]?|-[\w\.]+)(?= bui|\))|nexus [45])/i,/\blg[-e;\/ ]+((?!browser|netcast|android tv)\w+)/i,/\blg-?([\d\w]+) bui/i],[a,[d,E],[h,u]],[/(ideatab[-\w ]+)/i,/lenovo ?(s[56]000[-\w]+|tab(?:[\w ]+)|yt[-\d\w]{6}|tb[-\d\w]{6})/i],[a,[d,"Lenovo"],[h,c]],[/(?:maemo|nokia).*(n900|lumia \d+)/i,/nokia[-_ ]?([-\w\.]*)/i],[[a,/_/g," "],[d,"Nokia"],[h,u]],[/(pixel c)\b/i],[a,[d,U],[h,c]],[/droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i],[a,[d,U],[h,u]],[/droid.+ ([c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i],[a,[d,k],[h,u]],[/sony tablet [ps]/i,/\b(?:sony)?sgp\w+(?: bui|\))/i],[[a,"Xperia Tablet"],[d,k],[h,c]],[/ (kb2005|in20[12]5|be20[12][59])\b/i,/(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i],[a,[d,"OnePlus"],[h,u]],[/(alexa)webm/i,/(kf[a-z]{2}wi)( bui|\))/i,/(kf[a-z]+)( bui|\)).+silk\//i],[a,[d,y],[h,c]],[/((?:sd|kf)[0349hijorstuw]+)( bui|\)).+silk\//i],[[a,/(.+)/g,"Fire Phone $1"],[d,y],[h,u]],[/(playbook);[-\w\),; ]+(rim)/i],[a,d,[h,c]],[/\b((?:bb[a-f]|st[hv])100-\d)/i,/\(bb10; (\w+)/i],[a,[d,v],[h,u]],[/(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i],[a,[d,w],[h,c]],[/ (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i],[a,[d,w],[h,u]],[/(nexus 9)/i],[a,[d,"HTC"],[h,c]],[/(htc)[-;_ ]{1,2}([\w ]+(?=\)| bui)|\w+)/i,/(zte)[- ]([\w ]+?)(?: bui|\/|\))/i,/(alcatel|geeksphone|nexian|panasonic|sony)[-_ ]?([-\w]*)/i],[d,[a,/_/g," "],[h,u]],[/droid.+; ([ab][1-7]-?[0178a]\d\d?)/i],[a,[d,"Acer"],[h,c]],[/droid.+; (m[1-5] note) bui/i,/\bmz-([-\w]{2,})/i],[a,[d,"Meizu"],[h,u]],[/\b(sh-?[altvz]?\d\d[a-ekm]?)/i],[a,[d,"Sharp"],[h,u]],[/(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[-_ ]?([-\w]*)/i,/(hp) ([\w ]+\w)/i,/(asus)-?(\w+)/i,/(microsoft); (lumia[\w ]+)/i,/(lenovo)[-_ ]?([-\w]+)/i,/(jolla)/i,/(oppo) ?([\w ]+) bui/i],[d,a,[h,u]],[/(archos) (gamepad2?)/i,/(hp).+(touchpad(?!.+tablet)|tablet)/i,/(kindle)\/([\w\.]+)/i,/(nook)[\w ]+build\/(\w+)/i,/(dell) (strea[kpr\d ]*[\dko])/i,/(le[- ]+pan)[- ]+(\w{1,9}) bui/i,/(trinity)[- ]*(t\d{3}) bui/i,/(gigaset)[- ]+(q\w{1,9}) bui/i,/(vodafone) ([\w ]+)(?:\)| bui)/i],[d,a,[h,c]],[/(surface duo)/i],[a,[d,A],[h,c]],[/droid [\d\.]+; (fp\du?)(?: b|\))/i],[a,[d,"Fairphone"],[h,u]],[/(u304aa)/i],[a,[d,"AT&T"],[h,u]],[/\bsie-(\w*)/i],[a,[d,"Siemens"],[h,u]],[/\b(rct\w+) b/i],[a,[d,"RCA"],[h,c]],[/\b(venue[\d ]{2,7}) b/i],[a,[d,"Dell"],[h,c]],[/\b(q(?:mv|ta)\w+) b/i],[a,[d,"Verizon"],[h,c]],[/\b(?:barnes[& ]+noble |bn[rt])([\w\+ ]*) b/i],[a,[d,"Barnes & Noble"],[h,c]],[/\b(tm\d{3}\w+) b/i],[a,[d,"NuVision"],[h,c]],[/\b(k88) b/i],[a,[d,"ZTE"],[h,c]],[/\b(nx\d{3}j) b/i],[a,[d,"ZTE"],[h,u]],[/\b(gen\d{3}) b.+49h/i],[a,[d,"Swiss"],[h,u]],[/\b(zur\d{3}) b/i],[a,[d,"Swiss"],[h,c]],[/\b((zeki)?tb.*\b) b/i],[a,[d,"Zeki"],[h,c]],[/\b([yr]\d{2}) b/i,/\b(dragon[- ]+touch |dt)(\w{5}) b/i],[[d,"Dragon Touch"],a,[h,c]],[/\b(ns-?\w{0,9}) b/i],[a,[d,"Insignia"],[h,c]],[/\b((nxa|next)-?\w{0,9}) b/i],[a,[d,"NextBook"],[h,c]],[/\b(xtreme\_)?(v(1[045]|2[015]|[3469]0|7[05])) b/i],[[d,"Voice"],a,[h,u]],[/\b(lvtel\-)?(v1[12]) b/i],[[d,"LvTel"],a,[h,u]],[/\b(ph-1) /i],[a,[d,"Essential"],[h,u]],[/\b(v(100md|700na|7011|917g).*\b) b/i],[a,[d,"Envizen"],[h,c]],[/\b(trio[-\w\. ]+) b/i],[a,[d,"MachSpeed"],[h,c]],[/\btu_(1491) b/i],[a,[d,"Rotor"],[h,c]],[/(shield[\w ]+) b/i],[a,[d,"Nvidia"],[h,c]],[/(sprint) (\w+)/i],[d,a,[h,u]],[/(kin\.[onetw]{3})/i],[[a,/\./g," "],[d,A],[h,u]],[/droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i],[a,[d,C],[h,c]],[/droid.+; (ec30|ps20|tc[2-8]\d[kx])\)/i],[a,[d,C],[h,u]],[/(ouya)/i,/(nintendo) ([wids3utch]+)/i],[d,a,[h,f]],[/droid.+; (shield) bui/i],[a,[d,"Nvidia"],[h,f]],[/(playstation [345portablevi]+)/i],[a,[d,k],[h,f]],[/\b(xbox(?: one)?(?!; xbox))[\); ]/i],[a,[d,A],[h,f]],[/smart-tv.+(samsung)/i],[d,[h,m]],[/hbbtv.+maple;(\d+)/i],[[a,/^/,"SmartTV"],[d,T],[h,m]],[/(nux; netcast.+smarttv|lg (netcast\.tv-201\d|android tv))/i],[[d,E],[h,m]],[/(apple) ?tv/i],[d,[a,"Apple TV"],[h,m]],[/crkey/i],[[a,"Chromecast"],[d,U],[h,m]],[/droid.+aft(\w)( bui|\))/i],[a,[d,y],[h,m]],[/\(dtv[\);].+(aquos)/i],[a,[d,"Sharp"],[h,m]],[/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i,/hbbtv\/\d+\.\d+\.\d+ +\([\w ]*; *(\w[^;]*);([^;]*)/i],[[d,O],[a,O],[h,m]],[/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],[[h,m]],[/((pebble))app/i],[d,a,[h,_]],[/droid.+; (glass) \d/i],[a,[d,U],[h,_]],[/droid.+; (wt63?0{2,3})\)/i],[a,[d,C],[h,_]],[/(quest( 2)?)/i],[a,[d,F],[h,_]],[/(tesla)(?: qtcarbrowser|\/[-\w\.]+)/i],[d,[h,g]],[/droid .+?; ([^;]+?)(?: bui|\) applew).+? mobile safari/i],[a,[h,u]],[/droid .+?; ([^;]+?)(?: bui|\) applew).+?(?! mobile) safari/i],[a,[h,c]],[/\b((tablet|tab)[;\/]|focus\/\d(?!.+mobile))/i],[[h,c]],[/(phone|mobile(?:[;\/]| safari)|pda(?=.+windows ce))/i],[[h,u]],[/(android[-\w\. ]{0,9});.+buil/i],[a,[d,"Generic"]]],engine:[[/windows.+ edge\/([\w\.]+)/i],[l,[o,"EdgeHTML"]],[/webkit\/537\.36.+chrome\/(?!27)([\w\.]+)/i],[l,[o,"Blink"]],[/(presto)\/([\w\.]+)/i,/(webkit|trident|netfront|netsurf|amaya|lynx|w3m|goanna)\/([\w\.]+)/i,/ekioh(flow)\/([\w\.]+)/i,/(khtml|tasman|links)[\/ ]\(?([\w\.]+)/i,/(icab)[\/ ]([23]\.[\d\.]+)/i],[o,l],[/rv\:([\w\.]{1,9})\b.+(gecko)/i],[l,o]],os:[[/microsoft (windows) (vista|xp)/i],[o,l],[/(windows) nt 6\.2; (arm)/i,/(windows (?:phone(?: os)?|mobile))[\/ ]?([\d\.\w ]*)/i,/(windows)[\/ ]?([ntce\d\. ]+\w)(?!.+xbox)/i],[o,[l,G,H]],[/(win(?=3|9|n)|win 9x )([nt\d\.]+)/i],[[o,"Windows"],[l,G,H]],[/ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i,/cfnetwork\/.+darwin/i],[[l,/_/g,"."],[o,"iOS"]],[/(mac os x) ?([\w\. ]*)/i,/(macintosh|mac_powerpc\b)(?!.+haiku)/i],[[o,"Mac OS"],[l,/_/g,"."]],[/droid ([\w\.]+)\b.+(android[- ]x86)/i],[l,o],[/(android|webos|qnx|bada|rim tablet os|maemo|meego|sailfish)[-\/ ]?([\w\.]*)/i,/(blackberry)\w*\/([\w\.]*)/i,/(tizen|kaios)[\/ ]([\w\.]+)/i,/\((series40);/i],[o,l],[/\(bb(10);/i],[l,[o,v]],[/(?:symbian ?os|symbos|s60(?=;)|series60)[-\/ ]?([\w\.]*)/i],[l,[o,"Symbian"]],[/mozilla\/[\d\.]+ \((?:mobile|tablet|tv|mobile; [\w ]+); rv:.+ gecko\/([\w\.]+)/i],[l,[o,"Firefox OS"]],[/web0s;.+rt(tv)/i,/\b(?:hp)?wos(?:browser)?\/([\w\.]+)/i],[l,[o,"webOS"]],[/crkey\/([\d\.]+)/i],[l,[o,"Chromecast"]],[/(cros) [\w]+ ([\w\.]+\w)/i],[[o,"Chromium OS"],l],[/(nintendo|playstation) ([wids345portablevuch]+)/i,/(xbox); +xbox ([^\);]+)/i,/\b(joli|palm)\b ?(?:os)?\/?([\w\.]*)/i,/(mint)[\/\(\) ]?(\w*)/i,/(mageia|vectorlinux)[; ]/i,/([kxln]?ubuntu|debian|suse|opensuse|gentoo|arch(?= linux)|slackware|fedora|mandriva|centos|pclinuxos|red ?hat|zenwalk|linpus|raspbian|plan 9|minix|risc os|contiki|deepin|manjaro|elementary os|sabayon|linspire)(?: gnu\/linux)?(?: enterprise)?(?:[- ]linux)?(?:-gnu)?[-\/ ]?(?!chrom|package)([-\w\.]*)/i,/(hurd|linux) ?([\w\.]*)/i,/(gnu) ?([\w\.]*)/i,/\b([-frentopcghs]{0,5}bsd|dragonfly)[\/ ]?(?!amd|[ix346]{1,2}86)([\w\.]*)/i,/(haiku) (\w+)/i],[o,l],[/(sunos) ?([\w\.\d]*)/i],[[o,"Solaris"],l],[/((?:open)?solaris)[-\/ ]?([\w\.]*)/i,/(aix) ((\d)(?=\.|\)| )[\w\.])*/i,/\b(beos|os\/2|amigaos|morphos|openvms|fuchsia|hp-ux)/i,/(unix) ?([\w\.]*)/i],[o,l]]},$=function(i,a){if(typeof i===r&&(a=i,i=e),!(this instanceof $))return new $(i,a).getResult();var o=i||(typeof t!==s&&t.navigator&&t.navigator.userAgent?t.navigator.userAgent:""),h=a?function(t,e){var i={};for(var s in t)e[s]&&e[s].length%2==0?i[s]=e[s].concat(t[s]):i[s]=t[s];return i}(V,a):V;return this.getBrowser=function(){var t,i={};return i.name=e,i.version=e,M.call(i,o,h.browser),i.major=typeof(t=i.version)===n?t.replace(/[^\d\.]/g,"").split(".")[0]:e,i},this.getCPU=function(){var t={};return t.architecture=e,M.call(t,o,h.cpu),t},this.getDevice=function(){var t={};return t.vendor=e,t.model=e,t.type=e,M.call(t,o,h.device),t},this.getEngine=function(){var t={};return t.name=e,t.version=e,M.call(t,o,h.engine),t},this.getOS=function(){var t={};return t.name=e,t.version=e,M.call(t,o,h.os),t},this.getResult=function(){return{ua:this.getUA(),browser:this.getBrowser(),engine:this.getEngine(),os:this.getOS(),device:this.getDevice(),cpu:this.getCPU()}},this.getUA=function(){return o},this.setUA=function(t){return o=typeof t===n&&t.length>255?O(t,255):t,this},this.setUA(o),this};$.VERSION="1.0.2",$.BROWSER=P([o,l,"major"]),$.CPU=P([p]),$.DEVICE=P([a,d,h,f,u,m,c,_,g]),$.ENGINE=$.OS=P([o,l]),L.exports&&(D=L.exports=$),D.UAParser=$;var Y=typeof t!==s&&(t.jQuery||t.Zepto);if(Y&&!Y.ua){var j=new $;Y.ua=j.getResult(),Y.ua.get=function(){return j.getUA()},Y.ua.set=function(t){j.setUA(t);var e=j.getResult();for(var i in e)Y.ua[i]=e[i]}}}("object"==typeof window?window:R);var O=N.exports,M={};!function(t){var e,i,s,r=(e=new Date,i=4,s={setLogLevel:function(t){i=t==this.debug?1:t==this.info?2:t==this.warn?3:(this.error,4)},debug:function(t,s){void 0===console.debug&&(console.debug=console.log),1>=i&&console.debug("["+r.getDurationString(new Date-e,1e3)+"]","["+t+"]",s)},log:function(t,e){this.debug(t.msg)},info:function(t,s){2>=i&&console.info("["+r.getDurationString(new Date-e,1e3)+"]","["+t+"]",s)},warn:function(t,s){3>=i&&console.warn("["+r.getDurationString(new Date-e,1e3)+"]","["+t+"]",s)},error:function(t,s){4>=i&&console.error("["+r.getDurationString(new Date-e,1e3)+"]","["+t+"]",s)}},s);r.getDurationString=function(t,e){var i;function s(t,e){for(var i=(""+t).split(".");i[0].length<e;)i[0]="0"+i[0];return i.join(".")}t<0?(i=!0,t=-t):i=!1;var r=t/(e||1),n=Math.floor(r/3600);r-=3600*n;var a=Math.floor(r/60),o=1e3*(r-=60*a);return o-=1e3*(r=Math.floor(r)),o=Math.floor(o),(i?"-":"")+n+":"+s(a,2)+":"+s(r,2)+"."+s(o,3)},r.printRanges=function(t){var e=t.length;if(e>0){for(var i="",s=0;s<e;s++)s>0&&(i+=","),i+="["+r.getDurationString(t.start(s))+","+r.getDurationString(t.end(s))+"]";return i}return"(empty)"},t.Log=r;var n=function(t){if(!(t instanceof ArrayBuffer))throw"Needs an array buffer";this.buffer=t,this.dataview=new DataView(t),this.position=0};n.prototype.getPosition=function(){return this.position},n.prototype.getEndPosition=function(){return this.buffer.byteLength},n.prototype.getLength=function(){return this.buffer.byteLength},n.prototype.seek=function(t){var e=Math.max(0,Math.min(this.buffer.byteLength,t));return this.position=isNaN(e)||!isFinite(e)?0:e,!0},n.prototype.isEos=function(){return this.getPosition()>=this.getEndPosition()},n.prototype.readAnyInt=function(t,e){var i=0;if(this.position+t<=this.buffer.byteLength){switch(t){case 1:i=e?this.dataview.getInt8(this.position):this.dataview.getUint8(this.position);break;case 2:i=e?this.dataview.getInt16(this.position):this.dataview.getUint16(this.position);break;case 3:if(e)throw"No method for reading signed 24 bits values";i=this.dataview.getUint8(this.position)<<16,i|=this.dataview.getUint8(this.position+1)<<8,i|=this.dataview.getUint8(this.position+2);break;case 4:i=e?this.dataview.getInt32(this.position):this.dataview.getUint32(this.position);break;case 8:if(e)throw"No method for reading signed 64 bits values";i=this.dataview.getUint32(this.position)<<32,i|=this.dataview.getUint32(this.position+4);break;default:throw"readInt method not implemented for size: "+t}return this.position+=t,i}throw"Not enough bytes in buffer"},n.prototype.readUint8=function(){return this.readAnyInt(1,!1)},n.prototype.readUint16=function(){return this.readAnyInt(2,!1)},n.prototype.readUint24=function(){return this.readAnyInt(3,!1)},n.prototype.readUint32=function(){return this.readAnyInt(4,!1)},n.prototype.readUint64=function(){return this.readAnyInt(8,!1)},n.prototype.readString=function(t){if(this.position+t<=this.buffer.byteLength){for(var e="",i=0;i<t;i++)e+=String.fromCharCode(this.readUint8());return e}throw"Not enough bytes in buffer"},n.prototype.readCString=function(){for(var t=[];;){var e=this.readUint8();if(0===e)break;t.push(e)}return String.fromCharCode.apply(null,t)},n.prototype.readInt8=function(){return this.readAnyInt(1,!0)},n.prototype.readInt16=function(){return this.readAnyInt(2,!0)},n.prototype.readInt32=function(){return this.readAnyInt(4,!0)},n.prototype.readInt64=function(){return this.readAnyInt(8,!1)},n.prototype.readUint8Array=function(t){for(var e=new Uint8Array(t),i=0;i<t;i++)e[i]=this.readUint8();return e},n.prototype.readInt16Array=function(t){for(var e=new Int16Array(t),i=0;i<t;i++)e[i]=this.readInt16();return e},n.prototype.readUint16Array=function(t){for(var e=new Int16Array(t),i=0;i<t;i++)e[i]=this.readUint16();return e},n.prototype.readUint32Array=function(t){for(var e=new Uint32Array(t),i=0;i<t;i++)e[i]=this.readUint32();return e},n.prototype.readInt32Array=function(t){for(var e=new Int32Array(t),i=0;i<t;i++)e[i]=this.readInt32();return e},t.MP4BoxStream=n;var a=function(t,e,i){this._byteOffset=e||0,t instanceof ArrayBuffer?this.buffer=t:"object"==typeof t?(this.dataView=t,e&&(this._byteOffset+=e)):this.buffer=new ArrayBuffer(t||0),this.position=0,this.endianness=null==i?a.LITTLE_ENDIAN:i};a.prototype={},a.prototype.getPosition=function(){return this.position},a.prototype._realloc=function(t){if(this._dynamicSize){var e=this._byteOffset+this.position+t,i=this._buffer.byteLength;if(e<=i)e>this._byteLength&&(this._byteLength=e);else{for(i<1&&(i=1);e>i;)i*=2;var s=new ArrayBuffer(i),r=new Uint8Array(this._buffer);new Uint8Array(s,0,r.length).set(r),this.buffer=s,this._byteLength=e}}},a.prototype._trimAlloc=function(){if(this._byteLength!=this._buffer.byteLength){var t=new ArrayBuffer(this._byteLength),e=new Uint8Array(t),i=new Uint8Array(this._buffer,0,e.length);e.set(i),this.buffer=t}},a.BIG_ENDIAN=!1,a.LITTLE_ENDIAN=!0,a.prototype._byteLength=0,Object.defineProperty(a.prototype,"byteLength",{get:function(){return this._byteLength-this._byteOffset}}),Object.defineProperty(a.prototype,"buffer",{get:function(){return this._trimAlloc(),this._buffer},set:function(t){this._buffer=t,this._dataView=new DataView(this._buffer,this._byteOffset),this._byteLength=this._buffer.byteLength}}),Object.defineProperty(a.prototype,"byteOffset",{get:function(){return this._byteOffset},set:function(t){this._byteOffset=t,this._dataView=new DataView(this._buffer,this._byteOffset),this._byteLength=this._buffer.byteLength}}),Object.defineProperty(a.prototype,"dataView",{get:function(){return this._dataView},set:function(t){this._byteOffset=t.byteOffset,this._buffer=t.buffer,this._dataView=new DataView(this._buffer,this._byteOffset),this._byteLength=this._byteOffset+t.byteLength}}),a.prototype.seek=function(t){var e=Math.max(0,Math.min(this.byteLength,t));this.position=isNaN(e)||!isFinite(e)?0:e},a.prototype.isEof=function(){return this.position>=this._byteLength},a.prototype.mapUint8Array=function(t){this._realloc(1*t);var e=new Uint8Array(this._buffer,this.byteOffset+this.position,t);return this.position+=1*t,e},a.prototype.readInt32Array=function(t,e){t=null==t?this.byteLength-this.position/4:t;var i=new Int32Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readInt16Array=function(t,e){t=null==t?this.byteLength-this.position/2:t;var i=new Int16Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readInt8Array=function(t){t=null==t?this.byteLength-this.position:t;var e=new Int8Array(t);return a.memcpy(e.buffer,0,this.buffer,this.byteOffset+this.position,t*e.BYTES_PER_ELEMENT),this.position+=e.byteLength,e},a.prototype.readUint32Array=function(t,e){t=null==t?this.byteLength-this.position/4:t;var i=new Uint32Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readUint16Array=function(t,e){t=null==t?this.byteLength-this.position/2:t;var i=new Uint16Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readUint8Array=function(t){t=null==t?this.byteLength-this.position:t;var e=new Uint8Array(t);return a.memcpy(e.buffer,0,this.buffer,this.byteOffset+this.position,t*e.BYTES_PER_ELEMENT),this.position+=e.byteLength,e},a.prototype.readFloat64Array=function(t,e){t=null==t?this.byteLength-this.position/8:t;var i=new Float64Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readFloat32Array=function(t,e){t=null==t?this.byteLength-this.position/4:t;var i=new Float32Array(t);return a.memcpy(i.buffer,0,this.buffer,this.byteOffset+this.position,t*i.BYTES_PER_ELEMENT),a.arrayToNative(i,null==e?this.endianness:e),this.position+=i.byteLength,i},a.prototype.readInt32=function(t){var e=this._dataView.getInt32(this.position,null==t?this.endianness:t);return this.position+=4,e},a.prototype.readInt16=function(t){var e=this._dataView.getInt16(this.position,null==t?this.endianness:t);return this.position+=2,e},a.prototype.readInt8=function(){var t=this._dataView.getInt8(this.position);return this.position+=1,t},a.prototype.readUint32=function(t){var e=this._dataView.getUint32(this.position,null==t?this.endianness:t);return this.position+=4,e},a.prototype.readUint16=function(t){var e=this._dataView.getUint16(this.position,null==t?this.endianness:t);return this.position+=2,e},a.prototype.readUint8=function(){var t=this._dataView.getUint8(this.position);return this.position+=1,t},a.prototype.readFloat32=function(t){var e=this._dataView.getFloat32(this.position,null==t?this.endianness:t);return this.position+=4,e},a.prototype.readFloat64=function(t){var e=this._dataView.getFloat64(this.position,null==t?this.endianness:t);return this.position+=8,e},a.endianness=new Int8Array(new Int16Array([1]).buffer)[0]>0,a.memcpy=function(t,e,i,s,r){var n=new Uint8Array(t,e,r),a=new Uint8Array(i,s,r);n.set(a)},a.arrayToNative=function(t,e){return e==this.endianness?t:this.flipArrayEndianness(t)},a.nativeToEndian=function(t,e){return this.endianness==e?t:this.flipArrayEndianness(t)},a.flipArrayEndianness=function(t){for(var e=new Uint8Array(t.buffer,t.byteOffset,t.byteLength),i=0;i<t.byteLength;i+=t.BYTES_PER_ELEMENT)for(var s=i+t.BYTES_PER_ELEMENT-1,r=i;s>r;s--,r++){var n=e[r];e[r]=e[s],e[s]=n}return t},a.prototype.failurePosition=0,String.fromCharCodeUint8=function(t){for(var e=[],i=0;i<t.length;i++)e[i]=t[i];return String.fromCharCode.apply(null,e)},a.prototype.readString=function(t,e){return null==e||"ASCII"==e?String.fromCharCodeUint8.apply(null,[this.mapUint8Array(null==t?this.byteLength-this.position:t)]):new TextDecoder(e).decode(this.mapUint8Array(t))},a.prototype.readCString=function(t){var e=this.byteLength-this.position,i=new Uint8Array(this._buffer,this._byteOffset+this.position),s=e;null!=t&&(s=Math.min(t,e));for(var r=0;r<s&&0!==i[r];r++);var n=String.fromCharCodeUint8.apply(null,[this.mapUint8Array(r)]);return null!=t?this.position+=s-r:r!=e&&(this.position+=1),n};var o=Math.pow(2,32);a.prototype.readInt64=function(){return this.readInt32()*o+this.readUint32()},a.prototype.readUint64=function(){return this.readUint32()*o+this.readUint32()},a.prototype.readInt64=function(){return this.readUint32()*o+this.readUint32()},a.prototype.readUint24=function(){return(this.readUint8()<<16)+(this.readUint8()<<8)+this.readUint8()},t.DataStream=a,a.prototype.save=function(t){var e=new Blob([this.buffer]);if(!window.URL||!URL.createObjectURL)throw"DataStream.save: Can't create object URL.";var i=window.URL.createObjectURL(e),s=document.createElement("a");document.body.appendChild(s),s.setAttribute("href",i),s.setAttribute("download",t),s.setAttribute("target","_self"),s.click(),window.URL.revokeObjectURL(i)},a.prototype._dynamicSize=!0,Object.defineProperty(a.prototype,"dynamicSize",{get:function(){return this._dynamicSize},set:function(t){t||this._trimAlloc(),this._dynamicSize=t}}),a.prototype.shift=function(t){var e=new ArrayBuffer(this._byteLength-t),i=new Uint8Array(e),s=new Uint8Array(this._buffer,t,i.length);i.set(s),this.buffer=e,this.position-=t},a.prototype.writeInt32Array=function(t,e){if(this._realloc(4*t.length),t instanceof Int32Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapInt32Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeInt32(t[i],e)},a.prototype.writeInt16Array=function(t,e){if(this._realloc(2*t.length),t instanceof Int16Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapInt16Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeInt16(t[i],e)},a.prototype.writeInt8Array=function(t){if(this._realloc(1*t.length),t instanceof Int8Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapInt8Array(t.length);else for(var e=0;e<t.length;e++)this.writeInt8(t[e])},a.prototype.writeUint32Array=function(t,e){if(this._realloc(4*t.length),t instanceof Uint32Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapUint32Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeUint32(t[i],e)},a.prototype.writeUint16Array=function(t,e){if(this._realloc(2*t.length),t instanceof Uint16Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapUint16Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeUint16(t[i],e)},a.prototype.writeUint8Array=function(t){if(this._realloc(1*t.length),t instanceof Uint8Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapUint8Array(t.length);else for(var e=0;e<t.length;e++)this.writeUint8(t[e])},a.prototype.writeFloat64Array=function(t,e){if(this._realloc(8*t.length),t instanceof Float64Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapFloat64Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeFloat64(t[i],e)},a.prototype.writeFloat32Array=function(t,e){if(this._realloc(4*t.length),t instanceof Float32Array&&this.byteOffset+this.position%t.BYTES_PER_ELEMENT===0)a.memcpy(this._buffer,this.byteOffset+this.position,t.buffer,0,t.byteLength),this.mapFloat32Array(t.length,e);else for(var i=0;i<t.length;i++)this.writeFloat32(t[i],e)},a.prototype.writeInt32=function(t,e){this._realloc(4),this._dataView.setInt32(this.position,t,null==e?this.endianness:e),this.position+=4},a.prototype.writeInt16=function(t,e){this._realloc(2),this._dataView.setInt16(this.position,t,null==e?this.endianness:e),this.position+=2},a.prototype.writeInt8=function(t){this._realloc(1),this._dataView.setInt8(this.position,t),this.position+=1},a.prototype.writeUint32=function(t,e){this._realloc(4),this._dataView.setUint32(this.position,t,null==e?this.endianness:e),this.position+=4},a.prototype.writeUint16=function(t,e){this._realloc(2),this._dataView.setUint16(this.position,t,null==e?this.endianness:e),this.position+=2},a.prototype.writeUint8=function(t){this._realloc(1),this._dataView.setUint8(this.position,t),this.position+=1},a.prototype.writeFloat32=function(t,e){this._realloc(4),this._dataView.setFloat32(this.position,t,null==e?this.endianness:e),this.position+=4},a.prototype.writeFloat64=function(t,e){this._realloc(8),this._dataView.setFloat64(this.position,t,null==e?this.endianness:e),this.position+=8},a.prototype.writeUCS2String=function(t,e,i){null==i&&(i=t.length);for(var s=0;s<t.length&&s<i;s++)this.writeUint16(t.charCodeAt(s),e);for(;s<i;s++)this.writeUint16(0)},a.prototype.writeString=function(t,e,i){var s=0;if(null==e||"ASCII"==e)if(null!=i){var r=Math.min(t.length,i);for(s=0;s<r;s++)this.writeUint8(t.charCodeAt(s));for(;s<i;s++)this.writeUint8(0)}else for(s=0;s<t.length;s++)this.writeUint8(t.charCodeAt(s));else this.writeUint8Array(new TextEncoder(e).encode(t.substring(0,i)))},a.prototype.writeCString=function(t,e){var i=0;if(null!=e){var s=Math.min(t.length,e);for(i=0;i<s;i++)this.writeUint8(t.charCodeAt(i));for(;i<e;i++)this.writeUint8(0)}else{for(i=0;i<t.length;i++)this.writeUint8(t.charCodeAt(i));this.writeUint8(0)}},a.prototype.writeStruct=function(t,e){for(var i=0;i<t.length;i+=2){var s=t[i+1];this.writeType(s,e[t[i]],e)}},a.prototype.writeType=function(t,e,i){var s;if("function"==typeof t)return t(this,e);if("object"==typeof t&&!(t instanceof Array))return t.set(this,e,i);var r=null,n="ASCII",o=this.position;switch("string"==typeof t&&/:/.test(t)&&(s=t.split(":"),t=s[0],r=parseInt(s[1])),"string"==typeof t&&/,/.test(t)&&(s=t.split(","),t=s[0],n=parseInt(s[1])),t){case"uint8":this.writeUint8(e);break;case"int8":this.writeInt8(e);break;case"uint16":this.writeUint16(e,this.endianness);break;case"int16":this.writeInt16(e,this.endianness);break;case"uint32":this.writeUint32(e,this.endianness);break;case"int32":this.writeInt32(e,this.endianness);break;case"float32":this.writeFloat32(e,this.endianness);break;case"float64":this.writeFloat64(e,this.endianness);break;case"uint16be":this.writeUint16(e,a.BIG_ENDIAN);break;case"int16be":this.writeInt16(e,a.BIG_ENDIAN);break;case"uint32be":this.writeUint32(e,a.BIG_ENDIAN);break;case"int32be":this.writeInt32(e,a.BIG_ENDIAN);break;case"float32be":this.writeFloat32(e,a.BIG_ENDIAN);break;case"float64be":this.writeFloat64(e,a.BIG_ENDIAN);break;case"uint16le":this.writeUint16(e,a.LITTLE_ENDIAN);break;case"int16le":this.writeInt16(e,a.LITTLE_ENDIAN);break;case"uint32le":this.writeUint32(e,a.LITTLE_ENDIAN);break;case"int32le":this.writeInt32(e,a.LITTLE_ENDIAN);break;case"float32le":this.writeFloat32(e,a.LITTLE_ENDIAN);break;case"float64le":this.writeFloat64(e,a.LITTLE_ENDIAN);break;case"cstring":this.writeCString(e,r);break;case"string":this.writeString(e,n,r);break;case"u16string":this.writeUCS2String(e,this.endianness,r);break;case"u16stringle":this.writeUCS2String(e,a.LITTLE_ENDIAN,r);break;case"u16stringbe":this.writeUCS2String(e,a.BIG_ENDIAN,r);break;default:if(3==t.length){for(var h=t[1],d=0;d<e.length;d++)this.writeType(h,e[d]);break}this.writeStruct(t,e)}null!=r&&(this.position=o,this._realloc(r),this.position=o+r)},a.prototype.writeUint64=function(t){var e=Math.floor(t/o);this.writeUint32(e),this.writeUint32(4294967295&t)},a.prototype.writeUint24=function(t){this.writeUint8((16711680&t)>>16),this.writeUint8((65280&t)>>8),this.writeUint8(255&t)},a.prototype.adjustUint32=function(t,e){var i=this.position;this.seek(t),this.writeUint32(e),this.seek(i)},a.prototype.mapInt32Array=function(t,e){this._realloc(4*t);var i=new Int32Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=4*t,i},a.prototype.mapInt16Array=function(t,e){this._realloc(2*t);var i=new Int16Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=2*t,i},a.prototype.mapInt8Array=function(t){this._realloc(1*t);var e=new Int8Array(this._buffer,this.byteOffset+this.position,t);return this.position+=1*t,e},a.prototype.mapUint32Array=function(t,e){this._realloc(4*t);var i=new Uint32Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=4*t,i},a.prototype.mapUint16Array=function(t,e){this._realloc(2*t);var i=new Uint16Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=2*t,i},a.prototype.mapFloat64Array=function(t,e){this._realloc(8*t);var i=new Float64Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=8*t,i},a.prototype.mapFloat32Array=function(t,e){this._realloc(4*t);var i=new Float32Array(this._buffer,this.byteOffset+this.position,t);return a.arrayToNative(i,null==e?this.endianness:e),this.position+=4*t,i};var h=function(t){this.buffers=[],this.bufferIndex=-1,t&&(this.insertBuffer(t),this.bufferIndex=0)};(h.prototype=new a(new ArrayBuffer,0,a.BIG_ENDIAN)).initialized=function(){var t;return this.bufferIndex>-1||(this.buffers.length>0?0===(t=this.buffers[0]).fileStart?(this.buffer=t,this.bufferIndex=0,r.debug("MultiBufferStream","Stream ready for parsing"),!0):(r.warn("MultiBufferStream","The first buffer should have a fileStart of 0"),this.logBufferLevel(),!1):(r.warn("MultiBufferStream","No buffer to start parsing from"),this.logBufferLevel(),!1))},ArrayBuffer.concat=function(t,e){r.debug("ArrayBuffer","Trying to create a new buffer of size: "+(t.byteLength+e.byteLength));var i=new Uint8Array(t.byteLength+e.byteLength);return i.set(new Uint8Array(t),0),i.set(new Uint8Array(e),t.byteLength),i.buffer},h.prototype.reduceBuffer=function(t,e,i){var s;return(s=new Uint8Array(i)).set(new Uint8Array(t,e,i)),s.buffer.fileStart=t.fileStart+e,s.buffer.usedBytes=0,s.buffer},h.prototype.insertBuffer=function(t){for(var e=!0,i=0;i<this.buffers.length;i++){var s=this.buffers[i];if(t.fileStart<=s.fileStart){if(t.fileStart===s.fileStart){if(t.byteLength>s.byteLength){this.buffers.splice(i,1),i--;continue}r.warn("MultiBufferStream","Buffer (fileStart: "+t.fileStart+" - Length: "+t.byteLength+") already appended, ignoring")}else t.fileStart+t.byteLength<=s.fileStart||(t=this.reduceBuffer(t,0,s.fileStart-t.fileStart)),r.debug("MultiBufferStream","Appending new buffer (fileStart: "+t.fileStart+" - Length: "+t.byteLength+")"),this.buffers.splice(i,0,t),0===i&&(this.buffer=t);e=!1;break}if(t.fileStart<s.fileStart+s.byteLength){var n=s.fileStart+s.byteLength-t.fileStart,a=t.byteLength-n;if(!(a>0)){e=!1;break}t=this.reduceBuffer(t,n,a)}}e&&(r.debug("MultiBufferStream","Appending new buffer (fileStart: "+t.fileStart+" - Length: "+t.byteLength+")"),this.buffers.push(t),0===i&&(this.buffer=t))},h.prototype.logBufferLevel=function(t){var e,i,s,n,a,o=[],h="";for(s=0,n=0,e=0;e<this.buffers.length;e++)i=this.buffers[e],0===e?(a={},o.push(a),a.start=i.fileStart,a.end=i.fileStart+i.byteLength,h+="["+a.start+"-"):a.end===i.fileStart?a.end=i.fileStart+i.byteLength:((a={}).start=i.fileStart,h+=o[o.length-1].end-1+"], ["+a.start+"-",a.end=i.fileStart+i.byteLength,o.push(a)),s+=i.usedBytes,n+=i.byteLength;o.length>0&&(h+=a.end-1+"]");var d=t?r.info:r.debug;0===this.buffers.length?d("MultiBufferStream","No more buffer in memory"):d("MultiBufferStream",this.buffers.length+" stored buffer(s) ("+s+"/"+n+" bytes), continuous ranges: "+h)},h.prototype.cleanBuffers=function(){var t,e;for(t=0;t<this.buffers.length;t++)(e=this.buffers[t]).usedBytes===e.byteLength&&(r.debug("MultiBufferStream","Removing buffer #"+t),this.buffers.splice(t,1),t--)},h.prototype.mergeNextBuffer=function(){var t;if(this.bufferIndex+1<this.buffers.length){if((t=this.buffers[this.bufferIndex+1]).fileStart===this.buffer.fileStart+this.buffer.byteLength){var e=this.buffer.byteLength,i=this.buffer.usedBytes,s=this.buffer.fileStart;return this.buffers[this.bufferIndex]=ArrayBuffer.concat(this.buffer,t),this.buffer=this.buffers[this.bufferIndex],this.buffers.splice(this.bufferIndex+1,1),this.buffer.usedBytes=i,this.buffer.fileStart=s,r.debug("ISOFile","Concatenating buffer for box parsing (length: "+e+"->"+this.buffer.byteLength+")"),!0}return!1}return!1},h.prototype.findPosition=function(t,e,i){var s,n=null,a=-1;for(s=!0===t?0:this.bufferIndex;s<this.buffers.length&&(n=this.buffers[s]).fileStart<=e;)a=s,i&&(n.fileStart+n.byteLength<=e?n.usedBytes=n.byteLength:n.usedBytes=e-n.fileStart,this.logBufferLevel()),s++;return-1!==a&&(n=this.buffers[a]).fileStart+n.byteLength>=e?(r.debug("MultiBufferStream","Found position in existing buffer #"+a),a):-1},h.prototype.findEndContiguousBuf=function(t){var e,i,s,r=void 0!==t?t:this.bufferIndex;if(i=this.buffers[r],this.buffers.length>r+1)for(e=r+1;e<this.buffers.length&&(s=this.buffers[e]).fileStart===i.fileStart+i.byteLength;e++)i=s;return i.fileStart+i.byteLength},h.prototype.getEndFilePositionAfter=function(t){var e=this.findPosition(!0,t,!1);return-1!==e?this.findEndContiguousBuf(e):t},h.prototype.addUsedBytes=function(t){this.buffer.usedBytes+=t,this.logBufferLevel()},h.prototype.setAllUsedBytes=function(){this.buffer.usedBytes=this.buffer.byteLength,this.logBufferLevel()},h.prototype.seek=function(t,e,i){var s;return-1!==(s=this.findPosition(e,t,i))?(this.buffer=this.buffers[s],this.bufferIndex=s,this.position=t-this.buffer.fileStart,r.debug("MultiBufferStream","Repositioning parser at buffer position: "+this.position),!0):(r.debug("MultiBufferStream","Position "+t+" not found in buffered data"),!1)},h.prototype.getPosition=function(){if(-1===this.bufferIndex||null===this.buffers[this.bufferIndex])throw"Error accessing position in the MultiBufferStream";return this.buffers[this.bufferIndex].fileStart+this.position},h.prototype.getLength=function(){return this.byteLength},h.prototype.getEndPosition=function(){if(-1===this.bufferIndex||null===this.buffers[this.bufferIndex])throw"Error accessing position in the MultiBufferStream";return this.buffers[this.bufferIndex].fileStart+this.byteLength},t.MultiBufferStream=h;var d=function(){var t=[];t[3]="ES_Descriptor",t[4]="DecoderConfigDescriptor",t[5]="DecoderSpecificInfo",t[6]="SLConfigDescriptor",this.getDescriptorName=function(e){return t[e]};var e=this,i={};return this.parseOneDescriptor=function(e){var s,n,a,o=0;for(s=e.readUint8(),a=e.readUint8();128&a;)o=(127&a)<<7,a=e.readUint8();return o+=127&a,r.debug("MPEG4DescriptorParser","Found "+(t[s]||"Descriptor "+s)+", size "+o+" at position "+e.getPosition()),(n=t[s]?new i[t[s]](o):new i.Descriptor(o)).parse(e),n},i.Descriptor=function(t,e){this.tag=t,this.size=e,this.descs=[]},i.Descriptor.prototype.parse=function(t){this.data=t.readUint8Array(this.size)},i.Descriptor.prototype.findDescriptor=function(t){for(var e=0;e<this.descs.length;e++)if(this.descs[e].tag==t)return this.descs[e];return null},i.Descriptor.prototype.parseRemainingDescriptors=function(t){for(var i=t.position;t.position<i+this.size;){var s=e.parseOneDescriptor(t);this.descs.push(s)}},i.ES_Descriptor=function(t){i.Descriptor.call(this,3,t)},i.ES_Descriptor.prototype=new i.Descriptor,i.ES_Descriptor.prototype.parse=function(t){if(this.ES_ID=t.readUint16(),this.flags=t.readUint8(),this.size-=3,128&this.flags?(this.dependsOn_ES_ID=t.readUint16(),this.size-=2):this.dependsOn_ES_ID=0,64&this.flags){var e=t.readUint8();this.URL=t.readString(e),this.size-=e+1}else this.URL="";32&this.flags?(this.OCR_ES_ID=t.readUint16(),this.size-=2):this.OCR_ES_ID=0,this.parseRemainingDescriptors(t)},i.ES_Descriptor.prototype.getOTI=function(t){var e=this.findDescriptor(4);return e?e.oti:0},i.ES_Descriptor.prototype.getAudioConfig=function(t){var e=this.findDescriptor(4);if(!e)return null;var i=e.findDescriptor(5);if(i&&i.data){var s=(248&i.data[0])>>3;return 31===s&&i.data.length>=2&&(s=32+((7&i.data[0])<<3)+((224&i.data[1])>>5)),s}return null},i.DecoderConfigDescriptor=function(t){i.Descriptor.call(this,4,t)},i.DecoderConfigDescriptor.prototype=new i.Descriptor,i.DecoderConfigDescriptor.prototype.parse=function(t){this.oti=t.readUint8(),this.streamType=t.readUint8(),this.bufferSize=t.readUint24(),this.maxBitrate=t.readUint32(),this.avgBitrate=t.readUint32(),this.size-=13,this.parseRemainingDescriptors(t)},i.DecoderSpecificInfo=function(t){i.Descriptor.call(this,5,t)},i.DecoderSpecificInfo.prototype=new i.Descriptor,i.SLConfigDescriptor=function(t){i.Descriptor.call(this,6,t)},i.SLConfigDescriptor.prototype=new i.Descriptor,this};t.MPEG4DescriptorParser=d;var l={ERR_INVALID_DATA:-1,ERR_NOT_ENOUGH_DATA:0,OK:1,BASIC_BOXES:["mdat","idat","free","skip","meco","strk"],FULL_BOXES:["hmhd","nmhd","iods","xml ","bxml","ipro","mere"],CONTAINER_BOXES:[["moov",["trak","pssh"]],["trak"],["edts"],["mdia"],["minf"],["dinf"],["stbl",["sgpd","sbgp"]],["mvex",["trex"]],["moof",["traf"]],["traf",["trun","sgpd","sbgp"]],["vttc"],["tref"],["iref"],["mfra",["tfra"]],["meco"],["hnti"],["hinf"],["strk"],["strd"],["sinf"],["rinf"],["schi"],["trgr"],["udta",["kind"]],["iprp",["ipma"]],["ipco"]],boxCodes:[],fullBoxCodes:[],containerBoxCodes:[],sampleEntryCodes:{},sampleGroupEntryCodes:[],trackGroupTypes:[],UUIDBoxes:{},UUIDs:[],initialize:function(){l.FullBox.prototype=new l.Box,l.ContainerBox.prototype=new l.Box,l.SampleEntry.prototype=new l.Box,l.TrackGroupTypeBox.prototype=new l.FullBox,l.BASIC_BOXES.forEach((function(t){l.createBoxCtor(t)})),l.FULL_BOXES.forEach((function(t){l.createFullBoxCtor(t)})),l.CONTAINER_BOXES.forEach((function(t){l.createContainerBoxCtor(t[0],null,t[1])}))},Box:function(t,e,i){this.type=t,this.size=e,this.uuid=i},FullBox:function(t,e,i){l.Box.call(this,t,e,i),this.flags=0,this.version=0},ContainerBox:function(t,e,i){l.Box.call(this,t,e,i),this.boxes=[]},SampleEntry:function(t,e,i,s){l.ContainerBox.call(this,t,e),this.hdr_size=i,this.start=s},SampleGroupEntry:function(t){this.grouping_type=t},TrackGroupTypeBox:function(t,e){l.FullBox.call(this,t,e)},createBoxCtor:function(t,e){l.boxCodes.push(t),l[t+"Box"]=function(e){l.Box.call(this,t,e)},l[t+"Box"].prototype=new l.Box,e&&(l[t+"Box"].prototype.parse=e)},createFullBoxCtor:function(t,e){l[t+"Box"]=function(e){l.FullBox.call(this,t,e)},l[t+"Box"].prototype=new l.FullBox,l[t+"Box"].prototype.parse=function(t){this.parseFullHeader(t),e&&e.call(this,t)}},addSubBoxArrays:function(t){if(t){this.subBoxNames=t;for(var e=t.length,i=0;i<e;i++)this[t[i]+"s"]=[]}},createContainerBoxCtor:function(t,e,i){l[t+"Box"]=function(e){l.ContainerBox.call(this,t,e),l.addSubBoxArrays.call(this,i)},l[t+"Box"].prototype=new l.ContainerBox,e&&(l[t+"Box"].prototype.parse=e)},createMediaSampleEntryCtor:function(t,e,i){l.sampleEntryCodes[t]=[],l[t+"SampleEntry"]=function(t,e){l.SampleEntry.call(this,t,e),l.addSubBoxArrays.call(this,i)},l[t+"SampleEntry"].prototype=new l.SampleEntry,e&&(l[t+"SampleEntry"].prototype.parse=e)},createSampleEntryCtor:function(t,e,i,s){l.sampleEntryCodes[t].push(e),l[e+"SampleEntry"]=function(i){l[t+"SampleEntry"].call(this,e,i),l.addSubBoxArrays.call(this,s)},l[e+"SampleEntry"].prototype=new l[t+"SampleEntry"],i&&(l[e+"SampleEntry"].prototype.parse=i)},createEncryptedSampleEntryCtor:function(t,e,i){l.createSampleEntryCtor.call(this,t,e,i,["sinf"])},createSampleGroupCtor:function(t,e){l[t+"SampleGroupEntry"]=function(e){l.SampleGroupEntry.call(this,t,e)},l[t+"SampleGroupEntry"].prototype=new l.SampleGroupEntry,e&&(l[t+"SampleGroupEntry"].prototype.parse=e)},createTrackGroupCtor:function(t,e){l[t+"TrackGroupTypeBox"]=function(e){l.TrackGroupTypeBox.call(this,t,e)},l[t+"TrackGroupTypeBox"].prototype=new l.TrackGroupTypeBox,e&&(l[t+"TrackGroupTypeBox"].prototype.parse=e)},createUUIDBox:function(t,e,i,s){l.UUIDs.push(t),l.UUIDBoxes[t]=function(s){e?l.FullBox.call(this,"uuid",s,t):i?l.ContainerBox.call(this,"uuid",s,t):l.Box.call(this,"uuid",s,t)},l.UUIDBoxes[t].prototype=e?new l.FullBox:i?new l.ContainerBox:new l.Box,s&&(l.UUIDBoxes[t].prototype.parse=e?function(t){this.parseFullHeader(t),s&&s.call(this,t)}:s)}};l.initialize(),l.TKHD_FLAG_ENABLED=1,l.TKHD_FLAG_IN_MOVIE=2,l.TKHD_FLAG_IN_PREVIEW=4,l.TFHD_FLAG_BASE_DATA_OFFSET=1,l.TFHD_FLAG_SAMPLE_DESC=2,l.TFHD_FLAG_SAMPLE_DUR=8,l.TFHD_FLAG_SAMPLE_SIZE=16,l.TFHD_FLAG_SAMPLE_FLAGS=32,l.TFHD_FLAG_DUR_EMPTY=65536,l.TFHD_FLAG_DEFAULT_BASE_IS_MOOF=131072,l.TRUN_FLAGS_DATA_OFFSET=1,l.TRUN_FLAGS_FIRST_FLAG=4,l.TRUN_FLAGS_DURATION=256,l.TRUN_FLAGS_SIZE=512,l.TRUN_FLAGS_FLAGS=1024,l.TRUN_FLAGS_CTS_OFFSET=2048,l.Box.prototype.add=function(t){return this.addBox(new l[t+"Box"])},l.Box.prototype.addBox=function(t){return this.boxes.push(t),this[t.type+"s"]?this[t.type+"s"].push(t):this[t.type]=t,t},l.Box.prototype.set=function(t,e){return this[t]=e,this},l.Box.prototype.addEntry=function(t,e){var i=e||"entries";return this[i]||(this[i]=[]),this[i].push(t),this},t.BoxParser=l,l.parseUUID=function(t){return l.parseHex16(t)},l.parseHex16=function(t){for(var e="",i=0;i<16;i++){var s=t.readUint8().toString(16);e+=1===s.length?"0"+s:s}return e},l.parseOneBox=function(t,e,i){var s,n,a,o=t.getPosition(),h=0;if(t.getEndPosition()-o<8)return r.debug("BoxParser","Not enough data in stream to parse the type and size of the box"),{code:l.ERR_NOT_ENOUGH_DATA};if(i&&i<8)return r.debug("BoxParser","Not enough bytes left in the parent box to parse a new box"),{code:l.ERR_NOT_ENOUGH_DATA};var d=t.readUint32(),p=t.readString(4),f=p;if(r.debug("BoxParser","Found box of type '"+p+"' and size "+d+" at position "+o),h=8,"uuid"==p){if(t.getEndPosition()-t.getPosition()<16||i-h<16)return t.seek(o),r.debug("BoxParser","Not enough bytes left in the parent box to parse a UUID box"),{code:l.ERR_NOT_ENOUGH_DATA};h+=16,f=a=l.parseUUID(t)}if(1==d){if(t.getEndPosition()-t.getPosition()<8||i&&i-h<8)return t.seek(o),r.warn("BoxParser",'Not enough data in stream to parse the extended size of the "'+p+'" box'),{code:l.ERR_NOT_ENOUGH_DATA};d=t.readUint64(),h+=8}else if(0===d)if(i)d=i;else if("mdat"!==p)return r.error("BoxParser","Unlimited box size not supported for type: '"+p+"'"),s=new l.Box(p,d),{code:l.OK,box:s,size:s.size};return d<h?(r.error("BoxParser","Box of type "+p+" has an invalid size "+d+" (too small to be a box)"),{code:l.ERR_NOT_ENOUGH_DATA,type:p,size:d,hdr_size:h,start:o}):i&&d>i?(r.error("BoxParser","Box of type '"+p+"' has a size "+d+" greater than its container size "+i),{code:l.ERR_NOT_ENOUGH_DATA,type:p,size:d,hdr_size:h,start:o}):o+d>t.getEndPosition()?(t.seek(o),r.info("BoxParser","Not enough data in stream to parse the entire '"+p+"' box"),{code:l.ERR_NOT_ENOUGH_DATA,type:p,size:d,hdr_size:h,start:o}):e?{code:l.OK,type:p,size:d,hdr_size:h,start:o}:(l[p+"Box"]?s=new l[p+"Box"](d):"uuid"!==p?(r.warn("BoxParser","Unknown box type: '"+p+"'"),(s=new l.Box(p,d)).has_unparsed_data=!0):l.UUIDBoxes[a]?s=new l.UUIDBoxes[a](d):(r.warn("BoxParser","Unknown uuid type: '"+a+"'"),(s=new l.Box(p,d)).uuid=a,s.has_unparsed_data=!0),s.hdr_size=h,s.start=o,s.write===l.Box.prototype.write&&"mdat"!==s.type&&(r.info("BoxParser","'"+f+"' box writing not yet implemented, keeping unparsed data in memory for later write"),s.parseDataAndRewind(t)),s.parse(t),(n=t.getPosition()-(s.start+s.size))<0?(r.warn("BoxParser","Parsing of box '"+f+"' did not read the entire indicated box data size (missing "+-n+" bytes), seeking forward"),t.seek(s.start+s.size)):n>0&&(r.error("BoxParser","Parsing of box '"+f+"' read "+n+" more bytes than the indicated box data size, seeking backwards"),t.seek(s.start+s.size)),{code:l.OK,box:s,size:s.size})},l.Box.prototype.parse=function(t){"mdat"!=this.type?this.data=t.readUint8Array(this.size-this.hdr_size):0===this.size?t.seek(t.getEndPosition()):t.seek(this.start+this.size)},l.Box.prototype.parseDataAndRewind=function(t){this.data=t.readUint8Array(this.size-this.hdr_size),t.position-=this.size-this.hdr_size},l.FullBox.prototype.parseDataAndRewind=function(t){this.parseFullHeader(t),this.data=t.readUint8Array(this.size-this.hdr_size),this.hdr_size-=4,t.position-=this.size-this.hdr_size},l.FullBox.prototype.parseFullHeader=function(t){this.version=t.readUint8(),this.flags=t.readUint24(),this.hdr_size+=4},l.FullBox.prototype.parse=function(t){this.parseFullHeader(t),this.data=t.readUint8Array(this.size-this.hdr_size)},l.ContainerBox.prototype.parse=function(t){for(var e,i;t.getPosition()<this.start+this.size;){if((e=l.parseOneBox(t,!1,this.size-(t.getPosition()-this.start))).code!==l.OK)return;if(i=e.box,this.boxes.push(i),this.subBoxNames&&-1!=this.subBoxNames.indexOf(i.type))this[this.subBoxNames[this.subBoxNames.indexOf(i.type)]+"s"].push(i);else{var s="uuid"!==i.type?i.type:i.uuid;this[s]?r.warn("Box of type "+s+" already stored in field of this type"):this[s]=i}}},l.Box.prototype.parseLanguage=function(t){this.language=t.readUint16();var e=[];e[0]=this.language>>10&31,e[1]=this.language>>5&31,e[2]=31&this.language,this.languageString=String.fromCharCode(e[0]+96,e[1]+96,e[2]+96)},l.SAMPLE_ENTRY_TYPE_VISUAL="Visual",l.SAMPLE_ENTRY_TYPE_AUDIO="Audio",l.SAMPLE_ENTRY_TYPE_HINT="Hint",l.SAMPLE_ENTRY_TYPE_METADATA="Metadata",l.SAMPLE_ENTRY_TYPE_SUBTITLE="Subtitle",l.SAMPLE_ENTRY_TYPE_SYSTEM="System",l.SAMPLE_ENTRY_TYPE_TEXT="Text",l.SampleEntry.prototype.parseHeader=function(t){t.readUint8Array(6),this.data_reference_index=t.readUint16(),this.hdr_size+=8},l.SampleEntry.prototype.parse=function(t){this.parseHeader(t),this.data=t.readUint8Array(this.size-this.hdr_size)},l.SampleEntry.prototype.parseDataAndRewind=function(t){this.parseHeader(t),this.data=t.readUint8Array(this.size-this.hdr_size),this.hdr_size-=8,t.position-=this.size-this.hdr_size},l.SampleEntry.prototype.parseFooter=function(t){l.ContainerBox.prototype.parse.call(this,t)},l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_HINT),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_METADATA),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SYSTEM),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_TEXT),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,(function(t){var e;this.parseHeader(t),t.readUint16(),t.readUint16(),t.readUint32Array(3),this.width=t.readUint16(),this.height=t.readUint16(),this.horizresolution=t.readUint32(),this.vertresolution=t.readUint32(),t.readUint32(),this.frame_count=t.readUint16(),e=Math.min(31,t.readUint8()),this.compressorname=t.readString(e),e<31&&t.readString(31-e),this.depth=t.readUint16(),t.readUint16(),this.parseFooter(t)})),l.createMediaSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_AUDIO,(function(t){this.parseHeader(t),t.readUint32Array(2),this.channel_count=t.readUint16(),this.samplesize=t.readUint16(),t.readUint16(),t.readUint16(),this.samplerate=t.readUint32()/65536,this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"avc1"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"avc2"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"avc3"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"avc4"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"av01"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"hvc1"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"hev1"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_AUDIO,"mp4a"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_AUDIO,"ac-3"),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_AUDIO,"ec-3"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_VISUAL,"encv"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_AUDIO,"enca"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE,"encu"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SYSTEM,"encs"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_TEXT,"enct"),l.createEncryptedSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_METADATA,"encm"),l.createBoxCtor("a1lx",(function(t){var e=16*(1+(1&(1&t.readUint8())));this.layer_size=[];for(var i=0;i<3;i++)this.layer_size[i]=16==e?t.readUint16():t.readUint32()})),l.createBoxCtor("a1op",(function(t){this.op_index=t.readUint8()})),l.createFullBoxCtor("auxC",(function(t){this.aux_type=t.readCString();var e=this.size-this.hdr_size-(this.aux_type.length+1);this.aux_subtype=t.readUint8Array(e)})),l.createBoxCtor("av1C",(function(t){var e=t.readUint8();if(e>>7&!1)r.error("av1C marker problem");else if(this.version=127&e,1===this.version)if(e=t.readUint8(),this.seq_profile=e>>5&7,this.seq_level_idx_0=31&e,e=t.readUint8(),this.seq_tier_0=e>>7&1,this.high_bitdepth=e>>6&1,this.twelve_bit=e>>5&1,this.monochrome=e>>4&1,this.chroma_subsampling_x=e>>3&1,this.chroma_subsampling_y=e>>2&1,this.chroma_sample_position=3&e,e=t.readUint8(),this.reserved_1=e>>5&7,0===this.reserved_1){if(this.initial_presentation_delay_present=e>>4&1,1===this.initial_presentation_delay_present)this.initial_presentation_delay_minus_one=15&e;else if(this.reserved_2=15&e,0!==this.reserved_2)return void r.error("av1C reserved_2 parsing problem");var i=this.size-this.hdr_size-4;this.configOBUs=t.readUint8Array(i)}else r.error("av1C reserved_1 parsing problem");else r.error("av1C version "+this.version+" not supported")})),l.createBoxCtor("avcC",(function(t){var e,i;for(this.configurationVersion=t.readUint8(),this.AVCProfileIndication=t.readUint8(),this.profile_compatibility=t.readUint8(),this.AVCLevelIndication=t.readUint8(),this.lengthSizeMinusOne=3&t.readUint8(),this.nb_SPS_nalus=31&t.readUint8(),i=this.size-this.hdr_size-6,this.SPS=[],e=0;e<this.nb_SPS_nalus;e++)this.SPS[e]={},this.SPS[e].length=t.readUint16(),this.SPS[e].nalu=t.readUint8Array(this.SPS[e].length),i-=2+this.SPS[e].length;for(this.nb_PPS_nalus=t.readUint8(),i--,this.PPS=[],e=0;e<this.nb_PPS_nalus;e++)this.PPS[e]={},this.PPS[e].length=t.readUint16(),this.PPS[e].nalu=t.readUint8Array(this.PPS[e].length),i-=2+this.PPS[e].length;i>0&&(this.ext=t.readUint8Array(i))})),l.createBoxCtor("btrt",(function(t){this.bufferSizeDB=t.readUint32(),this.maxBitrate=t.readUint32(),this.avgBitrate=t.readUint32()})),l.createBoxCtor("clap",(function(t){this.cleanApertureWidthN=t.readUint32(),this.cleanApertureWidthD=t.readUint32(),this.cleanApertureHeightN=t.readUint32(),this.cleanApertureHeightD=t.readUint32(),this.horizOffN=t.readUint32(),this.horizOffD=t.readUint32(),this.vertOffN=t.readUint32(),this.vertOffD=t.readUint32()})),l.createBoxCtor("clli",(function(t){this.max_content_light_level=t.readUint16(),this.max_pic_average_light_level=t.readUint16()})),l.createFullBoxCtor("co64",(function(t){var e,i;if(e=t.readUint32(),this.chunk_offsets=[],0===this.version)for(i=0;i<e;i++)this.chunk_offsets.push(t.readUint64())})),l.createFullBoxCtor("CoLL",(function(t){this.maxCLL=t.readUint16(),this.maxFALL=t.readUint16()})),l.createBoxCtor("colr",(function(t){if(this.colour_type=t.readString(4),"nclx"===this.colour_type){this.colour_primaries=t.readUint16(),this.transfer_characteristics=t.readUint16(),this.matrix_coefficients=t.readUint16();var e=t.readUint8();this.full_range_flag=e>>7}else("rICC"===this.colour_type||"prof"===this.colour_type)&&(this.ICC_profile=t.readUint8Array(this.size-4))})),l.createFullBoxCtor("cprt",(function(t){this.parseLanguage(t),this.notice=t.readCString()})),l.createFullBoxCtor("cslg",(function(t){0===this.version&&(this.compositionToDTSShift=t.readInt32(),this.leastDecodeToDisplayDelta=t.readInt32(),this.greatestDecodeToDisplayDelta=t.readInt32(),this.compositionStartTime=t.readInt32(),this.compositionEndTime=t.readInt32())})),l.createFullBoxCtor("ctts",(function(t){var e,i;if(e=t.readUint32(),this.sample_counts=[],this.sample_offsets=[],0===this.version)for(i=0;i<e;i++){this.sample_counts.push(t.readUint32());var s=t.readInt32();s<0&&r.warn("BoxParser","ctts box uses negative values without using version 1"),this.sample_offsets.push(s)}else if(1==this.version)for(i=0;i<e;i++)this.sample_counts.push(t.readUint32()),this.sample_offsets.push(t.readInt32())})),l.createBoxCtor("dac3",(function(t){var e=t.readUint8(),i=t.readUint8(),s=t.readUint8();this.fscod=e>>6,this.bsid=e>>1&31,this.bsmod=(1&e)<<2|i>>6&3,this.acmod=i>>3&7,this.lfeon=i>>2&1,this.bit_rate_code=3&i|s>>5&7})),l.createBoxCtor("dec3",(function(t){var e=t.readUint16();this.data_rate=e>>3,this.num_ind_sub=7&e,this.ind_subs=[];for(var i=0;i<this.num_ind_sub+1;i++){var s={};this.ind_subs.push(s);var r=t.readUint8(),n=t.readUint8(),a=t.readUint8();s.fscod=r>>6,s.bsid=r>>1&31,s.bsmod=(1&r)<<4|n>>4&15,s.acmod=n>>1&7,s.lfeon=1&n,s.num_dep_sub=a>>1&15,s.num_dep_sub>0&&(s.chan_loc=(1&a)<<8|t.readUint8())}})),l.createFullBoxCtor("dfLa",(function(t){var e=[],i=["STREAMINFO","PADDING","APPLICATION","SEEKTABLE","VORBIS_COMMENT","CUESHEET","PICTURE","RESERVED"];for(this.parseFullHeader(t);;){var s=t.readUint8(),r=Math.min(127&s,i.length-1);if(r?t.readUint8Array(t.readUint24()):(t.readUint8Array(13),this.samplerate=t.readUint32()>>12,t.readUint8Array(20)),e.push(i[r]),128&s)break}this.numMetadataBlocks=e.length+" ("+e.join(", ")+")"})),l.createBoxCtor("dimm",(function(t){this.bytessent=t.readUint64()})),l.createBoxCtor("dmax",(function(t){this.time=t.readUint32()})),l.createBoxCtor("dmed",(function(t){this.bytessent=t.readUint64()})),l.createFullBoxCtor("dref",(function(t){var e,i;this.entries=[];for(var s=t.readUint32(),r=0;r<s;r++){if((e=l.parseOneBox(t,!1,this.size-(t.getPosition()-this.start))).code!==l.OK)return;i=e.box,this.entries.push(i)}})),l.createBoxCtor("drep",(function(t){this.bytessent=t.readUint64()})),l.createFullBoxCtor("elng",(function(t){this.extended_language=t.readString(this.size-this.hdr_size)})),l.createFullBoxCtor("elst",(function(t){this.entries=[];for(var e=t.readUint32(),i=0;i<e;i++){var s={};this.entries.push(s),1===this.version?(s.segment_duration=t.readUint64(),s.media_time=t.readInt64()):(s.segment_duration=t.readUint32(),s.media_time=t.readInt32()),s.media_rate_integer=t.readInt16(),s.media_rate_fraction=t.readInt16()}})),l.createFullBoxCtor("emsg",(function(t){1==this.version?(this.timescale=t.readUint32(),this.presentation_time=t.readUint64(),this.event_duration=t.readUint32(),this.id=t.readUint32(),this.scheme_id_uri=t.readCString(),this.value=t.readCString()):(this.scheme_id_uri=t.readCString(),this.value=t.readCString(),this.timescale=t.readUint32(),this.presentation_time_delta=t.readUint32(),this.event_duration=t.readUint32(),this.id=t.readUint32());var e=this.size-this.hdr_size-(16+(this.scheme_id_uri.length+1)+(this.value.length+1));1==this.version&&(e-=4),this.message_data=t.readUint8Array(e)})),l.createFullBoxCtor("esds",(function(t){var e=t.readUint8Array(this.size-this.hdr_size),i=new d;this.esd=i.parseOneDescriptor(new a(e.buffer,0,a.BIG_ENDIAN))})),l.createBoxCtor("fiel",(function(t){this.fieldCount=t.readUint8(),this.fieldOrdering=t.readUint8()})),l.createBoxCtor("frma",(function(t){this.data_format=t.readString(4)})),l.createBoxCtor("ftyp",(function(t){var e=this.size-this.hdr_size;this.major_brand=t.readString(4),this.minor_version=t.readUint32(),e-=8,this.compatible_brands=[];for(var i=0;e>=4;)this.compatible_brands[i]=t.readString(4),e-=4,i++})),l.createFullBoxCtor("hdlr",(function(t){0===this.version&&(t.readUint32(),this.handler=t.readString(4),t.readUint32Array(3),this.name=t.readString(this.size-this.hdr_size-20),"\0"===this.name[this.name.length-1]&&(this.name=this.name.slice(0,-1)))})),l.createBoxCtor("hvcC",(function(t){var e,i,s,r;this.configurationVersion=t.readUint8(),r=t.readUint8(),this.general_profile_space=r>>6,this.general_tier_flag=(32&r)>>5,this.general_profile_idc=31&r,this.general_profile_compatibility=t.readUint32(),this.general_constraint_indicator=t.readUint8Array(6),this.general_level_idc=t.readUint8(),this.min_spatial_segmentation_idc=4095&t.readUint16(),this.parallelismType=3&t.readUint8(),this.chroma_format_idc=3&t.readUint8(),this.bit_depth_luma_minus8=7&t.readUint8(),this.bit_depth_chroma_minus8=7&t.readUint8(),this.avgFrameRate=t.readUint16(),r=t.readUint8(),this.constantFrameRate=r>>6,this.numTemporalLayers=(13&r)>>3,this.temporalIdNested=(4&r)>>2,this.lengthSizeMinusOne=3&r,this.nalu_arrays=[];var n=t.readUint8();for(e=0;e<n;e++){var a=[];this.nalu_arrays.push(a),r=t.readUint8(),a.completeness=(128&r)>>7,a.nalu_type=63&r;var o=t.readUint16();for(i=0;i<o;i++){var h={};a.push(h),s=t.readUint16(),h.data=t.readUint8Array(s)}}})),l.createFullBoxCtor("iinf",(function(t){var e;0===this.version?this.entry_count=t.readUint16():this.entry_count=t.readUint32(),this.item_infos=[];for(var i=0;i<this.entry_count;i++){if((e=l.parseOneBox(t,!1,this.size-(t.getPosition()-this.start))).code!==l.OK)return;"infe"!==e.box.type&&r.error("BoxParser","Expected 'infe' box, got "+e.box.type),this.item_infos[i]=e.box}})),l.createFullBoxCtor("iloc",(function(t){var e;e=t.readUint8(),this.offset_size=e>>4&15,this.length_size=15&e,e=t.readUint8(),this.base_offset_size=e>>4&15,1===this.version||2===this.version?this.index_size=15&e:this.index_size=0,this.items=[];var i=0;if(this.version<2)i=t.readUint16();else{if(2!==this.version)throw"version of iloc box not supported";i=t.readUint32()}for(var s=0;s<i;s++){var r={};if(this.items.push(r),this.version<2)r.item_ID=t.readUint16();else{if(2!==this.version)throw"version of iloc box not supported";r.item_ID=t.readUint16()}switch(1===this.version||2===this.version?r.construction_method=15&t.readUint16():r.construction_method=0,r.data_reference_index=t.readUint16(),this.base_offset_size){case 0:r.base_offset=0;break;case 4:r.base_offset=t.readUint32();break;case 8:r.base_offset=t.readUint64();break;default:throw"Error reading base offset size"}var n=t.readUint16();r.extents=[];for(var a=0;a<n;a++){var o={};if(r.extents.push(o),1===this.version||2===this.version)switch(this.index_size){case 0:o.extent_index=0;break;case 4:o.extent_index=t.readUint32();break;case 8:o.extent_index=t.readUint64();break;default:throw"Error reading extent index"}switch(this.offset_size){case 0:o.extent_offset=0;break;case 4:o.extent_offset=t.readUint32();break;case 8:o.extent_offset=t.readUint64();break;default:throw"Error reading extent index"}switch(this.length_size){case 0:o.extent_length=0;break;case 4:o.extent_length=t.readUint32();break;case 8:o.extent_length=t.readUint64();break;default:throw"Error reading extent index"}}}})),l.createBoxCtor("imir",(function(t){var e=t.readUint8();this.reserved=e>>7,this.axis=1&e})),l.createFullBoxCtor("infe",(function(t){if(0!==this.version&&1!==this.version||(this.item_ID=t.readUint16(),this.item_protection_index=t.readUint16(),this.item_name=t.readCString(),this.content_type=t.readCString(),this.content_encoding=t.readCString()),1===this.version)return this.extension_type=t.readString(4),r.warn("BoxParser","Cannot parse extension type"),void t.seek(this.start+this.size);this.version>=2&&(2===this.version?this.item_ID=t.readUint16():3===this.version&&(this.item_ID=t.readUint32()),this.item_protection_index=t.readUint16(),this.item_type=t.readString(4),this.item_name=t.readCString(),"mime"===this.item_type?(this.content_type=t.readCString(),this.content_encoding=t.readCString()):"uri "===this.item_type&&(this.item_uri_type=t.readCString()))})),l.createFullBoxCtor("ipma",(function(t){var e,i;for(entry_count=t.readUint32(),this.associations=[],e=0;e<entry_count;e++){var s={};this.associations.push(s),this.version<1?s.id=t.readUint16():s.id=t.readUint32();var r=t.readUint8();for(s.props=[],i=0;i<r;i++){var n=t.readUint8(),a={};s.props.push(a),a.essential=(128&n)>>7==1,1&this.flags?a.property_index=(127&n)<<8|t.readUint8():a.property_index=127&n}}})),l.createFullBoxCtor("iref",(function(t){var e,i;for(this.references=[];t.getPosition()<this.start+this.size;){if((e=l.parseOneBox(t,!0,this.size-(t.getPosition()-this.start))).code!==l.OK)return;(i=0===this.version?new l.SingleItemTypeReferenceBox(e.type,e.size,e.hdr_size,e.start):new l.SingleItemTypeReferenceBoxLarge(e.type,e.size,e.hdr_size,e.start)).write===l.Box.prototype.write&&"mdat"!==i.type&&(r.warn("BoxParser",i.type+" box writing not yet implemented, keeping unparsed data in memory for later write"),i.parseDataAndRewind(t)),i.parse(t),this.references.push(i)}})),l.createBoxCtor("irot",(function(t){this.angle=3&t.readUint8()})),l.createFullBoxCtor("ispe",(function(t){this.image_width=t.readUint32(),this.image_height=t.readUint32()})),l.createFullBoxCtor("kind",(function(t){this.schemeURI=t.readCString(),this.value=t.readCString()})),l.createFullBoxCtor("leva",(function(t){var e=t.readUint8();this.levels=[];for(var i=0;i<e;i++){var s={};this.levels[i]=s,s.track_ID=t.readUint32();var n=t.readUint8();switch(s.padding_flag=n>>7,s.assignment_type=127&n,s.assignment_type){case 0:s.grouping_type=t.readString(4);break;case 1:s.grouping_type=t.readString(4),s.grouping_type_parameter=t.readUint32();break;case 2:case 3:break;case 4:s.sub_track_id=t.readUint32();break;default:r.warn("BoxParser","Unknown leva assignement type")}}})),l.createBoxCtor("lsel",(function(t){this.layer_id=t.readUint16()})),l.createBoxCtor("maxr",(function(t){this.period=t.readUint32(),this.bytes=t.readUint32()})),l.createBoxCtor("mdcv",(function(t){this.display_primaries=[],this.display_primaries[0]={},this.display_primaries[0].x=t.readUint16(),this.display_primaries[0].y=t.readUint16(),this.display_primaries[1]={},this.display_primaries[1].x=t.readUint16(),this.display_primaries[1].y=t.readUint16(),this.display_primaries[2]={},this.display_primaries[2].x=t.readUint16(),this.display_primaries[2].y=t.readUint16(),this.white_point={},this.white_point.x=t.readUint16(),this.white_point.y=t.readUint16(),this.max_display_mastering_luminance=t.readUint32(),this.min_display_mastering_luminance=t.readUint32()})),l.createFullBoxCtor("mdhd",(function(t){1==this.version?(this.creation_time=t.readUint64(),this.modification_time=t.readUint64(),this.timescale=t.readUint32(),this.duration=t.readUint64()):(this.creation_time=t.readUint32(),this.modification_time=t.readUint32(),this.timescale=t.readUint32(),this.duration=t.readUint32()),this.parseLanguage(t),t.readUint16()})),l.createFullBoxCtor("mehd",(function(t){1&this.flags&&(r.warn("BoxParser","mehd box incorrectly uses flags set to 1, converting version to 1"),this.version=1),1==this.version?this.fragment_duration=t.readUint64():this.fragment_duration=t.readUint32()})),l.createFullBoxCtor("meta",(function(t){this.boxes=[],l.ContainerBox.prototype.parse.call(this,t)})),l.createFullBoxCtor("mfhd",(function(t){this.sequence_number=t.readUint32()})),l.createFullBoxCtor("mfro",(function(t){this._size=t.readUint32()})),l.createFullBoxCtor("mvhd",(function(t){1==this.version?(this.creation_time=t.readUint64(),this.modification_time=t.readUint64(),this.timescale=t.readUint32(),this.duration=t.readUint64()):(this.creation_time=t.readUint32(),this.modification_time=t.readUint32(),this.timescale=t.readUint32(),this.duration=t.readUint32()),this.rate=t.readUint32(),this.volume=t.readUint16()>>8,t.readUint16(),t.readUint32Array(2),this.matrix=t.readUint32Array(9),t.readUint32Array(6),this.next_track_id=t.readUint32()})),l.createBoxCtor("npck",(function(t){this.packetssent=t.readUint32()})),l.createBoxCtor("nump",(function(t){this.packetssent=t.readUint64()})),l.createFullBoxCtor("padb",(function(t){var e=t.readUint32();this.padbits=[];for(var i=0;i<Math.floor((e+1)/2);i++)this.padbits=t.readUint8()})),l.createBoxCtor("pasp",(function(t){this.hSpacing=t.readUint32(),this.vSpacing=t.readUint32()})),l.createBoxCtor("payl",(function(t){this.text=t.readString(this.size-this.hdr_size)})),l.createBoxCtor("payt",(function(t){this.payloadID=t.readUint32();var e=t.readUint8();this.rtpmap_string=t.readString(e)})),l.createFullBoxCtor("pdin",(function(t){var e=(this.size-this.hdr_size)/8;this.rate=[],this.initial_delay=[];for(var i=0;i<e;i++)this.rate[i]=t.readUint32(),this.initial_delay[i]=t.readUint32()})),l.createFullBoxCtor("pitm",(function(t){0===this.version?this.item_id=t.readUint16():this.item_id=t.readUint32()})),l.createFullBoxCtor("pixi",(function(t){var e;for(this.num_channels=t.readUint8(),this.bits_per_channels=[],e=0;e<this.num_channels;e++)this.bits_per_channels[e]=t.readUint8()})),l.createBoxCtor("pmax",(function(t){this.bytes=t.readUint32()})),l.createFullBoxCtor("prft",(function(t){this.ref_track_id=t.readUint32(),this.ntp_timestamp=t.readUint64(),0===this.version?this.media_time=t.readUint32():this.media_time=t.readUint64()})),l.createFullBoxCtor("pssh",(function(t){if(this.system_id=l.parseHex16(t),this.version>0){var e=t.readUint32();this.kid=[];for(var i=0;i<e;i++)this.kid[i]=l.parseHex16(t)}var s=t.readUint32();s>0&&(this.data=t.readUint8Array(s))})),l.createFullBoxCtor("clef",(function(t){this.width=t.readUint32(),this.height=t.readUint32()})),l.createFullBoxCtor("enof",(function(t){this.width=t.readUint32(),this.height=t.readUint32()})),l.createFullBoxCtor("prof",(function(t){this.width=t.readUint32(),this.height=t.readUint32()})),l.createContainerBoxCtor("tapt",null,["clef","prof","enof"]),l.createBoxCtor("rtp ",(function(t){this.descriptionformat=t.readString(4),this.sdptext=t.readString(this.size-this.hdr_size-4)})),l.createFullBoxCtor("saio",(function(t){1&this.flags&&(this.aux_info_type=t.readUint32(),this.aux_info_type_parameter=t.readUint32());var e=t.readUint32();this.offset=[];for(var i=0;i<e;i++)0===this.version?this.offset[i]=t.readUint32():this.offset[i]=t.readUint64()})),l.createFullBoxCtor("saiz",(function(t){1&this.flags&&(this.aux_info_type=t.readUint32(),this.aux_info_type_parameter=t.readUint32()),this.default_sample_info_size=t.readUint8();var e=t.readUint32();if(this.sample_info_size=[],0===this.default_sample_info_size)for(var i=0;i<e;i++)this.sample_info_size[i]=t.readUint8()})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_METADATA,"mett",(function(t){this.parseHeader(t),this.content_encoding=t.readCString(),this.mime_format=t.readCString(),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_METADATA,"metx",(function(t){this.parseHeader(t),this.content_encoding=t.readCString(),this.namespace=t.readCString(),this.schema_location=t.readCString(),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE,"sbtt",(function(t){this.parseHeader(t),this.content_encoding=t.readCString(),this.mime_format=t.readCString(),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE,"stpp",(function(t){this.parseHeader(t),this.namespace=t.readCString(),this.schema_location=t.readCString(),this.auxiliary_mime_types=t.readCString(),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE,"stxt",(function(t){this.parseHeader(t),this.content_encoding=t.readCString(),this.mime_format=t.readCString(),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_SUBTITLE,"tx3g",(function(t){this.parseHeader(t),this.displayFlags=t.readUint32(),this.horizontal_justification=t.readInt8(),this.vertical_justification=t.readInt8(),this.bg_color_rgba=t.readUint8Array(4),this.box_record=t.readInt16Array(4),this.style_record=t.readUint8Array(12),this.parseFooter(t)})),l.createSampleEntryCtor(l.SAMPLE_ENTRY_TYPE_METADATA,"wvtt",(function(t){this.parseHeader(t),this.parseFooter(t)})),l.createSampleGroupCtor("alst",(function(t){var e,i=t.readUint16();for(this.first_output_sample=t.readUint16(),this.sample_offset=[],e=0;e<i;e++)this.sample_offset[e]=t.readUint32();var s=this.description_length-4-4*i;for(this.num_output_samples=[],this.num_total_samples=[],e=0;e<s/4;e++)this.num_output_samples[e]=t.readUint16(),this.num_total_samples[e]=t.readUint16()})),l.createSampleGroupCtor("avll",(function(t){this.layerNumber=t.readUint8(),this.accurateStatisticsFlag=t.readUint8(),this.avgBitRate=t.readUint16(),this.avgFrameRate=t.readUint16()})),l.createSampleGroupCtor("avss",(function(t){this.subSequenceIdentifier=t.readUint16(),this.layerNumber=t.readUint8();var e=t.readUint8();this.durationFlag=e>>7,this.avgRateFlag=e>>6&1,this.durationFlag&&(this.duration=t.readUint32()),this.avgRateFlag&&(this.accurateStatisticsFlag=t.readUint8(),this.avgBitRate=t.readUint16(),this.avgFrameRate=t.readUint16()),this.dependency=[];for(var i=t.readUint8(),s=0;s<i;s++){var r={};this.dependency.push(r),r.subSeqDirectionFlag=t.readUint8(),r.layerNumber=t.readUint8(),r.subSequenceIdentifier=t.readUint16()}})),l.createSampleGroupCtor("dtrt",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("mvif",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("prol",(function(t){this.roll_distance=t.readInt16()})),l.createSampleGroupCtor("rap ",(function(t){var e=t.readUint8();this.num_leading_samples_known=e>>7,this.num_leading_samples=127&e})),l.createSampleGroupCtor("rash",(function(t){if(this.operation_point_count=t.readUint16(),this.description_length!==2+(1===this.operation_point_count?2:6*this.operation_point_count)+9)r.warn("BoxParser","Mismatch in "+this.grouping_type+" sample group length"),this.data=t.readUint8Array(this.description_length-2);else{if(1===this.operation_point_count)this.target_rate_share=t.readUint16();else{this.target_rate_share=[],this.available_bitrate=[];for(var e=0;e<this.operation_point_count;e++)this.available_bitrate[e]=t.readUint32(),this.target_rate_share[e]=t.readUint16()}this.maximum_bitrate=t.readUint32(),this.minimum_bitrate=t.readUint32(),this.discard_priority=t.readUint8()}})),l.createSampleGroupCtor("roll",(function(t){this.roll_distance=t.readInt16()})),l.SampleGroupEntry.prototype.parse=function(t){r.warn("BoxParser","Unknown Sample Group type: "+this.grouping_type),this.data=t.readUint8Array(this.description_length)},l.createSampleGroupCtor("scif",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("scnm",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("seig",(function(t){this.reserved=t.readUint8();var e=t.readUint8();this.crypt_byte_block=e>>4,this.skip_byte_block=15&e,this.isProtected=t.readUint8(),this.Per_Sample_IV_Size=t.readUint8(),this.KID=l.parseHex16(t),this.constant_IV_size=0,this.constant_IV=0,1===this.isProtected&&0===this.Per_Sample_IV_Size&&(this.constant_IV_size=t.readUint8(),this.constant_IV=t.readUint8Array(this.constant_IV_size))})),l.createSampleGroupCtor("stsa",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("sync",(function(t){var e=t.readUint8();this.NAL_unit_type=63&e})),l.createSampleGroupCtor("tele",(function(t){var e=t.readUint8();this.level_independently_decodable=e>>7})),l.createSampleGroupCtor("tsas",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("tscl",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createSampleGroupCtor("vipr",(function(t){r.warn("BoxParser","Sample Group type: "+this.grouping_type+" not fully parsed")})),l.createFullBoxCtor("sbgp",(function(t){this.grouping_type=t.readString(4),1===this.version?this.grouping_type_parameter=t.readUint32():this.grouping_type_parameter=0,this.entries=[];for(var e=t.readUint32(),i=0;i<e;i++){var s={};this.entries.push(s),s.sample_count=t.readInt32(),s.group_description_index=t.readInt32()}})),l.createFullBoxCtor("schm",(function(t){this.scheme_type=t.readString(4),this.scheme_version=t.readUint32(),1&this.flags&&(this.scheme_uri=t.readString(this.size-this.hdr_size-8))})),l.createBoxCtor("sdp ",(function(t){this.sdptext=t.readString(this.size-this.hdr_size)})),l.createFullBoxCtor("sdtp",(function(t){var e,i=this.size-this.hdr_size;this.is_leading=[],this.sample_depends_on=[],this.sample_is_depended_on=[],this.sample_has_redundancy=[];for(var s=0;s<i;s++)e=t.readUint8(),this.is_leading[s]=e>>6,this.sample_depends_on[s]=e>>4&3,this.sample_is_depended_on[s]=e>>2&3,this.sample_has_redundancy[s]=3&e})),l.createFullBoxCtor("senc"),l.createFullBoxCtor("sgpd",(function(t){this.grouping_type=t.readString(4),r.debug("BoxParser","Found Sample Groups of type "+this.grouping_type),1===this.version?this.default_length=t.readUint32():this.default_length=0,this.version>=2&&(this.default_group_description_index=t.readUint32()),this.entries=[];for(var e=t.readUint32(),i=0;i<e;i++){var s;s=l[this.grouping_type+"SampleGroupEntry"]?new l[this.grouping_type+"SampleGroupEntry"](this.grouping_type):new l.SampleGroupEntry(this.grouping_type),this.entries.push(s),1===this.version&&0===this.default_length?s.description_length=t.readUint32():s.description_length=this.default_length,s.write===l.SampleGroupEntry.prototype.write&&(r.info("BoxParser","SampleGroup for type "+this.grouping_type+" writing not yet implemented, keeping unparsed data in memory for later write"),s.data=t.readUint8Array(s.description_length),t.position-=s.description_length),s.parse(t)}})),l.createFullBoxCtor("sidx",(function(t){this.reference_ID=t.readUint32(),this.timescale=t.readUint32(),0===this.version?(this.earliest_presentation_time=t.readUint32(),this.first_offset=t.readUint32()):(this.earliest_presentation_time=t.readUint64(),this.first_offset=t.readUint64()),t.readUint16(),this.references=[];for(var e=t.readUint16(),i=0;i<e;i++){var s={};this.references.push(s);var r=t.readUint32();s.reference_type=r>>31&1,s.referenced_size=2147483647&r,s.subsegment_duration=t.readUint32(),r=t.readUint32(),s.starts_with_SAP=r>>31&1,s.SAP_type=r>>28&7,s.SAP_delta_time=268435455&r}})),l.SingleItemTypeReferenceBox=function(t,e,i,s){l.Box.call(this,t,e),this.hdr_size=i,this.start=s},l.SingleItemTypeReferenceBox.prototype=new l.Box,l.SingleItemTypeReferenceBox.prototype.parse=function(t){this.from_item_ID=t.readUint16();var e=t.readUint16();this.references=[];for(var i=0;i<e;i++)this.references[i]=t.readUint16()},l.SingleItemTypeReferenceBoxLarge=function(t,e,i,s){l.Box.call(this,t,e),this.hdr_size=i,this.start=s},l.SingleItemTypeReferenceBoxLarge.prototype=new l.Box,l.SingleItemTypeReferenceBoxLarge.prototype.parse=function(t){this.from_item_ID=t.readUint32();var e=t.readUint16();this.references=[];for(var i=0;i<e;i++)this.references[i]=t.readUint32()},l.createFullBoxCtor("SmDm",(function(t){this.primaryRChromaticity_x=t.readUint16(),this.primaryRChromaticity_y=t.readUint16(),this.primaryGChromaticity_x=t.readUint16(),this.primaryGChromaticity_y=t.readUint16(),this.primaryBChromaticity_x=t.readUint16(),this.primaryBChromaticity_y=t.readUint16(),this.whitePointChromaticity_x=t.readUint16(),this.whitePointChromaticity_y=t.readUint16(),this.luminanceMax=t.readUint32(),this.luminanceMin=t.readUint32()})),l.createFullBoxCtor("smhd",(function(t){this.balance=t.readUint16(),t.readUint16()})),l.createFullBoxCtor("ssix",(function(t){this.subsegments=[];for(var e=t.readUint32(),i=0;i<e;i++){var s={};this.subsegments.push(s),s.ranges=[];for(var r=t.readUint32(),n=0;n<r;n++){var a={};s.ranges.push(a),a.level=t.readUint8(),a.range_size=t.readUint24()}}})),l.createFullBoxCtor("stco",(function(t){var e;if(e=t.readUint32(),this.chunk_offsets=[],0===this.version)for(var i=0;i<e;i++)this.chunk_offsets.push(t.readUint32())})),l.createFullBoxCtor("stdp",(function(t){var e=(this.size-this.hdr_size)/2;this.priority=[];for(var i=0;i<e;i++)this.priority[i]=t.readUint16()})),l.createFullBoxCtor("sthd"),l.createFullBoxCtor("stri",(function(t){this.switch_group=t.readUint16(),this.alternate_group=t.readUint16(),this.sub_track_id=t.readUint32();var e=(this.size-this.hdr_size-8)/4;this.attribute_list=[];for(var i=0;i<e;i++)this.attribute_list[i]=t.readUint32()})),l.createFullBoxCtor("stsc",(function(t){var e,i;if(e=t.readUint32(),this.first_chunk=[],this.samples_per_chunk=[],this.sample_description_index=[],0===this.version)for(i=0;i<e;i++)this.first_chunk.push(t.readUint32()),this.samples_per_chunk.push(t.readUint32()),this.sample_description_index.push(t.readUint32())})),l.createFullBoxCtor("stsd",(function(t){var e,i,s,n;for(this.entries=[],s=t.readUint32(),e=1;e<=s;e++){if((i=l.parseOneBox(t,!0,this.size-(t.getPosition()-this.start))).code!==l.OK)return;l[i.type+"SampleEntry"]?((n=new l[i.type+"SampleEntry"](i.size)).hdr_size=i.hdr_size,n.start=i.start):(r.warn("BoxParser","Unknown sample entry type: "+i.type),n=new l.SampleEntry(i.type,i.size,i.hdr_size,i.start)),n.write===l.SampleEntry.prototype.write&&(r.info("BoxParser","SampleEntry "+n.type+" box writing not yet implemented, keeping unparsed data in memory for later write"),n.parseDataAndRewind(t)),n.parse(t),this.entries.push(n)}})),l.createFullBoxCtor("stsg",(function(t){this.grouping_type=t.readUint32();var e=t.readUint16();this.group_description_index=[];for(var i=0;i<e;i++)this.group_description_index[i]=t.readUint32()})),l.createFullBoxCtor("stsh",(function(t){var e,i;if(e=t.readUint32(),this.shadowed_sample_numbers=[],this.sync_sample_numbers=[],0===this.version)for(i=0;i<e;i++)this.shadowed_sample_numbers.push(t.readUint32()),this.sync_sample_numbers.push(t.readUint32())})),l.createFullBoxCtor("stss",(function(t){var e,i;if(i=t.readUint32(),0===this.version)for(this.sample_numbers=[],e=0;e<i;e++)this.sample_numbers.push(t.readUint32())})),l.createFullBoxCtor("stsz",(function(t){var e;if(this.sample_sizes=[],0===this.version)for(this.sample_size=t.readUint32(),this.sample_count=t.readUint32(),e=0;e<this.sample_count;e++)0===this.sample_size?this.sample_sizes.push(t.readUint32()):this.sample_sizes[e]=this.sample_size})),l.createFullBoxCtor("stts",(function(t){var e,i,s;if(e=t.readUint32(),this.sample_counts=[],this.sample_deltas=[],0===this.version)for(i=0;i<e;i++)this.sample_counts.push(t.readUint32()),(s=t.readInt32())<0&&(r.warn("BoxParser","File uses negative stts sample delta, using value 1 instead, sync may be lost!"),s=1),this.sample_deltas.push(s)})),l.createFullBoxCtor("stvi",(function(t){var e=t.readUint32();this.single_view_allowed=3&e,this.stereo_scheme=t.readUint32();var i,s,r=t.readUint32();for(this.stereo_indication_type=t.readString(r),this.boxes=[];t.getPosition()<this.start+this.size;){if((i=l.parseOneBox(t,!1,this.size-(t.getPosition()-this.start))).code!==l.OK)return;s=i.box,this.boxes.push(s),this[s.type]=s}})),l.createBoxCtor("styp",(function(t){l.ftypBox.prototype.parse.call(this,t)})),l.createFullBoxCtor("stz2",(function(t){var e,i;if(this.sample_sizes=[],0===this.version)if(this.reserved=t.readUint24(),this.field_size=t.readUint8(),i=t.readUint32(),4===this.field_size)for(e=0;e<i;e+=2){var s=t.readUint8();this.sample_sizes[e]=s>>4&15,this.sample_sizes[e+1]=15&s}else if(8===this.field_size)for(e=0;e<i;e++)this.sample_sizes[e]=t.readUint8();else if(16===this.field_size)for(e=0;e<i;e++)this.sample_sizes[e]=t.readUint16();else r.error("BoxParser","Error in length field in stz2 box")})),l.createFullBoxCtor("subs",(function(t){var e,i,s,r;for(s=t.readUint32(),this.entries=[],e=0;e<s;e++){var n={};if(this.entries[e]=n,n.sample_delta=t.readUint32(),n.subsamples=[],(r=t.readUint16())>0)for(i=0;i<r;i++){var a={};n.subsamples.push(a),1==this.version?a.size=t.readUint32():a.size=t.readUint16(),a.priority=t.readUint8(),a.discardable=t.readUint8(),a.codec_specific_parameters=t.readUint32()}}})),l.createFullBoxCtor("tenc",(function(t){if(t.readUint8(),0===this.version)t.readUint8();else{var e=t.readUint8();this.default_crypt_byte_block=e>>4&15,this.default_skip_byte_block=15&e}this.default_isProtected=t.readUint8(),this.default_Per_Sample_IV_Size=t.readUint8(),this.default_KID=l.parseHex16(t),1===this.default_isProtected&&0===this.default_Per_Sample_IV_Size&&(this.default_constant_IV_size=t.readUint8(),this.default_constant_IV=t.readUint8Array(this.default_constant_IV_size))})),l.createFullBoxCtor("tfdt",(function(t){1==this.version?this.baseMediaDecodeTime=t.readUint64():this.baseMediaDecodeTime=t.readUint32()})),l.createFullBoxCtor("tfhd",(function(t){var e=0;this.track_id=t.readUint32(),this.size-this.hdr_size>e&&this.flags&l.TFHD_FLAG_BASE_DATA_OFFSET?(this.base_data_offset=t.readUint64(),e+=8):this.base_data_offset=0,this.size-this.hdr_size>e&&this.flags&l.TFHD_FLAG_SAMPLE_DESC?(this.default_sample_description_index=t.readUint32(),e+=4):this.default_sample_description_index=0,this.size-this.hdr_size>e&&this.flags&l.TFHD_FLAG_SAMPLE_DUR?(this.default_sample_duration=t.readUint32(),e+=4):this.default_sample_duration=0,this.size-this.hdr_size>e&&this.flags&l.TFHD_FLAG_SAMPLE_SIZE?(this.default_sample_size=t.readUint32(),e+=4):this.default_sample_size=0,this.size-this.hdr_size>e&&this.flags&l.TFHD_FLAG_SAMPLE_FLAGS?(this.default_sample_flags=t.readUint32(),e+=4):this.default_sample_flags=0})),l.createFullBoxCtor("tfra",(function(t){this.track_ID=t.readUint32(),t.readUint24();var e=t.readUint8();this.length_size_of_traf_num=e>>4&3,this.length_size_of_trun_num=e>>2&3,this.length_size_of_sample_num=3&e,this.entries=[];for(var i=t.readUint32(),s=0;s<i;s++)1===this.version?(this.time=t.readUint64(),this.moof_offset=t.readUint64()):(this.time=t.readUint32(),this.moof_offset=t.readUint32()),this.traf_number=t["readUint"+8*(this.length_size_of_traf_num+1)](),this.trun_number=t["readUint"+8*(this.length_size_of_trun_num+1)](),this.sample_number=t["readUint"+8*(this.length_size_of_sample_num+1)]()})),l.createFullBoxCtor("tkhd",(function(t){1==this.version?(this.creation_time=t.readUint64(),this.modification_time=t.readUint64(),this.track_id=t.readUint32(),t.readUint32(),this.duration=t.readUint64()):(this.creation_time=t.readUint32(),this.modification_time=t.readUint32(),this.track_id=t.readUint32(),t.readUint32(),this.duration=t.readUint32()),t.readUint32Array(2),this.layer=t.readInt16(),this.alternate_group=t.readInt16(),this.volume=t.readInt16()>>8,t.readUint16(),this.matrix=t.readInt32Array(9),this.width=t.readUint32(),this.height=t.readUint32()})),l.createBoxCtor("tmax",(function(t){this.time=t.readUint32()})),l.createBoxCtor("tmin",(function(t){this.time=t.readUint32()})),l.createBoxCtor("totl",(function(t){this.bytessent=t.readUint32()})),l.createBoxCtor("tpay",(function(t){this.bytessent=t.readUint32()})),l.createBoxCtor("tpyl",(function(t){this.bytessent=t.readUint64()})),l.TrackGroupTypeBox.prototype.parse=function(t){this.parseFullHeader(t),this.track_group_id=t.readUint32()},l.createTrackGroupCtor("msrc"),l.TrackReferenceTypeBox=function(t,e,i,s){l.Box.call(this,t,e),this.hdr_size=i,this.start=s},l.TrackReferenceTypeBox.prototype=new l.Box,l.TrackReferenceTypeBox.prototype.parse=function(t){this.track_ids=t.readUint32Array((this.size-this.hdr_size)/4)},l.trefBox.prototype.parse=function(t){for(var e,i;t.getPosition()<this.start+this.size;){if((e=l.parseOneBox(t,!0,this.size-(t.getPosition()-this.start))).code!==l.OK)return;(i=new l.TrackReferenceTypeBox(e.type,e.size,e.hdr_size,e.start)).write===l.Box.prototype.write&&"mdat"!==i.type&&(r.info("BoxParser","TrackReference "+i.type+" box writing not yet implemented, keeping unparsed data in memory for later write"),i.parseDataAndRewind(t)),i.parse(t),this.boxes.push(i)}},l.createFullBoxCtor("trep",(function(t){for(this.track_ID=t.readUint32(),this.boxes=[];t.getPosition()<this.start+this.size;){if(ret=l.parseOneBox(t,!1,this.size-(t.getPosition()-this.start)),ret.code!==l.OK)return;box=ret.box,this.boxes.push(box)}})),l.createFullBoxCtor("trex",(function(t){this.track_id=t.readUint32(),this.default_sample_description_index=t.readUint32(),this.default_sample_duration=t.readUint32(),this.default_sample_size=t.readUint32(),this.default_sample_flags=t.readUint32()})),l.createBoxCtor("trpy",(function(t){this.bytessent=t.readUint64()})),l.createFullBoxCtor("trun",(function(t){var e=0;if(this.sample_count=t.readUint32(),e+=4,this.size-this.hdr_size>e&&this.flags&l.TRUN_FLAGS_DATA_OFFSET?(this.data_offset=t.readInt32(),e+=4):this.data_offset=0,this.size-this.hdr_size>e&&this.flags&l.TRUN_FLAGS_FIRST_FLAG?(this.first_sample_flags=t.readUint32(),e+=4):this.first_sample_flags=0,this.sample_duration=[],this.sample_size=[],this.sample_flags=[],this.sample_composition_time_offset=[],this.size-this.hdr_size>e)for(var i=0;i<this.sample_count;i++)this.flags&l.TRUN_FLAGS_DURATION&&(this.sample_duration[i]=t.readUint32()),this.flags&l.TRUN_FLAGS_SIZE&&(this.sample_size[i]=t.readUint32()),this.flags&l.TRUN_FLAGS_FLAGS&&(this.sample_flags[i]=t.readUint32()),this.flags&l.TRUN_FLAGS_CTS_OFFSET&&(0===this.version?this.sample_composition_time_offset[i]=t.readUint32():this.sample_composition_time_offset[i]=t.readInt32())})),l.createFullBoxCtor("tsel",(function(t){this.switch_group=t.readUint32();var e=(this.size-this.hdr_size-4)/4;this.attribute_list=[];for(var i=0;i<e;i++)this.attribute_list[i]=t.readUint32()})),l.createFullBoxCtor("txtC",(function(t){this.config=t.readCString()})),l.createFullBoxCtor("url ",(function(t){1!==this.flags&&(this.location=t.readCString())})),l.createFullBoxCtor("urn ",(function(t){this.name=t.readCString(),this.size-this.hdr_size-this.name.length-1>0&&(this.location=t.readCString())})),l.createUUIDBox("a5d40b30e81411ddba2f0800200c9a66",!0,!1,(function(t){this.LiveServerManifest=t.readString(this.size-this.hdr_size).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")})),l.createUUIDBox("d08a4f1810f34a82b6c832d8aba183d3",!0,!1,(function(t){this.system_id=l.parseHex16(t);var e=t.readUint32();e>0&&(this.data=t.readUint8Array(e))})),l.createUUIDBox("a2394f525a9b4f14a2446c427c648df4",!0,!1),l.createUUIDBox("8974dbce7be74c5184f97148f9882554",!0,!1,(function(t){this.default_AlgorithmID=t.readUint24(),this.default_IV_size=t.readUint8(),this.default_KID=l.parseHex16(t)})),l.createUUIDBox("d4807ef2ca3946958e5426cb9e46a79f",!0,!1,(function(t){this.fragment_count=t.readUint8(),this.entries=[];for(var e=0;e<this.fragment_count;e++){var i={},s=0,r=0;1===this.version?(s=t.readUint64(),r=t.readUint64()):(s=t.readUint32(),r=t.readUint32()),i.absolute_time=s,i.absolute_duration=r,this.entries.push(i)}})),l.createUUIDBox("6d1d9b0542d544e680e2141daff757b2",!0,!1,(function(t){1===this.version?(this.absolute_time=t.readUint64(),this.duration=t.readUint64()):(this.absolute_time=t.readUint32(),this.duration=t.readUint32())})),l.createFullBoxCtor("vmhd",(function(t){this.graphicsmode=t.readUint16(),this.opcolor=t.readUint16Array(3)})),l.createFullBoxCtor("vpcC",(function(t){var e;1===this.version?(this.profile=t.readUint8(),this.level=t.readUint8(),e=t.readUint8(),this.bitDepth=e>>4,this.chromaSubsampling=e>>1&7,this.videoFullRangeFlag=1&e,this.colourPrimaries=t.readUint8(),this.transferCharacteristics=t.readUint8(),this.matrixCoefficients=t.readUint8(),this.codecIntializationDataSize=t.readUint16(),this.codecIntializationData=t.readUint8Array(this.codecIntializationDataSize)):(this.profile=t.readUint8(),this.level=t.readUint8(),e=t.readUint8(),this.bitDepth=e>>4&15,this.colorSpace=15&e,e=t.readUint8(),this.chromaSubsampling=e>>4&15,this.transferFunction=e>>1&7,this.videoFullRangeFlag=1&e,this.codecIntializationDataSize=t.readUint16(),this.codecIntializationData=t.readUint8Array(this.codecIntializationDataSize))})),l.createBoxCtor("vttC",(function(t){this.text=t.readString(this.size-this.hdr_size)})),l.SampleEntry.prototype.isVideo=function(){return!1},l.SampleEntry.prototype.isAudio=function(){return!1},l.SampleEntry.prototype.isSubtitle=function(){return!1},l.SampleEntry.prototype.isMetadata=function(){return!1},l.SampleEntry.prototype.isHint=function(){return!1},l.SampleEntry.prototype.getCodec=function(){return this.type.replace(".","")},l.SampleEntry.prototype.getWidth=function(){return""},l.SampleEntry.prototype.getHeight=function(){return""},l.SampleEntry.prototype.getChannelCount=function(){return""},l.SampleEntry.prototype.getSampleRate=function(){return""},l.SampleEntry.prototype.getSampleSize=function(){return""},l.VisualSampleEntry.prototype.isVideo=function(){return!0},l.VisualSampleEntry.prototype.getWidth=function(){return this.width},l.VisualSampleEntry.prototype.getHeight=function(){return this.height},l.AudioSampleEntry.prototype.isAudio=function(){return!0},l.AudioSampleEntry.prototype.getChannelCount=function(){return this.channel_count},l.AudioSampleEntry.prototype.getSampleRate=function(){return this.samplerate},l.AudioSampleEntry.prototype.getSampleSize=function(){return this.samplesize},l.SubtitleSampleEntry.prototype.isSubtitle=function(){return!0},l.MetadataSampleEntry.prototype.isMetadata=function(){return!0},l.decimalToHex=function(t,e){var i=Number(t).toString(16);for(e=null==e?e=2:e;i.length<e;)i="0"+i;return i},l.avc1SampleEntry.prototype.getCodec=l.avc2SampleEntry.prototype.getCodec=l.avc3SampleEntry.prototype.getCodec=l.avc4SampleEntry.prototype.getCodec=function(){var t=l.SampleEntry.prototype.getCodec.call(this);return this.avcC?t+"."+l.decimalToHex(this.avcC.AVCProfileIndication)+l.decimalToHex(this.avcC.profile_compatibility)+l.decimalToHex(this.avcC.AVCLevelIndication):t},l.hev1SampleEntry.prototype.getCodec=l.hvc1SampleEntry.prototype.getCodec=function(){var t,e=l.SampleEntry.prototype.getCodec.call(this);if(this.hvcC){switch(e+=".",this.hvcC.general_profile_space){case 0:e+="";break;case 1:e+="A";break;case 2:e+="B";break;case 3:e+="C"}e+=this.hvcC.general_profile_idc,e+=".";var i=this.hvcC.general_profile_compatibility,s=0;for(t=0;t<32&&(s|=1&i,31!=t);t++)s<<=1,i>>=1;e+=l.decimalToHex(s,0),e+=".",0===this.hvcC.general_tier_flag?e+="L":e+="H",e+=this.hvcC.general_level_idc;var r=!1,n="";for(t=5;t>=0;t--)(this.hvcC.general_constraint_indicator[t]||r)&&(n="."+l.decimalToHex(this.hvcC.general_constraint_indicator[t],0)+n,r=!0);e+=n}return e},l.mp4aSampleEntry.prototype.getCodec=function(){var t=l.SampleEntry.prototype.getCodec.call(this);if(this.esds&&this.esds.esd){var e=this.esds.esd.getOTI(),i=this.esds.esd.getAudioConfig();return t+"."+l.decimalToHex(e)+(i?"."+i:"")}return t},l.stxtSampleEntry.prototype.getCodec=function(){var t=l.SampleEntry.prototype.getCodec.call(this);return this.mime_format?t+"."+this.mime_format:t},l.av01SampleEntry.prototype.getCodec=function(){var t,e=l.SampleEntry.prototype.getCodec.call(this);return 2===this.av1C.seq_profile&&1===this.av1C.high_bitdepth?t=1===this.av1C.twelve_bit?"12":"10":this.av1C.seq_profile<=2&&(t=1===this.av1C.high_bitdepth?"10":"08"),e+"."+this.av1C.seq_profile+"."+this.av1C.seq_level_idx_0+(this.av1C.seq_tier_0?"H":"M")+"."+t},l.Box.prototype.writeHeader=function(t,e){this.size+=8,this.size>o&&(this.size+=8),"uuid"===this.type&&(this.size+=16),r.debug("BoxWriter","Writing box "+this.type+" of size: "+this.size+" at position "+t.getPosition()+(e||"")),this.size>o?t.writeUint32(1):(this.sizePosition=t.getPosition(),t.writeUint32(this.size)),t.writeString(this.type,null,4),"uuid"===this.type&&t.writeUint8Array(this.uuid),this.size>o&&t.writeUint64(this.size)},l.FullBox.prototype.writeHeader=function(t){this.size+=4,l.Box.prototype.writeHeader.call(this,t," v="+this.version+" f="+this.flags),t.writeUint8(this.version),t.writeUint24(this.flags)},l.Box.prototype.write=function(t){"mdat"===this.type?this.data&&(this.size=this.data.length,this.writeHeader(t),t.writeUint8Array(this.data)):(this.size=this.data?this.data.length:0,this.writeHeader(t),this.data&&t.writeUint8Array(this.data))},l.ContainerBox.prototype.write=function(t){this.size=0,this.writeHeader(t);for(var e=0;e<this.boxes.length;e++)this.boxes[e]&&(this.boxes[e].write(t),this.size+=this.boxes[e].size);r.debug("BoxWriter","Adjusting box "+this.type+" with new size "+this.size),t.adjustUint32(this.sizePosition,this.size)},l.TrackReferenceTypeBox.prototype.write=function(t){this.size=4*this.track_ids.length,this.writeHeader(t),t.writeUint32Array(this.track_ids)},l.avcCBox.prototype.write=function(t){var e;for(this.size=7,e=0;e<this.SPS.length;e++)this.size+=2+this.SPS[e].length;for(e=0;e<this.PPS.length;e++)this.size+=2+this.PPS[e].length;for(this.ext&&(this.size+=this.ext.length),this.writeHeader(t),t.writeUint8(this.configurationVersion),t.writeUint8(this.AVCProfileIndication),t.writeUint8(this.profile_compatibility),t.writeUint8(this.AVCLevelIndication),t.writeUint8(this.lengthSizeMinusOne+252),t.writeUint8(this.SPS.length+224),e=0;e<this.SPS.length;e++)t.writeUint16(this.SPS[e].length),t.writeUint8Array(this.SPS[e].nalu);for(t.writeUint8(this.PPS.length),e=0;e<this.PPS.length;e++)t.writeUint16(this.PPS[e].length),t.writeUint8Array(this.PPS[e].nalu);this.ext&&t.writeUint8Array(this.ext)},l.co64Box.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=4+8*this.chunk_offsets.length,this.writeHeader(t),t.writeUint32(this.chunk_offsets.length),e=0;e<this.chunk_offsets.length;e++)t.writeUint64(this.chunk_offsets[e])},l.cslgBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=20,this.writeHeader(t),t.writeInt32(this.compositionToDTSShift),t.writeInt32(this.leastDecodeToDisplayDelta),t.writeInt32(this.greatestDecodeToDisplayDelta),t.writeInt32(this.compositionStartTime),t.writeInt32(this.compositionEndTime)},l.cttsBox.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=4+8*this.sample_counts.length,this.writeHeader(t),t.writeUint32(this.sample_counts.length),e=0;e<this.sample_counts.length;e++)t.writeUint32(this.sample_counts[e]),1===this.version?t.writeInt32(this.sample_offsets[e]):t.writeUint32(this.sample_offsets[e])},l.drefBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4,this.writeHeader(t),t.writeUint32(this.entries.length);for(var e=0;e<this.entries.length;e++)this.entries[e].write(t),this.size+=this.entries[e].size;r.debug("BoxWriter","Adjusting box "+this.type+" with new size "+this.size),t.adjustUint32(this.sizePosition,this.size)},l.elngBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=this.extended_language.length,this.writeHeader(t),t.writeString(this.extended_language)},l.elstBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4+12*this.entries.length,this.writeHeader(t),t.writeUint32(this.entries.length);for(var e=0;e<this.entries.length;e++){var i=this.entries[e];t.writeUint32(i.segment_duration),t.writeInt32(i.media_time),t.writeInt16(i.media_rate_integer),t.writeInt16(i.media_rate_fraction)}},l.emsgBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=16+this.message_data.length+(this.scheme_id_uri.length+1)+(this.value.length+1),this.writeHeader(t),t.writeCString(this.scheme_id_uri),t.writeCString(this.value),t.writeUint32(this.timescale),t.writeUint32(this.presentation_time_delta),t.writeUint32(this.event_duration),t.writeUint32(this.id),t.writeUint8Array(this.message_data)},l.ftypBox.prototype.write=function(t){this.size=8+4*this.compatible_brands.length,this.writeHeader(t),t.writeString(this.major_brand,null,4),t.writeUint32(this.minor_version);for(var e=0;e<this.compatible_brands.length;e++)t.writeString(this.compatible_brands[e],null,4)},l.hdlrBox.prototype.write=function(t){this.size=20+this.name.length+1,this.version=0,this.flags=0,this.writeHeader(t),t.writeUint32(0),t.writeString(this.handler,null,4),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeCString(this.name)},l.kindBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=this.schemeURI.length+1+(this.value.length+1),this.writeHeader(t),t.writeCString(this.schemeURI),t.writeCString(this.value)},l.mdhdBox.prototype.write=function(t){this.size=20,this.flags=0,this.version=0,this.writeHeader(t),t.writeUint32(this.creation_time),t.writeUint32(this.modification_time),t.writeUint32(this.timescale),t.writeUint32(this.duration),t.writeUint16(this.language),t.writeUint16(0)},l.mehdBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4,this.writeHeader(t),t.writeUint32(this.fragment_duration)},l.mfhdBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4,this.writeHeader(t),t.writeUint32(this.sequence_number)},l.mvhdBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=96,this.writeHeader(t),t.writeUint32(this.creation_time),t.writeUint32(this.modification_time),t.writeUint32(this.timescale),t.writeUint32(this.duration),t.writeUint32(this.rate),t.writeUint16(this.volume<<8),t.writeUint16(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32Array(this.matrix),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32(this.next_track_id)},l.SampleEntry.prototype.writeHeader=function(t){this.size=8,l.Box.prototype.writeHeader.call(this,t),t.writeUint8(0),t.writeUint8(0),t.writeUint8(0),t.writeUint8(0),t.writeUint8(0),t.writeUint8(0),t.writeUint16(this.data_reference_index)},l.SampleEntry.prototype.writeFooter=function(t){for(var e=0;e<this.boxes.length;e++)this.boxes[e].write(t),this.size+=this.boxes[e].size;r.debug("BoxWriter","Adjusting box "+this.type+" with new size "+this.size),t.adjustUint32(this.sizePosition,this.size)},l.SampleEntry.prototype.write=function(t){this.writeHeader(t),t.writeUint8Array(this.data),this.size+=this.data.length,r.debug("BoxWriter","Adjusting box "+this.type+" with new size "+this.size),t.adjustUint32(this.sizePosition,this.size)},l.VisualSampleEntry.prototype.write=function(t){this.writeHeader(t),this.size+=70,t.writeUint16(0),t.writeUint16(0),t.writeUint32(0),t.writeUint32(0),t.writeUint32(0),t.writeUint16(this.width),t.writeUint16(this.height),t.writeUint32(this.horizresolution),t.writeUint32(this.vertresolution),t.writeUint32(0),t.writeUint16(this.frame_count),t.writeUint8(Math.min(31,this.compressorname.length)),t.writeString(this.compressorname,null,31),t.writeUint16(this.depth),t.writeInt16(-1),this.writeFooter(t)},l.AudioSampleEntry.prototype.write=function(t){this.writeHeader(t),this.size+=20,t.writeUint32(0),t.writeUint32(0),t.writeUint16(this.channel_count),t.writeUint16(this.samplesize),t.writeUint16(0),t.writeUint16(0),t.writeUint32(this.samplerate<<16),this.writeFooter(t)},l.stppSampleEntry.prototype.write=function(t){this.writeHeader(t),this.size+=this.namespace.length+1+this.schema_location.length+1+this.auxiliary_mime_types.length+1,t.writeCString(this.namespace),t.writeCString(this.schema_location),t.writeCString(this.auxiliary_mime_types),this.writeFooter(t)},l.SampleGroupEntry.prototype.write=function(t){t.writeUint8Array(this.data)},l.sbgpBox.prototype.write=function(t){this.version=1,this.flags=0,this.size=12+8*this.entries.length,this.writeHeader(t),t.writeString(this.grouping_type,null,4),t.writeUint32(this.grouping_type_parameter),t.writeUint32(this.entries.length);for(var e=0;e<this.entries.length;e++){var i=this.entries[e];t.writeInt32(i.sample_count),t.writeInt32(i.group_description_index)}},l.sgpdBox.prototype.write=function(t){var e,i;for(this.flags=0,this.size=12,e=0;e<this.entries.length;e++)i=this.entries[e],1===this.version&&(0===this.default_length&&(this.size+=4),this.size+=i.data.length);for(this.writeHeader(t),t.writeString(this.grouping_type,null,4),1===this.version&&t.writeUint32(this.default_length),this.version>=2&&t.writeUint32(this.default_sample_description_index),t.writeUint32(this.entries.length),e=0;e<this.entries.length;e++)i=this.entries[e],1===this.version&&0===this.default_length&&t.writeUint32(i.description_length),i.write(t)},l.sidxBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=20+12*this.references.length,this.writeHeader(t),t.writeUint32(this.reference_ID),t.writeUint32(this.timescale),t.writeUint32(this.earliest_presentation_time),t.writeUint32(this.first_offset),t.writeUint16(0),t.writeUint16(this.references.length);for(var e=0;e<this.references.length;e++){var i=this.references[e];t.writeUint32(i.reference_type<<31|i.referenced_size),t.writeUint32(i.subsegment_duration),t.writeUint32(i.starts_with_SAP<<31|i.SAP_type<<28|i.SAP_delta_time)}},l.stcoBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4+4*this.chunk_offsets.length,this.writeHeader(t),t.writeUint32(this.chunk_offsets.length),t.writeUint32Array(this.chunk_offsets)},l.stscBox.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=4+12*this.first_chunk.length,this.writeHeader(t),t.writeUint32(this.first_chunk.length),e=0;e<this.first_chunk.length;e++)t.writeUint32(this.first_chunk[e]),t.writeUint32(this.samples_per_chunk[e]),t.writeUint32(this.sample_description_index[e])},l.stsdBox.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=0,this.writeHeader(t),t.writeUint32(this.entries.length),this.size+=4,e=0;e<this.entries.length;e++)this.entries[e].write(t),this.size+=this.entries[e].size;r.debug("BoxWriter","Adjusting box "+this.type+" with new size "+this.size),t.adjustUint32(this.sizePosition,this.size)},l.stshBox.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=4+8*this.shadowed_sample_numbers.length,this.writeHeader(t),t.writeUint32(this.shadowed_sample_numbers.length),e=0;e<this.shadowed_sample_numbers.length;e++)t.writeUint32(this.shadowed_sample_numbers[e]),t.writeUint32(this.sync_sample_numbers[e])},l.stssBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=4+4*this.sample_numbers.length,this.writeHeader(t),t.writeUint32(this.sample_numbers.length),t.writeUint32Array(this.sample_numbers)},l.stszBox.prototype.write=function(t){var e,i=!0;if(this.version=0,this.flags=0,this.sample_sizes.length>0)for(e=0;e+1<this.sample_sizes.length;){if(this.sample_sizes[e+1]!==this.sample_sizes[0]){i=!1;break}e++}else i=!1;this.size=8,i||(this.size+=4*this.sample_sizes.length),this.writeHeader(t),i?t.writeUint32(this.sample_sizes[0]):t.writeUint32(0),t.writeUint32(this.sample_sizes.length),i||t.writeUint32Array(this.sample_sizes)},l.sttsBox.prototype.write=function(t){var e;for(this.version=0,this.flags=0,this.size=4+8*this.sample_counts.length,this.writeHeader(t),t.writeUint32(this.sample_counts.length),e=0;e<this.sample_counts.length;e++)t.writeUint32(this.sample_counts[e]),t.writeUint32(this.sample_deltas[e])},l.tfdtBox.prototype.write=function(t){var e=Math.pow(2,32)-1;this.version=this.baseMediaDecodeTime>e?1:0,this.flags=0,this.size=4,1===this.version&&(this.size+=4),this.writeHeader(t),1===this.version?t.writeUint64(this.baseMediaDecodeTime):t.writeUint32(this.baseMediaDecodeTime)},l.tfhdBox.prototype.write=function(t){this.version=0,this.size=4,this.flags&l.TFHD_FLAG_BASE_DATA_OFFSET&&(this.size+=8),this.flags&l.TFHD_FLAG_SAMPLE_DESC&&(this.size+=4),this.flags&l.TFHD_FLAG_SAMPLE_DUR&&(this.size+=4),this.flags&l.TFHD_FLAG_SAMPLE_SIZE&&(this.size+=4),this.flags&l.TFHD_FLAG_SAMPLE_FLAGS&&(this.size+=4),this.writeHeader(t),t.writeUint32(this.track_id),this.flags&l.TFHD_FLAG_BASE_DATA_OFFSET&&t.writeUint64(this.base_data_offset),this.flags&l.TFHD_FLAG_SAMPLE_DESC&&t.writeUint32(this.default_sample_description_index),this.flags&l.TFHD_FLAG_SAMPLE_DUR&&t.writeUint32(this.default_sample_duration),this.flags&l.TFHD_FLAG_SAMPLE_SIZE&&t.writeUint32(this.default_sample_size),this.flags&l.TFHD_FLAG_SAMPLE_FLAGS&&t.writeUint32(this.default_sample_flags)},l.tkhdBox.prototype.write=function(t){this.version=0,this.size=80,this.writeHeader(t),t.writeUint32(this.creation_time),t.writeUint32(this.modification_time),t.writeUint32(this.track_id),t.writeUint32(0),t.writeUint32(this.duration),t.writeUint32(0),t.writeUint32(0),t.writeInt16(this.layer),t.writeInt16(this.alternate_group),t.writeInt16(this.volume<<8),t.writeUint16(0),t.writeInt32Array(this.matrix),t.writeUint32(this.width),t.writeUint32(this.height)},l.trexBox.prototype.write=function(t){this.version=0,this.flags=0,this.size=20,this.writeHeader(t),t.writeUint32(this.track_id),t.writeUint32(this.default_sample_description_index),t.writeUint32(this.default_sample_duration),t.writeUint32(this.default_sample_size),t.writeUint32(this.default_sample_flags)},l.trunBox.prototype.write=function(t){this.version=0,this.size=4,this.flags&l.TRUN_FLAGS_DATA_OFFSET&&(this.size+=4),this.flags&l.TRUN_FLAGS_FIRST_FLAG&&(this.size+=4),this.flags&l.TRUN_FLAGS_DURATION&&(this.size+=4*this.sample_duration.length),this.flags&l.TRUN_FLAGS_SIZE&&(this.size+=4*this.sample_size.length),this.flags&l.TRUN_FLAGS_FLAGS&&(this.size+=4*this.sample_flags.length),this.flags&l.TRUN_FLAGS_CTS_OFFSET&&(this.size+=4*this.sample_composition_time_offset.length),this.writeHeader(t),t.writeUint32(this.sample_count),this.flags&l.TRUN_FLAGS_DATA_OFFSET&&(this.data_offset_position=t.getPosition(),t.writeInt32(this.data_offset)),this.flags&l.TRUN_FLAGS_FIRST_FLAG&&t.writeUint32(this.first_sample_flags);for(var e=0;e<this.sample_count;e++)this.flags&l.TRUN_FLAGS_DURATION&&t.writeUint32(this.sample_duration[e]),this.flags&l.TRUN_FLAGS_SIZE&&t.writeUint32(this.sample_size[e]),this.flags&l.TRUN_FLAGS_FLAGS&&t.writeUint32(this.sample_flags[e]),this.flags&l.TRUN_FLAGS_CTS_OFFSET&&(0===this.version?t.writeUint32(this.sample_composition_time_offset[e]):t.writeInt32(this.sample_composition_time_offset[e]))},l["url Box"].prototype.write=function(t){this.version=0,this.location?(this.flags=0,this.size=this.location.length+1):(this.flags=1,this.size=0),this.writeHeader(t),this.location&&t.writeCString(this.location)},l["urn Box"].prototype.write=function(t){this.version=0,this.flags=0,this.size=this.name.length+1+(this.location?this.location.length+1:0),this.writeHeader(t),t.writeCString(this.name),this.location&&t.writeCString(this.location)},l.vmhdBox.prototype.write=function(t){this.version=0,this.flags=1,this.size=8,this.writeHeader(t),t.writeUint16(this.graphicsmode),t.writeUint16Array(this.opcolor)},l.cttsBox.prototype.unpack=function(t){var e,i,s;for(s=0,e=0;e<this.sample_counts.length;e++)for(i=0;i<this.sample_counts[e];i++)t[s].pts=t[s].dts+this.sample_offsets[e],s++},l.sttsBox.prototype.unpack=function(t){var e,i,s;for(s=0,e=0;e<this.sample_counts.length;e++)for(i=0;i<this.sample_counts[e];i++)t[s].dts=0===s?0:t[s-1].dts+this.sample_deltas[e],s++},l.stcoBox.prototype.unpack=function(t){var e;for(e=0;e<this.chunk_offsets.length;e++)t[e].offset=this.chunk_offsets[e]},l.stscBox.prototype.unpack=function(t){var e,i,s,r,n;for(r=0,n=0,e=0;e<this.first_chunk.length;e++)for(i=0;i<(e+1<this.first_chunk.length?this.first_chunk[e+1]:1/0);i++)for(n++,s=0;s<this.samples_per_chunk[e];s++){if(!t[r])return;t[r].description_index=this.sample_description_index[e],t[r].chunk_index=n,r++}},l.stszBox.prototype.unpack=function(t){var e;for(e=0;e<this.sample_sizes.length;e++)t[e].size=this.sample_sizes[e]},l.DIFF_BOXES_PROP_NAMES=["boxes","entries","references","subsamples","items","item_infos","extents","associations","subsegments","ranges","seekLists","seekPoints","esd","levels"],l.DIFF_PRIMITIVE_ARRAY_PROP_NAMES=["compatible_brands","matrix","opcolor","sample_counts","sample_counts","sample_deltas","first_chunk","samples_per_chunk","sample_sizes","chunk_offsets","sample_offsets","sample_description_index","sample_duration"],l.boxEqualFields=function(t,e){if(t&&!e)return!1;var i;for(i in t)if(!(l.DIFF_BOXES_PROP_NAMES.indexOf(i)>-1||t[i]instanceof l.Box||e[i]instanceof l.Box||void 0===t[i]||void 0===e[i]||"function"==typeof t[i]||"function"==typeof e[i]||t.subBoxNames&&t.subBoxNames.indexOf(i.slice(0,4))>-1||e.subBoxNames&&e.subBoxNames.indexOf(i.slice(0,4))>-1||"data"===i||"start"===i||"size"===i||"creation_time"===i||"modification_time"===i||l.DIFF_PRIMITIVE_ARRAY_PROP_NAMES.indexOf(i)>-1||t[i]===e[i]))return!1;return!0},l.boxEqual=function(t,e){if(!l.boxEqualFields(t,e))return!1;for(var i=0;i<l.DIFF_BOXES_PROP_NAMES.length;i++){var s=l.DIFF_BOXES_PROP_NAMES[i];if(t[s]&&e[s]&&!l.boxEqual(t[s],e[s]))return!1}return!0};var p=function(){};p.prototype.parseSample=function(t){var e,i={};i.resources=[];var s=new n(t.data.buffer);if(t.subsamples&&0!==t.subsamples.length){if(i.documentString=s.readString(t.subsamples[0].size),t.subsamples.length>1)for(e=1;e<t.subsamples.length;e++)i.resources[e]=s.readUint8Array(t.subsamples[e].size)}else i.documentString=s.readString(t.data.length);return"undefined"!=typeof DOMParser&&(i.document=(new DOMParser).parseFromString(i.documentString,"application/xml")),i};var f=function(){};f.prototype.parseSample=function(t){return new n(t.data.buffer).readString(t.data.length)},f.prototype.parseConfig=function(t){var e=new n(t.buffer);return e.readUint32(),e.readCString()},t.XMLSubtitlein4Parser=p,t.Textin4Parser=f;var u=function(t){this.stream=t||new h,this.boxes=[],this.mdats=[],this.moofs=[],this.isProgressive=!1,this.moovStartFound=!1,this.onMoovStart=null,this.moovStartSent=!1,this.onReady=null,this.readySent=!1,this.onSegment=null,this.onSamples=null,this.onError=null,this.sampleListBuilt=!1,this.fragmentedTracks=[],this.extractedTracks=[],this.isFragmentationInitialized=!1,this.sampleProcessingStarted=!1,this.nextMoofNumber=0,this.itemListBuilt=!1,this.onSidx=null,this.sidxSent=!1};u.prototype.setSegmentOptions=function(t,e,i){var s=this.getTrackById(t);if(s){var r={};this.fragmentedTracks.push(r),r.id=t,r.user=e,r.trak=s,s.nextSample=0,r.segmentStream=null,r.nb_samples=1e3,r.rapAlignement=!0,i&&(i.nbSamples&&(r.nb_samples=i.nbSamples),i.rapAlignement&&(r.rapAlignement=i.rapAlignement))}},u.prototype.unsetSegmentOptions=function(t){for(var e=-1,i=0;i<this.fragmentedTracks.length;i++){this.fragmentedTracks[i].id==t&&(e=i)}e>-1&&this.fragmentedTracks.splice(e,1)},u.prototype.setExtractionOptions=function(t,e,i){var s=this.getTrackById(t);if(s){var r={};this.extractedTracks.push(r),r.id=t,r.user=e,r.trak=s,s.nextSample=0,r.nb_samples=1e3,r.samples=[],i&&i.nbSamples&&(r.nb_samples=i.nbSamples)}},u.prototype.unsetExtractionOptions=function(t){for(var e=-1,i=0;i<this.extractedTracks.length;i++){this.extractedTracks[i].id==t&&(e=i)}e>-1&&this.extractedTracks.splice(e,1)},u.prototype.parse=function(){var t,e;if(!this.restoreParsePosition||this.restoreParsePosition())for(;;){if(this.hasIncompleteMdat&&this.hasIncompleteMdat()){if(this.processIncompleteMdat())continue;return}if(this.saveParsePosition&&this.saveParsePosition(),(t=l.parseOneBox(this.stream,false)).code===l.ERR_NOT_ENOUGH_DATA){if(this.processIncompleteBox){if(this.processIncompleteBox(t))continue;return}return}var i;switch(i="uuid"!==(e=t.box).type?e.type:e.uuid,this.boxes.push(e),i){case"mdat":this.mdats.push(e);break;case"moof":this.moofs.push(e);break;case"moov":this.moovStartFound=!0,0===this.mdats.length&&(this.isProgressive=!0);default:void 0!==this[i]&&r.warn("ISOFile","Duplicate Box of type: "+i+", overriding previous occurrence"),this[i]=e}this.updateUsedBytes&&this.updateUsedBytes(e,t)}},u.prototype.checkBuffer=function(t){if(null==t)throw"Buffer must be defined and non empty";if(void 0===t.fileStart)throw"Buffer must have a fileStart property";return 0===t.byteLength?(r.warn("ISOFile","Ignoring empty buffer (fileStart: "+t.fileStart+")"),this.stream.logBufferLevel(),!1):(r.info("ISOFile","Processing buffer (fileStart: "+t.fileStart+")"),t.usedBytes=0,this.stream.insertBuffer(t),this.stream.logBufferLevel(),!!this.stream.initialized()||(r.warn("ISOFile","Not ready to start parsing"),!1))},u.prototype.appendBuffer=function(t,e){var i;if(this.checkBuffer(t))return this.parse(),this.moovStartFound&&!this.moovStartSent&&(this.moovStartSent=!0,this.onMoovStart&&this.onMoovStart()),this.moov?(this.sampleListBuilt||(this.buildSampleLists(),this.sampleListBuilt=!0),this.updateSampleLists(),this.onReady&&!this.readySent&&(this.readySent=!0,this.onReady(this.getInfo())),this.processSamples(e),this.nextSeekPosition?(i=this.nextSeekPosition,this.nextSeekPosition=void 0):i=this.nextParsePosition,this.stream.getEndFilePositionAfter&&(i=this.stream.getEndFilePositionAfter(i))):i=this.nextParsePosition?this.nextParsePosition:0,this.sidx&&this.onSidx&&!this.sidxSent&&(this.onSidx(this.sidx),this.sidxSent=!0),this.meta&&(this.flattenItemInfo&&!this.itemListBuilt&&(this.flattenItemInfo(),this.itemListBuilt=!0),this.processItems&&this.processItems(this.onItem)),this.stream.cleanBuffers&&(r.info("ISOFile","Done processing buffer (fileStart: "+t.fileStart+") - next buffer to fetch should have a fileStart position of "+i),this.stream.logBufferLevel(),this.stream.cleanBuffers(),this.stream.logBufferLevel(!0),r.info("ISOFile","Sample data size in memory: "+this.getAllocatedSampleDataSize())),i},u.prototype.getInfo=function(){var t,e,i,s,r,n={},a=new Date("1904-01-01T00:00:00Z").getTime();if(this.moov)for(n.hasMoov=!0,n.duration=this.moov.mvhd.duration,n.timescale=this.moov.mvhd.timescale,n.isFragmented=null!=this.moov.mvex,n.isFragmented&&this.moov.mvex.mehd&&(n.fragment_duration=this.moov.mvex.mehd.fragment_duration),n.isProgressive=this.isProgressive,n.hasIOD=null!=this.moov.iods,n.brands=[],n.brands.push(this.ftyp.major_brand),n.brands=n.brands.concat(this.ftyp.compatible_brands),n.created=new Date(a+1e3*this.moov.mvhd.creation_time),n.modified=new Date(a+1e3*this.moov.mvhd.modification_time),n.tracks=[],n.audioTracks=[],n.videoTracks=[],n.subtitleTracks=[],n.metadataTracks=[],n.hintTracks=[],n.otherTracks=[],t=0;t<this.moov.traks.length;t++){if(r=(i=this.moov.traks[t]).mdia.minf.stbl.stsd.entries[0],s={},n.tracks.push(s),s.id=i.tkhd.track_id,s.name=i.mdia.hdlr.name,s.references=[],i.tref)for(e=0;e<i.tref.boxes.length;e++)ref={},s.references.push(ref),ref.type=i.tref.boxes[e].type,ref.track_ids=i.tref.boxes[e].track_ids;i.edts&&(s.edits=i.edts.elst.entries),s.created=new Date(a+1e3*i.tkhd.creation_time),s.modified=new Date(a+1e3*i.tkhd.modification_time),s.movie_duration=i.tkhd.duration,s.movie_timescale=n.timescale,s.layer=i.tkhd.layer,s.alternate_group=i.tkhd.alternate_group,s.volume=i.tkhd.volume,s.matrix=i.tkhd.matrix,s.track_width=i.tkhd.width/65536,s.track_height=i.tkhd.height/65536,s.timescale=i.mdia.mdhd.timescale,s.cts_shift=i.mdia.minf.stbl.cslg,s.duration=i.mdia.mdhd.duration,s.samples_duration=i.samples_duration,s.codec=r.getCodec(),s.kind=i.udta&&i.udta.kinds.length?i.udta.kinds[0]:{schemeURI:"",value:""},s.language=i.mdia.elng?i.mdia.elng.extended_language:i.mdia.mdhd.languageString,s.nb_samples=i.samples.length,s.size=i.samples_size,s.bitrate=8*s.size*s.timescale/s.samples_duration,r.isAudio()?(s.type="audio",n.audioTracks.push(s),s.audio={},s.audio.sample_rate=r.getSampleRate(),s.audio.channel_count=r.getChannelCount(),s.audio.sample_size=r.getSampleSize()):r.isVideo()?(s.type="video",n.videoTracks.push(s),s.video={},s.video.width=r.getWidth(),s.video.height=r.getHeight()):r.isSubtitle()?(s.type="subtitles",n.subtitleTracks.push(s)):r.isHint()?(s.type="metadata",n.hintTracks.push(s)):r.isMetadata()?(s.type="metadata",n.metadataTracks.push(s)):(s.type="metadata",n.otherTracks.push(s))}else n.hasMoov=!1;if(n.mime="",n.hasMoov&&n.tracks){for(n.videoTracks&&n.videoTracks.length>0?n.mime+='video/mp4; codecs="':n.audioTracks&&n.audioTracks.length>0?n.mime+='audio/mp4; codecs="':n.mime+='application/mp4; codecs="',t=0;t<n.tracks.length;t++)0!==t&&(n.mime+=","),n.mime+=n.tracks[t].codec;n.mime+='"; profiles="',n.mime+=this.ftyp.compatible_brands.join(),n.mime+='"'}return n},u.prototype.processSamples=function(t){var e,i;if(this.sampleProcessingStarted){if(this.isFragmentationInitialized&&null!==this.onSegment)for(e=0;e<this.fragmentedTracks.length;e++){var s=this.fragmentedTracks[e];for(i=s.trak;i.nextSample<i.samples.length&&this.sampleProcessingStarted;){r.debug("ISOFile","Creating media fragment on track #"+s.id+" for sample "+i.nextSample);var n=this.createFragment(s.id,i.nextSample,s.segmentStream);if(!n)break;if(s.segmentStream=n,i.nextSample++,(i.nextSample%s.nb_samples==0||t||i.nextSample>=i.samples.length)&&(r.info("ISOFile","Sending fragmented data on track #"+s.id+" for samples ["+Math.max(0,i.nextSample-s.nb_samples)+","+(i.nextSample-1)+"]"),r.info("ISOFile","Sample data size in memory: "+this.getAllocatedSampleDataSize()),this.onSegment&&this.onSegment(s.id,s.user,s.segmentStream.buffer,i.nextSample,t||i.nextSample>=i.samples.length),s.segmentStream=null,s!==this.fragmentedTracks[e]))break}}if(null!==this.onSamples)for(e=0;e<this.extractedTracks.length;e++){var a=this.extractedTracks[e];for(i=a.trak;i.nextSample<i.samples.length&&this.sampleProcessingStarted;){r.debug("ISOFile","Exporting on track #"+a.id+" sample #"+i.nextSample);var o=this.getSample(i,i.nextSample);if(!o)break;if(i.nextSample++,a.samples.push(o),(i.nextSample%a.nb_samples==0||i.nextSample>=i.samples.length)&&(r.debug("ISOFile","Sending samples on track #"+a.id+" for sample "+i.nextSample),this.onSamples&&this.onSamples(a.id,a.user,a.samples),a.samples=[],a!==this.extractedTracks[e]))break}}}},u.prototype.getBox=function(t){var e=this.getBoxes(t,!0);return e.length?e[0]:null},u.prototype.getBoxes=function(t,e){var i=[];return u._sweep.call(this,t,i,e),i},u._sweep=function(t,e,i){for(var s in this.type&&this.type==t&&e.push(this),this.boxes){if(e.length&&i)return;u._sweep.call(this.boxes[s],t,e,i)}},u.prototype.getTrackSamplesInfo=function(t){var e=this.getTrackById(t);return e?e.samples:void 0},u.prototype.getTrackSample=function(t,e){var i=this.getTrackById(t);return this.getSample(i,e)},u.prototype.releaseUsedSamples=function(t,e){var i=0,s=this.getTrackById(t);s.lastValidSample||(s.lastValidSample=0);for(var n=s.lastValidSample;n<e;n++)i+=this.releaseSample(s,n);r.info("ISOFile","Track #"+t+" released samples up to "+e+" (released size: "+i+", remaining: "+this.samplesDataSize+")"),s.lastValidSample=e},u.prototype.start=function(){this.sampleProcessingStarted=!0,this.processSamples(!1)},u.prototype.stop=function(){this.sampleProcessingStarted=!1},u.prototype.flush=function(){r.info("ISOFile","Flushing remaining samples"),this.updateSampleLists(),this.processSamples(!0),this.stream.cleanBuffers(),this.stream.logBufferLevel(!0)},u.prototype.seekTrack=function(t,e,i){var s,n,a,o,h=0,d=0;if(0===i.samples.length)return r.info("ISOFile","No sample in track, cannot seek! Using time "+r.getDurationString(0,1)+" and offset: 0"),{offset:0,time:0};for(s=0;s<i.samples.length;s++){if(n=i.samples[s],0===s)d=0,o=n.timescale;else if(n.cts>t*n.timescale){d=s-1;break}e&&n.is_sync&&(h=s)}for(e&&(d=h),t=i.samples[d].cts,i.nextSample=d;i.samples[d].alreadyRead===i.samples[d].size&&i.samples[d+1];)d++;return a=i.samples[d].offset+i.samples[d].alreadyRead,r.info("ISOFile","Seeking to "+(e?"RAP":"")+" sample #"+i.nextSample+" on track "+i.tkhd.track_id+", time "+r.getDurationString(t,o)+" and offset: "+a),{offset:a,time:t/o}},u.prototype.seek=function(t,e){var i,s,n,a=this.moov,o={offset:1/0,time:1/0};if(this.moov){for(n=0;n<a.traks.length;n++)i=a.traks[n],(s=this.seekTrack(t,e,i)).offset<o.offset&&(o.offset=s.offset),s.time<o.time&&(o.time=s.time);return r.info("ISOFile","Seeking at time "+r.getDurationString(o.time,1)+" needs a buffer with a fileStart position of "+o.offset),o.offset===1/0?o={offset:this.nextParsePosition,time:0}:o.offset=this.stream.getEndFilePositionAfter(o.offset),r.info("ISOFile","Adjusted seek position (after checking data already in buffer): "+o.offset),o}throw"Cannot seek: moov not received!"},u.prototype.equal=function(t){for(var e=0;e<this.boxes.length&&e<t.boxes.length;){var i=this.boxes[e],s=t.boxes[e];if(!l.boxEqual(i,s))return!1;e++}return!0},t.ISOFile=u,u.prototype.lastBoxStartPosition=0,u.prototype.parsingMdat=null,u.prototype.nextParsePosition=0,u.prototype.discardMdatData=!1,u.prototype.processIncompleteBox=function(t){var e;return"mdat"===t.type?(e=new l[t.type+"Box"](t.size),this.parsingMdat=e,this.boxes.push(e),this.mdats.push(e),e.start=t.start,e.hdr_size=t.hdr_size,this.stream.addUsedBytes(e.hdr_size),this.lastBoxStartPosition=e.start+e.size,this.stream.seek(e.start+e.size,!1,this.discardMdatData)?(this.parsingMdat=null,!0):(this.moovStartFound?this.nextParsePosition=this.stream.findEndContiguousBuf():this.nextParsePosition=e.start+e.size,!1)):("moov"===t.type&&(this.moovStartFound=!0,0===this.mdats.length&&(this.isProgressive=!0)),!!this.stream.mergeNextBuffer&&this.stream.mergeNextBuffer()?(this.nextParsePosition=this.stream.getEndPosition(),!0):(t.type?this.moovStartFound?this.nextParsePosition=this.stream.getEndPosition():this.nextParsePosition=this.stream.getPosition()+t.size:this.nextParsePosition=this.stream.getEndPosition(),!1))},u.prototype.hasIncompleteMdat=function(){return null!==this.parsingMdat},u.prototype.processIncompleteMdat=function(){var t;return t=this.parsingMdat,this.stream.seek(t.start+t.size,!1,this.discardMdatData)?(r.debug("ISOFile","Found 'mdat' end in buffered data"),this.parsingMdat=null,!0):(this.nextParsePosition=this.stream.findEndContiguousBuf(),!1)},u.prototype.restoreParsePosition=function(){return this.stream.seek(this.lastBoxStartPosition,!0,this.discardMdatData)},u.prototype.saveParsePosition=function(){this.lastBoxStartPosition=this.stream.getPosition()},u.prototype.updateUsedBytes=function(t,e){this.stream.addUsedBytes&&("mdat"===t.type?(this.stream.addUsedBytes(t.hdr_size),this.discardMdatData&&this.stream.addUsedBytes(t.size-t.hdr_size)):this.stream.addUsedBytes(t.size))},u.prototype.add=l.Box.prototype.add,u.prototype.addBox=l.Box.prototype.addBox,u.prototype.init=function(t){var e=t||{};this.add("ftyp").set("major_brand",e.brands&&e.brands[0]||"iso4").set("minor_version",0).set("compatible_brands",e.brands||["iso4"]);var i=this.add("moov");return i.add("mvhd").set("timescale",e.timescale||600).set("rate",e.rate||65536).set("creation_time",0).set("modification_time",0).set("duration",e.duration||0).set("volume",e.width?0:256).set("matrix",[65536,0,0,0,65536,0,0,0,1073741824]).set("next_track_id",1),i.add("mvex"),this},u.prototype.addTrack=function(t){this.moov||this.init(t);var e=t||{};e.width=e.width||320,e.height=e.height||320,e.id=e.id||this.moov.mvhd.next_track_id,e.type=e.type||"avc1";var i=this.moov.add("trak");this.moov.mvhd.next_track_id=e.id+1,i.add("tkhd").set("flags",l.TKHD_FLAG_ENABLED|l.TKHD_FLAG_IN_MOVIE|l.TKHD_FLAG_IN_PREVIEW).set("creation_time",0).set("modification_time",0).set("track_id",e.id).set("duration",e.duration||0).set("layer",e.layer||0).set("alternate_group",0).set("volume",1).set("matrix",[0,0,0,0,0,0,0,0,0]).set("width",e.width).set("height",e.height);var s=i.add("mdia");s.add("mdhd").set("creation_time",0).set("modification_time",0).set("timescale",e.timescale||1).set("duration",e.media_duration||0).set("language",e.language||"und"),s.add("hdlr").set("handler",e.hdlr||"vide").set("name",e.name||"Track created with MP4Box.js"),s.add("elng").set("extended_language",e.language||"fr-FR");var r=s.add("minf");if(void 0!==l[e.type+"SampleEntry"]){var a=new l[e.type+"SampleEntry"];a.data_reference_index=1;var o="";for(var h in l.sampleEntryCodes)for(var d=l.sampleEntryCodes[h],p=0;p<d.length;p++)if(d.indexOf(e.type)>-1){o=h;break}switch(o){case"Visual":if(r.add("vmhd").set("graphicsmode",0).set("opcolor",[0,0,0]),a.set("width",e.width).set("height",e.height).set("horizresolution",72<<16).set("vertresolution",72<<16).set("frame_count",1).set("compressorname",e.type+" Compressor").set("depth",24),e.avcDecoderConfigRecord){var f=new l.avcCBox,u=new n(e.avcDecoderConfigRecord);f.parse(u),a.addBox(f)}break;case"Audio":r.add("smhd").set("balance",e.balance||0),a.set("channel_count",e.channel_count||2).set("samplesize",e.samplesize||16).set("samplerate",e.samplerate||65536);break;case"Hint":r.add("hmhd");break;case"Subtitle":if(r.add("sthd"),"stpp"===e.type)a.set("namespace",e.namespace||"nonamespace").set("schema_location",e.schema_location||"").set("auxiliary_mime_types",e.auxiliary_mime_types||"");break;default:r.add("nmhd")}e.description&&a.addBox(e.description),e.description_boxes&&e.description_boxes.forEach((function(t){a.addBox(t)})),r.add("dinf").add("dref").addEntry((new l["url Box"]).set("flags",1));var c=r.add("stbl");return c.add("stsd").addEntry(a),c.add("stts").set("sample_counts",[]).set("sample_deltas",[]),c.add("stsc").set("first_chunk",[]).set("samples_per_chunk",[]).set("sample_description_index",[]),c.add("stco").set("chunk_offsets",[]),c.add("stsz").set("sample_sizes",[]),this.moov.mvex.add("trex").set("track_id",e.id).set("default_sample_description_index",e.default_sample_description_index||1).set("default_sample_duration",e.default_sample_duration||0).set("default_sample_size",e.default_sample_size||0).set("default_sample_flags",e.default_sample_flags||0),this.buildTrakSampleLists(i),e.id}},l.Box.prototype.computeSize=function(t){var e=t||new a;e.endianness=a.BIG_ENDIAN,this.write(e)},u.prototype.addSample=function(t,e,i){var s=i||{},r={},n=this.getTrackById(t);if(null!==n){r.number=n.samples.length,r.track_id=n.tkhd.track_id,r.timescale=n.mdia.mdhd.timescale,r.description_index=s.sample_description_index?s.sample_description_index-1:0,r.description=n.mdia.minf.stbl.stsd.entries[r.description_index],r.data=e,r.size=e.byteLength,r.alreadyRead=r.size,r.duration=s.duration||1,r.cts=s.cts||0,r.dts=s.dts||0,r.is_sync=s.is_sync||!1,r.is_leading=s.is_leading||0,r.depends_on=s.depends_on||0,r.is_depended_on=s.is_depended_on||0,r.has_redundancy=s.has_redundancy||0,r.degradation_priority=s.degradation_priority||0,r.offset=0,r.subsamples=s.subsamples,n.samples.push(r),n.samples_size+=r.size,n.samples_duration+=r.duration,n.first_dts||(n.first_dts=s.dts),this.processSamples();var a=this.createSingleSampleMoof(r);return this.addBox(a),a.computeSize(),a.trafs[0].truns[0].data_offset=a.size+8,this.add("mdat").data=new Uint8Array(e),r}},u.prototype.createSingleSampleMoof=function(t){var e=0;e=t.is_sync?1<<25:65536;var i=new l.moofBox;i.add("mfhd").set("sequence_number",this.nextMoofNumber),this.nextMoofNumber++;var s=i.add("traf"),r=this.getTrackById(t.track_id);return s.add("tfhd").set("track_id",t.track_id).set("flags",l.TFHD_FLAG_DEFAULT_BASE_IS_MOOF),s.add("tfdt").set("baseMediaDecodeTime",t.dts-r.first_dts),s.add("trun").set("flags",l.TRUN_FLAGS_DATA_OFFSET|l.TRUN_FLAGS_DURATION|l.TRUN_FLAGS_SIZE|l.TRUN_FLAGS_FLAGS|l.TRUN_FLAGS_CTS_OFFSET).set("data_offset",0).set("first_sample_flags",0).set("sample_count",1).set("sample_duration",[t.duration]).set("sample_size",[t.size]).set("sample_flags",[e]).set("sample_composition_time_offset",[t.cts-t.dts]),i},u.prototype.lastMoofIndex=0,u.prototype.samplesDataSize=0,u.prototype.resetTables=function(){var t,e,i,s,r,n;for(this.initial_duration=this.moov.mvhd.duration,this.moov.mvhd.duration=0,t=0;t<this.moov.traks.length;t++){(e=this.moov.traks[t]).tkhd.duration=0,e.mdia.mdhd.duration=0,(e.mdia.minf.stbl.stco||e.mdia.minf.stbl.co64).chunk_offsets=[],(i=e.mdia.minf.stbl.stsc).first_chunk=[],i.samples_per_chunk=[],i.sample_description_index=[],(e.mdia.minf.stbl.stsz||e.mdia.minf.stbl.stz2).sample_sizes=[],(s=e.mdia.minf.stbl.stts).sample_counts=[],s.sample_deltas=[],(r=e.mdia.minf.stbl.ctts)&&(r.sample_counts=[],r.sample_offsets=[]),n=e.mdia.minf.stbl.stss;var a=e.mdia.minf.stbl.boxes.indexOf(n);-1!=a&&(e.mdia.minf.stbl.boxes[a]=null)}},u.initSampleGroups=function(t,e,i,s,r){var n,a,o,h;function d(t,e,i){this.grouping_type=t,this.grouping_type_parameter=e,this.sbgp=i,this.last_sample_in_run=-1,this.entry_index=-1}for(e&&(e.sample_groups_info=[]),t.sample_groups_info||(t.sample_groups_info=[]),a=0;a<i.length;a++){for(h=i[a].grouping_type+"/"+i[a].grouping_type_parameter,o=new d(i[a].grouping_type,i[a].grouping_type_parameter,i[a]),e&&(e.sample_groups_info[h]=o),t.sample_groups_info[h]||(t.sample_groups_info[h]=o),n=0;n<s.length;n++)s[n].grouping_type===i[a].grouping_type&&(o.description=s[n],o.description.used=!0);if(r)for(n=0;n<r.length;n++)r[n].grouping_type===i[a].grouping_type&&(o.fragment_description=r[n],o.fragment_description.used=!0,o.is_fragment=!0)}if(e){if(r)for(a=0;a<r.length;a++)!r[a].used&&r[a].version>=2&&(h=r[a].grouping_type+"/0",(o=new d(r[a].grouping_type,0)).is_fragment=!0,e.sample_groups_info[h]||(e.sample_groups_info[h]=o))}else for(a=0;a<s.length;a++)!s[a].used&&s[a].version>=2&&(h=s[a].grouping_type+"/0",o=new d(s[a].grouping_type,0),t.sample_groups_info[h]||(t.sample_groups_info[h]=o))},u.setSampleGroupProperties=function(t,e,i,s){var r,n;for(r in e.sample_groups=[],s){var a;if(e.sample_groups[r]={},e.sample_groups[r].grouping_type=s[r].grouping_type,e.sample_groups[r].grouping_type_parameter=s[r].grouping_type_parameter,i>=s[r].last_sample_in_run&&(s[r].last_sample_in_run<0&&(s[r].last_sample_in_run=0),s[r].entry_index++,s[r].entry_index<=s[r].sbgp.entries.length-1&&(s[r].last_sample_in_run+=s[r].sbgp.entries[s[r].entry_index].sample_count)),s[r].entry_index<=s[r].sbgp.entries.length-1?e.sample_groups[r].group_description_index=s[r].sbgp.entries[s[r].entry_index].group_description_index:e.sample_groups[r].group_description_index=-1,0!==e.sample_groups[r].group_description_index)a=s[r].fragment_description?s[r].fragment_description:s[r].description,e.sample_groups[r].group_description_index>0?(n=e.sample_groups[r].group_description_index>65535?(e.sample_groups[r].group_description_index>>16)-1:e.sample_groups[r].group_description_index-1,a&&n>=0&&(e.sample_groups[r].description=a.entries[n])):a&&a.version>=2&&a.default_group_description_index>0&&(e.sample_groups[r].description=a.entries[a.default_group_description_index-1])}},u.process_sdtp=function(t,e,i){e&&(t?(e.is_leading=t.is_leading[i],e.depends_on=t.sample_depends_on[i],e.is_depended_on=t.sample_is_depended_on[i],e.has_redundancy=t.sample_has_redundancy[i]):(e.is_leading=0,e.depends_on=0,e.is_depended_on=0,e.has_redundancy=0))},u.prototype.buildSampleLists=function(){var t,e;for(t=0;t<this.moov.traks.length;t++)e=this.moov.traks[t],this.buildTrakSampleLists(e)},u.prototype.buildTrakSampleLists=function(t){var e,i,s,r,n,a,o,h,d,l,p,f,c,m,_,g,y,b,w,v,x,U,S,E;if(t.samples=[],t.samples_duration=0,t.samples_size=0,i=t.mdia.minf.stbl.stco||t.mdia.minf.stbl.co64,s=t.mdia.minf.stbl.stsc,r=t.mdia.minf.stbl.stsz||t.mdia.minf.stbl.stz2,n=t.mdia.minf.stbl.stts,a=t.mdia.minf.stbl.ctts,o=t.mdia.minf.stbl.stss,h=t.mdia.minf.stbl.stsd,d=t.mdia.minf.stbl.subs,f=t.mdia.minf.stbl.stdp,l=t.mdia.minf.stbl.sbgps,p=t.mdia.minf.stbl.sgpds,b=-1,w=-1,v=-1,x=-1,U=0,S=0,E=0,u.initSampleGroups(t,null,l,p),void 0!==r){for(e=0;e<r.sample_sizes.length;e++){var A={};A.number=e,A.track_id=t.tkhd.track_id,A.timescale=t.mdia.mdhd.timescale,A.alreadyRead=0,t.samples[e]=A,A.size=r.sample_sizes[e],t.samples_size+=A.size,0===e?(m=1,c=0,A.chunk_index=m,A.chunk_run_index=c,y=s.samples_per_chunk[c],g=0,_=c+1<s.first_chunk.length?s.first_chunk[c+1]-1:1/0):e<y?(A.chunk_index=m,A.chunk_run_index=c):(m++,A.chunk_index=m,g=0,m<=_||(_=++c+1<s.first_chunk.length?s.first_chunk[c+1]-1:1/0),A.chunk_run_index=c,y+=s.samples_per_chunk[c]),A.description_index=s.sample_description_index[A.chunk_run_index]-1,A.description=h.entries[A.description_index],A.offset=i.chunk_offsets[A.chunk_index-1]+g,g+=A.size,e>b&&(w++,b<0&&(b=0),b+=n.sample_counts[w]),e>0?(t.samples[e-1].duration=n.sample_deltas[w],t.samples_duration+=t.samples[e-1].duration,A.dts=t.samples[e-1].dts+t.samples[e-1].duration):A.dts=0,a?(e>=v&&(x++,v<0&&(v=0),v+=a.sample_counts[x]),A.cts=t.samples[e].dts+a.sample_offsets[x]):A.cts=A.dts,o?(e==o.sample_numbers[U]-1?(A.is_sync=!0,U++):(A.is_sync=!1,A.degradation_priority=0),d&&d.entries[S].sample_delta+E==e+1&&(A.subsamples=d.entries[S].subsamples,E+=d.entries[S].sample_delta,S++)):A.is_sync=!0,u.process_sdtp(t.mdia.minf.stbl.sdtp,A,A.number),A.degradation_priority=f?f.priority[e]:0,d&&d.entries[S].sample_delta+E==e&&(A.subsamples=d.entries[S].subsamples,E+=d.entries[S].sample_delta),(l.length>0||p.length>0)&&u.setSampleGroupProperties(t,A,e,t.sample_groups_info)}e>0&&(t.samples[e-1].duration=Math.max(t.mdia.mdhd.duration-t.samples[e-1].dts,0),t.samples_duration+=t.samples[e-1].duration)}},u.prototype.updateSampleLists=function(){var t,e,i,s,r,n,a,o,h,d,p,f,c,m,_;if(void 0!==this.moov)for(;this.lastMoofIndex<this.moofs.length;)if(h=this.moofs[this.lastMoofIndex],this.lastMoofIndex++,"moof"==h.type)for(d=h,t=0;t<d.trafs.length;t++){for(p=d.trafs[t],f=this.getTrackById(p.tfhd.track_id),c=this.getTrexById(p.tfhd.track_id),s=p.tfhd.flags&l.TFHD_FLAG_SAMPLE_DESC?p.tfhd.default_sample_description_index:c?c.default_sample_description_index:1,r=p.tfhd.flags&l.TFHD_FLAG_SAMPLE_DUR?p.tfhd.default_sample_duration:c?c.default_sample_duration:0,n=p.tfhd.flags&l.TFHD_FLAG_SAMPLE_SIZE?p.tfhd.default_sample_size:c?c.default_sample_size:0,a=p.tfhd.flags&l.TFHD_FLAG_SAMPLE_FLAGS?p.tfhd.default_sample_flags:c?c.default_sample_flags:0,p.sample_number=0,p.sbgps.length>0&&u.initSampleGroups(f,p,p.sbgps,f.mdia.minf.stbl.sgpds,p.sgpds),e=0;e<p.truns.length;e++){var g=p.truns[e];for(i=0;i<g.sample_count;i++){(m={}).moof_number=this.lastMoofIndex,m.number_in_traf=p.sample_number,p.sample_number++,m.number=f.samples.length,p.first_sample_index=f.samples.length,f.samples.push(m),m.track_id=f.tkhd.track_id,m.timescale=f.mdia.mdhd.timescale,m.description_index=s-1,m.description=f.mdia.minf.stbl.stsd.entries[m.description_index],m.size=n,g.flags&l.TRUN_FLAGS_SIZE&&(m.size=g.sample_size[i]),f.samples_size+=m.size,m.duration=r,g.flags&l.TRUN_FLAGS_DURATION&&(m.duration=g.sample_duration[i]),f.samples_duration+=m.duration,f.first_traf_merged||i>0?m.dts=f.samples[f.samples.length-2].dts+f.samples[f.samples.length-2].duration:(p.tfdt?m.dts=p.tfdt.baseMediaDecodeTime:m.dts=0,f.first_traf_merged=!0),m.cts=m.dts,g.flags&l.TRUN_FLAGS_CTS_OFFSET&&(m.cts=m.dts+g.sample_composition_time_offset[i]),_=a,g.flags&l.TRUN_FLAGS_FLAGS?_=g.sample_flags[i]:0===i&&g.flags&l.TRUN_FLAGS_FIRST_FLAG&&(_=g.first_sample_flags),m.is_sync=!(_>>16&1),m.is_leading=_>>26&3,m.depends_on=_>>24&3,m.is_depended_on=_>>22&3,m.has_redundancy=_>>20&3,m.degradation_priority=65535&_;var y=!!(p.tfhd.flags&l.TFHD_FLAG_BASE_DATA_OFFSET),b=!!(p.tfhd.flags&l.TFHD_FLAG_DEFAULT_BASE_IS_MOOF),w=!!(g.flags&l.TRUN_FLAGS_DATA_OFFSET),v=0;v=y?p.tfhd.base_data_offset:b||0===e?d.start:o,m.offset=0===e&&0===i?w?v+g.data_offset:v:o,o=m.offset+m.size,(p.sbgps.length>0||p.sgpds.length>0||f.mdia.minf.stbl.sbgps.length>0||f.mdia.minf.stbl.sgpds.length>0)&&u.setSampleGroupProperties(f,m,m.number_in_traf,p.sample_groups_info)}}if(p.subs){f.has_fragment_subsamples=!0;var x=p.first_sample_index;for(e=0;e<p.subs.entries.length;e++)x+=p.subs.entries[e].sample_delta,(m=f.samples[x-1]).subsamples=p.subs.entries[e].subsamples}}},u.prototype.getSample=function(t,e){var i,s=t.samples[e];if(!this.moov)return null;if(s.data){if(s.alreadyRead==s.size)return s}else s.data=new Uint8Array(s.size),s.alreadyRead=0,this.samplesDataSize+=s.size,r.debug("ISOFile","Allocating sample #"+e+" on track #"+t.tkhd.track_id+" of size "+s.size+" (total: "+this.samplesDataSize+")");for(;;){var n=this.stream.findPosition(!0,s.offset+s.alreadyRead,!1);if(!(n>-1))return null;var o=(i=this.stream.buffers[n]).byteLength-(s.offset+s.alreadyRead-i.fileStart);if(s.size-s.alreadyRead<=o)return r.debug("ISOFile","Getting sample #"+e+" data (alreadyRead: "+s.alreadyRead+" offset: "+(s.offset+s.alreadyRead-i.fileStart)+" read size: "+(s.size-s.alreadyRead)+" full size: "+s.size+")"),a.memcpy(s.data.buffer,s.alreadyRead,i,s.offset+s.alreadyRead-i.fileStart,s.size-s.alreadyRead),i.usedBytes+=s.size-s.alreadyRead,this.stream.logBufferLevel(),s.alreadyRead=s.size,s;if(0===o)return null;r.debug("ISOFile","Getting sample #"+e+" partial data (alreadyRead: "+s.alreadyRead+" offset: "+(s.offset+s.alreadyRead-i.fileStart)+" read size: "+o+" full size: "+s.size+")"),a.memcpy(s.data.buffer,s.alreadyRead,i,s.offset+s.alreadyRead-i.fileStart,o),s.alreadyRead+=o,i.usedBytes+=o,this.stream.logBufferLevel()}},u.prototype.releaseSample=function(t,e){var i=t.samples[e];return i.data?(this.samplesDataSize-=i.size,i.data=null,i.alreadyRead=0,i.size):0},u.prototype.getAllocatedSampleDataSize=function(){return this.samplesDataSize},u.prototype.getCodecs=function(){var t,e="";for(t=0;t<this.moov.traks.length;t++){t>0&&(e+=","),e+=this.moov.traks[t].mdia.minf.stbl.stsd.entries[0].getCodec()}return e},u.prototype.getTrexById=function(t){var e;if(!this.moov||!this.moov.mvex)return null;for(e=0;e<this.moov.mvex.trexs.length;e++){var i=this.moov.mvex.trexs[e];if(i.track_id==t)return i}return null},u.prototype.getTrackById=function(t){if(void 0===this.moov)return null;for(var e=0;e<this.moov.traks.length;e++){var i=this.moov.traks[e];if(i.tkhd.track_id==t)return i}return null},u.prototype.items=[],u.prototype.itemsDataSize=0,u.prototype.flattenItemInfo=function(){var t,e,i,s=this.items,n=this.meta;if(null!=n&&void 0!==n.hdlr&&void 0!==n.iinf){for(t=0;t<n.iinf.item_infos.length;t++)(i={}).id=n.iinf.item_infos[t].item_ID,s[i.id]=i,i.ref_to=[],i.name=n.iinf.item_infos[t].item_name,n.iinf.item_infos[t].protection_index>0&&(i.protection=n.ipro.protections[n.iinf.item_infos[t].protection_index-1]),n.iinf.item_infos[t].item_type?i.type=n.iinf.item_infos[t].item_type:i.type="mime",i.content_type=n.iinf.item_infos[t].content_type,i.content_encoding=n.iinf.item_infos[t].content_encoding;if(n.iloc)for(t=0;t<n.iloc.items.length;t++){var a=n.iloc.items[t];switch(i=s[a.item_ID],0!==a.data_reference_index&&(r.warn("Item storage with reference to other files: not supported"),i.source=n.dinf.boxes[a.data_reference_index-1]),a.construction_method){case 0:break;case 1:case 2:r.warn("Item storage with construction_method : not supported")}for(i.extents=[],i.size=0,e=0;e<a.extents.length;e++)i.extents[e]={},i.extents[e].offset=a.extents[e].extent_offset+a.base_offset,i.extents[e].length=a.extents[e].extent_length,i.extents[e].alreadyRead=0,i.size+=i.extents[e].length}if(n.pitm&&(s[n.pitm.item_id].primary=!0),n.iref)for(t=0;t<n.iref.references.length;t++){var o=n.iref.references[t];for(e=0;e<o.references.length;e++)s[o.from_item_ID].ref_to.push({type:o.type,id:o.references[e]})}if(n.iprp)for(var h=0;h<n.iprp.ipmas.length;h++){var d=n.iprp.ipmas[h];for(t=0;t<d.associations.length;t++){var l=d.associations[t];for(void 0===(i=s[l.id]).properties&&(i.properties={},i.properties.boxes=[]),e=0;e<l.props.length;e++){var p=l.props[e];if(p.property_index>0&&p.property_index-1<n.iprp.ipco.boxes.length){var f=n.iprp.ipco.boxes[p.property_index-1];i.properties[f.type]=f,i.properties.boxes.push(f)}}}}}},u.prototype.getItem=function(t){var e,i;if(!this.meta)return null;if(!(i=this.items[t]).data&&i.size)i.data=new Uint8Array(i.size),i.alreadyRead=0,this.itemsDataSize+=i.size,r.debug("ISOFile","Allocating item #"+t+" of size "+i.size+" (total: "+this.itemsDataSize+")");else if(i.alreadyRead===i.size)return i;for(var s=0;s<i.extents.length;s++){var n=i.extents[s];if(n.alreadyRead!==n.length){var o=this.stream.findPosition(!0,n.offset+n.alreadyRead,!1);if(!(o>-1))return null;var h=(e=this.stream.buffers[o]).byteLength-(n.offset+n.alreadyRead-e.fileStart);if(!(n.length-n.alreadyRead<=h))return r.debug("ISOFile","Getting item #"+t+" extent #"+s+" partial data (alreadyRead: "+n.alreadyRead+" offset: "+(n.offset+n.alreadyRead-e.fileStart)+" read size: "+h+" full extent size: "+n.length+" full item size: "+i.size+")"),a.memcpy(i.data.buffer,i.alreadyRead,e,n.offset+n.alreadyRead-e.fileStart,h),n.alreadyRead+=h,i.alreadyRead+=h,e.usedBytes+=h,this.stream.logBufferLevel(),null;r.debug("ISOFile","Getting item #"+t+" extent #"+s+" data (alreadyRead: "+n.alreadyRead+" offset: "+(n.offset+n.alreadyRead-e.fileStart)+" read size: "+(n.length-n.alreadyRead)+" full extent size: "+n.length+" full item size: "+i.size+")"),a.memcpy(i.data.buffer,i.alreadyRead,e,n.offset+n.alreadyRead-e.fileStart,n.length-n.alreadyRead),e.usedBytes+=n.length-n.alreadyRead,this.stream.logBufferLevel(),i.alreadyRead+=n.length-n.alreadyRead,n.alreadyRead=n.length}}return i.alreadyRead===i.size?i:null},u.prototype.releaseItem=function(t){var e=this.items[t];if(e.data){this.itemsDataSize-=e.size,e.data=null,e.alreadyRead=0;for(var i=0;i<e.extents.length;i++){e.extents[i].alreadyRead=0}return e.size}return 0},u.prototype.processItems=function(t){for(var e in this.items){var i=this.items[e];this.getItem(i.id),t&&!i.sent&&(t(i),i.sent=!0,i.data=null)}},u.prototype.hasItem=function(t){for(var e in this.items){var i=this.items[e];if(i.name===t)return i.id}return-1},u.prototype.getMetaHandler=function(){return this.meta?this.meta.hdlr.handler:null},u.prototype.getPrimaryItem=function(){return this.meta&&this.meta.pitm?this.getItem(this.meta.pitm.item_id):null},u.prototype.itemToFragmentedTrackFile=function(t){var e=t||{},i=null;if(null==(i=e.itemId?this.getItem(e.itemId):this.getPrimaryItem()))return null;var s=new u;s.discardMdatData=!1;var r={type:i.type,description_boxes:i.properties.boxes};i.properties.ispe&&(r.width=i.properties.ispe.image_width,r.height=i.properties.ispe.image_height);var n=s.addTrack(r);return n?(s.addSample(n,i.data),s):null},u.prototype.write=function(t){for(var e=0;e<this.boxes.length;e++)this.boxes[e].write(t)},u.prototype.createFragment=function(t,e,i){var s=this.getTrackById(t),n=this.getSample(s,e);if(null==n)return n=s.samples[e],this.nextSeekPosition?this.nextSeekPosition=Math.min(n.offset+n.alreadyRead,this.nextSeekPosition):this.nextSeekPosition=s.samples[e].offset+n.alreadyRead,null;var o=i||new a;o.endianness=a.BIG_ENDIAN;var h=this.createSingleSampleMoof(n);h.write(o),h.trafs[0].truns[0].data_offset=h.size+8,r.debug("MP4Box","Adjusting data_offset with new value "+h.trafs[0].truns[0].data_offset),o.adjustUint32(h.trafs[0].truns[0].data_offset_position,h.trafs[0].truns[0].data_offset);var d=new l.mdatBox;return d.data=n.data,d.write(o),o},u.writeInitializationSegment=function(t,e,i,s){var n;r.debug("ISOFile","Generating initialization segment");var o=new a;o.endianness=a.BIG_ENDIAN,t.write(o);var h=e.add("mvex");for(i&&h.add("mehd").set("fragment_duration",i),n=0;n<e.traks.length;n++)h.add("trex").set("track_id",e.traks[n].tkhd.track_id).set("default_sample_description_index",1).set("default_sample_duration",s).set("default_sample_size",0).set("default_sample_flags",65536);return e.write(o),o.buffer},u.prototype.save=function(t){var e=new a;e.endianness=a.BIG_ENDIAN,this.write(e),e.save(t)},u.prototype.getBuffer=function(){var t=new a;return t.endianness=a.BIG_ENDIAN,this.write(t),t.buffer},u.prototype.initializeSegmentation=function(){var t,e,i,s;for(null===this.onSegment&&r.warn("MP4Box","No segmentation callback set!"),this.isFragmentationInitialized||(this.isFragmentationInitialized=!0,this.nextMoofNumber=0,this.resetTables()),e=[],t=0;t<this.fragmentedTracks.length;t++){var n=new l.moovBox;n.mvhd=this.moov.mvhd,n.boxes.push(n.mvhd),i=this.getTrackById(this.fragmentedTracks[t].id),n.boxes.push(i),n.traks.push(i),(s={}).id=i.tkhd.track_id,s.user=this.fragmentedTracks[t].user,s.buffer=u.writeInitializationSegment(this.ftyp,n,this.moov.mvex&&this.moov.mvex.mehd?this.moov.mvex.mehd.fragment_duration:void 0,this.moov.traks[t].samples.length>0?this.moov.traks[t].samples[0].duration:0),e.push(s)}return e},l.Box.prototype.printHeader=function(t){this.size+=8,this.size>o&&(this.size+=8),"uuid"===this.type&&(this.size+=16),t.log(t.indent+"size:"+this.size),t.log(t.indent+"type:"+this.type)},l.FullBox.prototype.printHeader=function(t){this.size+=4,l.Box.prototype.printHeader.call(this,t),t.log(t.indent+"version:"+this.version),t.log(t.indent+"flags:"+this.flags)},l.Box.prototype.print=function(t){this.printHeader(t)},l.ContainerBox.prototype.print=function(t){this.printHeader(t);for(var e=0;e<this.boxes.length;e++)if(this.boxes[e]){var i=t.indent;t.indent+=" ",this.boxes[e].print(t),t.indent=i}},u.prototype.print=function(t){t.indent="";for(var e=0;e<this.boxes.length;e++)this.boxes[e]&&this.boxes[e].print(t)},l.mvhdBox.prototype.print=function(t){l.FullBox.prototype.printHeader.call(this,t),t.log(t.indent+"creation_time: "+this.creation_time),t.log(t.indent+"modification_time: "+this.modification_time),t.log(t.indent+"timescale: "+this.timescale),t.log(t.indent+"duration: "+this.duration),t.log(t.indent+"rate: "+this.rate),t.log(t.indent+"volume: "+(this.volume>>8)),t.log(t.indent+"matrix: "+this.matrix.join(", ")),t.log(t.indent+"next_track_id: "+this.next_track_id)},l.tkhdBox.prototype.print=function(t){l.FullBox.prototype.printHeader.call(this,t),t.log(t.indent+"creation_time: "+this.creation_time),t.log(t.indent+"modification_time: "+this.modification_time),t.log(t.indent+"track_id: "+this.track_id),t.log(t.indent+"duration: "+this.duration),t.log(t.indent+"volume: "+(this.volume>>8)),t.log(t.indent+"matrix: "+this.matrix.join(", ")),t.log(t.indent+"layer: "+this.layer),t.log(t.indent+"alternate_group: "+this.alternate_group),t.log(t.indent+"width: "+this.width),t.log(t.indent+"height: "+this.height)};var c={createFile:function(t,e){var i=void 0===t||t,s=new u(e);return s.discardMdatData=!i,s}};t.createFile=c.createFile}(M);class G{constructor(t){this.data=new Uint8Array(t),this.idx=0,this.size=t}getData(){if(this.idx!==this.size)throw new Error("Mismatch between size reserved and sized used");return this.data.slice(0,this.idx)}writeUint8(t){this.data.set([t],this.idx),this.idx+=1}writeUint16(t){const e=new Uint16Array(1);e[0]=t;const i=new Uint8Array(e.buffer);this.data.set([i[1],i[0]],this.idx),this.idx+=2}writeUint8Array(t){this.data.set(t,this.idx),this.idx+=t.length}}const H=(t,e,{VideoDecoder:i,EncodedVideoChunk:s,debug:r})=>new Promise(((n,a)=>{r&&console.info("Decoding video from",t);try{const o=M.createFile();let h;const d=new i({output:t=>{createImageBitmap(t,{resizeQuality:"low"}).then((i=>{e(i),t.close(),d.decodeQueueSize<=0&&setTimeout((()=>{"closed"!==d.state&&(d.close(),n())}),500)}))},error:t=>{console.error(t),a(t)}});o.onReady=t=>{if(t&&t.videoTracks&&t.videoTracks[0]){[{codec:h}]=t.videoTracks,r&&console.info("Video with codec:",h);const e=(t=>{let e,i=7;for(e=0;e<t.SPS.length;e+=1)i+=2+t.SPS[e].length;for(e=0;e<t.PPS.length;e+=1)i+=2+t.PPS[e].length;const s=new G(i);for(s.writeUint8(t.configurationVersion),s.writeUint8(t.AVCProfileIndication),s.writeUint8(t.profile_compatibility),s.writeUint8(t.AVCLevelIndication),s.writeUint8(t.lengthSizeMinusOne+252),s.writeUint8(t.nb_SPS_nalus+224),e=0;e<t.SPS.length;e+=1)s.writeUint16(t.SPS[e].length),s.writeUint8Array(t.SPS[e].nalu);for(s.writeUint8(t.nb_PPS_nalus),e=0;e<t.PPS.length;e+=1)s.writeUint16(t.PPS[e].length),s.writeUint8Array(t.PPS[e].nalu);return s.getData()})(o.moov.traks[0].mdia.minf.stbl.stsd.entries[0].avcC);d.configure({codec:h,description:e}),o.setExtractionOptions(t.videoTracks[0].id),o.start()}else a(new Error("URL provided is not a valid mp4 video file."))},o.onSamples=(t,e,i)=>{for(let t=0;t<i.length;t+=1){const e=i[t],r=e.is_sync?"key":"delta",n=new s({type:r,timestamp:e.cts,duration:e.duration,data:e.data});d.decode(n)}},fetch(t).then((t=>{const e=t.body.getReader();let i=0;return e.read().then((function t({done:s,value:r}){if(s)return o.flush(),null;const n=r.buffer;return n.fileStart=i,i+=n.byteLength,o.appendBuffer(n),e.read().then(t)}))}))}catch(t){a(t)}}));function V(t){let i,s,n,a,o=!0,h=!1,u=[{tabindex:"0"},{preload:"metadata"},{autobuffer:""},{playsInline:!0},{"webkit-playsinline":""},t[12]],m={};for(let t=0;t<u.length;t+=1)m=e(m,u[t]);function y(){cancelAnimationFrame(s),i.paused||(s=d(y),h=!0),t[28].call(i)}return{c(){i=f("video"),_(i,m),g(i,"cover",t[0])},m(e,s){l(e,i,s),t[25](i),i.muted=t[8],isNaN(t[7])||(i.playbackRate=t[7]),n||(a=[c(i,"volumechange",t[26]),c(i,"play",t[27]),c(i,"pause",t[27]),c(i,"timeupdate",y),c(i,"ratechange",t[29])],n=!0)},p(t,e){_(i,m=function(t,e){const i={},s={},r={$$scope:1};let n=t.length;for(;n--;){const a=t[n],o=e[n];if(o){for(const t in a)t in o||(s[t]=1);for(const t in o)r[t]||(i[t]=o[t],r[t]=1);t[n]=o}else for(const t in a)r[t]=1}for(const t in s)t in i||(i[t]=void 0);return i}(u,[{tabindex:"0"},{preload:"metadata"},{autobuffer:""},{playsInline:!0},{"webkit-playsinline":""},4096&e[0]&&t[12]])),256&e[0]&&(i.muted=t[8]),64&e[0]&&o!==(o=t[6])&&i[o?"pause":"play"](),!h&&32&e[0]&&!isNaN(t[5])&&(i.currentTime=t[5]),h=!1,128&e[0]&&!isNaN(t[7])&&(i.playbackRate=t[7]),g(i,"cover",t[0])},d(e){e&&p(i),t[25](null),n=!1,r(a)}}}function $(t){let e;return{c(){e=f("canvas"),g(e,"cover",t[0])},m(i,s){l(i,e,s),t[24](e)},p(t,i){1&i[0]&&g(e,"cover",t[0])},d(i){i&&p(e),t[24](null)}}}function Y(e){let i,s,n,a,o=!1,h=()=>{o=!1};function d(t,e){return t[1]&&t[4]?$:V}A(e[22]),A(e[23]);let f=d(e),m=f(e);return{c(){m.c(),s=u(),this.c=t},m(t,r){m.m(t,r),l(t,s,r),n||(a=[c(window,"scroll",e[11]),c(window,"resize",e[22]),c(window,"scroll",(()=>{o=!0,clearTimeout(i),i=setTimeout(h,100),e[23]()}))],n=!0)},p(t,e){1024&e[0]&&!o&&(o=!0,clearTimeout(i),scrollTo(window.pageXOffset,t[10]),i=setTimeout(h,100)),f===(f=d(t))&&m?m.p(t,e):(m.d(1),m=f(t),m&&(m.c(),m.m(s.parentNode,s)))},i:t,o:t,d(t){m.d(t),t&&p(s),n=!1,r(a)}}}function j(t,i,s){let r,n,a,{transitionspeed:h=8}=i,{cover:d=!0}=i,{sticky:l=!0}=i,{full:p=!0}=i,{usewebcodecs:f=!1}=i,{src:u}=i,{debug:c}=i,{startheight:m=0}=i,{endheight:_=0}=i,g=0,y=0,b=0,w=!1,x=0,U=!0,S=1,E=!0,A=0,B=0;const z=[],T=t=>{z.push(t)},k=(new O).getEngine();f&&((t,e,i)=>"function"==typeof VideoDecoder&&"function"==typeof EncodedVideoChunk?(i&&console.info("WebCodecs is natively supported, using native version..."),H(t,e,{VideoDecoder:VideoDecoder,EncodedVideoChunk:EncodedVideoChunk,debug:i})):"object"==typeof LibAVWebCodecs&&"function"==typeof LibAVWebCodecs.load?(i&&console.info("WebCodecs is not natively supported, but LibAVWebCodecs polyfill detected. Using polyfill..."),("object"==typeof LibAV?LibAV.LibAV():Promise.resolve()).then(LibAVWebCodecs.load).then((()=>H(t,e,{...LibAVWebCodecs,debug:i})))):Promise.reject(new Error("WebCodecs is not available, please try a different browser or supply the LibAVWebCodecs polyfill.")))(u,T,c).then((()=>{const{duration:t}=n;s(4,g=z.length),y=g/t,console.log(g),c&&console.info("Received",g,"frames");const e=setInterval((()=>{if(!a)return;clearInterval(e);const t=z[Math.floor(x*y)];t&&(s(3,a.width=t.width,a),s(3,a.height=t.height,a),r.drawImage(t,0,0,t.width,t.height))}),10)}));const I=()=>{if(Math.abs(x-b)<.1)return s(6,U=!0),void(w=!1);const t="WebKit"===k.name;if(a){s(5,x+=(b-x)/(64/h));const t=z[Math.floor(x*y)];t&&(s(3,a.width=t.width,a),s(3,a.height=t.height,a),r.drawImage(t,0,0,t.width,t.height))}else if(t||b-x<0){s(6,U=!0);s(5,x+=(b-x)/(64/h))}else s(7,S=Math.max(Math.min(4*(b-x),h,16),1)),s(6,U=!1);"function"==typeof requestAnimationFrame&&requestAnimationFrame(I)};function C(t){b=Math.max(Math.min(t,1),0)*(g/y||n.duration),w||(s(6,U=!1),w=!0,I())}return t.$$set=t=>{s(12,i=e(e({},i),o(t))),"transitionspeed"in t&&s(13,h=t.transitionspeed),"cover"in t&&s(0,d=t.cover),"sticky"in t&&s(14,l=t.sticky),"full"in t&&s(15,p=t.full),"usewebcodecs"in t&&s(1,f=t.usewebcodecs),"src"in t&&s(16,u=t.src),"debug"in t&&s(17,c=t.debug),"startheight"in t&&s(18,m=t.startheight),"endheight"in t&&s(19,_=t.endheight)},t.$$.update=()=>{if(8&t.$$.dirty[0]&&(r=a&&a.getContext("2d")),49164&t.$$.dirty[0]&&(n||a)){const t=n&&n.parentNode.host||a&&a.parentNode.host;t&&(l&&(t.style.display="block",t.style.position="sticky",t.style.top="0"),p&&(t.style.width="100%",t.style.height="100vh",t.style.overflow="hidden"))}},i=o(i),[d,f,n,a,g,x,U,S,E,A,B,()=>{console.log(f,g);const t=parseFloat(m),e=parseFloat(_);if(B+A>t){const i=(B-t+A)/(e-t+A)*2;console.log(i),C(i)}},i,h,l,p,u,c,m,_,function(t){b=Math.max(Math.min(t,n.duration),0),w||(s(6,U=!1),w=!0,I())},C,function(){s(9,A=window.innerHeight)},function(){s(10,B=window.pageYOffset)},function(t){v[t?"unshift":"push"]((()=>{a=t,s(3,a)}))},function(t){v[t?"unshift":"push"]((()=>{n=t,s(2,n)}))},function(){E=this.muted,s(8,E)},function(){U=this.paused,s(6,U)},function(){x=this.currentTime,s(5,x)},function(){S=this.playbackRate,s(7,S)}]}class q extends P{constructor(t){super(),this.shadowRoot.innerHTML="<style>video{display:block;position:sticky;object-fit:cover}.cover{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);min-width:101%;min-height:101%;width:auto;height:100vh}</style>",F(this,{target:this.shadowRoot,props:y(this.attributes),customElement:!0},j,Y,a,{transitionspeed:13,cover:0,sticky:14,full:15,usewebcodecs:1,src:16,debug:17,startheight:18,endheight:19,setCurrentTime:20,setCurrentTimePercent:21},null,[-1,-1]),t&&(t.target&&l(t.target,this,t.anchor),t.props&&(this.$set(t.props),T()))}static get observedAttributes(){return["transitionspeed","cover","sticky","full","usewebcodecs","src","debug","startheight","endheight","setCurrentTime","setCurrentTimePercent"]}get transitionspeed(){return this.$$.ctx[13]}set transitionspeed(t){this.$$set({transitionspeed:t}),T()}get cover(){return this.$$.ctx[0]}set cover(t){this.$$set({cover:t}),T()}get sticky(){return this.$$.ctx[14]}set sticky(t){this.$$set({sticky:t}),T()}get full(){return this.$$.ctx[15]}set full(t){this.$$set({full:t}),T()}get usewebcodecs(){return this.$$.ctx[1]}set usewebcodecs(t){this.$$set({usewebcodecs:t}),T()}get src(){return this.$$.ctx[16]}set src(t){this.$$set({src:t}),T()}get debug(){return this.$$.ctx[17]}set debug(t){this.$$set({debug:t}),T()}get startheight(){return this.$$.ctx[18]}set startheight(t){this.$$set({startheight:t}),T()}get endheight(){return this.$$.ctx[19]}set endheight(t){this.$$set({endheight:t}),T()}get setCurrentTime(){return this.$$.ctx[20]}get setCurrentTimePercent(){return this.$$.ctx[21]}}customElements.define("scrolly-video",q)}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function () {
+    'use strict';
+
+    function noop() { }
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function exclude_internal_props(props) {
+        const result = {};
+        for (const k in props)
+            if (k[0] !== '$')
+                result[k] = props[k];
+        return result;
+    }
+
+    const is_client = typeof window !== 'undefined';
+    let raf = is_client ? cb => requestAnimationFrame(cb) : noop;
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function set_attributes(node, attributes) {
+        // @ts-ignore
+        const descriptors = Object.getOwnPropertyDescriptors(node.__proto__);
+        for (const key in attributes) {
+            if (attributes[key] == null) {
+                node.removeAttribute(key);
+            }
+            else if (key === 'style') {
+                node.style.cssText = attributes[key];
+            }
+            else if (key === '__value') {
+                node.value = node[key] = attributes[key];
+            }
+            else if (descriptors[key] && descriptors[key].set) {
+                node[key] = attributes[key];
+            }
+            else {
+                attr(node, key, attributes[key]);
+            }
+        }
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, cancelable, detail);
+        return e;
+    }
+    function attribute_to_object(attributes) {
+        const result = {};
+        for (const attribute of attributes) {
+            result[attribute.name] = attribute.value;
+        }
+        return result;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (flushidx < dirty_components.length) {
+                const component = dirty_components[flushidx];
+                flushidx++;
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+
+    function get_spread_update(levels, updates) {
+        const update = {};
+        const to_null_out = {};
+        const accounted_for = { $$scope: 1 };
+        let i = levels.length;
+        while (i--) {
+            const o = levels[i];
+            const n = updates[i];
+            if (n) {
+                for (const key in o) {
+                    if (!(key in n))
+                        to_null_out[key] = 1;
+                }
+                for (const key in n) {
+                    if (!accounted_for[key]) {
+                        update[key] = n[key];
+                        accounted_for[key] = 1;
+                    }
+                }
+                levels[i] = n;
+            }
+            else {
+                for (const key in o) {
+                    accounted_for[key] = 1;
+                }
+            }
+        }
+        for (const key in to_null_out) {
+            if (!(key in update))
+                update[key] = undefined;
+        }
+        return update;
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    let SvelteElement;
+    if (typeof HTMLElement === 'function') {
+        SvelteElement = class extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+            connectedCallback() {
+                const { on_mount } = this.$$;
+                this.$$.on_disconnect = on_mount.map(run).filter(is_function);
+                // @ts-ignore todo: improve typings
+                for (const key in this.$$.slotted) {
+                    // @ts-ignore todo: improve typings
+                    this.appendChild(this.$$.slotted[key]);
+                }
+            }
+            attributeChangedCallback(attr, _oldValue, newValue) {
+                this[attr] = newValue;
+            }
+            disconnectedCallback() {
+                run_all(this.$$.on_disconnect);
+            }
+            $destroy() {
+                destroy_component(this, 1);
+                this.$destroy = noop;
+            }
+            $on(type, callback) {
+                // TODO should this delegate to addEventListener?
+                const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+                callbacks.push(callback);
+                return () => {
+                    const index = callbacks.indexOf(callback);
+                    if (index !== -1)
+                        callbacks.splice(index, 1);
+                };
+            }
+            $set($$props) {
+                if (this.$$set && !is_empty($$props)) {
+                    this.$$.skip_bound = true;
+                    this.$$set($$props);
+                    this.$$.skip_bound = false;
+                }
+            }
+        };
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.49.0' }, detail), { bubbles: true }));
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    var uaParser = {exports: {}};
+
+    (function (module, exports) {
+    /////////////////////////////////////////////////////////////////////////////////
+    /* UAParser.js v1.0.2
+       Copyright © 2012-2021 Faisal Salman <f@faisalman.com>
+       MIT License *//*
+       Detect Browser, Engine, OS, CPU, and Device type/model from User-Agent data.
+       Supports browser & node.js environment. 
+       Demo   : https://faisalman.github.io/ua-parser-js
+       Source : https://github.com/faisalman/ua-parser-js */
+    /////////////////////////////////////////////////////////////////////////////////
+
+    (function (window, undefined$1) {
+
+        //////////////
+        // Constants
+        /////////////
+
+
+        var LIBVERSION  = '1.0.2',
+            EMPTY       = '',
+            UNKNOWN     = '?',
+            FUNC_TYPE   = 'function',
+            UNDEF_TYPE  = 'undefined',
+            OBJ_TYPE    = 'object',
+            STR_TYPE    = 'string',
+            MAJOR       = 'major',
+            MODEL       = 'model',
+            NAME        = 'name',
+            TYPE        = 'type',
+            VENDOR      = 'vendor',
+            VERSION     = 'version',
+            ARCHITECTURE= 'architecture',
+            CONSOLE     = 'console',
+            MOBILE      = 'mobile',
+            TABLET      = 'tablet',
+            SMARTTV     = 'smarttv',
+            WEARABLE    = 'wearable',
+            EMBEDDED    = 'embedded',
+            UA_MAX_LENGTH = 255;
+
+        var AMAZON  = 'Amazon',
+            APPLE   = 'Apple',
+            ASUS    = 'ASUS',
+            BLACKBERRY = 'BlackBerry',
+            BROWSER = 'Browser',
+            CHROME  = 'Chrome',
+            EDGE    = 'Edge',
+            FIREFOX = 'Firefox',
+            GOOGLE  = 'Google',
+            HUAWEI  = 'Huawei',
+            LG      = 'LG',
+            MICROSOFT = 'Microsoft',
+            MOTOROLA  = 'Motorola',
+            OPERA   = 'Opera',
+            SAMSUNG = 'Samsung',
+            SONY    = 'Sony',
+            XIAOMI  = 'Xiaomi',
+            ZEBRA   = 'Zebra',
+            FACEBOOK   = 'Facebook';
+
+        ///////////
+        // Helper
+        //////////
+
+        var extend = function (regexes, extensions) {
+                var mergedRegexes = {};
+                for (var i in regexes) {
+                    if (extensions[i] && extensions[i].length % 2 === 0) {
+                        mergedRegexes[i] = extensions[i].concat(regexes[i]);
+                    } else {
+                        mergedRegexes[i] = regexes[i];
+                    }
+                }
+                return mergedRegexes;
+            },
+            enumerize = function (arr) {
+                var enums = {};
+                for (var i=0; i<arr.length; i++) {
+                    enums[arr[i].toUpperCase()] = arr[i];
+                }
+                return enums;
+            },
+            has = function (str1, str2) {
+                return typeof str1 === STR_TYPE ? lowerize(str2).indexOf(lowerize(str1)) !== -1 : false;
+            },
+            lowerize = function (str) {
+                return str.toLowerCase();
+            },
+            majorize = function (version) {
+                return typeof(version) === STR_TYPE ? version.replace(/[^\d\.]/g, EMPTY).split('.')[0] : undefined$1;
+            },
+            trim = function (str, len) {
+                if (typeof(str) === STR_TYPE) {
+                    str = str.replace(/^\s\s*/, EMPTY).replace(/\s\s*$/, EMPTY);
+                    return typeof(len) === UNDEF_TYPE ? str : str.substring(0, UA_MAX_LENGTH);
+                }
+        };
+
+        ///////////////
+        // Map helper
+        //////////////
+
+        var rgxMapper = function (ua, arrays) {
+
+                var i = 0, j, k, p, q, matches, match;
+
+                // loop through all regexes maps
+                while (i < arrays.length && !matches) {
+
+                    var regex = arrays[i],       // even sequence (0,2,4,..)
+                        props = arrays[i + 1];   // odd sequence (1,3,5,..)
+                    j = k = 0;
+
+                    // try matching uastring with regexes
+                    while (j < regex.length && !matches) {
+
+                        matches = regex[j++].exec(ua);
+
+                        if (!!matches) {
+                            for (p = 0; p < props.length; p++) {
+                                match = matches[++k];
+                                q = props[p];
+                                // check if given property is actually array
+                                if (typeof q === OBJ_TYPE && q.length > 0) {
+                                    if (q.length === 2) {
+                                        if (typeof q[1] == FUNC_TYPE) {
+                                            // assign modified match
+                                            this[q[0]] = q[1].call(this, match);
+                                        } else {
+                                            // assign given value, ignore regex match
+                                            this[q[0]] = q[1];
+                                        }
+                                    } else if (q.length === 3) {
+                                        // check whether function or regex
+                                        if (typeof q[1] === FUNC_TYPE && !(q[1].exec && q[1].test)) {
+                                            // call function (usually string mapper)
+                                            this[q[0]] = match ? q[1].call(this, match, q[2]) : undefined$1;
+                                        } else {
+                                            // sanitize match using given regex
+                                            this[q[0]] = match ? match.replace(q[1], q[2]) : undefined$1;
+                                        }
+                                    } else if (q.length === 4) {
+                                            this[q[0]] = match ? q[3].call(this, match.replace(q[1], q[2])) : undefined$1;
+                                    }
+                                } else {
+                                    this[q] = match ? match : undefined$1;
+                                }
+                            }
+                        }
+                    }
+                    i += 2;
+                }
+            },
+
+            strMapper = function (str, map) {
+
+                for (var i in map) {
+                    // check if current value is array
+                    if (typeof map[i] === OBJ_TYPE && map[i].length > 0) {
+                        for (var j = 0; j < map[i].length; j++) {
+                            if (has(map[i][j], str)) {
+                                return (i === UNKNOWN) ? undefined$1 : i;
+                            }
+                        }
+                    } else if (has(map[i], str)) {
+                        return (i === UNKNOWN) ? undefined$1 : i;
+                    }
+                }
+                return str;
+        };
+
+        ///////////////
+        // String map
+        //////////////
+
+        // Safari < 3.0
+        var oldSafariMap = {
+                '1.0'   : '/8',
+                '1.2'   : '/1',
+                '1.3'   : '/3',
+                '2.0'   : '/412',
+                '2.0.2' : '/416',
+                '2.0.3' : '/417',
+                '2.0.4' : '/419',
+                '?'     : '/'
+            },
+            windowsVersionMap = {
+                'ME'        : '4.90',
+                'NT 3.11'   : 'NT3.51',
+                'NT 4.0'    : 'NT4.0',
+                '2000'      : 'NT 5.0',
+                'XP'        : ['NT 5.1', 'NT 5.2'],
+                'Vista'     : 'NT 6.0',
+                '7'         : 'NT 6.1',
+                '8'         : 'NT 6.2',
+                '8.1'       : 'NT 6.3',
+                '10'        : ['NT 6.4', 'NT 10.0'],
+                'RT'        : 'ARM'
+        };
+
+        //////////////
+        // Regex map
+        /////////////
+
+        var regexes = {
+
+            browser : [[
+
+                /\b(?:crmo|crios)\/([\w\.]+)/i                                      // Chrome for Android/iOS
+                ], [VERSION, [NAME, 'Chrome']], [
+                /edg(?:e|ios|a)?\/([\w\.]+)/i                                       // Microsoft Edge
+                ], [VERSION, [NAME, 'Edge']], [
+
+                // Presto based
+                /(opera mini)\/([-\w\.]+)/i,                                        // Opera Mini
+                /(opera [mobiletab]{3,6})\b.+version\/([-\w\.]+)/i,                 // Opera Mobi/Tablet
+                /(opera)(?:.+version\/|[\/ ]+)([\w\.]+)/i                           // Opera
+                ], [NAME, VERSION], [
+                /opios[\/ ]+([\w\.]+)/i                                             // Opera mini on iphone >= 8.0
+                ], [VERSION, [NAME, OPERA+' Mini']], [
+                /\bopr\/([\w\.]+)/i                                                 // Opera Webkit
+                ], [VERSION, [NAME, OPERA]], [
+
+                // Mixed
+                /(kindle)\/([\w\.]+)/i,                                             // Kindle
+                /(lunascape|maxthon|netfront|jasmine|blazer)[\/ ]?([\w\.]*)/i,      // Lunascape/Maxthon/Netfront/Jasmine/Blazer
+                // Trident based
+                /(avant |iemobile|slim)(?:browser)?[\/ ]?([\w\.]*)/i,               // Avant/IEMobile/SlimBrowser
+                /(ba?idubrowser)[\/ ]?([\w\.]+)/i,                                  // Baidu Browser
+                /(?:ms|\()(ie) ([\w\.]+)/i,                                         // Internet Explorer
+
+                // Webkit/KHTML based                                               // Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron/Iridium/PhantomJS/Bowser/QupZilla/Falkon
+                /(flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon|rekonq|puffin|brave|whale|qqbrowserlite|qq)\/([-\w\.]+)/i,
+                                                                                    // Rekonq/Puffin/Brave/Whale/QQBrowserLite/QQ, aka ShouQ
+                /(weibo)__([\d\.]+)/i                                               // Weibo
+                ], [NAME, VERSION], [
+                /(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i                 // UCBrowser
+                ], [VERSION, [NAME, 'UC'+BROWSER]], [
+                /\bqbcore\/([\w\.]+)/i                                              // WeChat Desktop for Windows Built-in Browser
+                ], [VERSION, [NAME, 'WeChat(Win) Desktop']], [
+                /micromessenger\/([\w\.]+)/i                                        // WeChat
+                ], [VERSION, [NAME, 'WeChat']], [
+                /konqueror\/([\w\.]+)/i                                             // Konqueror
+                ], [VERSION, [NAME, 'Konqueror']], [
+                /trident.+rv[: ]([\w\.]{1,9})\b.+like gecko/i                       // IE11
+                ], [VERSION, [NAME, 'IE']], [
+                /yabrowser\/([\w\.]+)/i                                             // Yandex
+                ], [VERSION, [NAME, 'Yandex']], [
+                /(avast|avg)\/([\w\.]+)/i                                           // Avast/AVG Secure Browser
+                ], [[NAME, /(.+)/, '$1 Secure '+BROWSER], VERSION], [
+                /\bfocus\/([\w\.]+)/i                                               // Firefox Focus
+                ], [VERSION, [NAME, FIREFOX+' Focus']], [
+                /\bopt\/([\w\.]+)/i                                                 // Opera Touch
+                ], [VERSION, [NAME, OPERA+' Touch']], [
+                /coc_coc\w+\/([\w\.]+)/i                                            // Coc Coc Browser
+                ], [VERSION, [NAME, 'Coc Coc']], [
+                /dolfin\/([\w\.]+)/i                                                // Dolphin
+                ], [VERSION, [NAME, 'Dolphin']], [
+                /coast\/([\w\.]+)/i                                                 // Opera Coast
+                ], [VERSION, [NAME, OPERA+' Coast']], [
+                /miuibrowser\/([\w\.]+)/i                                           // MIUI Browser
+                ], [VERSION, [NAME, 'MIUI '+BROWSER]], [
+                /fxios\/([-\w\.]+)/i                                                // Firefox for iOS
+                ], [VERSION, [NAME, FIREFOX]], [
+                /\bqihu|(qi?ho?o?|360)browser/i                                     // 360
+                ], [[NAME, '360 '+BROWSER]], [
+                /(oculus|samsung|sailfish)browser\/([\w\.]+)/i
+                ], [[NAME, /(.+)/, '$1 '+BROWSER], VERSION], [                      // Oculus/Samsung/Sailfish Browser
+                /(comodo_dragon)\/([\w\.]+)/i                                       // Comodo Dragon
+                ], [[NAME, /_/g, ' '], VERSION], [
+                /(electron)\/([\w\.]+) safari/i,                                    // Electron-based App
+                /(tesla)(?: qtcarbrowser|\/(20\d\d\.[-\w\.]+))/i,                   // Tesla
+                /m?(qqbrowser|baiduboxapp|2345Explorer)[\/ ]?([\w\.]+)/i            // QQBrowser/Baidu App/2345 Browser
+                ], [NAME, VERSION], [
+                /(metasr)[\/ ]?([\w\.]+)/i,                                         // SouGouBrowser
+                /(lbbrowser)/i                                                      // LieBao Browser
+                ], [NAME], [
+
+                // WebView
+                /((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i       // Facebook App for iOS & Android
+                ], [[NAME, FACEBOOK], VERSION], [
+                /safari (line)\/([\w\.]+)/i,                                        // Line App for iOS
+                /\b(line)\/([\w\.]+)\/iab/i,                                        // Line App for Android
+                /(chromium|instagram)[\/ ]([-\w\.]+)/i                              // Chromium/Instagram
+                ], [NAME, VERSION], [
+                /\bgsa\/([\w\.]+) .*safari\//i                                      // Google Search Appliance on iOS
+                ], [VERSION, [NAME, 'GSA']], [
+
+                /headlesschrome(?:\/([\w\.]+)| )/i                                  // Chrome Headless
+                ], [VERSION, [NAME, CHROME+' Headless']], [
+
+                / wv\).+(chrome)\/([\w\.]+)/i                                       // Chrome WebView
+                ], [[NAME, CHROME+' WebView'], VERSION], [
+
+                /droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i           // Android Browser
+                ], [VERSION, [NAME, 'Android '+BROWSER]], [
+
+                /(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i       // Chrome/OmniWeb/Arora/Tizen/Nokia
+                ], [NAME, VERSION], [
+
+                /version\/([\w\.]+) .*mobile\/\w+ (safari)/i                        // Mobile Safari
+                ], [VERSION, [NAME, 'Mobile Safari']], [
+                /version\/([\w\.]+) .*(mobile ?safari|safari)/i                     // Safari & Safari Mobile
+                ], [VERSION, NAME], [
+                /webkit.+?(mobile ?safari|safari)(\/[\w\.]+)/i                      // Safari < 3.0
+                ], [NAME, [VERSION, strMapper, oldSafariMap]], [
+
+                /(webkit|khtml)\/([\w\.]+)/i
+                ], [NAME, VERSION], [
+
+                // Gecko based
+                /(navigator|netscape\d?)\/([-\w\.]+)/i                              // Netscape
+                ], [[NAME, 'Netscape'], VERSION], [
+                /mobile vr; rv:([\w\.]+)\).+firefox/i                               // Firefox Reality
+                ], [VERSION, [NAME, FIREFOX+' Reality']], [
+                /ekiohf.+(flow)\/([\w\.]+)/i,                                       // Flow
+                /(swiftfox)/i,                                                      // Swiftfox
+                /(icedragon|iceweasel|camino|chimera|fennec|maemo browser|minimo|conkeror|klar)[\/ ]?([\w\.\+]+)/i,
+                                                                                    // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror/Klar
+                /(seamonkey|k-meleon|icecat|iceape|firebird|phoenix|palemoon|basilisk|waterfox)\/([-\w\.]+)$/i,
+                                                                                    // Firefox/SeaMonkey/K-Meleon/IceCat/IceApe/Firebird/Phoenix
+                /(firefox)\/([\w\.]+)/i,                                            // Other Firefox-based
+                /(mozilla)\/([\w\.]+) .+rv\:.+gecko\/\d+/i,                         // Mozilla
+
+                // Other
+                /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir|obigo|mosaic|(?:go|ice|up)[\. ]?browser)[-\/ ]?v?([\w\.]+)/i,
+                                                                                    // Polaris/Lynx/Dillo/iCab/Doris/Amaya/w3m/NetSurf/Sleipnir/Obigo/Mosaic/Go/ICE/UP.Browser
+                /(links) \(([\w\.]+)/i                                              // Links
+                ], [NAME, VERSION]
+            ],
+
+            cpu : [[
+
+                /(?:(amd|x(?:(?:86|64)[-_])?|wow|win)64)[;\)]/i                     // AMD64 (x64)
+                ], [[ARCHITECTURE, 'amd64']], [
+
+                /(ia32(?=;))/i                                                      // IA32 (quicktime)
+                ], [[ARCHITECTURE, lowerize]], [
+
+                /((?:i[346]|x)86)[;\)]/i                                            // IA32 (x86)
+                ], [[ARCHITECTURE, 'ia32']], [
+
+                /\b(aarch64|arm(v?8e?l?|_?64))\b/i                                 // ARM64
+                ], [[ARCHITECTURE, 'arm64']], [
+
+                /\b(arm(?:v[67])?ht?n?[fl]p?)\b/i                                   // ARMHF
+                ], [[ARCHITECTURE, 'armhf']], [
+
+                // PocketPC mistakenly identified as PowerPC
+                /windows (ce|mobile); ppc;/i
+                ], [[ARCHITECTURE, 'arm']], [
+
+                /((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i                            // PowerPC
+                ], [[ARCHITECTURE, /ower/, EMPTY, lowerize]], [
+
+                /(sun4\w)[;\)]/i                                                    // SPARC
+                ], [[ARCHITECTURE, 'sparc']], [
+
+                /((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i
+                                                                                    // IA64, 68K, ARM/64, AVR/32, IRIX/64, MIPS/64, SPARC/64, PA-RISC
+                ], [[ARCHITECTURE, lowerize]]
+            ],
+
+            device : [[
+
+                //////////////////////////
+                // MOBILES & TABLETS
+                // Ordered by popularity
+                /////////////////////////
+
+                // Samsung
+                /\b(sch-i[89]0\d|shw-m380s|sm-[pt]\w{2,4}|gt-[pn]\d{2,4}|sgh-t8[56]9|nexus 10)/i
+                ], [MODEL, [VENDOR, SAMSUNG], [TYPE, TABLET]], [
+                /\b((?:s[cgp]h|gt|sm)-\w+|galaxy nexus)/i,
+                /samsung[- ]([-\w]+)/i,
+                /sec-(sgh\w+)/i
+                ], [MODEL, [VENDOR, SAMSUNG], [TYPE, MOBILE]], [
+
+                // Apple
+                /\((ip(?:hone|od)[\w ]*);/i                                         // iPod/iPhone
+                ], [MODEL, [VENDOR, APPLE], [TYPE, MOBILE]], [
+                /\((ipad);[-\w\),; ]+apple/i,                                       // iPad
+                /applecoremedia\/[\w\.]+ \((ipad)/i,
+                /\b(ipad)\d\d?,\d\d?[;\]].+ios/i
+                ], [MODEL, [VENDOR, APPLE], [TYPE, TABLET]], [
+
+                // Huawei
+                /\b((?:ag[rs][23]?|bah2?|sht?|btv)-a?[lw]\d{2})\b(?!.+d\/s)/i
+                ], [MODEL, [VENDOR, HUAWEI], [TYPE, TABLET]], [
+                /(?:huawei|honor)([-\w ]+)[;\)]/i,
+                /\b(nexus 6p|\w{2,4}-[atu]?[ln][01259x][012359][an]?)\b(?!.+d\/s)/i
+                ], [MODEL, [VENDOR, HUAWEI], [TYPE, MOBILE]], [
+
+                // Xiaomi
+                /\b(poco[\w ]+)(?: bui|\))/i,                                       // Xiaomi POCO
+                /\b; (\w+) build\/hm\1/i,                                           // Xiaomi Hongmi 'numeric' models
+                /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i,                             // Xiaomi Hongmi
+                /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i,                   // Xiaomi Redmi
+                /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i // Xiaomi Mi
+                ], [[MODEL, /_/g, ' '], [VENDOR, XIAOMI], [TYPE, MOBILE]], [
+                /\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i                        // Mi Pad tablets
+                ],[[MODEL, /_/g, ' '], [VENDOR, XIAOMI], [TYPE, TABLET]], [
+
+                // OPPO
+                /; (\w+) bui.+ oppo/i,
+                /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i
+                ], [MODEL, [VENDOR, 'OPPO'], [TYPE, MOBILE]], [
+
+                // Vivo
+                /vivo (\w+)(?: bui|\))/i,
+                /\b(v[12]\d{3}\w?[at])(?: bui|;)/i
+                ], [MODEL, [VENDOR, 'Vivo'], [TYPE, MOBILE]], [
+
+                // Realme
+                /\b(rmx[12]\d{3})(?: bui|;|\))/i
+                ], [MODEL, [VENDOR, 'Realme'], [TYPE, MOBILE]], [
+
+                // Motorola
+                /\b(milestone|droid(?:[2-4x]| (?:bionic|x2|pro|razr))?:?( 4g)?)\b[\w ]+build\//i,
+                /\bmot(?:orola)?[- ](\w*)/i,
+                /((?:moto[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i
+                ], [MODEL, [VENDOR, MOTOROLA], [TYPE, MOBILE]], [
+                /\b(mz60\d|xoom[2 ]{0,2}) build\//i
+                ], [MODEL, [VENDOR, MOTOROLA], [TYPE, TABLET]], [
+
+                // LG
+                /((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i
+                ], [MODEL, [VENDOR, LG], [TYPE, TABLET]], [
+                /(lm(?:-?f100[nv]?|-[\w\.]+)(?= bui|\))|nexus [45])/i,
+                /\blg[-e;\/ ]+((?!browser|netcast|android tv)\w+)/i,
+                /\blg-?([\d\w]+) bui/i
+                ], [MODEL, [VENDOR, LG], [TYPE, MOBILE]], [
+
+                // Lenovo
+                /(ideatab[-\w ]+)/i,
+                /lenovo ?(s[56]000[-\w]+|tab(?:[\w ]+)|yt[-\d\w]{6}|tb[-\d\w]{6})/i
+                ], [MODEL, [VENDOR, 'Lenovo'], [TYPE, TABLET]], [
+
+                // Nokia
+                /(?:maemo|nokia).*(n900|lumia \d+)/i,
+                /nokia[-_ ]?([-\w\.]*)/i
+                ], [[MODEL, /_/g, ' '], [VENDOR, 'Nokia'], [TYPE, MOBILE]], [
+
+                // Google
+                /(pixel c)\b/i                                                      // Google Pixel C
+                ], [MODEL, [VENDOR, GOOGLE], [TYPE, TABLET]], [
+                /droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i                         // Google Pixel
+                ], [MODEL, [VENDOR, GOOGLE], [TYPE, MOBILE]], [
+
+                // Sony
+                /droid.+ ([c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i
+                ], [MODEL, [VENDOR, SONY], [TYPE, MOBILE]], [
+                /sony tablet [ps]/i,
+                /\b(?:sony)?sgp\w+(?: bui|\))/i
+                ], [[MODEL, 'Xperia Tablet'], [VENDOR, SONY], [TYPE, TABLET]], [
+
+                // OnePlus
+                / (kb2005|in20[12]5|be20[12][59])\b/i,
+                /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i
+                ], [MODEL, [VENDOR, 'OnePlus'], [TYPE, MOBILE]], [
+
+                // Amazon
+                /(alexa)webm/i,
+                /(kf[a-z]{2}wi)( bui|\))/i,                                         // Kindle Fire without Silk
+                /(kf[a-z]+)( bui|\)).+silk\//i                                      // Kindle Fire HD
+                ], [MODEL, [VENDOR, AMAZON], [TYPE, TABLET]], [
+                /((?:sd|kf)[0349hijorstuw]+)( bui|\)).+silk\//i                     // Fire Phone
+                ], [[MODEL, /(.+)/g, 'Fire Phone $1'], [VENDOR, AMAZON], [TYPE, MOBILE]], [
+
+                // BlackBerry
+                /(playbook);[-\w\),; ]+(rim)/i                                      // BlackBerry PlayBook
+                ], [MODEL, VENDOR, [TYPE, TABLET]], [
+                /\b((?:bb[a-f]|st[hv])100-\d)/i,
+                /\(bb10; (\w+)/i                                                    // BlackBerry 10
+                ], [MODEL, [VENDOR, BLACKBERRY], [TYPE, MOBILE]], [
+
+                // Asus
+                /(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i
+                ], [MODEL, [VENDOR, ASUS], [TYPE, TABLET]], [
+                / (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i
+                ], [MODEL, [VENDOR, ASUS], [TYPE, MOBILE]], [
+
+                // HTC
+                /(nexus 9)/i                                                        // HTC Nexus 9
+                ], [MODEL, [VENDOR, 'HTC'], [TYPE, TABLET]], [
+                /(htc)[-;_ ]{1,2}([\w ]+(?=\)| bui)|\w+)/i,                         // HTC
+
+                // ZTE
+                /(zte)[- ]([\w ]+?)(?: bui|\/|\))/i,
+                /(alcatel|geeksphone|nexian|panasonic|sony)[-_ ]?([-\w]*)/i         // Alcatel/GeeksPhone/Nexian/Panasonic/Sony
+                ], [VENDOR, [MODEL, /_/g, ' '], [TYPE, MOBILE]], [
+
+                // Acer
+                /droid.+; ([ab][1-7]-?[0178a]\d\d?)/i
+                ], [MODEL, [VENDOR, 'Acer'], [TYPE, TABLET]], [
+
+                // Meizu
+                /droid.+; (m[1-5] note) bui/i,
+                /\bmz-([-\w]{2,})/i
+                ], [MODEL, [VENDOR, 'Meizu'], [TYPE, MOBILE]], [
+
+                // Sharp
+                /\b(sh-?[altvz]?\d\d[a-ekm]?)/i
+                ], [MODEL, [VENDOR, 'Sharp'], [TYPE, MOBILE]], [
+
+                // MIXED
+                /(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[-_ ]?([-\w]*)/i,
+                                                                                    // BlackBerry/BenQ/Palm/Sony-Ericsson/Acer/Asus/Dell/Meizu/Motorola/Polytron
+                /(hp) ([\w ]+\w)/i,                                                 // HP iPAQ
+                /(asus)-?(\w+)/i,                                                   // Asus
+                /(microsoft); (lumia[\w ]+)/i,                                      // Microsoft Lumia
+                /(lenovo)[-_ ]?([-\w]+)/i,                                          // Lenovo
+                /(jolla)/i,                                                         // Jolla
+                /(oppo) ?([\w ]+) bui/i                                             // OPPO
+                ], [VENDOR, MODEL, [TYPE, MOBILE]], [
+
+                /(archos) (gamepad2?)/i,                                            // Archos
+                /(hp).+(touchpad(?!.+tablet)|tablet)/i,                             // HP TouchPad
+                /(kindle)\/([\w\.]+)/i,                                             // Kindle
+                /(nook)[\w ]+build\/(\w+)/i,                                        // Nook
+                /(dell) (strea[kpr\d ]*[\dko])/i,                                   // Dell Streak
+                /(le[- ]+pan)[- ]+(\w{1,9}) bui/i,                                  // Le Pan Tablets
+                /(trinity)[- ]*(t\d{3}) bui/i,                                      // Trinity Tablets
+                /(gigaset)[- ]+(q\w{1,9}) bui/i,                                    // Gigaset Tablets
+                /(vodafone) ([\w ]+)(?:\)| bui)/i                                   // Vodafone
+                ], [VENDOR, MODEL, [TYPE, TABLET]], [
+
+                /(surface duo)/i                                                    // Surface Duo
+                ], [MODEL, [VENDOR, MICROSOFT], [TYPE, TABLET]], [
+                /droid [\d\.]+; (fp\du?)(?: b|\))/i                                 // Fairphone
+                ], [MODEL, [VENDOR, 'Fairphone'], [TYPE, MOBILE]], [
+                /(u304aa)/i                                                         // AT&T
+                ], [MODEL, [VENDOR, 'AT&T'], [TYPE, MOBILE]], [
+                /\bsie-(\w*)/i                                                      // Siemens
+                ], [MODEL, [VENDOR, 'Siemens'], [TYPE, MOBILE]], [
+                /\b(rct\w+) b/i                                                     // RCA Tablets
+                ], [MODEL, [VENDOR, 'RCA'], [TYPE, TABLET]], [
+                /\b(venue[\d ]{2,7}) b/i                                            // Dell Venue Tablets
+                ], [MODEL, [VENDOR, 'Dell'], [TYPE, TABLET]], [
+                /\b(q(?:mv|ta)\w+) b/i                                              // Verizon Tablet
+                ], [MODEL, [VENDOR, 'Verizon'], [TYPE, TABLET]], [
+                /\b(?:barnes[& ]+noble |bn[rt])([\w\+ ]*) b/i                       // Barnes & Noble Tablet
+                ], [MODEL, [VENDOR, 'Barnes & Noble'], [TYPE, TABLET]], [
+                /\b(tm\d{3}\w+) b/i
+                ], [MODEL, [VENDOR, 'NuVision'], [TYPE, TABLET]], [
+                /\b(k88) b/i                                                        // ZTE K Series Tablet
+                ], [MODEL, [VENDOR, 'ZTE'], [TYPE, TABLET]], [
+                /\b(nx\d{3}j) b/i                                                   // ZTE Nubia
+                ], [MODEL, [VENDOR, 'ZTE'], [TYPE, MOBILE]], [
+                /\b(gen\d{3}) b.+49h/i                                              // Swiss GEN Mobile
+                ], [MODEL, [VENDOR, 'Swiss'], [TYPE, MOBILE]], [
+                /\b(zur\d{3}) b/i                                                   // Swiss ZUR Tablet
+                ], [MODEL, [VENDOR, 'Swiss'], [TYPE, TABLET]], [
+                /\b((zeki)?tb.*\b) b/i                                              // Zeki Tablets
+                ], [MODEL, [VENDOR, 'Zeki'], [TYPE, TABLET]], [
+                /\b([yr]\d{2}) b/i,
+                /\b(dragon[- ]+touch |dt)(\w{5}) b/i                                // Dragon Touch Tablet
+                ], [[VENDOR, 'Dragon Touch'], MODEL, [TYPE, TABLET]], [
+                /\b(ns-?\w{0,9}) b/i                                                // Insignia Tablets
+                ], [MODEL, [VENDOR, 'Insignia'], [TYPE, TABLET]], [
+                /\b((nxa|next)-?\w{0,9}) b/i                                        // NextBook Tablets
+                ], [MODEL, [VENDOR, 'NextBook'], [TYPE, TABLET]], [
+                /\b(xtreme\_)?(v(1[045]|2[015]|[3469]0|7[05])) b/i                  // Voice Xtreme Phones
+                ], [[VENDOR, 'Voice'], MODEL, [TYPE, MOBILE]], [
+                /\b(lvtel\-)?(v1[12]) b/i                                           // LvTel Phones
+                ], [[VENDOR, 'LvTel'], MODEL, [TYPE, MOBILE]], [
+                /\b(ph-1) /i                                                        // Essential PH-1
+                ], [MODEL, [VENDOR, 'Essential'], [TYPE, MOBILE]], [
+                /\b(v(100md|700na|7011|917g).*\b) b/i                               // Envizen Tablets
+                ], [MODEL, [VENDOR, 'Envizen'], [TYPE, TABLET]], [
+                /\b(trio[-\w\. ]+) b/i                                              // MachSpeed Tablets
+                ], [MODEL, [VENDOR, 'MachSpeed'], [TYPE, TABLET]], [
+                /\btu_(1491) b/i                                                    // Rotor Tablets
+                ], [MODEL, [VENDOR, 'Rotor'], [TYPE, TABLET]], [
+                /(shield[\w ]+) b/i                                                 // Nvidia Shield Tablets
+                ], [MODEL, [VENDOR, 'Nvidia'], [TYPE, TABLET]], [
+                /(sprint) (\w+)/i                                                   // Sprint Phones
+                ], [VENDOR, MODEL, [TYPE, MOBILE]], [
+                /(kin\.[onetw]{3})/i                                                // Microsoft Kin
+                ], [[MODEL, /\./g, ' '], [VENDOR, MICROSOFT], [TYPE, MOBILE]], [
+                /droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i             // Zebra
+                ], [MODEL, [VENDOR, ZEBRA], [TYPE, TABLET]], [
+                /droid.+; (ec30|ps20|tc[2-8]\d[kx])\)/i
+                ], [MODEL, [VENDOR, ZEBRA], [TYPE, MOBILE]], [
+
+                ///////////////////
+                // CONSOLES
+                ///////////////////
+
+                /(ouya)/i,                                                          // Ouya
+                /(nintendo) ([wids3utch]+)/i                                        // Nintendo
+                ], [VENDOR, MODEL, [TYPE, CONSOLE]], [
+                /droid.+; (shield) bui/i                                            // Nvidia
+                ], [MODEL, [VENDOR, 'Nvidia'], [TYPE, CONSOLE]], [
+                /(playstation [345portablevi]+)/i                                   // Playstation
+                ], [MODEL, [VENDOR, SONY], [TYPE, CONSOLE]], [
+                /\b(xbox(?: one)?(?!; xbox))[\); ]/i                                // Microsoft Xbox
+                ], [MODEL, [VENDOR, MICROSOFT], [TYPE, CONSOLE]], [
+
+                ///////////////////
+                // SMARTTVS
+                ///////////////////
+
+                /smart-tv.+(samsung)/i                                              // Samsung
+                ], [VENDOR, [TYPE, SMARTTV]], [
+                /hbbtv.+maple;(\d+)/i
+                ], [[MODEL, /^/, 'SmartTV'], [VENDOR, SAMSUNG], [TYPE, SMARTTV]], [
+                /(nux; netcast.+smarttv|lg (netcast\.tv-201\d|android tv))/i        // LG SmartTV
+                ], [[VENDOR, LG], [TYPE, SMARTTV]], [
+                /(apple) ?tv/i                                                      // Apple TV
+                ], [VENDOR, [MODEL, APPLE+' TV'], [TYPE, SMARTTV]], [
+                /crkey/i                                                            // Google Chromecast
+                ], [[MODEL, CHROME+'cast'], [VENDOR, GOOGLE], [TYPE, SMARTTV]], [
+                /droid.+aft(\w)( bui|\))/i                                          // Fire TV
+                ], [MODEL, [VENDOR, AMAZON], [TYPE, SMARTTV]], [
+                /\(dtv[\);].+(aquos)/i                                              // Sharp
+                ], [MODEL, [VENDOR, 'Sharp'], [TYPE, SMARTTV]], [
+                /\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i,                          // Roku
+                /hbbtv\/\d+\.\d+\.\d+ +\([\w ]*; *(\w[^;]*);([^;]*)/i               // HbbTV devices
+                ], [[VENDOR, trim], [MODEL, trim], [TYPE, SMARTTV]], [
+                /\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i                   // SmartTV from Unidentified Vendors
+                ], [[TYPE, SMARTTV]], [
+
+                ///////////////////
+                // WEARABLES
+                ///////////////////
+
+                /((pebble))app/i                                                    // Pebble
+                ], [VENDOR, MODEL, [TYPE, WEARABLE]], [
+                /droid.+; (glass) \d/i                                              // Google Glass
+                ], [MODEL, [VENDOR, GOOGLE], [TYPE, WEARABLE]], [
+                /droid.+; (wt63?0{2,3})\)/i
+                ], [MODEL, [VENDOR, ZEBRA], [TYPE, WEARABLE]], [
+                /(quest( 2)?)/i                                                     // Oculus Quest
+                ], [MODEL, [VENDOR, FACEBOOK], [TYPE, WEARABLE]], [
+
+                ///////////////////
+                // EMBEDDED
+                ///////////////////
+
+                /(tesla)(?: qtcarbrowser|\/[-\w\.]+)/i                              // Tesla
+                ], [VENDOR, [TYPE, EMBEDDED]], [
+
+                ////////////////////
+                // MIXED (GENERIC)
+                ///////////////////
+
+                /droid .+?; ([^;]+?)(?: bui|\) applew).+? mobile safari/i           // Android Phones from Unidentified Vendors
+                ], [MODEL, [TYPE, MOBILE]], [
+                /droid .+?; ([^;]+?)(?: bui|\) applew).+?(?! mobile) safari/i       // Android Tablets from Unidentified Vendors
+                ], [MODEL, [TYPE, TABLET]], [
+                /\b((tablet|tab)[;\/]|focus\/\d(?!.+mobile))/i                      // Unidentifiable Tablet
+                ], [[TYPE, TABLET]], [
+                /(phone|mobile(?:[;\/]| safari)|pda(?=.+windows ce))/i              // Unidentifiable Mobile
+                ], [[TYPE, MOBILE]], [
+                /(android[-\w\. ]{0,9});.+buil/i                                    // Generic Android Device
+                ], [MODEL, [VENDOR, 'Generic']]
+            ],
+
+            engine : [[
+
+                /windows.+ edge\/([\w\.]+)/i                                       // EdgeHTML
+                ], [VERSION, [NAME, EDGE+'HTML']], [
+
+                /webkit\/537\.36.+chrome\/(?!27)([\w\.]+)/i                         // Blink
+                ], [VERSION, [NAME, 'Blink']], [
+
+                /(presto)\/([\w\.]+)/i,                                             // Presto
+                /(webkit|trident|netfront|netsurf|amaya|lynx|w3m|goanna)\/([\w\.]+)/i, // WebKit/Trident/NetFront/NetSurf/Amaya/Lynx/w3m/Goanna
+                /ekioh(flow)\/([\w\.]+)/i,                                          // Flow
+                /(khtml|tasman|links)[\/ ]\(?([\w\.]+)/i,                           // KHTML/Tasman/Links
+                /(icab)[\/ ]([23]\.[\d\.]+)/i                                       // iCab
+                ], [NAME, VERSION], [
+
+                /rv\:([\w\.]{1,9})\b.+(gecko)/i                                     // Gecko
+                ], [VERSION, NAME]
+            ],
+
+            os : [[
+
+                // Windows
+                /microsoft (windows) (vista|xp)/i                                   // Windows (iTunes)
+                ], [NAME, VERSION], [
+                /(windows) nt 6\.2; (arm)/i,                                        // Windows RT
+                /(windows (?:phone(?: os)?|mobile))[\/ ]?([\d\.\w ]*)/i,            // Windows Phone
+                /(windows)[\/ ]?([ntce\d\. ]+\w)(?!.+xbox)/i
+                ], [NAME, [VERSION, strMapper, windowsVersionMap]], [
+                /(win(?=3|9|n)|win 9x )([nt\d\.]+)/i
+                ], [[NAME, 'Windows'], [VERSION, strMapper, windowsVersionMap]], [
+
+                // iOS/macOS
+                /ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i,              // iOS
+                /cfnetwork\/.+darwin/i
+                ], [[VERSION, /_/g, '.'], [NAME, 'iOS']], [
+                /(mac os x) ?([\w\. ]*)/i,
+                /(macintosh|mac_powerpc\b)(?!.+haiku)/i                             // Mac OS
+                ], [[NAME, 'Mac OS'], [VERSION, /_/g, '.']], [
+
+                // Mobile OSes
+                /droid ([\w\.]+)\b.+(android[- ]x86)/i                              // Android-x86
+                ], [VERSION, NAME], [                                               // Android/WebOS/QNX/Bada/RIM/Maemo/MeeGo/Sailfish OS
+                /(android|webos|qnx|bada|rim tablet os|maemo|meego|sailfish)[-\/ ]?([\w\.]*)/i,
+                /(blackberry)\w*\/([\w\.]*)/i,                                      // Blackberry
+                /(tizen|kaios)[\/ ]([\w\.]+)/i,                                     // Tizen/KaiOS
+                /\((series40);/i                                                    // Series 40
+                ], [NAME, VERSION], [
+                /\(bb(10);/i                                                        // BlackBerry 10
+                ], [VERSION, [NAME, BLACKBERRY]], [
+                /(?:symbian ?os|symbos|s60(?=;)|series60)[-\/ ]?([\w\.]*)/i         // Symbian
+                ], [VERSION, [NAME, 'Symbian']], [
+                /mozilla\/[\d\.]+ \((?:mobile|tablet|tv|mobile; [\w ]+); rv:.+ gecko\/([\w\.]+)/i // Firefox OS
+                ], [VERSION, [NAME, FIREFOX+' OS']], [
+                /web0s;.+rt(tv)/i,
+                /\b(?:hp)?wos(?:browser)?\/([\w\.]+)/i                              // WebOS
+                ], [VERSION, [NAME, 'webOS']], [
+
+                // Google Chromecast
+                /crkey\/([\d\.]+)/i                                                 // Google Chromecast
+                ], [VERSION, [NAME, CHROME+'cast']], [
+                /(cros) [\w]+ ([\w\.]+\w)/i                                         // Chromium OS
+                ], [[NAME, 'Chromium OS'], VERSION],[
+
+                // Console
+                /(nintendo|playstation) ([wids345portablevuch]+)/i,                 // Nintendo/Playstation
+                /(xbox); +xbox ([^\);]+)/i,                                         // Microsoft Xbox (360, One, X, S, Series X, Series S)
+
+                // Other
+                /\b(joli|palm)\b ?(?:os)?\/?([\w\.]*)/i,                            // Joli/Palm
+                /(mint)[\/\(\) ]?(\w*)/i,                                           // Mint
+                /(mageia|vectorlinux)[; ]/i,                                        // Mageia/VectorLinux
+                /([kxln]?ubuntu|debian|suse|opensuse|gentoo|arch(?= linux)|slackware|fedora|mandriva|centos|pclinuxos|red ?hat|zenwalk|linpus|raspbian|plan 9|minix|risc os|contiki|deepin|manjaro|elementary os|sabayon|linspire)(?: gnu\/linux)?(?: enterprise)?(?:[- ]linux)?(?:-gnu)?[-\/ ]?(?!chrom|package)([-\w\.]*)/i,
+                                                                                    // Ubuntu/Debian/SUSE/Gentoo/Arch/Slackware/Fedora/Mandriva/CentOS/PCLinuxOS/RedHat/Zenwalk/Linpus/Raspbian/Plan9/Minix/RISCOS/Contiki/Deepin/Manjaro/elementary/Sabayon/Linspire
+                /(hurd|linux) ?([\w\.]*)/i,                                         // Hurd/Linux
+                /(gnu) ?([\w\.]*)/i,                                                // GNU
+                /\b([-frentopcghs]{0,5}bsd|dragonfly)[\/ ]?(?!amd|[ix346]{1,2}86)([\w\.]*)/i, // FreeBSD/NetBSD/OpenBSD/PC-BSD/GhostBSD/DragonFly
+                /(haiku) (\w+)/i                                                    // Haiku
+                ], [NAME, VERSION], [
+                /(sunos) ?([\w\.\d]*)/i                                             // Solaris
+                ], [[NAME, 'Solaris'], VERSION], [
+                /((?:open)?solaris)[-\/ ]?([\w\.]*)/i,                              // Solaris
+                /(aix) ((\d)(?=\.|\)| )[\w\.])*/i,                                  // AIX
+                /\b(beos|os\/2|amigaos|morphos|openvms|fuchsia|hp-ux)/i,            // BeOS/OS2/AmigaOS/MorphOS/OpenVMS/Fuchsia/HP-UX
+                /(unix) ?([\w\.]*)/i                                                // UNIX
+                ], [NAME, VERSION]
+            ]
+        };
+
+        /////////////////
+        // Constructor
+        ////////////////
+
+        var UAParser = function (ua, extensions) {
+
+            if (typeof ua === OBJ_TYPE) {
+                extensions = ua;
+                ua = undefined$1;
+            }
+
+            if (!(this instanceof UAParser)) {
+                return new UAParser(ua, extensions).getResult();
+            }
+
+            var _ua = ua || ((typeof window !== UNDEF_TYPE && window.navigator && window.navigator.userAgent) ? window.navigator.userAgent : EMPTY);
+            var _rgxmap = extensions ? extend(regexes, extensions) : regexes;
+
+            this.getBrowser = function () {
+                var _browser = {};
+                _browser[NAME] = undefined$1;
+                _browser[VERSION] = undefined$1;
+                rgxMapper.call(_browser, _ua, _rgxmap.browser);
+                _browser.major = majorize(_browser.version);
+                return _browser;
+            };
+            this.getCPU = function () {
+                var _cpu = {};
+                _cpu[ARCHITECTURE] = undefined$1;
+                rgxMapper.call(_cpu, _ua, _rgxmap.cpu);
+                return _cpu;
+            };
+            this.getDevice = function () {
+                var _device = {};
+                _device[VENDOR] = undefined$1;
+                _device[MODEL] = undefined$1;
+                _device[TYPE] = undefined$1;
+                rgxMapper.call(_device, _ua, _rgxmap.device);
+                return _device;
+            };
+            this.getEngine = function () {
+                var _engine = {};
+                _engine[NAME] = undefined$1;
+                _engine[VERSION] = undefined$1;
+                rgxMapper.call(_engine, _ua, _rgxmap.engine);
+                return _engine;
+            };
+            this.getOS = function () {
+                var _os = {};
+                _os[NAME] = undefined$1;
+                _os[VERSION] = undefined$1;
+                rgxMapper.call(_os, _ua, _rgxmap.os);
+                return _os;
+            };
+            this.getResult = function () {
+                return {
+                    ua      : this.getUA(),
+                    browser : this.getBrowser(),
+                    engine  : this.getEngine(),
+                    os      : this.getOS(),
+                    device  : this.getDevice(),
+                    cpu     : this.getCPU()
+                };
+            };
+            this.getUA = function () {
+                return _ua;
+            };
+            this.setUA = function (ua) {
+                _ua = (typeof ua === STR_TYPE && ua.length > UA_MAX_LENGTH) ? trim(ua, UA_MAX_LENGTH) : ua;
+                return this;
+            };
+            this.setUA(_ua);
+            return this;
+        };
+
+        UAParser.VERSION = LIBVERSION;
+        UAParser.BROWSER =  enumerize([NAME, VERSION, MAJOR]);
+        UAParser.CPU = enumerize([ARCHITECTURE]);
+        UAParser.DEVICE = enumerize([MODEL, VENDOR, TYPE, CONSOLE, MOBILE, SMARTTV, TABLET, WEARABLE, EMBEDDED]);
+        UAParser.ENGINE = UAParser.OS = enumerize([NAME, VERSION]);
+
+        ///////////
+        // Export
+        //////////
+
+        // check js environment
+        {
+            // nodejs env
+            if (module.exports) {
+                exports = module.exports = UAParser;
+            }
+            exports.UAParser = UAParser;
+        }
+
+        // jQuery/Zepto specific (optional)
+        // Note:
+        //   In AMD env the global scope should be kept clean, but jQuery is an exception.
+        //   jQuery always exports to global scope, unless jQuery.noConflict(true) is used,
+        //   and we should catch that.
+        var $ = typeof window !== UNDEF_TYPE && (window.jQuery || window.Zepto);
+        if ($ && !$.ua) {
+            var parser = new UAParser();
+            $.ua = parser.getResult();
+            $.ua.get = function () {
+                return parser.getUA();
+            };
+            $.ua.set = function (ua) {
+                parser.setUA(ua);
+                var result = parser.getResult();
+                for (var prop in result) {
+                    $.ua[prop] = result[prop];
+                }
+            };
+        }
+
+    })(typeof window === 'object' ? window : commonjsGlobal);
+    }(uaParser, uaParser.exports));
+
+    var UAParser = uaParser.exports;
+
+    var mp4box_all = {};
+
+    (function (exports) {
+    // file:src/log.js
+    /* 
+     * Copyright (c) 2012-2013. Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    var Log = (function (){
+    		var start = new Date();
+    		var LOG_LEVEL_ERROR 	= 4;
+    		var LOG_LEVEL_WARNING 	= 3;
+    		var LOG_LEVEL_INFO 		= 2;
+    		var LOG_LEVEL_DEBUG		= 1;
+    		var log_level = LOG_LEVEL_ERROR;
+    		var logObject = {
+    			setLogLevel : function(level) {
+    				if (level == this.debug) log_level = LOG_LEVEL_DEBUG;
+    				else if (level == this.info) log_level = LOG_LEVEL_INFO;
+    				else if (level == this.warn) log_level = LOG_LEVEL_WARNING;
+    				else if (level == this.error) log_level = LOG_LEVEL_ERROR;
+    				else log_level = LOG_LEVEL_ERROR;
+    			},
+    			debug : function(module, msg) {
+    				if (console.debug === undefined) {
+    					console.debug = console.log;
+    				}
+    				if (LOG_LEVEL_DEBUG >= log_level) {
+    					console.debug("["+Log.getDurationString(new Date()-start,1000)+"]","["+module+"]",msg);
+    				}
+    			},
+    			log : function(module, msg) {
+    				this.debug(module.msg);
+    			},
+    			info : function(module, msg) {
+    				if (LOG_LEVEL_INFO >= log_level) {
+    					console.info("["+Log.getDurationString(new Date()-start,1000)+"]","["+module+"]",msg);
+    				}
+    			},
+    			warn : function(module, msg) {
+    				if (LOG_LEVEL_WARNING >= log_level) {
+    					console.warn("["+Log.getDurationString(new Date()-start,1000)+"]","["+module+"]",msg);
+    				}
+    			},
+    			error : function(module, msg) {
+    				if (LOG_LEVEL_ERROR >= log_level) {
+    					console.error("["+Log.getDurationString(new Date()-start,1000)+"]","["+module+"]",msg);
+    				}
+    			}
+    		};
+    		return logObject;
+    	})();
+    	
+    /* Helper function to print a duration value in the form H:MM:SS.MS */
+    Log.getDurationString = function(duration, _timescale) {
+    	var neg;
+    	/* Helper function to print a number on a fixed number of digits */
+    	function pad(number, length) {
+    		var str = '' + number;
+    		var a = str.split('.');		
+    		while (a[0].length < length) {
+    			a[0] = '0' + a[0];
+    		}
+    		return a.join('.');
+    	}
+    	if (duration < 0) {
+    		neg = true;
+    		duration = -duration;
+    	} else {
+    		neg = false;	
+    	}
+    	var timescale = _timescale || 1;
+    	var duration_sec = duration/timescale;
+    	var hours = Math.floor(duration_sec/3600);
+    	duration_sec -= hours * 3600;
+    	var minutes = Math.floor(duration_sec/60);
+    	duration_sec -= minutes * 60;		
+    	var msec = duration_sec*1000;
+    	duration_sec = Math.floor(duration_sec);
+    	msec -= duration_sec*1000;
+    	msec = Math.floor(msec);
+    	return (neg ? "-": "")+hours+":"+pad(minutes,2)+":"+pad(duration_sec,2)+"."+pad(msec,3);
+    };
+    	
+    /* Helper function to stringify HTML5 TimeRanges objects */	
+    Log.printRanges = function(ranges) {
+    	var length = ranges.length;
+    	if (length > 0) {
+    		var str = "";
+    		for (var i = 0; i < length; i++) {
+    		  if (i > 0) str += ",";
+    		  str += "["+Log.getDurationString(ranges.start(i))+ ","+Log.getDurationString(ranges.end(i))+"]";
+    		}
+    		return str;
+    	} else {
+    		return "(empty)";
+    	}
+    };
+
+    {
+    	exports.Log = Log;
+    }
+    // file:src/stream.js
+    var MP4BoxStream = function(arrayBuffer) {
+      if (arrayBuffer instanceof ArrayBuffer) {
+        this.buffer = arrayBuffer;
+        this.dataview = new DataView(arrayBuffer);
+      } else {
+        throw ("Needs an array buffer");
+      }
+      this.position = 0;
+    };
+
+    /*************************************************************************
+      Common API between MultiBufferStream and SimpleStream
+     *************************************************************************/
+    MP4BoxStream.prototype.getPosition = function() {
+      return this.position;
+    };
+
+    MP4BoxStream.prototype.getEndPosition = function() {
+      return this.buffer.byteLength;
+    };
+
+    MP4BoxStream.prototype.getLength = function() {
+      return this.buffer.byteLength;
+    };
+
+    MP4BoxStream.prototype.seek = function (pos) {
+      var npos = Math.max(0, Math.min(this.buffer.byteLength, pos));
+      this.position = (isNaN(npos) || !isFinite(npos)) ? 0 : npos;
+      return true;
+    };
+
+    MP4BoxStream.prototype.isEos = function () {
+      return this.getPosition() >= this.getEndPosition();
+    };
+
+    /*************************************************************************
+      Read methods, simimar to DataStream but simpler
+     *************************************************************************/
+    MP4BoxStream.prototype.readAnyInt = function(size, signed) {
+      var res = 0;
+      if (this.position + size <= this.buffer.byteLength) {
+        switch (size) {
+          case 1:
+            if (signed) {
+              res = this.dataview.getInt8(this.position);
+            } else {
+              res = this.dataview.getUint8(this.position);
+            }
+            break;
+          case 2:
+            if (signed) {
+              res = this.dataview.getInt16(this.position);
+            } else {
+              res = this.dataview.getUint16(this.position);
+            }
+            break;
+          case 3:
+            if (signed) {
+              throw ("No method for reading signed 24 bits values");
+            } else {
+              res = this.dataview.getUint8(this.position) << 16;
+              res |= this.dataview.getUint8(this.position+1) << 8;
+              res |= this.dataview.getUint8(this.position+2);
+            }
+            break;
+          case 4:
+            if (signed) {
+              res = this.dataview.getInt32(this.position);
+            } else {
+              res = this.dataview.getUint32(this.position);
+            }
+            break;
+          case 8:
+            if (signed) {
+              throw ("No method for reading signed 64 bits values");
+            } else {
+              res = this.dataview.getUint32(this.position) << 32;
+              res |= this.dataview.getUint32(this.position+4);
+            }
+            break;
+          default:
+            throw ("readInt method not implemented for size: "+size);
+        }
+        this.position+= size;
+        return res;
+      } else {
+        throw ("Not enough bytes in buffer");
+      }
+    };
+
+    MP4BoxStream.prototype.readUint8 = function() {
+      return this.readAnyInt(1, false);
+    };
+
+    MP4BoxStream.prototype.readUint16 = function() {
+      return this.readAnyInt(2, false);
+    };
+
+    MP4BoxStream.prototype.readUint24 = function() {
+      return this.readAnyInt(3, false);
+    };
+
+    MP4BoxStream.prototype.readUint32 = function() {
+      return this.readAnyInt(4, false);
+    };
+
+    MP4BoxStream.prototype.readUint64 = function() {
+      return this.readAnyInt(8, false);
+    };
+
+    MP4BoxStream.prototype.readString = function(length) {
+      if (this.position + length <= this.buffer.byteLength) {
+        var s = "";
+        for (var i = 0; i < length; i++) {
+          s += String.fromCharCode(this.readUint8());
+        }
+        return s;
+      } else {
+        throw ("Not enough bytes in buffer");
+      }
+    };
+
+    MP4BoxStream.prototype.readCString = function() {
+      var arr = [];
+      while(true) {
+        var b = this.readUint8();
+        if (b !== 0) {
+          arr.push(b);
+        } else {
+          break;
+        }
+      }
+      return String.fromCharCode.apply(null, arr); 
+    };
+
+    MP4BoxStream.prototype.readInt8 = function() {
+      return this.readAnyInt(1, true);
+    };
+
+    MP4BoxStream.prototype.readInt16 = function() {
+      return this.readAnyInt(2, true);
+    };
+
+    MP4BoxStream.prototype.readInt32 = function() {
+      return this.readAnyInt(4, true);
+    };
+
+    MP4BoxStream.prototype.readInt64 = function() {
+      return this.readAnyInt(8, false);
+    };
+
+    MP4BoxStream.prototype.readUint8Array = function(length) {
+      var arr = new Uint8Array(length);
+      for (var i = 0; i < length; i++) {
+        arr[i] = this.readUint8();
+      }
+      return arr;
+    };
+
+    MP4BoxStream.prototype.readInt16Array = function(length) {
+      var arr = new Int16Array(length);
+      for (var i = 0; i < length; i++) {
+        arr[i] = this.readInt16();
+      }
+      return arr;
+    };
+
+    MP4BoxStream.prototype.readUint16Array = function(length) {
+      var arr = new Int16Array(length);
+      for (var i = 0; i < length; i++) {
+        arr[i] = this.readUint16();
+      }
+      return arr;
+    };
+
+    MP4BoxStream.prototype.readUint32Array = function(length) {
+      var arr = new Uint32Array(length);
+      for (var i = 0; i < length; i++) {
+        arr[i] = this.readUint32();
+      }
+      return arr;
+    };
+
+    MP4BoxStream.prototype.readInt32Array = function(length) {
+      var arr = new Int32Array(length);
+      for (var i = 0; i < length; i++) {
+        arr[i] = this.readInt32();
+      }
+      return arr;
+    };
+
+    {
+      exports.MP4BoxStream = MP4BoxStream;
+    }// file:src/DataStream.js
+    /**
+      DataStream reads scalars, arrays and structs of data from an ArrayBuffer.
+      It's like a file-like DataView on steroids.
+
+      @param {ArrayBuffer} arrayBuffer ArrayBuffer to read from.
+      @param {?Number} byteOffset Offset from arrayBuffer beginning for the DataStream.
+      @param {?Boolean} endianness DataStream.BIG_ENDIAN or DataStream.LITTLE_ENDIAN (the default).
+      */
+    var DataStream = function(arrayBuffer, byteOffset, endianness) {
+      this._byteOffset = byteOffset || 0;
+      if (arrayBuffer instanceof ArrayBuffer) {
+        this.buffer = arrayBuffer;
+      } else if (typeof arrayBuffer == "object") {
+        this.dataView = arrayBuffer;
+        if (byteOffset) {
+          this._byteOffset += byteOffset;
+        }
+      } else {
+        this.buffer = new ArrayBuffer(arrayBuffer || 0);
+      }
+      this.position = 0;
+      this.endianness = endianness == null ? DataStream.LITTLE_ENDIAN : endianness;
+    };
+    DataStream.prototype = {};
+
+    DataStream.prototype.getPosition = function() {
+      return this.position;
+    };
+
+    /**
+      Internal function to resize the DataStream buffer when required.
+      @param {number} extra Number of bytes to add to the buffer allocation.
+      @return {null}
+      */
+    DataStream.prototype._realloc = function(extra) {
+      if (!this._dynamicSize) {
+        return;
+      }
+      var req = this._byteOffset + this.position + extra;
+      var blen = this._buffer.byteLength;
+      if (req <= blen) {
+        if (req > this._byteLength) {
+          this._byteLength = req;
+        }
+        return;
+      }
+      if (blen < 1) {
+        blen = 1;
+      }
+      while (req > blen) {
+        blen *= 2;
+      }
+      var buf = new ArrayBuffer(blen);
+      var src = new Uint8Array(this._buffer);
+      var dst = new Uint8Array(buf, 0, src.length);
+      dst.set(src);
+      this.buffer = buf;
+      this._byteLength = req;
+    };
+
+    /**
+      Internal function to trim the DataStream buffer when required.
+      Used for stripping out the extra bytes from the backing buffer when
+      the virtual byteLength is smaller than the buffer byteLength (happens after
+      growing the buffer with writes and not filling the extra space completely).
+
+      @return {null}
+      */
+    DataStream.prototype._trimAlloc = function() {
+      if (this._byteLength == this._buffer.byteLength) {
+        return;
+      }
+      var buf = new ArrayBuffer(this._byteLength);
+      var dst = new Uint8Array(buf);
+      var src = new Uint8Array(this._buffer, 0, dst.length);
+      dst.set(src);
+      this.buffer = buf;
+    };
+
+
+    /**
+      Big-endian const to use as default endianness.
+      @type {boolean}
+      */
+    DataStream.BIG_ENDIAN = false;
+
+    /**
+      Little-endian const to use as default endianness.
+      @type {boolean}
+      */
+    DataStream.LITTLE_ENDIAN = true;
+
+    /**
+      Virtual byte length of the DataStream backing buffer.
+      Updated to be max of original buffer size and last written size.
+      If dynamicSize is false is set to buffer size.
+      @type {number}
+      */
+    DataStream.prototype._byteLength = 0;
+
+    /**
+      Returns the byte length of the DataStream object.
+      @type {number}
+      */
+    Object.defineProperty(DataStream.prototype, 'byteLength',
+      { get: function() {
+        return this._byteLength - this._byteOffset;
+      }});
+
+    /**
+      Set/get the backing ArrayBuffer of the DataStream object.
+      The setter updates the DataView to point to the new buffer.
+      @type {Object}
+      */
+    Object.defineProperty(DataStream.prototype, 'buffer',
+      { get: function() {
+          this._trimAlloc();
+          return this._buffer;
+        },
+        set: function(v) {
+          this._buffer = v;
+          this._dataView = new DataView(this._buffer, this._byteOffset);
+          this._byteLength = this._buffer.byteLength;
+        } });
+
+    /**
+      Set/get the byteOffset of the DataStream object.
+      The setter updates the DataView to point to the new byteOffset.
+      @type {number}
+      */
+    Object.defineProperty(DataStream.prototype, 'byteOffset',
+      { get: function() {
+          return this._byteOffset;
+        },
+        set: function(v) {
+          this._byteOffset = v;
+          this._dataView = new DataView(this._buffer, this._byteOffset);
+          this._byteLength = this._buffer.byteLength;
+        } });
+
+    /**
+      Set/get the backing DataView of the DataStream object.
+      The setter updates the buffer and byteOffset to point to the DataView values.
+      @type {Object}
+      */
+    Object.defineProperty(DataStream.prototype, 'dataView',
+      { get: function() {
+          return this._dataView;
+        },
+        set: function(v) {
+          this._byteOffset = v.byteOffset;
+          this._buffer = v.buffer;
+          this._dataView = new DataView(this._buffer, this._byteOffset);
+          this._byteLength = this._byteOffset + v.byteLength;
+        } });
+
+    /**
+      Sets the DataStream read/write position to given position.
+      Clamps between 0 and DataStream length.
+
+      @param {number} pos Position to seek to.
+      @return {null}
+      */
+    DataStream.prototype.seek = function(pos) {
+      var npos = Math.max(0, Math.min(this.byteLength, pos));
+      this.position = (isNaN(npos) || !isFinite(npos)) ? 0 : npos;
+    };
+
+    /**
+      Returns true if the DataStream seek pointer is at the end of buffer and
+      there's no more data to read.
+
+      @return {boolean} True if the seek pointer is at the end of the buffer.
+      */
+    DataStream.prototype.isEof = function() {
+      return (this.position >= this._byteLength);
+    };
+
+
+    /**
+      Maps a Uint8Array into the DataStream buffer.
+
+      Nice for quickly reading in data.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Uint8Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapUint8Array = function(length) {
+      this._realloc(length * 1);
+      var arr = new Uint8Array(this._buffer, this.byteOffset+this.position, length);
+      this.position += length * 1;
+      return arr;
+    };
+
+
+    /**
+      Reads an Int32Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Int32Array.
+     */
+    DataStream.prototype.readInt32Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 4) : length;
+      var arr = new Int32Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads an Int16Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Int16Array.
+     */
+    DataStream.prototype.readInt16Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 2) : length;
+      var arr = new Int16Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads an Int8Array of desired length from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Int8Array.
+     */
+    DataStream.prototype.readInt8Array = function(length) {
+      length = length == null ? (this.byteLength-this.position) : length;
+      var arr = new Int8Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads a Uint32Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Uint32Array.
+     */
+    DataStream.prototype.readUint32Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 4) : length;
+      var arr = new Uint32Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads a Uint16Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Uint16Array.
+     */
+    DataStream.prototype.readUint16Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 2) : length;
+      var arr = new Uint16Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads a Uint8Array of desired length from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Uint8Array.
+     */
+    DataStream.prototype.readUint8Array = function(length) {
+      length = length == null ? (this.byteLength-this.position) : length;
+      var arr = new Uint8Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads a Float64Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Float64Array.
+     */
+    DataStream.prototype.readFloat64Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 8) : length;
+      var arr = new Float64Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+    /**
+      Reads a Float32Array of desired length and endianness from the DataStream.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} The read Float32Array.
+     */
+    DataStream.prototype.readFloat32Array = function(length, e) {
+      length = length == null ? (this.byteLength-this.position / 4) : length;
+      var arr = new Float32Array(length);
+      DataStream.memcpy(arr.buffer, 0,
+                        this.buffer, this.byteOffset+this.position,
+                        length*arr.BYTES_PER_ELEMENT);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += arr.byteLength;
+      return arr;
+    };
+
+
+    /**
+      Reads a 32-bit int from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readInt32 = function(e) {
+      var v = this._dataView.getInt32(this.position, e == null ? this.endianness : e);
+      this.position += 4;
+      return v;
+    };
+
+    /**
+      Reads a 16-bit int from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readInt16 = function(e) {
+      var v = this._dataView.getInt16(this.position, e == null ? this.endianness : e);
+      this.position += 2;
+      return v;
+    };
+
+    /**
+      Reads an 8-bit int from the DataStream.
+
+      @return {number} The read number.
+     */
+    DataStream.prototype.readInt8 = function() {
+      var v = this._dataView.getInt8(this.position);
+      this.position += 1;
+      return v;
+    };
+
+    /**
+      Reads a 32-bit unsigned int from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readUint32 = function(e) {
+      var v = this._dataView.getUint32(this.position, e == null ? this.endianness : e);
+      this.position += 4;
+      return v;
+    };
+
+    /**
+      Reads a 16-bit unsigned int from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readUint16 = function(e) {
+      var v = this._dataView.getUint16(this.position, e == null ? this.endianness : e);
+      this.position += 2;
+      return v;
+    };
+
+    /**
+      Reads an 8-bit unsigned int from the DataStream.
+
+      @return {number} The read number.
+     */
+    DataStream.prototype.readUint8 = function() {
+      var v = this._dataView.getUint8(this.position);
+      this.position += 1;
+      return v;
+    };
+
+    /**
+      Reads a 32-bit float from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readFloat32 = function(e) {
+      var v = this._dataView.getFloat32(this.position, e == null ? this.endianness : e);
+      this.position += 4;
+      return v;
+    };
+
+    /**
+      Reads a 64-bit float from the DataStream with the desired endianness.
+
+      @param {?boolean} e Endianness of the number.
+      @return {number} The read number.
+     */
+    DataStream.prototype.readFloat64 = function(e) {
+      var v = this._dataView.getFloat64(this.position, e == null ? this.endianness : e);
+      this.position += 8;
+      return v;
+    };
+
+    /**
+      Native endianness. Either DataStream.BIG_ENDIAN or DataStream.LITTLE_ENDIAN
+      depending on the platform endianness.
+
+      @type {boolean}
+     */
+    DataStream.endianness = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
+
+    /**
+      Copies byteLength bytes from the src buffer at srcOffset to the
+      dst buffer at dstOffset.
+
+      @param {Object} dst Destination ArrayBuffer to write to.
+      @param {number} dstOffset Offset to the destination ArrayBuffer.
+      @param {Object} src Source ArrayBuffer to read from.
+      @param {number} srcOffset Offset to the source ArrayBuffer.
+      @param {number} byteLength Number of bytes to copy.
+     */
+    DataStream.memcpy = function(dst, dstOffset, src, srcOffset, byteLength) {
+      var dstU8 = new Uint8Array(dst, dstOffset, byteLength);
+      var srcU8 = new Uint8Array(src, srcOffset, byteLength);
+      dstU8.set(srcU8);
+    };
+
+    /**
+      Converts array to native endianness in-place.
+
+      @param {Object} array Typed array to convert.
+      @param {boolean} arrayIsLittleEndian True if the data in the array is
+                                           little-endian. Set false for big-endian.
+      @return {Object} The converted typed array.
+     */
+    DataStream.arrayToNative = function(array, arrayIsLittleEndian) {
+      if (arrayIsLittleEndian == this.endianness) {
+        return array;
+      } else {
+        return this.flipArrayEndianness(array);
+      }
+    };
+
+    /**
+      Converts native endianness array to desired endianness in-place.
+
+      @param {Object} array Typed array to convert.
+      @param {boolean} littleEndian True if the converted array should be
+                                    little-endian. Set false for big-endian.
+      @return {Object} The converted typed array.
+     */
+    DataStream.nativeToEndian = function(array, littleEndian) {
+      if (this.endianness == littleEndian) {
+        return array;
+      } else {
+        return this.flipArrayEndianness(array);
+      }
+    };
+
+    /**
+      Flips typed array endianness in-place.
+
+      @param {Object} array Typed array to flip.
+      @return {Object} The converted typed array.
+     */
+    DataStream.flipArrayEndianness = function(array) {
+      var u8 = new Uint8Array(array.buffer, array.byteOffset, array.byteLength);
+      for (var i=0; i<array.byteLength; i+=array.BYTES_PER_ELEMENT) {
+        for (var j=i+array.BYTES_PER_ELEMENT-1, k=i; j>k; j--, k++) {
+          var tmp = u8[k];
+          u8[k] = u8[j];
+          u8[j] = tmp;
+        }
+      }
+      return array;
+    };
+
+    /**
+      Seek position where DataStream#readStruct ran into a problem.
+      Useful for debugging struct parsing.
+
+      @type {number}
+     */
+    DataStream.prototype.failurePosition = 0;
+
+    String.fromCharCodeUint8 = function(uint8arr) {
+        var arr = [];
+        for (var i = 0; i < uint8arr.length; i++) {
+          arr[i] = uint8arr[i];
+        }
+        return String.fromCharCode.apply(null, arr);
+    };
+    /**
+      Read a string of desired length and encoding from the DataStream.
+
+      @param {number} length The length of the string to read in bytes.
+      @param {?string} encoding The encoding of the string data in the DataStream.
+                                Defaults to ASCII.
+      @return {string} The read string.
+     */
+    DataStream.prototype.readString = function(length, encoding) {
+      if (encoding == null || encoding == "ASCII") {
+        return String.fromCharCodeUint8.apply(null, [this.mapUint8Array(length == null ? this.byteLength-this.position : length)]);
+      } else {
+        return (new TextDecoder(encoding)).decode(this.mapUint8Array(length));
+      }
+    };
+
+    /**
+      Read null-terminated string of desired length from the DataStream. Truncates
+      the returned string so that the null byte is not a part of it.
+
+      @param {?number} length The length of the string to read.
+      @return {string} The read string.
+     */
+    DataStream.prototype.readCString = function(length) {
+      var blen = this.byteLength-this.position;
+      var u8 = new Uint8Array(this._buffer, this._byteOffset + this.position);
+      var len = blen;
+      if (length != null) {
+        len = Math.min(length, blen);
+      }
+      for (var i = 0; i < len && u8[i] !== 0; i++); // find first zero byte
+      var s = String.fromCharCodeUint8.apply(null, [this.mapUint8Array(i)]);
+      if (length != null) {
+        this.position += len-i;
+      } else if (i != blen) {
+        this.position += 1; // trailing zero if not at end of buffer
+      }
+      return s;
+    };
+
+    /* 
+       TODO: fix endianness for 24/64-bit fields
+       TODO: check range/support for 64-bits numbers in JavaScript
+    */
+    var MAX_SIZE = Math.pow(2, 32);
+
+    DataStream.prototype.readInt64 = function () {
+      return (this.readInt32()*MAX_SIZE)+this.readUint32();
+    };
+    DataStream.prototype.readUint64 = function () {
+    	return (this.readUint32()*MAX_SIZE)+this.readUint32();
+    };
+
+    DataStream.prototype.readInt64 = function () {
+      return (this.readUint32()*MAX_SIZE)+this.readUint32();
+    };
+
+    DataStream.prototype.readUint24 = function () {
+    	return (this.readUint8()<<16)+(this.readUint8()<<8)+this.readUint8();
+    };
+
+    {
+      exports.DataStream = DataStream;  
+    }
+    // file:src/DataStream-write.js
+    /**
+      Saves the DataStream contents to the given filename.
+      Uses Chrome's anchor download property to initiate download.
+     
+      @param {string} filename Filename to save as.
+      @return {null}
+      */
+    DataStream.prototype.save = function(filename) {
+      var blob = new Blob([this.buffer]);
+      if (window.URL && URL.createObjectURL) {
+          var url = window.URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          // Required in Firefox:
+          document.body.appendChild(a);
+          a.setAttribute('href', url);
+          a.setAttribute('download', filename);
+          // Required in Firefox:
+          a.setAttribute('target', '_self');
+          a.click();
+          window.URL.revokeObjectURL(url);
+      } else {
+          throw("DataStream.save: Can't create object URL.");
+      }
+    };
+
+    /**
+      Whether to extend DataStream buffer when trying to write beyond its size.
+      If set, the buffer is reallocated to twice its current size until the
+      requested write fits the buffer.
+      @type {boolean}
+      */
+    DataStream.prototype._dynamicSize = true;
+    Object.defineProperty(DataStream.prototype, 'dynamicSize',
+      { get: function() {
+          return this._dynamicSize;
+        },
+        set: function(v) {
+          if (!v) {
+            this._trimAlloc();
+          }
+          this._dynamicSize = v;
+        } });
+
+    /**
+      Internal function to trim the DataStream buffer when required.
+      Used for stripping out the first bytes when not needed anymore.
+
+      @return {null}
+      */
+    DataStream.prototype.shift = function(offset) {
+      var buf = new ArrayBuffer(this._byteLength-offset);
+      var dst = new Uint8Array(buf);
+      var src = new Uint8Array(this._buffer, offset, dst.length);
+      dst.set(src);
+      this.buffer = buf;
+      this.position -= offset;
+    };
+
+    /**
+      Writes an Int32Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeInt32Array = function(arr, e) {
+      this._realloc(arr.length * 4);
+      if (arr instanceof Int32Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapInt32Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeInt32(arr[i], e);
+        }
+      }
+    };
+
+    /**
+      Writes an Int16Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeInt16Array = function(arr, e) {
+      this._realloc(arr.length * 2);
+      if (arr instanceof Int16Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapInt16Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeInt16(arr[i], e);
+        }
+      }
+    };
+
+    /**
+      Writes an Int8Array to the DataStream.
+
+      @param {Object} arr The array to write.
+     */
+    DataStream.prototype.writeInt8Array = function(arr) {
+      this._realloc(arr.length * 1);
+      if (arr instanceof Int8Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapInt8Array(arr.length);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeInt8(arr[i]);
+        }
+      }
+    };
+
+    /**
+      Writes a Uint32Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeUint32Array = function(arr, e) {
+      this._realloc(arr.length * 4);
+      if (arr instanceof Uint32Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapUint32Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeUint32(arr[i], e);
+        }
+      }
+    };
+
+    /**
+      Writes a Uint16Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeUint16Array = function(arr, e) {
+      this._realloc(arr.length * 2);
+      if (arr instanceof Uint16Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapUint16Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeUint16(arr[i], e);
+        }
+      }
+    };
+
+    /**
+      Writes a Uint8Array to the DataStream.
+
+      @param {Object} arr The array to write.
+     */
+    DataStream.prototype.writeUint8Array = function(arr) {
+      this._realloc(arr.length * 1);
+      if (arr instanceof Uint8Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapUint8Array(arr.length);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeUint8(arr[i]);
+        }
+      }
+    };
+
+    /**
+      Writes a Float64Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeFloat64Array = function(arr, e) {
+      this._realloc(arr.length * 8);
+      if (arr instanceof Float64Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapFloat64Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeFloat64(arr[i], e);
+        }
+      }
+    };
+
+    /**
+      Writes a Float32Array of specified endianness to the DataStream.
+
+      @param {Object} arr The array to write.
+      @param {?boolean} e Endianness of the data to write.
+     */
+    DataStream.prototype.writeFloat32Array = function(arr, e) {
+      this._realloc(arr.length * 4);
+      if (arr instanceof Float32Array &&
+          this.byteOffset+this.position % arr.BYTES_PER_ELEMENT === 0) {
+        DataStream.memcpy(this._buffer, this.byteOffset+this.position,
+                          arr.buffer, 0,
+                          arr.byteLength);
+        this.mapFloat32Array(arr.length, e);
+      } else {
+        for (var i=0; i<arr.length; i++) {
+          this.writeFloat32(arr[i], e);
+        }
+      }
+    };
+
+
+    /**
+      Writes a 32-bit int to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeInt32 = function(v, e) {
+      this._realloc(4);
+      this._dataView.setInt32(this.position, v, e == null ? this.endianness : e);
+      this.position += 4;
+    };
+
+    /**
+      Writes a 16-bit int to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeInt16 = function(v, e) {
+      this._realloc(2);
+      this._dataView.setInt16(this.position, v, e == null ? this.endianness : e);
+      this.position += 2;
+    };
+
+    /**
+      Writes an 8-bit int to the DataStream.
+
+      @param {number} v Number to write.
+     */
+    DataStream.prototype.writeInt8 = function(v) {
+      this._realloc(1);
+      this._dataView.setInt8(this.position, v);
+      this.position += 1;
+    };
+
+    /**
+      Writes a 32-bit unsigned int to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeUint32 = function(v, e) {
+      this._realloc(4);
+      this._dataView.setUint32(this.position, v, e == null ? this.endianness : e);
+      this.position += 4;
+    };
+
+    /**
+      Writes a 16-bit unsigned int to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeUint16 = function(v, e) {
+      this._realloc(2);
+      this._dataView.setUint16(this.position, v, e == null ? this.endianness : e);
+      this.position += 2;
+    };
+
+    /**
+      Writes an 8-bit unsigned  int to the DataStream.
+
+      @param {number} v Number to write.
+     */
+    DataStream.prototype.writeUint8 = function(v) {
+      this._realloc(1);
+      this._dataView.setUint8(this.position, v);
+      this.position += 1;
+    };
+
+    /**
+      Writes a 32-bit float to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeFloat32 = function(v, e) {
+      this._realloc(4);
+      this._dataView.setFloat32(this.position, v, e == null ? this.endianness : e);
+      this.position += 4;
+    };
+
+    /**
+      Writes a 64-bit float to the DataStream with the desired endianness.
+
+      @param {number} v Number to write.
+      @param {?boolean} e Endianness of the number.
+     */
+    DataStream.prototype.writeFloat64 = function(v, e) {
+      this._realloc(8);
+      this._dataView.setFloat64(this.position, v, e == null ? this.endianness : e);
+      this.position += 8;
+    };
+
+    /**
+      Write a UCS-2 string of desired endianness to the DataStream. The
+      lengthOverride argument lets you define the number of characters to write.
+      If the string is shorter than lengthOverride, the extra space is padded with
+      zeroes.
+
+      @param {string} str The string to write.
+      @param {?boolean} endianness The endianness to use for the written string data.
+      @param {?number} lengthOverride The number of characters to write.
+     */
+    DataStream.prototype.writeUCS2String = function(str, endianness, lengthOverride) {
+      if (lengthOverride == null) {
+        lengthOverride = str.length;
+      }
+      for (var i = 0; i < str.length && i < lengthOverride; i++) {
+        this.writeUint16(str.charCodeAt(i), endianness);
+      }
+      for (; i<lengthOverride; i++) {
+        this.writeUint16(0);
+      }
+    };
+
+    /**
+      Writes a string of desired length and encoding to the DataStream.
+
+      @param {string} s The string to write.
+      @param {?string} encoding The encoding for the written string data.
+                                Defaults to ASCII.
+      @param {?number} length The number of characters to write.
+     */
+    DataStream.prototype.writeString = function(s, encoding, length) {
+      var i = 0;
+      if (encoding == null || encoding == "ASCII") {
+        if (length != null) {
+          var len = Math.min(s.length, length);
+          for (i=0; i<len; i++) {
+            this.writeUint8(s.charCodeAt(i));
+          }
+          for (; i<length; i++) {
+            this.writeUint8(0);
+          }
+        } else {
+          for (i=0; i<s.length; i++) {
+            this.writeUint8(s.charCodeAt(i));
+          }
+        }
+      } else {
+        this.writeUint8Array((new TextEncoder(encoding)).encode(s.substring(0, length)));
+      }
+    };
+
+    /**
+      Writes a null-terminated string to DataStream and zero-pads it to length
+      bytes. If length is not given, writes the string followed by a zero.
+      If string is longer than length, the written part of the string does not have
+      a trailing zero.
+
+      @param {string} s The string to write.
+      @param {?number} length The number of characters to write.
+     */
+    DataStream.prototype.writeCString = function(s, length) {
+      var i = 0;
+      if (length != null) {
+        var len = Math.min(s.length, length);
+        for (i=0; i<len; i++) {
+          this.writeUint8(s.charCodeAt(i));
+        }
+        for (; i<length; i++) {
+          this.writeUint8(0);
+        }
+      } else {
+        for (i=0; i<s.length; i++) {
+          this.writeUint8(s.charCodeAt(i));
+        }
+        this.writeUint8(0);
+      }
+    };
+
+    /**
+      Writes a struct to the DataStream. Takes a structDefinition that gives the
+      types and a struct object that gives the values. Refer to readStruct for the
+      structure of structDefinition.
+
+      @param {Object} structDefinition Type definition of the struct.
+      @param {Object} struct The struct data object.
+      */
+    DataStream.prototype.writeStruct = function(structDefinition, struct) {
+      for (var i = 0; i < structDefinition.length; i+=2) {
+        var t = structDefinition[i+1];
+        this.writeType(t, struct[structDefinition[i]], struct);
+      }
+    };
+
+    /**
+      Writes object v of type t to the DataStream.
+
+      @param {Object} t Type of data to write.
+      @param {Object} v Value of data to write.
+      @param {Object} struct Struct to pass to write callback functions.
+      */
+    DataStream.prototype.writeType = function(t, v, struct) {
+      var tp;
+      if (typeof t == "function") {
+        return t(this, v);
+      } else if (typeof t == "object" && !(t instanceof Array)) {
+        return t.set(this, v, struct);
+      }
+      var lengthOverride = null;
+      var charset = "ASCII";
+      var pos = this.position;
+      if (typeof(t) == 'string' && /:/.test(t)) {
+        tp = t.split(":");
+        t = tp[0];
+        lengthOverride = parseInt(tp[1]);
+      }
+      if (typeof t == 'string' && /,/.test(t)) {
+        tp = t.split(",");
+        t = tp[0];
+        charset = parseInt(tp[1]);
+      }
+
+      switch(t) {
+        case 'uint8':
+          this.writeUint8(v);
+          break;
+        case 'int8':
+          this.writeInt8(v);
+          break;
+
+        case 'uint16':
+          this.writeUint16(v, this.endianness);
+          break;
+        case 'int16':
+          this.writeInt16(v, this.endianness);
+          break;
+        case 'uint32':
+          this.writeUint32(v, this.endianness);
+          break;
+        case 'int32':
+          this.writeInt32(v, this.endianness);
+          break;
+        case 'float32':
+          this.writeFloat32(v, this.endianness);
+          break;
+        case 'float64':
+          this.writeFloat64(v, this.endianness);
+          break;
+
+        case 'uint16be':
+          this.writeUint16(v, DataStream.BIG_ENDIAN);
+          break;
+        case 'int16be':
+          this.writeInt16(v, DataStream.BIG_ENDIAN);
+          break;
+        case 'uint32be':
+          this.writeUint32(v, DataStream.BIG_ENDIAN);
+          break;
+        case 'int32be':
+          this.writeInt32(v, DataStream.BIG_ENDIAN);
+          break;
+        case 'float32be':
+          this.writeFloat32(v, DataStream.BIG_ENDIAN);
+          break;
+        case 'float64be':
+          this.writeFloat64(v, DataStream.BIG_ENDIAN);
+          break;
+
+        case 'uint16le':
+          this.writeUint16(v, DataStream.LITTLE_ENDIAN);
+          break;
+        case 'int16le':
+          this.writeInt16(v, DataStream.LITTLE_ENDIAN);
+          break;
+        case 'uint32le':
+          this.writeUint32(v, DataStream.LITTLE_ENDIAN);
+          break;
+        case 'int32le':
+          this.writeInt32(v, DataStream.LITTLE_ENDIAN);
+          break;
+        case 'float32le':
+          this.writeFloat32(v, DataStream.LITTLE_ENDIAN);
+          break;
+        case 'float64le':
+          this.writeFloat64(v, DataStream.LITTLE_ENDIAN);
+          break;
+
+        case 'cstring':
+          this.writeCString(v, lengthOverride);
+          break;
+
+        case 'string':
+          this.writeString(v, charset, lengthOverride);
+          break;
+
+        case 'u16string':
+          this.writeUCS2String(v, this.endianness, lengthOverride);
+          break;
+
+        case 'u16stringle':
+          this.writeUCS2String(v, DataStream.LITTLE_ENDIAN, lengthOverride);
+          break;
+
+        case 'u16stringbe':
+          this.writeUCS2String(v, DataStream.BIG_ENDIAN, lengthOverride);
+          break;
+
+        default:
+          if (t.length == 3) {
+            var ta = t[1];
+            for (var i=0; i<v.length; i++) {
+              this.writeType(ta, v[i]);
+            }
+            break;
+          } else {
+            this.writeStruct(t, v);
+            break;
+          }
+      }
+      if (lengthOverride != null) {
+        this.position = pos;
+        this._realloc(lengthOverride);
+        this.position = pos + lengthOverride;
+      }
+    };
+
+
+    DataStream.prototype.writeUint64 = function (v) {
+    	var h = Math.floor(v / MAX_SIZE);
+    	this.writeUint32(h);
+    	this.writeUint32(v & 0xFFFFFFFF);
+    };
+
+    DataStream.prototype.writeUint24 = function (v) {
+    	this.writeUint8((v & 0x00FF0000)>>16);
+    	this.writeUint8((v & 0x0000FF00)>>8);
+    	this.writeUint8((v & 0x000000FF));
+    };
+
+    DataStream.prototype.adjustUint32 = function(position, value) {
+    	var pos = this.position;
+    	this.seek(position);
+    	this.writeUint32(value);
+    	this.seek(pos);
+    };
+    // file:src/DataStream-map.js
+    /**
+      Maps an Int32Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Int32Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapInt32Array = function(length, e) {
+      this._realloc(length * 4);
+      var arr = new Int32Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 4;
+      return arr;
+    };
+
+    /**
+      Maps an Int16Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Int16Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapInt16Array = function(length, e) {
+      this._realloc(length * 2);
+      var arr = new Int16Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 2;
+      return arr;
+    };
+
+    /**
+      Maps an Int8Array into the DataStream buffer.
+
+      Nice for quickly reading in data.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Int8Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapInt8Array = function(length) {
+      this._realloc(length * 1);
+      var arr = new Int8Array(this._buffer, this.byteOffset+this.position, length);
+      this.position += length * 1;
+      return arr;
+    };
+
+    /**
+      Maps a Uint32Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Uint32Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapUint32Array = function(length, e) {
+      this._realloc(length * 4);
+      var arr = new Uint32Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 4;
+      return arr;
+    };
+
+    /**
+      Maps a Uint16Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Uint16Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapUint16Array = function(length, e) {
+      this._realloc(length * 2);
+      var arr = new Uint16Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 2;
+      return arr;
+    };
+
+    /**
+      Maps a Float64Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Float64Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapFloat64Array = function(length, e) {
+      this._realloc(length * 8);
+      var arr = new Float64Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 8;
+      return arr;
+    };
+
+    /**
+      Maps a Float32Array into the DataStream buffer, swizzling it to native
+      endianness in-place. The current offset from the start of the buffer needs to
+      be a multiple of element size, just like with typed array views.
+
+      Nice for quickly reading in data. Warning: potentially modifies the buffer
+      contents.
+
+      @param {number} length Number of elements to map.
+      @param {?boolean} e Endianness of the data to read.
+      @return {Object} Float32Array to the DataStream backing buffer.
+      */
+    DataStream.prototype.mapFloat32Array = function(length, e) {
+      this._realloc(length * 4);
+      var arr = new Float32Array(this._buffer, this.byteOffset+this.position, length);
+      DataStream.arrayToNative(arr, e == null ? this.endianness : e);
+      this.position += length * 4;
+      return arr;
+    };
+    // file:src/buffer.js
+    /**
+     * MultiBufferStream is a class that acts as a SimpleStream for parsing 
+     * It holds several, possibly non-contiguous ArrayBuffer objects, each with a fileStart property 
+     * containing the offset for the buffer data in an original/virtual file 
+     *
+     * It inherits also from DataStream for all read/write/alloc operations
+     */
+
+    /**
+     * Constructor
+     */
+    var MultiBufferStream = function(buffer) {
+    	/* List of ArrayBuffers, with a fileStart property, sorted in fileStart order and non overlapping */
+    	this.buffers = [];	
+    	this.bufferIndex = -1;
+    	if (buffer) {
+    		this.insertBuffer(buffer);
+    		this.bufferIndex = 0;
+    	}
+    };
+    MultiBufferStream.prototype = new DataStream(new ArrayBuffer(), 0, DataStream.BIG_ENDIAN);
+
+    /************************************************************************************
+      Methods for the managnement of the buffers (insertion, removal, concatenation, ...)
+     ***********************************************************************************/
+
+    MultiBufferStream.prototype.initialized = function() {
+    	var firstBuffer;
+    	if (this.bufferIndex > -1) {
+    		return true;
+    	} else if (this.buffers.length > 0) {
+    		firstBuffer = this.buffers[0];
+    		if (firstBuffer.fileStart === 0) {
+    			this.buffer = firstBuffer;
+    			this.bufferIndex = 0;
+    			Log.debug("MultiBufferStream", "Stream ready for parsing");
+    			return true;
+    		} else {
+    			Log.warn("MultiBufferStream", "The first buffer should have a fileStart of 0");
+    			this.logBufferLevel();
+    			return false;
+    		}
+    	} else {
+    		Log.warn("MultiBufferStream", "No buffer to start parsing from");
+    		this.logBufferLevel();
+    		return false;
+    	}			
+    };
+
+    /**
+     * helper functions to concatenate two ArrayBuffer objects
+     * @param  {ArrayBuffer} buffer1 
+     * @param  {ArrayBuffer} buffer2 
+     * @return {ArrayBuffer} the concatenation of buffer1 and buffer2 in that order
+     */
+    ArrayBuffer.concat = function(buffer1, buffer2) {
+      Log.debug("ArrayBuffer", "Trying to create a new buffer of size: "+(buffer1.byteLength + buffer2.byteLength));
+      var tmp = new Uint8Array(buffer1.byteLength + buffer2.byteLength);
+      tmp.set(new Uint8Array(buffer1), 0);
+      tmp.set(new Uint8Array(buffer2), buffer1.byteLength);
+      return tmp.buffer;
+    };
+
+    /**
+     * Reduces the size of a given buffer, but taking the part between offset and offset+newlength
+     * @param  {ArrayBuffer} buffer    
+     * @param  {Number}      offset    the start of new buffer
+     * @param  {Number}      newLength the length of the new buffer
+     * @return {ArrayBuffer}           the new buffer
+     */
+    MultiBufferStream.prototype.reduceBuffer = function(buffer, offset, newLength) {
+    	var smallB;
+    	smallB = new Uint8Array(newLength);
+    	smallB.set(new Uint8Array(buffer, offset, newLength));
+    	smallB.buffer.fileStart = buffer.fileStart+offset;
+    	smallB.buffer.usedBytes = 0;
+    	return smallB.buffer;	
+    };
+
+    /**
+     * Inserts the new buffer in the sorted list of buffers,
+     *  making sure, it is not overlapping with existing ones (possibly reducing its size).
+     *  if the new buffer overrides/replaces the 0-th buffer (for instance because it is bigger), 
+     *  updates the DataStream buffer for parsing 
+    */
+    MultiBufferStream.prototype.insertBuffer = function(ab) {	
+    	var to_add = true;
+    	/* TODO: improve insertion if many buffers */
+    	for (var i = 0; i < this.buffers.length; i++) {
+    		var b = this.buffers[i];
+    		if (ab.fileStart <= b.fileStart) {
+    			/* the insertion position is found */
+    			if (ab.fileStart === b.fileStart) {
+    				/* The new buffer overlaps with an existing buffer */
+    				if (ab.byteLength >  b.byteLength) {
+    					/* the new buffer is bigger than the existing one
+    					   remove the existing buffer and try again to insert 
+    					   the new buffer to check overlap with the next ones */
+    					this.buffers.splice(i, 1);
+    					i--; 
+    					continue;
+    				} else {
+    					/* the new buffer is smaller than the existing one, just drop it */
+    					Log.warn("MultiBufferStream", "Buffer (fileStart: "+ab.fileStart+" - Length: "+ab.byteLength+") already appended, ignoring");
+    				}
+    			} else {
+    				/* The beginning of the new buffer is not overlapping with an existing buffer
+    				   let's check the end of it */
+    				if (ab.fileStart + ab.byteLength <= b.fileStart) ; else {
+    					/* There is some overlap, cut the new buffer short, and add it*/
+    					ab = this.reduceBuffer(ab, 0, b.fileStart - ab.fileStart);
+    				}
+    				Log.debug("MultiBufferStream", "Appending new buffer (fileStart: "+ab.fileStart+" - Length: "+ab.byteLength+")");
+    				this.buffers.splice(i, 0, ab);
+    				/* if this new buffer is inserted in the first place in the list of the buffer, 
+    				   and the DataStream is initialized, make it the buffer used for parsing */
+    				if (i === 0) {
+    					this.buffer = ab;
+    				}
+    			}
+    			to_add = false;
+    			break;
+    		} else if (ab.fileStart < b.fileStart + b.byteLength) {
+    			/* the new buffer overlaps its beginning with the end of the current buffer */
+    			var offset = b.fileStart + b.byteLength - ab.fileStart;
+    			var newLength = ab.byteLength - offset;
+    			if (newLength > 0) {
+    				/* the new buffer is bigger than the current overlap, drop the overlapping part and try again inserting the remaining buffer */
+    				ab = this.reduceBuffer(ab, offset, newLength);
+    			} else {
+    				/* the content of the new buffer is entirely contained in the existing buffer, drop it entirely */
+    				to_add = false;
+    				break;
+    			}
+    		}
+    	}
+    	/* if the buffer has not been added, we can add it at the end */
+    	if (to_add) {
+    		Log.debug("MultiBufferStream", "Appending new buffer (fileStart: "+ab.fileStart+" - Length: "+ab.byteLength+")");
+    		this.buffers.push(ab);
+    		/* if this new buffer is inserted in the first place in the list of the buffer, 
+    		   and the DataStream is initialized, make it the buffer used for parsing */
+    		if (i === 0) {
+    			this.buffer = ab;
+    		}
+    	}
+    };
+
+    /**
+     * Displays the status of the buffers (number and used bytes)
+     * @param  {Object} info callback method for display
+     */
+    MultiBufferStream.prototype.logBufferLevel = function(info) {
+    	var i;
+    	var buffer;
+    	var used, total;
+    	var ranges = [];
+    	var range;
+    	var bufferedString = "";
+    	used = 0;
+    	total = 0;
+    	for (i = 0; i < this.buffers.length; i++) {
+    		buffer = this.buffers[i];
+    		if (i === 0) {
+    			range = {};
+    			ranges.push(range);
+    			range.start = buffer.fileStart;
+    			range.end = buffer.fileStart+buffer.byteLength;
+    			bufferedString += "["+range.start+"-";
+    		} else if (range.end === buffer.fileStart) {
+    			range.end = buffer.fileStart+buffer.byteLength;
+    		} else {
+    			range = {};
+    			range.start = buffer.fileStart;
+    			bufferedString += (ranges[ranges.length-1].end-1)+"], ["+range.start+"-";
+    			range.end = buffer.fileStart+buffer.byteLength;
+    			ranges.push(range);
+    		}
+    		used += buffer.usedBytes;
+    		total += buffer.byteLength;
+    	}
+    	if (ranges.length > 0) {
+    		bufferedString += (range.end-1)+"]";
+    	}
+    	var log = (info ? Log.info : Log.debug);
+    	if (this.buffers.length === 0) {
+    		log("MultiBufferStream", "No more buffer in memory");
+    	} else {
+    		log("MultiBufferStream", ""+this.buffers.length+" stored buffer(s) ("+used+"/"+total+" bytes), continuous ranges: "+bufferedString);
+    	}
+    };
+
+    MultiBufferStream.prototype.cleanBuffers = function () {
+    	var i;
+    	var buffer;
+    	for (i = 0; i < this.buffers.length; i++) {
+    		buffer = this.buffers[i];
+    		if (buffer.usedBytes === buffer.byteLength) {
+    			Log.debug("MultiBufferStream", "Removing buffer #"+i);
+    			this.buffers.splice(i, 1);
+    			i--;
+    		}
+    	}
+    };
+
+    MultiBufferStream.prototype.mergeNextBuffer = function() {
+    	var next_buffer;
+    	if (this.bufferIndex+1 < this.buffers.length) {
+    		next_buffer = this.buffers[this.bufferIndex+1];
+    		if (next_buffer.fileStart === this.buffer.fileStart + this.buffer.byteLength) {
+    			var oldLength = this.buffer.byteLength;
+    			var oldUsedBytes = this.buffer.usedBytes;
+    			var oldFileStart = this.buffer.fileStart;
+    			this.buffers[this.bufferIndex] = ArrayBuffer.concat(this.buffer, next_buffer);
+    			this.buffer = this.buffers[this.bufferIndex];
+    			this.buffers.splice(this.bufferIndex+1, 1);
+    			this.buffer.usedBytes = oldUsedBytes; /* TODO: should it be += ? */
+    			this.buffer.fileStart = oldFileStart;
+    			Log.debug("ISOFile", "Concatenating buffer for box parsing (length: "+oldLength+"->"+this.buffer.byteLength+")");
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	} else {
+    		return false;
+    	}
+    };
+
+
+    /*************************************************************************
+      Seek-related functions
+     *************************************************************************/
+
+    /**
+     * Finds the buffer that holds the given file position
+     * @param  {Boolean} fromStart    indicates if the search should start from the current buffer (false) 
+     *                                or from the first buffer (true)
+     * @param  {Number}  filePosition position in the file to seek to
+     * @param  {Boolean} markAsUsed   indicates if the bytes in between the current position and the seek position 
+     *                                should be marked as used for garbage collection
+     * @return {Number}               the index of the buffer holding the seeked file position, -1 if not found.
+     */
+    MultiBufferStream.prototype.findPosition = function(fromStart, filePosition, markAsUsed) {
+    	var i;
+    	var abuffer = null;
+    	var index = -1;
+
+    	/* find the buffer with the largest position smaller than the given position */
+    	if (fromStart === true) {
+    	   /* the reposition can be in the past, we need to check from the beginning of the list of buffers */
+    		i = 0;
+    	} else {
+    		i = this.bufferIndex;
+    	}
+
+    	while (i < this.buffers.length) {
+    		abuffer = this.buffers[i];
+    		if (abuffer.fileStart <= filePosition) {
+    			index = i;
+    			if (markAsUsed) {
+    				if (abuffer.fileStart + abuffer.byteLength <= filePosition) {
+    					abuffer.usedBytes = abuffer.byteLength;	
+    				} else {
+    					abuffer.usedBytes = filePosition - abuffer.fileStart;
+    				}		
+    				this.logBufferLevel();	
+    			}
+    		} else {
+    			break;
+    		}
+    		i++;
+    	}
+
+    	if (index !== -1) {
+    		abuffer = this.buffers[index];
+    		if (abuffer.fileStart + abuffer.byteLength >= filePosition) {			
+    			Log.debug("MultiBufferStream", "Found position in existing buffer #"+index);
+    			return index;
+    		} else {
+    			return -1;
+    		}
+    	} else {
+    		return -1;
+    	}
+    };
+
+    /**
+     * Finds the largest file position contained in a buffer or in the next buffers if they are contiguous (no gap)
+     * starting from the given buffer index or from the current buffer if the index is not given
+     *
+     * @param  {Number} inputindex Index of the buffer to start from
+     * @return {Number}            The largest file position found in the buffers
+     */
+    MultiBufferStream.prototype.findEndContiguousBuf = function(inputindex) {
+    	var i;
+    	var currentBuf;
+    	var nextBuf;
+    	var index = (inputindex !== undefined ? inputindex : this.bufferIndex);
+    	currentBuf = this.buffers[index];
+    	/* find the end of the contiguous range of data */
+    	if (this.buffers.length > index+1) {
+    		for (i = index+1; i < this.buffers.length; i++) {
+    			nextBuf = this.buffers[i];
+    			if (nextBuf.fileStart === currentBuf.fileStart + currentBuf.byteLength) {
+    				currentBuf = nextBuf;
+    			} else {
+    				break;
+    			}
+    		}
+    	}
+    	/* return the position of last byte in the file that we have */
+    	return currentBuf.fileStart + currentBuf.byteLength;
+    };
+
+    /**
+     * Returns the largest file position contained in the buffers, larger than the given position
+     * @param  {Number} pos the file position to start from
+     * @return {Number}     the largest position in the current buffer or in the buffer and the next contiguous 
+     *                      buffer that holds the given position
+     */
+    MultiBufferStream.prototype.getEndFilePositionAfter = function(pos) {
+    	var index = this.findPosition(true, pos, false);
+    	if (index !== -1) {
+    		return this.findEndContiguousBuf(index);
+    	} else {
+    		return pos;
+    	}
+    };
+
+    /*************************************************************************
+      Garbage collection related functions
+     *************************************************************************/
+
+    /**
+     * Marks a given number of bytes as used in the current buffer for garbage collection
+     * @param {Number} nbBytes 
+     */
+    MultiBufferStream.prototype.addUsedBytes = function(nbBytes) {
+    	this.buffer.usedBytes += nbBytes;
+    	this.logBufferLevel();
+    };
+
+    /**
+     * Marks the entire current buffer as used, ready for garbage collection
+     */
+    MultiBufferStream.prototype.setAllUsedBytes = function() {
+    	this.buffer.usedBytes = this.buffer.byteLength;
+    	this.logBufferLevel();
+    };
+
+    /*************************************************************************
+      Common API between MultiBufferStream and SimpleStream
+     *************************************************************************/
+
+    /**
+     * Tries to seek to a given file position
+     * if possible, repositions the parsing from there and returns true 
+     * if not possible, does not change anything and returns false 
+     * @param  {Number}  filePosition position in the file to seek to
+     * @param  {Boolean} fromStart    indicates if the search should start from the current buffer (false) 
+     *                                or from the first buffer (true)
+     * @param  {Boolean} markAsUsed   indicates if the bytes in between the current position and the seek position 
+     *                                should be marked as used for garbage collection
+     * @return {Boolean}              true if the seek succeeded, false otherwise
+     */
+    MultiBufferStream.prototype.seek = function(filePosition, fromStart, markAsUsed) {
+    	var index;
+    	index = this.findPosition(fromStart, filePosition, markAsUsed);
+    	if (index !== -1) {
+    		this.buffer = this.buffers[index];
+    		this.bufferIndex = index;
+    		this.position = filePosition - this.buffer.fileStart;
+    		Log.debug("MultiBufferStream", "Repositioning parser at buffer position: "+this.position);
+    		return true;
+    	} else {
+    		Log.debug("MultiBufferStream", "Position "+filePosition+" not found in buffered data");
+    		return false;
+    	}
+    };
+
+    /**
+     * Returns the current position in the file
+     * @return {Number} the position in the file
+     */
+    MultiBufferStream.prototype.getPosition = function() {
+    	if (this.bufferIndex === -1 || this.buffers[this.bufferIndex] === null) {
+    		throw "Error accessing position in the MultiBufferStream";
+    	}
+    	return this.buffers[this.bufferIndex].fileStart+this.position;
+    };
+
+    /**
+     * Returns the length of the current buffer
+     * @return {Number} the length of the current buffer
+     */
+    MultiBufferStream.prototype.getLength = function() {
+    	return this.byteLength;
+    };
+
+    MultiBufferStream.prototype.getEndPosition = function() {
+    	if (this.bufferIndex === -1 || this.buffers[this.bufferIndex] === null) {
+    		throw "Error accessing position in the MultiBufferStream";
+    	}
+    	return this.buffers[this.bufferIndex].fileStart+this.byteLength;
+    };
+
+    {
+    	exports.MultiBufferStream = MultiBufferStream;
+    }// file:src/descriptor.js
+    /*
+     * Copyright (c) 2012-2013. Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    var MPEG4DescriptorParser = function () {
+    	var ES_DescrTag 			= 0x03;
+    	var DecoderConfigDescrTag 	= 0x04;
+    	var DecSpecificInfoTag 		= 0x05;
+    	var SLConfigDescrTag 		= 0x06;
+
+    	var descTagToName = [];
+    	descTagToName[ES_DescrTag] 				= "ES_Descriptor";
+    	descTagToName[DecoderConfigDescrTag] 	= "DecoderConfigDescriptor";
+    	descTagToName[DecSpecificInfoTag] 		= "DecoderSpecificInfo";
+    	descTagToName[SLConfigDescrTag] 		= "SLConfigDescriptor";
+
+    	this.getDescriptorName = function(tag) {
+    		return descTagToName[tag];
+    	};
+
+    	var that = this;
+    	var classes = {};
+
+    	this.parseOneDescriptor = function (stream) {
+    		var size = 0;
+    		var tag;
+    		var desc;
+    		var byteRead;
+    		tag = stream.readUint8();
+    		byteRead = stream.readUint8();
+    		while (byteRead & 0x80) {
+    			size = (byteRead & 0x7F)<<7;
+    			byteRead = stream.readUint8();
+    		}
+    		size += byteRead & 0x7F;
+    		Log.debug("MPEG4DescriptorParser", "Found "+(descTagToName[tag] || "Descriptor "+tag)+", size "+size+" at position "+stream.getPosition());
+    		if (descTagToName[tag]) {
+    			desc = new classes[descTagToName[tag]](size);
+    		} else {
+    			desc = new classes.Descriptor(size);
+    		}
+    		desc.parse(stream);
+    		return desc;
+    	};
+
+    	classes.Descriptor = function(_tag, _size) {
+    		this.tag = _tag;
+    		this.size = _size;
+    		this.descs = [];
+    	};
+
+    	classes.Descriptor.prototype.parse = function (stream) {
+    		this.data = stream.readUint8Array(this.size);
+    	};
+
+    	classes.Descriptor.prototype.findDescriptor = function (tag) {
+    		for (var i = 0; i < this.descs.length; i++) {
+    			if (this.descs[i].tag == tag) {
+    				return this.descs[i];
+    			}
+    		}
+    		return null;
+    	};
+
+    	classes.Descriptor.prototype.parseRemainingDescriptors = function (stream) {
+    		var start = stream.position;
+    		while (stream.position < start+this.size) {
+    			var desc = that.parseOneDescriptor(stream);
+    			this.descs.push(desc);
+    		}
+    	};
+
+    	classes.ES_Descriptor = function (size) {
+    		classes.Descriptor.call(this, ES_DescrTag, size);
+    	};
+
+    	classes.ES_Descriptor.prototype = new classes.Descriptor();
+
+    	classes.ES_Descriptor.prototype.parse = function(stream) {
+    		this.ES_ID = stream.readUint16();
+    		this.flags = stream.readUint8();
+    		this.size -= 3;
+    		if (this.flags & 0x80) {
+    			this.dependsOn_ES_ID = stream.readUint16();
+    			this.size -= 2;
+    		} else {
+    			this.dependsOn_ES_ID = 0;
+    		}
+    		if (this.flags & 0x40) {
+    			var l = stream.readUint8();
+    			this.URL = stream.readString(l);
+    			this.size -= l+1;
+    		} else {
+    			this.URL = "";
+    		}
+    		if (this.flags & 0x20) {
+    			this.OCR_ES_ID = stream.readUint16();
+    			this.size -= 2;
+    		} else {
+    			this.OCR_ES_ID = 0;
+    		}
+    		this.parseRemainingDescriptors(stream);
+    	};
+
+    	classes.ES_Descriptor.prototype.getOTI = function(stream) {
+    		var dcd = this.findDescriptor(DecoderConfigDescrTag);
+    		if (dcd) {
+    			return dcd.oti;
+    		} else {
+    			return 0;
+    		}
+    	};
+
+    	classes.ES_Descriptor.prototype.getAudioConfig = function(stream) {
+    		var dcd = this.findDescriptor(DecoderConfigDescrTag);
+    		if (!dcd) return null;
+    		var dsi = dcd.findDescriptor(DecSpecificInfoTag);
+    		if (dsi && dsi.data) {
+    			var audioObjectType = (dsi.data[0]& 0xF8) >> 3;
+    			if (audioObjectType === 31 && dsi.data.length >= 2) {
+    				audioObjectType = 32 + ((dsi.data[0] & 0x7) << 3) + ((dsi.data[1] & 0xE0) >> 5);
+    			}
+    			return audioObjectType;
+    		} else {
+    			return null;
+    		}
+    	};
+
+    	classes.DecoderConfigDescriptor = function (size) {
+    		classes.Descriptor.call(this, DecoderConfigDescrTag, size);
+    	};
+    	classes.DecoderConfigDescriptor.prototype = new classes.Descriptor();
+
+    	classes.DecoderConfigDescriptor.prototype.parse = function(stream) {
+    		this.oti = stream.readUint8();
+    		this.streamType = stream.readUint8();
+    		this.bufferSize = stream.readUint24();
+    		this.maxBitrate = stream.readUint32();
+    		this.avgBitrate = stream.readUint32();
+    		this.size -= 13;
+    		this.parseRemainingDescriptors(stream);
+    	};
+
+    	classes.DecoderSpecificInfo = function (size) {
+    		classes.Descriptor.call(this, DecSpecificInfoTag, size);
+    	};
+    	classes.DecoderSpecificInfo.prototype = new classes.Descriptor();
+
+    	classes.SLConfigDescriptor = function (size) {
+    		classes.Descriptor.call(this, SLConfigDescrTag, size);
+    	};
+    	classes.SLConfigDescriptor.prototype = new classes.Descriptor();
+
+    	return this;
+    };
+
+    {
+    	exports.MPEG4DescriptorParser = MPEG4DescriptorParser;
+    }// file:src/box.js
+    /*
+     * Copyright (c) 2012-2013. Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    var BoxParser = {
+    	ERR_INVALID_DATA : -1,
+    	ERR_NOT_ENOUGH_DATA : 0,
+    	OK : 1,
+
+    	// Boxes to be created with default parsing
+    	BASIC_BOXES: [ "mdat", "idat", "free", "skip", "meco", "strk" ],
+    	FULL_BOXES: [ "hmhd", "nmhd", "iods", "xml ", "bxml", "ipro", "mere" ],
+    	CONTAINER_BOXES: [
+    		[ "moov", [ "trak", "pssh" ] ],
+    		[ "trak" ],
+    		[ "edts" ],
+    		[ "mdia" ],
+    		[ "minf" ],
+    		[ "dinf" ],
+    		[ "stbl", [ "sgpd", "sbgp" ] ],
+    		[ "mvex", [ "trex" ] ],
+    		[ "moof", [ "traf" ] ],
+    		[ "traf", [ "trun", "sgpd", "sbgp" ] ],
+    		[ "vttc" ],
+    		[ "tref" ],
+    		[ "iref" ],
+    		[ "mfra", [ "tfra" ] ],
+    		[ "meco" ],
+    		[ "hnti" ],
+    		[ "hinf" ],
+    		[ "strk" ],
+    		[ "strd" ],
+    		[ "sinf" ],
+    		[ "rinf" ],
+    		[ "schi" ],
+    		[ "trgr" ],
+    		[ "udta", ["kind"] ],
+    		[ "iprp", ["ipma"] ],
+    		[ "ipco"]
+    	],
+    	// Boxes effectively created
+    	boxCodes : [],
+    	fullBoxCodes : [],
+    	containerBoxCodes : [],
+    	sampleEntryCodes : {},
+    	sampleGroupEntryCodes: [],
+    	trackGroupTypes: [],
+    	UUIDBoxes: {},
+    	UUIDs: [],
+    	initialize: function() {
+    		BoxParser.FullBox.prototype = new BoxParser.Box();
+    		BoxParser.ContainerBox.prototype = new BoxParser.Box();
+    		BoxParser.SampleEntry.prototype = new BoxParser.Box();
+    		BoxParser.TrackGroupTypeBox.prototype = new BoxParser.FullBox();
+
+    		/* creating constructors for simple boxes */
+    		BoxParser.BASIC_BOXES.forEach(function(type) {
+    			BoxParser.createBoxCtor(type);
+    		});
+    		BoxParser.FULL_BOXES.forEach(function(type) {
+    			BoxParser.createFullBoxCtor(type);
+    		});
+    		BoxParser.CONTAINER_BOXES.forEach(function(types) {
+    			BoxParser.createContainerBoxCtor(types[0], null, types[1]);
+    		});
+    	},
+    	Box: function(_type, _size, _uuid) {
+    		this.type = _type;
+    		this.size = _size;
+    		this.uuid = _uuid;
+    	},
+    	FullBox: function(type, size, uuid) {
+    		BoxParser.Box.call(this, type, size, uuid);
+    		this.flags = 0;
+    		this.version = 0;
+    	},
+    	ContainerBox: function(type, size, uuid) {
+    		BoxParser.Box.call(this, type, size, uuid);
+    		this.boxes = [];
+    	},
+    	SampleEntry: function(type, size, hdr_size, start) {
+    		BoxParser.ContainerBox.call(this, type, size);
+    		this.hdr_size = hdr_size;
+    		this.start = start;
+    	},
+    	SampleGroupEntry: function(type) {
+    		this.grouping_type = type;
+    	},
+    	TrackGroupTypeBox: function(type, size) {
+    		BoxParser.FullBox.call(this, type, size);
+    	},
+    	createBoxCtor: function(type, parseMethod){
+    		BoxParser.boxCodes.push(type);
+    		BoxParser[type+"Box"] = function(size) {
+    			BoxParser.Box.call(this, type, size);
+    		};
+    		BoxParser[type+"Box"].prototype = new BoxParser.Box();
+    		if (parseMethod) BoxParser[type+"Box"].prototype.parse = parseMethod;
+    	},
+    	createFullBoxCtor: function(type, parseMethod) {
+    		//BoxParser.fullBoxCodes.push(type);
+    		BoxParser[type+"Box"] = function(size) {
+    			BoxParser.FullBox.call(this, type, size);
+    		};
+    		BoxParser[type+"Box"].prototype = new BoxParser.FullBox();
+    		BoxParser[type+"Box"].prototype.parse = function(stream) {
+    			this.parseFullHeader(stream);
+    			if (parseMethod) {
+    				parseMethod.call(this, stream);
+    			}
+    		};
+    	},
+    	addSubBoxArrays: function(subBoxNames) {
+    		if (subBoxNames) {
+    			this.subBoxNames = subBoxNames;
+    			var nbSubBoxes = subBoxNames.length;
+    			for (var k = 0; k<nbSubBoxes; k++) {
+    				this[subBoxNames[k]+"s"] = [];
+    			}
+    		}
+    	},
+    	createContainerBoxCtor: function(type, parseMethod, subBoxNames) {
+    		//BoxParser.containerBoxCodes.push(type);
+    		BoxParser[type+"Box"] = function(size) {
+    			BoxParser.ContainerBox.call(this, type, size);
+    			BoxParser.addSubBoxArrays.call(this, subBoxNames);
+    		};
+    		BoxParser[type+"Box"].prototype = new BoxParser.ContainerBox();
+    		if (parseMethod) BoxParser[type+"Box"].prototype.parse = parseMethod;
+    	},
+    	createMediaSampleEntryCtor: function(mediaType, parseMethod, subBoxNames) {
+    		BoxParser.sampleEntryCodes[mediaType] = [];
+    		BoxParser[mediaType+"SampleEntry"] = function(type, size) {
+    			BoxParser.SampleEntry.call(this, type, size);
+    			BoxParser.addSubBoxArrays.call(this, subBoxNames);
+    		};
+    		BoxParser[mediaType+"SampleEntry"].prototype = new BoxParser.SampleEntry();
+    		if (parseMethod) BoxParser[mediaType+"SampleEntry"].prototype .parse = parseMethod;
+    	},
+    	createSampleEntryCtor: function(mediaType, type, parseMethod, subBoxNames) {
+    		BoxParser.sampleEntryCodes[mediaType].push(type);
+    		BoxParser[type+"SampleEntry"] = function(size) {
+    			BoxParser[mediaType+"SampleEntry"].call(this, type, size);
+    			BoxParser.addSubBoxArrays.call(this, subBoxNames);
+    		};
+    		BoxParser[type+"SampleEntry"].prototype = new BoxParser[mediaType+"SampleEntry"]();
+    		if (parseMethod) BoxParser[type+"SampleEntry"].prototype.parse = parseMethod;
+    	},
+    	createEncryptedSampleEntryCtor: function(mediaType, type, parseMethod) {
+    		BoxParser.createSampleEntryCtor.call(this, mediaType, type, parseMethod, ["sinf"]);
+    	},
+    	createSampleGroupCtor: function(type, parseMethod) {
+    		//BoxParser.sampleGroupEntryCodes.push(type);
+    		BoxParser[type+"SampleGroupEntry"] = function(size) {
+    			BoxParser.SampleGroupEntry.call(this, type, size);
+    		};
+    		BoxParser[type+"SampleGroupEntry"].prototype = new BoxParser.SampleGroupEntry();
+    		if (parseMethod) BoxParser[type+"SampleGroupEntry"].prototype.parse = parseMethod;
+    	},
+    	createTrackGroupCtor: function(type, parseMethod) {
+    		//BoxParser.trackGroupTypes.push(type);
+    		BoxParser[type+"TrackGroupTypeBox"] = function(size) {
+    			BoxParser.TrackGroupTypeBox.call(this, type, size);
+    		};
+    		BoxParser[type+"TrackGroupTypeBox"].prototype = new BoxParser.TrackGroupTypeBox();
+    		if (parseMethod) BoxParser[type+"TrackGroupTypeBox"].prototype.parse = parseMethod;
+    	},
+    	createUUIDBox: function(uuid, isFullBox, isContainerBox, parseMethod) {
+    		BoxParser.UUIDs.push(uuid);
+    		BoxParser.UUIDBoxes[uuid] = function(size) {
+    			if (isFullBox) {
+    				BoxParser.FullBox.call(this, "uuid", size, uuid);
+    			} else {
+    				if (isContainerBox) {
+    					BoxParser.ContainerBox.call(this, "uuid", size, uuid);
+    				} else {
+    					BoxParser.Box.call(this, "uuid", size, uuid);
+    				}
+    			}
+    		};
+    		BoxParser.UUIDBoxes[uuid].prototype = (isFullBox ? new BoxParser.FullBox() : (isContainerBox ? new BoxParser.ContainerBox() : new BoxParser.Box()));
+    		if (parseMethod) {
+    			if (isFullBox) {
+    				BoxParser.UUIDBoxes[uuid].prototype.parse = function(stream) {
+    					this.parseFullHeader(stream);
+    					if (parseMethod) {
+    						parseMethod.call(this, stream);
+    					}
+    				};
+    			} else {
+    				BoxParser.UUIDBoxes[uuid].prototype.parse = parseMethod;
+    			}
+    		}
+    	}
+    };
+
+    BoxParser.initialize();
+
+    BoxParser.TKHD_FLAG_ENABLED    = 0x000001;
+    BoxParser.TKHD_FLAG_IN_MOVIE   = 0x000002;
+    BoxParser.TKHD_FLAG_IN_PREVIEW = 0x000004;
+
+    BoxParser.TFHD_FLAG_BASE_DATA_OFFSET	= 0x01;
+    BoxParser.TFHD_FLAG_SAMPLE_DESC			= 0x02;
+    BoxParser.TFHD_FLAG_SAMPLE_DUR			= 0x08;
+    BoxParser.TFHD_FLAG_SAMPLE_SIZE			= 0x10;
+    BoxParser.TFHD_FLAG_SAMPLE_FLAGS		= 0x20;
+    BoxParser.TFHD_FLAG_DUR_EMPTY			= 0x10000;
+    BoxParser.TFHD_FLAG_DEFAULT_BASE_IS_MOOF= 0x20000;
+
+    BoxParser.TRUN_FLAGS_DATA_OFFSET= 0x01;
+    BoxParser.TRUN_FLAGS_FIRST_FLAG	= 0x04;
+    BoxParser.TRUN_FLAGS_DURATION	= 0x100;
+    BoxParser.TRUN_FLAGS_SIZE		= 0x200;
+    BoxParser.TRUN_FLAGS_FLAGS		= 0x400;
+    BoxParser.TRUN_FLAGS_CTS_OFFSET	= 0x800;
+
+    BoxParser.Box.prototype.add = function(name) {
+    	return this.addBox(new BoxParser[name+"Box"]());
+    };
+
+    BoxParser.Box.prototype.addBox = function(box) {
+    	this.boxes.push(box);
+    	if (this[box.type+"s"]) {
+    		this[box.type+"s"].push(box);
+    	} else {
+    		this[box.type] = box;
+    	}
+    	return box;
+    };
+
+    BoxParser.Box.prototype.set = function(prop, value) {
+    	this[prop] = value;
+    	return this;
+    };
+
+    BoxParser.Box.prototype.addEntry = function(value, _prop) {
+    	var prop = _prop || "entries";
+    	if (!this[prop]) {
+    		this[prop] = [];
+    	}
+    	this[prop].push(value);
+    	return this;
+    };
+
+    {
+    	exports.BoxParser = BoxParser;
+    }
+    // file:src/box-parse.js
+    /* 
+     * Copyright (c) Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    BoxParser.parseUUID = function(stream) {
+    	return BoxParser.parseHex16(stream);
+    };
+
+    BoxParser.parseHex16 = function(stream) {
+    	var hex16 = "";
+    	for (var i = 0; i <16; i++) {
+    		var hex = stream.readUint8().toString(16);
+    		hex16 += (hex.length === 1 ? "0"+hex : hex);
+    	}
+    	return hex16;
+    };
+
+    BoxParser.parseOneBox = function(stream, headerOnly, parentSize) {
+    	var box;
+    	var start = stream.getPosition();
+    	var hdr_size = 0;
+    	var diff;
+    	var uuid;
+    	if (stream.getEndPosition() - start < 8) {
+    		Log.debug("BoxParser", "Not enough data in stream to parse the type and size of the box");
+    		return { code: BoxParser.ERR_NOT_ENOUGH_DATA };
+    	}
+    	if (parentSize && parentSize < 8) {
+    		Log.debug("BoxParser", "Not enough bytes left in the parent box to parse a new box");
+    		return { code: BoxParser.ERR_NOT_ENOUGH_DATA };
+    	}
+    	var size = stream.readUint32();
+    	var type = stream.readString(4);
+    	var box_type = type;
+    	Log.debug("BoxParser", "Found box of type '"+type+"' and size "+size+" at position "+start);
+    	hdr_size = 8;
+    	if (type == "uuid") {
+    		if ((stream.getEndPosition() - stream.getPosition() < 16) || (parentSize -hdr_size < 16)) {
+    			stream.seek(start);
+    			Log.debug("BoxParser", "Not enough bytes left in the parent box to parse a UUID box");
+    			return { code: BoxParser.ERR_NOT_ENOUGH_DATA };
+    		}
+    		uuid = BoxParser.parseUUID(stream);
+    		hdr_size += 16;
+    		box_type = uuid;
+    	}
+    	if (size == 1) {
+    		if ((stream.getEndPosition() - stream.getPosition() < 8) || (parentSize && (parentSize - hdr_size) < 8)) {
+    			stream.seek(start);
+    			Log.warn("BoxParser", "Not enough data in stream to parse the extended size of the \""+type+"\" box");
+    			return { code: BoxParser.ERR_NOT_ENOUGH_DATA };
+    		}
+    		size = stream.readUint64();
+    		hdr_size += 8;
+    	} else if (size === 0) {
+    		/* box extends till the end of file or invalid file */
+    		if (parentSize) {
+    			size = parentSize;
+    		} else {
+    			/* box extends till the end of file */
+    			if (type !== "mdat") {
+    				Log.error("BoxParser", "Unlimited box size not supported for type: '"+type+"'");
+    				box = new BoxParser.Box(type, size);
+    				return { code: BoxParser.OK, box: box, size: box.size };
+    			}
+    		}
+    	}
+    	if (size < hdr_size) {
+    		Log.error("BoxParser", "Box of type "+type+" has an invalid size "+size+" (too small to be a box)");
+    		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
+    	}
+    	if (parentSize && size > parentSize) {
+    		Log.error("BoxParser", "Box of type '"+type+"' has a size "+size+" greater than its container size "+parentSize);
+    		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
+    	}
+    	if (start + size > stream.getEndPosition()) {
+    		stream.seek(start);
+    		Log.info("BoxParser", "Not enough data in stream to parse the entire '"+type+"' box");
+    		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
+    	}
+    	if (headerOnly) {
+    		return { code: BoxParser.OK, type: type, size: size, hdr_size: hdr_size, start: start };
+    	} else {
+    		if (BoxParser[type+"Box"]) {
+    			box = new BoxParser[type+"Box"](size);
+    		} else {
+    			if (type !== "uuid") {
+    				Log.warn("BoxParser", "Unknown box type: '"+type+"'");
+    				box = new BoxParser.Box(type, size);
+    				box.has_unparsed_data = true;
+    			} else {
+    				if (BoxParser.UUIDBoxes[uuid]) {
+    					box = new BoxParser.UUIDBoxes[uuid](size);
+    				} else {
+    					Log.warn("BoxParser", "Unknown uuid type: '"+uuid+"'");
+    					box = new BoxParser.Box(type, size);
+    					box.uuid = uuid;
+    					box.has_unparsed_data = true;
+    				}
+    			}
+    		}
+    	}
+    	box.hdr_size = hdr_size;
+    	/* recording the position of the box in the input stream */
+    	box.start = start;
+    	if (box.write === BoxParser.Box.prototype.write && box.type !== "mdat") {
+    		Log.info("BoxParser", "'"+box_type+"' box writing not yet implemented, keeping unparsed data in memory for later write");
+    		box.parseDataAndRewind(stream);
+    	}
+    	box.parse(stream);
+    	diff = stream.getPosition() - (box.start+box.size);
+    	if (diff < 0) {
+    		Log.warn("BoxParser", "Parsing of box '"+box_type+"' did not read the entire indicated box data size (missing "+(-diff)+" bytes), seeking forward");
+    		stream.seek(box.start+box.size);
+    	} else if (diff > 0) {
+    		Log.error("BoxParser", "Parsing of box '"+box_type+"' read "+diff+" more bytes than the indicated box data size, seeking backwards");
+    		stream.seek(box.start+box.size);
+    	}
+    	return { code: BoxParser.OK, box: box, size: box.size };
+    };
+
+    BoxParser.Box.prototype.parse = function(stream) {
+    	if (this.type != "mdat") {
+    		this.data = stream.readUint8Array(this.size-this.hdr_size);
+    	} else {
+    		if (this.size === 0) {
+    			stream.seek(stream.getEndPosition());
+    		} else {
+    			stream.seek(this.start+this.size);
+    		}
+    	}
+    };
+
+    /* Used to parse a box without consuming its data, to allow detailled parsing
+       Useful for boxes for which a write method is not yet implemented */
+    BoxParser.Box.prototype.parseDataAndRewind = function(stream) {
+    	this.data = stream.readUint8Array(this.size-this.hdr_size);
+    	// rewinding
+    	stream.position -= this.size-this.hdr_size;
+    };
+
+    BoxParser.FullBox.prototype.parseDataAndRewind = function(stream) {
+    	this.parseFullHeader(stream);
+    	this.data = stream.readUint8Array(this.size-this.hdr_size);
+    	// restore the header size as if the full header had not been parsed
+    	this.hdr_size -= 4;
+    	// rewinding
+    	stream.position -= this.size-this.hdr_size;
+    };
+
+    BoxParser.FullBox.prototype.parseFullHeader = function (stream) {
+    	this.version = stream.readUint8();
+    	this.flags = stream.readUint24();
+    	this.hdr_size += 4;
+    };
+
+    BoxParser.FullBox.prototype.parse = function (stream) {
+    	this.parseFullHeader(stream);
+    	this.data = stream.readUint8Array(this.size-this.hdr_size);
+    };
+
+    BoxParser.ContainerBox.prototype.parse = function(stream) {
+    	var ret;
+    	var box;
+    	while (stream.getPosition() < this.start+this.size) {
+    		ret = BoxParser.parseOneBox(stream, false, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			box = ret.box;
+    			/* store the box in the 'boxes' array to preserve box order (for offset) but also store box in a property for more direct access */
+    			this.boxes.push(box);
+    			if (this.subBoxNames && this.subBoxNames.indexOf(box.type) != -1) {
+    				this[this.subBoxNames[this.subBoxNames.indexOf(box.type)]+"s"].push(box);
+    			} else {
+    				var box_type = box.type !== "uuid" ? box.type : box.uuid;
+    				if (this[box_type]) {
+    					Log.warn("Box of type "+box_type+" already stored in field of this type");
+    				} else {
+    					this[box_type] = box;
+    				}
+    			}
+    		} else {
+    			return;
+    		}
+    	}
+    };
+
+    BoxParser.Box.prototype.parseLanguage = function(stream) {
+    	this.language = stream.readUint16();
+    	var chars = [];
+    	chars[0] = (this.language>>10)&0x1F;
+    	chars[1] = (this.language>>5)&0x1F;
+    	chars[2] = (this.language)&0x1F;
+    	this.languageString = String.fromCharCode(chars[0]+0x60, chars[1]+0x60, chars[2]+0x60);
+    };
+
+    // file:src/parsing/sampleentries/sampleentry.js
+    BoxParser.SAMPLE_ENTRY_TYPE_VISUAL 		= "Visual";
+    BoxParser.SAMPLE_ENTRY_TYPE_AUDIO 		= "Audio";
+    BoxParser.SAMPLE_ENTRY_TYPE_HINT 		= "Hint";
+    BoxParser.SAMPLE_ENTRY_TYPE_METADATA 	= "Metadata";
+    BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE 	= "Subtitle";
+    BoxParser.SAMPLE_ENTRY_TYPE_SYSTEM 		= "System";
+    BoxParser.SAMPLE_ENTRY_TYPE_TEXT 		= "Text";
+
+    BoxParser.SampleEntry.prototype.parseHeader = function(stream) {
+    	stream.readUint8Array(6);
+    	this.data_reference_index = stream.readUint16();
+    	this.hdr_size += 8;
+    };
+
+    BoxParser.SampleEntry.prototype.parse = function(stream) {
+    	this.parseHeader(stream);
+    	this.data = stream.readUint8Array(this.size - this.hdr_size);
+    };
+
+    BoxParser.SampleEntry.prototype.parseDataAndRewind = function(stream) {
+    	this.parseHeader(stream);
+    	this.data = stream.readUint8Array(this.size - this.hdr_size);
+    	// restore the header size as if the sample entry header had not been parsed
+    	this.hdr_size -= 8;
+    	// rewinding
+    	stream.position -= this.size-this.hdr_size;
+    };
+
+    BoxParser.SampleEntry.prototype.parseFooter = function(stream) {
+    	BoxParser.ContainerBox.prototype.parse.call(this, stream);
+    };
+
+    // Base SampleEntry types with default parsing
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_HINT);
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA);
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE);
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SYSTEM);
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_TEXT);
+
+    //Base SampleEntry types for Audio and Video with specific parsing
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, function(stream) {
+    	var compressorname_length;
+    	this.parseHeader(stream);
+    	stream.readUint16();
+    	stream.readUint16();
+    	stream.readUint32Array(3);
+    	this.width = stream.readUint16();
+    	this.height = stream.readUint16();
+    	this.horizresolution = stream.readUint32();
+    	this.vertresolution = stream.readUint32();
+    	stream.readUint32();
+    	this.frame_count = stream.readUint16();
+    	compressorname_length = Math.min(31, stream.readUint8());
+    	this.compressorname = stream.readString(compressorname_length);
+    	if (compressorname_length < 31) {
+    		stream.readString(31 - compressorname_length);
+    	}
+    	this.depth = stream.readUint16();
+    	stream.readUint16();
+    	this.parseFooter(stream);
+    });
+
+    BoxParser.createMediaSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, function(stream) {
+    	this.parseHeader(stream);
+    	stream.readUint32Array(2);
+    	this.channel_count = stream.readUint16();
+    	this.samplesize = stream.readUint16();
+    	stream.readUint16();
+    	stream.readUint16();
+    	this.samplerate = (stream.readUint32()/(1<<16));
+    	this.parseFooter(stream);
+    });
+
+    // Sample entries inheriting from Audio and Video
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "avc1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "avc2");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "avc3");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "avc4");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "av01");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "hvc1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "hev1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"mp4a");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"ac-3");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"ec-3");
+
+    // Encrypted sample entries
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, 	"encv");
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"enca");
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE, 	"encu");
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SYSTEM, 	"encs");
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_TEXT, 		"enct");
+    BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA, 	"encm");
+
+
+    // file:src/parsing/a1lx.js
+    BoxParser.createBoxCtor("a1lx", function(stream) {
+    	var large_size = stream.readUint8() & 1;
+    	var FieldLength = ((large_size & 1) + 1) * 16;
+    	this.layer_size = [];
+    	for (var i = 0; i < 3; i++) {
+    		if (FieldLength == 16) {
+    			this.layer_size[i] = stream.readUint16();
+    		} else {
+    			this.layer_size[i] = stream.readUint32();
+    		}
+    	}
+    });// file:src/parsing/a1op.js
+    BoxParser.createBoxCtor("a1op", function(stream) {
+    	this.op_index = stream.readUint8();
+    });// file:src/parsing/auxC.js
+    BoxParser.createFullBoxCtor("auxC", function(stream) {
+    	this.aux_type = stream.readCString();
+    	var aux_subtype_length = this.size - this.hdr_size - (this.aux_type.length + 1);
+    	this.aux_subtype = stream.readUint8Array(aux_subtype_length);
+    });// file:src/parsing/av1C.js
+    BoxParser.createBoxCtor("av1C", function(stream) {
+    	var tmp = stream.readUint8();
+    	if ((tmp >> 7) & 0x1 !== 1) {
+    		Log.error("av1C marker problem");
+    		return;
+    	}
+    	this.version = tmp & 0x7F;
+    	if (this.version !== 1) {
+    		Log.error("av1C version "+this.version+" not supported");
+    		return;
+    	}
+    	tmp = stream.readUint8();
+    	this.seq_profile = (tmp >> 5) & 0x7;
+    	this.seq_level_idx_0 = tmp & 0x1F;
+    	tmp = stream.readUint8();
+    	this.seq_tier_0 = (tmp >> 7) & 0x1;
+    	this.high_bitdepth = (tmp >> 6) & 0x1;
+    	this.twelve_bit = (tmp >> 5) & 0x1;
+    	this.monochrome = (tmp >> 4) & 0x1;
+    	this.chroma_subsampling_x = (tmp >> 3) & 0x1;
+    	this.chroma_subsampling_y = (tmp >> 2) & 0x1;
+    	this.chroma_sample_position = (tmp & 0x3);
+    	tmp = stream.readUint8();
+    	this.reserved_1 = (tmp >> 5) & 0x7;
+    	if (this.reserved_1 !== 0) {
+    		Log.error("av1C reserved_1 parsing problem");
+    		return;
+    	}
+    	this.initial_presentation_delay_present = (tmp >> 4) & 0x1;
+    	if (this.initial_presentation_delay_present === 1) {
+    		this.initial_presentation_delay_minus_one = (tmp & 0xF);
+    	} else {
+    		this.reserved_2 = (tmp & 0xF);
+    		if (this.reserved_2 !== 0) {
+    			Log.error("av1C reserved_2 parsing problem");
+    			return;
+    		}
+    	}
+
+    	var configOBUs_length = this.size - this.hdr_size - 4;
+    	this.configOBUs = stream.readUint8Array(configOBUs_length);
+    });
+
+    // file:src/parsing/avcC.js
+    BoxParser.createBoxCtor("avcC", function(stream) {
+    	var i;
+    	var toparse;
+    	this.configurationVersion = stream.readUint8();
+    	this.AVCProfileIndication = stream.readUint8();
+    	this.profile_compatibility = stream.readUint8();
+    	this.AVCLevelIndication = stream.readUint8();
+    	this.lengthSizeMinusOne = (stream.readUint8() & 0x3);
+    	this.nb_SPS_nalus = (stream.readUint8() & 0x1F);
+    	toparse = this.size - this.hdr_size - 6;
+    	this.SPS = [];
+    	for (i = 0; i < this.nb_SPS_nalus; i++) {
+    		this.SPS[i] = {};
+    		this.SPS[i].length = stream.readUint16();
+    		this.SPS[i].nalu = stream.readUint8Array(this.SPS[i].length);
+    		toparse -= 2+this.SPS[i].length;
+    	}
+    	this.nb_PPS_nalus = stream.readUint8();
+    	toparse--;
+    	this.PPS = [];
+    	for (i = 0; i < this.nb_PPS_nalus; i++) {
+    		this.PPS[i] = {};
+    		this.PPS[i].length = stream.readUint16();
+    		this.PPS[i].nalu = stream.readUint8Array(this.PPS[i].length);
+    		toparse -= 2+this.PPS[i].length;
+    	}
+    	if (toparse>0) {
+    		this.ext = stream.readUint8Array(toparse);
+    	}
+    });
+
+    // file:src/parsing/btrt.js
+    BoxParser.createBoxCtor("btrt", function(stream) {
+    	this.bufferSizeDB = stream.readUint32();
+    	this.maxBitrate = stream.readUint32();
+    	this.avgBitrate = stream.readUint32();
+    });
+
+    // file:src/parsing/clap.js
+    BoxParser.createBoxCtor("clap", function(stream) {
+    	this.cleanApertureWidthN = stream.readUint32();
+    	this.cleanApertureWidthD = stream.readUint32();
+    	this.cleanApertureHeightN = stream.readUint32();
+    	this.cleanApertureHeightD = stream.readUint32();
+    	this.horizOffN = stream.readUint32();
+    	this.horizOffD = stream.readUint32();
+    	this.vertOffN = stream.readUint32();
+    	this.vertOffD = stream.readUint32();
+    });// file:src/parsing/clli.js
+    BoxParser.createBoxCtor("clli", function(stream) {
+    	this.max_content_light_level = stream.readUint16();
+        this.max_pic_average_light_level = stream.readUint16();
+    });
+
+    // file:src/parsing/co64.js
+    BoxParser.createFullBoxCtor("co64", function(stream) {
+    	var entry_count;
+    	var i;
+    	entry_count = stream.readUint32();
+    	this.chunk_offsets = [];
+    	if (this.version === 0) {
+    		for(i=0; i<entry_count; i++) {
+    			this.chunk_offsets.push(stream.readUint64());
+    		}
+    	}
+    });
+
+    // file:src/parsing/CoLL.js
+    BoxParser.createFullBoxCtor("CoLL", function(stream) {
+    	this.maxCLL = stream.readUint16();
+        this.maxFALL = stream.readUint16();
+    });
+
+    // file:src/parsing/colr.js
+    BoxParser.createBoxCtor("colr", function(stream) {
+    	this.colour_type = stream.readString(4);
+    	if (this.colour_type === 'nclx') {
+    		this.colour_primaries = stream.readUint16();
+    		this.transfer_characteristics = stream.readUint16();
+    		this.matrix_coefficients = stream.readUint16();
+    		var tmp = stream.readUint8();
+    		this.full_range_flag = tmp >> 7;
+    	} else if (this.colour_type === 'rICC') {
+    		this.ICC_profile = stream.readUint8Array(this.size - 4);
+    	} else if (this.colour_type === 'prof') {
+    		this.ICC_profile = stream.readUint8Array(this.size - 4);
+    	}
+    });// file:src/parsing/cprt.js
+    BoxParser.createFullBoxCtor("cprt", function (stream) {
+    	this.parseLanguage(stream);
+    	this.notice = stream.readCString();
+    });
+
+    // file:src/parsing/cslg.js
+    BoxParser.createFullBoxCtor("cslg", function(stream) {
+    	if (this.version === 0) {
+    		this.compositionToDTSShift = stream.readInt32(); /* signed */
+    		this.leastDecodeToDisplayDelta = stream.readInt32(); /* signed */
+    		this.greatestDecodeToDisplayDelta = stream.readInt32(); /* signed */
+    		this.compositionStartTime = stream.readInt32(); /* signed */
+    		this.compositionEndTime = stream.readInt32(); /* signed */
+    	}
+    });
+
+    // file:src/parsing/ctts.js
+    BoxParser.createFullBoxCtor("ctts", function(stream) {
+    	var entry_count;
+    	var i;
+    	entry_count = stream.readUint32();
+    	this.sample_counts = [];
+    	this.sample_offsets = [];
+    	if (this.version === 0) {
+    		for(i=0; i<entry_count; i++) {
+    			this.sample_counts.push(stream.readUint32());
+    			/* some files are buggy and declare version=0 while using signed offsets.
+    			   The likelyhood of using the most significant bit in a 32-bits time offset is very low,
+    			   so using signed value here as well */
+    			   var value = stream.readInt32();
+    			   if (value < 0) {
+    			   		Log.warn("BoxParser", "ctts box uses negative values without using version 1");
+    			   }
+    			this.sample_offsets.push(value);
+    		}
+    	} else if (this.version == 1) {
+    		for(i=0; i<entry_count; i++) {
+    			this.sample_counts.push(stream.readUint32());
+    			this.sample_offsets.push(stream.readInt32()); /* signed */
+    		}
+    	}
+    });
+
+    // file:src/parsing/dac3.js
+    BoxParser.createBoxCtor("dac3", function(stream) {
+    	var tmp_byte1 = stream.readUint8();
+    	var tmp_byte2 = stream.readUint8();
+    	var tmp_byte3 = stream.readUint8();
+    	this.fscod = tmp_byte1 >> 6;
+    	this.bsid  = ((tmp_byte1 >> 1) & 0x1F);
+    	this.bsmod = ((tmp_byte1 & 0x1) <<  2) | ((tmp_byte2 >> 6) & 0x3);
+    	this.acmod = ((tmp_byte2 >> 3) & 0x7);
+    	this.lfeon = ((tmp_byte2 >> 2) & 0x1);
+    	this.bit_rate_code = (tmp_byte2 & 0x3) | ((tmp_byte3 >> 5) & 0x7);
+    });
+
+    // file:src/parsing/dec3.js
+    BoxParser.createBoxCtor("dec3", function(stream) {
+    	var tmp_16 = stream.readUint16();
+    	this.data_rate = tmp_16 >> 3;
+    	this.num_ind_sub = tmp_16 & 0x7;
+    	this.ind_subs = [];
+    	for (var i = 0; i < this.num_ind_sub+1; i++) {
+    		var ind_sub = {};
+    		this.ind_subs.push(ind_sub);
+    		var tmp_byte1 = stream.readUint8();
+    		var tmp_byte2 = stream.readUint8();
+    		var tmp_byte3 = stream.readUint8();
+    		ind_sub.fscod = tmp_byte1 >> 6;
+    		ind_sub.bsid  = ((tmp_byte1 >> 1) & 0x1F);
+    		ind_sub.bsmod = ((tmp_byte1 & 0x1) << 4) | ((tmp_byte2 >> 4) & 0xF);
+    		ind_sub.acmod = ((tmp_byte2 >> 1) & 0x7);
+    		ind_sub.lfeon = (tmp_byte2 & 0x1);
+    		ind_sub.num_dep_sub = ((tmp_byte3 >> 1) & 0xF);
+    		if (ind_sub.num_dep_sub > 0) {
+    			ind_sub.chan_loc = ((tmp_byte3 & 0x1) << 8) | stream.readUint8();
+    		}
+    	}
+    });
+
+    // file:src/parsing/dfLa.js
+    BoxParser.createFullBoxCtor("dfLa", function(stream) {
+        var BLOCKTYPE_MASK = 0x7F;
+        var LASTMETADATABLOCKFLAG_MASK = 0x80;
+
+        var boxesFound = [];
+        var knownBlockTypes = [
+            "STREAMINFO",
+            "PADDING",
+            "APPLICATION",
+            "SEEKTABLE",
+            "VORBIS_COMMENT",
+            "CUESHEET",
+            "PICTURE",
+            "RESERVED"
+        ];
+
+        // dfLa is a FullBox
+        this.parseFullHeader(stream);
+
+        // for (i=0; ; i++) { // to end of box
+        do {
+            var flagAndType = stream.readUint8();
+
+            var type = Math.min(
+                (flagAndType & BLOCKTYPE_MASK),
+                (knownBlockTypes.length - 1)
+            );
+
+            // if this is a STREAMINFO block, read the true samplerate since this
+            // can be different to the AudioSampleEntry samplerate.
+            if (!(type)) {
+                // read past all the other stuff
+                stream.readUint8Array(13);
+
+                // extract samplerate
+                this.samplerate = (stream.readUint32() >> 12);
+
+                // read to end of STREAMINFO
+                stream.readUint8Array(20);
+            } else {
+                // not interested in other block types so just discard length bytes
+                stream.readUint8Array(stream.readUint24());
+            }
+
+            boxesFound.push(knownBlockTypes[type]);
+
+            if (!!(flagAndType & LASTMETADATABLOCKFLAG_MASK)) {
+                break;
+            }
+        } while (true);
+
+        this.numMetadataBlocks =
+            boxesFound.length + " (" + boxesFound.join(", ") + ")";
+    });
+    // file:src/parsing/dimm.js
+    BoxParser.createBoxCtor("dimm", function(stream) {
+    	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/dmax.js
+    BoxParser.createBoxCtor("dmax", function(stream) {
+    	this.time = stream.readUint32();
+    });
+
+    // file:src/parsing/dmed.js
+    BoxParser.createBoxCtor("dmed", function(stream) {
+    	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/dref.js
+    BoxParser.createFullBoxCtor("dref", function(stream) {
+    	var ret;
+    	var box;
+    	this.entries = [];
+    	var entry_count = stream.readUint32();
+    	for (var i = 0; i < entry_count; i++) {
+    		ret = BoxParser.parseOneBox(stream, false, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			box = ret.box;
+    			this.entries.push(box);
+    		} else {
+    			return;
+    		}
+    	}
+    });
+
+    // file:src/parsing/drep.js
+    BoxParser.createBoxCtor("drep", function(stream) {
+    	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/elng.js
+    BoxParser.createFullBoxCtor("elng", function(stream) {
+    	this.extended_language = stream.readString(this.size-this.hdr_size);
+    });
+
+    // file:src/parsing/elst.js
+    BoxParser.createFullBoxCtor("elst", function(stream) {
+    	this.entries = [];
+    	var entry_count = stream.readUint32();
+    	for (var i = 0; i < entry_count; i++) {
+    		var entry = {};
+    		this.entries.push(entry);
+    		if (this.version === 1) {
+    			entry.segment_duration = stream.readUint64();
+    			entry.media_time = stream.readInt64();
+    		} else {
+    			entry.segment_duration = stream.readUint32();
+    			entry.media_time = stream.readInt32();
+    		}
+    		entry.media_rate_integer = stream.readInt16();
+    		entry.media_rate_fraction = stream.readInt16();
+    	}
+    });
+
+    // file:src/parsing/emsg.js
+    BoxParser.createFullBoxCtor("emsg", function(stream) {
+    	if (this.version == 1) {
+    		this.timescale 					= stream.readUint32();
+    		this.presentation_time 			= stream.readUint64();
+    		this.event_duration			 	= stream.readUint32();
+    		this.id 						= stream.readUint32();
+    		this.scheme_id_uri 				= stream.readCString();
+    		this.value 						= stream.readCString();
+    	} else {
+    		this.scheme_id_uri 				= stream.readCString();
+    		this.value 						= stream.readCString();
+    		this.timescale 					= stream.readUint32();
+    		this.presentation_time_delta 	= stream.readUint32();
+    		this.event_duration			 	= stream.readUint32();
+    		this.id 						= stream.readUint32();
+    	}
+    	var message_size = this.size - this.hdr_size - (4*4 + (this.scheme_id_uri.length+1) + (this.value.length+1));
+    	if (this.version == 1) {
+    		message_size -= 4;
+    	}
+    	this.message_data = stream.readUint8Array(message_size);
+    });
+
+    // file:src/parsing/esds.js
+    BoxParser.createFullBoxCtor("esds", function(stream) {
+    	var esd_data = stream.readUint8Array(this.size-this.hdr_size);
+    	if (typeof MPEG4DescriptorParser !== "undefined") {
+    		var esd_parser = new MPEG4DescriptorParser();
+    		this.esd = esd_parser.parseOneDescriptor(new DataStream(esd_data.buffer, 0, DataStream.BIG_ENDIAN));
+    	}
+    });
+
+    // file:src/parsing/fiel.js
+    BoxParser.createBoxCtor("fiel", function(stream) {
+    	this.fieldCount = stream.readUint8();
+    	this.fieldOrdering = stream.readUint8();
+    });
+
+    // file:src/parsing/frma.js
+    BoxParser.createBoxCtor("frma", function(stream) {
+    	this.data_format = stream.readString(4);
+    });
+
+    // file:src/parsing/ftyp.js
+    BoxParser.createBoxCtor("ftyp", function(stream) {
+    	var toparse = this.size - this.hdr_size;
+    	this.major_brand = stream.readString(4);
+    	this.minor_version = stream.readUint32();
+    	toparse -= 8;
+    	this.compatible_brands = [];
+    	var i = 0;
+    	while (toparse>=4) {
+    		this.compatible_brands[i] = stream.readString(4);
+    		toparse -= 4;
+    		i++;
+    	}
+    });
+
+    // file:src/parsing/hdlr.js
+    BoxParser.createFullBoxCtor("hdlr", function(stream) {
+    	if (this.version === 0) {
+    		stream.readUint32();
+    		this.handler = stream.readString(4);
+    		stream.readUint32Array(3);
+    		this.name = stream.readString(this.size-this.hdr_size-20);
+    		if (this.name[this.name.length-1]==='\0') {
+    			this.name = this.name.slice(0,-1);
+    		}
+    	}
+    });
+
+    // file:src/parsing/hvcC.js
+    BoxParser.createBoxCtor("hvcC", function(stream) {
+    	var i, j;
+    	var length;
+    	var tmp_byte;
+    	this.configurationVersion = stream.readUint8();
+    	tmp_byte = stream.readUint8();
+    	this.general_profile_space = tmp_byte >> 6;
+    	this.general_tier_flag = (tmp_byte & 0x20) >> 5;
+    	this.general_profile_idc = (tmp_byte & 0x1F);
+    	this.general_profile_compatibility = stream.readUint32();
+    	this.general_constraint_indicator = stream.readUint8Array(6);
+    	this.general_level_idc = stream.readUint8();
+    	this.min_spatial_segmentation_idc = stream.readUint16() & 0xFFF;
+    	this.parallelismType = (stream.readUint8() & 0x3);
+    	this.chroma_format_idc = (stream.readUint8() & 0x3);
+    	this.bit_depth_luma_minus8 = (stream.readUint8() & 0x7);
+    	this.bit_depth_chroma_minus8 = (stream.readUint8() & 0x7);
+    	this.avgFrameRate = stream.readUint16();
+    	tmp_byte = stream.readUint8();
+    	this.constantFrameRate = (tmp_byte >> 6);
+    	this.numTemporalLayers = (tmp_byte & 0XD) >> 3;
+    	this.temporalIdNested = (tmp_byte & 0X4) >> 2;
+    	this.lengthSizeMinusOne = (tmp_byte & 0X3);
+
+    	this.nalu_arrays = [];
+    	var numOfArrays = stream.readUint8();
+    	for (i = 0; i < numOfArrays; i++) {
+    		var nalu_array = [];
+    		this.nalu_arrays.push(nalu_array);
+    		tmp_byte = stream.readUint8();
+    		nalu_array.completeness = (tmp_byte & 0x80) >> 7;
+    		nalu_array.nalu_type = tmp_byte & 0x3F;
+    		var numNalus = stream.readUint16();
+    		for (j = 0; j < numNalus; j++) {
+    			var nalu = {};
+    			nalu_array.push(nalu);
+    			length = stream.readUint16();
+    			nalu.data   = stream.readUint8Array(length);
+    		}
+    	}
+    });
+
+    // file:src/parsing/iinf.js
+    BoxParser.createFullBoxCtor("iinf", function(stream) {
+    	var ret;
+    	if (this.version === 0) {
+    		this.entry_count = stream.readUint16();
+    	} else {
+    		this.entry_count = stream.readUint32();
+    	}
+    	this.item_infos = [];
+    	for (var i = 0; i < this.entry_count; i++) {
+    		ret = BoxParser.parseOneBox(stream, false, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			if (ret.box.type !== "infe") {
+    				Log.error("BoxParser", "Expected 'infe' box, got "+ret.box.type);
+    			}
+    			this.item_infos[i] = ret.box;
+    		} else {
+    			return;
+    		}
+    	}
+    });
+
+    // file:src/parsing/iloc.js
+    BoxParser.createFullBoxCtor("iloc", function(stream) {
+    	var byte;
+    	byte = stream.readUint8();
+    	this.offset_size = (byte >> 4) & 0xF;
+    	this.length_size = byte & 0xF;
+    	byte = stream.readUint8();
+    	this.base_offset_size = (byte >> 4) & 0xF;
+    	if (this.version === 1 || this.version === 2) {
+    		this.index_size = byte & 0xF;
+    	} else {
+    		this.index_size = 0;
+    		// reserved = byte & 0xF;
+    	}
+    	this.items = [];
+    	var item_count = 0;
+    	if (this.version < 2) {
+    		item_count = stream.readUint16();
+    	} else if (this.version === 2) {
+    		item_count = stream.readUint32();
+    	} else {
+    		throw "version of iloc box not supported";
+    	}
+    	for (var i = 0; i < item_count; i++) {
+    		var item = {};
+    		this.items.push(item);
+    		if (this.version < 2) {
+    			item.item_ID = stream.readUint16();
+    		} else if (this.version === 2) {
+    			item.item_ID = stream.readUint16();
+    		} else {
+    			throw "version of iloc box not supported";
+    		}
+    		if (this.version === 1 || this.version === 2) {
+    			item.construction_method = (stream.readUint16() & 0xF);
+    		} else {
+    			item.construction_method = 0;
+    		}
+    		item.data_reference_index = stream.readUint16();
+    		switch(this.base_offset_size) {
+    			case 0:
+    				item.base_offset = 0;
+    				break;
+    			case 4:
+    				item.base_offset = stream.readUint32();
+    				break;
+    			case 8:
+    				item.base_offset = stream.readUint64();
+    				break;
+    			default:
+    				throw "Error reading base offset size";
+    		}
+    		var extent_count = stream.readUint16();
+    		item.extents = [];
+    		for (var j=0; j < extent_count; j++) {
+    			var extent = {};
+    			item.extents.push(extent);
+    			if (this.version === 1 || this.version === 2) {
+    				switch(this.index_size) {
+    					case 0:
+    						extent.extent_index = 0;
+    						break;
+    					case 4:
+    						extent.extent_index = stream.readUint32();
+    						break;
+    					case 8:
+    						extent.extent_index = stream.readUint64();
+    						break;
+    					default:
+    						throw "Error reading extent index";
+    				}
+    			}
+    			switch(this.offset_size) {
+    				case 0:
+    					extent.extent_offset = 0;
+    					break;
+    				case 4:
+    					extent.extent_offset = stream.readUint32();
+    					break;
+    				case 8:
+    					extent.extent_offset = stream.readUint64();
+    					break;
+    				default:
+    					throw "Error reading extent index";
+    			}
+    			switch(this.length_size) {
+    				case 0:
+    					extent.extent_length = 0;
+    					break;
+    				case 4:
+    					extent.extent_length = stream.readUint32();
+    					break;
+    				case 8:
+    					extent.extent_length = stream.readUint64();
+    					break;
+    				default:
+    					throw "Error reading extent index";
+    			}
+    		}
+    	}
+    });
+
+    // file:src/parsing/imir.js
+    BoxParser.createBoxCtor("imir", function(stream) {
+    	var tmp = stream.readUint8();
+    	this.reserved = tmp >> 7;
+    	this.axis = tmp & 1;
+    });// file:src/parsing/infe.js
+    BoxParser.createFullBoxCtor("infe", function(stream) {
+    	if (this.version === 0 || this.version === 1) {
+    		this.item_ID = stream.readUint16();
+    		this.item_protection_index = stream.readUint16();
+    		this.item_name = stream.readCString();
+    		this.content_type = stream.readCString();
+    		this.content_encoding = stream.readCString();
+    	}
+    	if (this.version === 1) {
+    		this.extension_type = stream.readString(4);
+    		Log.warn("BoxParser", "Cannot parse extension type");
+    		stream.seek(this.start+this.size);
+    		return;
+    	}
+    	if (this.version >= 2) {
+    		if (this.version === 2) {
+    			this.item_ID = stream.readUint16();
+    		} else if (this.version === 3) {
+    			this.item_ID = stream.readUint32();
+    		}
+    		this.item_protection_index = stream.readUint16();
+    		this.item_type = stream.readString(4);
+    		this.item_name = stream.readCString();
+    		if (this.item_type === "mime") {
+    			this.content_type = stream.readCString();
+    			this.content_encoding = stream.readCString();
+    		} else if (this.item_type === "uri ") {
+    			this.item_uri_type = stream.readCString();
+    		}
+    	}
+    });
+    // file:src/parsing/ipma.js
+    BoxParser.createFullBoxCtor("ipma", function(stream) {
+    	var i, j;
+    	entry_count = stream.readUint32();
+    	this.associations = [];
+    	for(i=0; i<entry_count; i++) {
+    		var item_assoc = {};
+    		this.associations.push(item_assoc);
+    		if (this.version < 1) {
+    			item_assoc.id = stream.readUint16();
+    		} else {
+    			item_assoc.id = stream.readUint32();
+    		}
+    		var association_count = stream.readUint8();
+    		item_assoc.props = [];
+    		for (j = 0; j < association_count; j++) {
+    			var tmp = stream.readUint8();
+    			var p = {};
+    			item_assoc.props.push(p);
+    			p.essential = ((tmp & 0x80) >> 7) === 1;
+    			if (this.flags & 0x1) {
+    				p.property_index = (tmp & 0x7F) << 8 | stream.readUint8();
+    			} else {
+    				p.property_index = (tmp & 0x7F);
+    			}
+    		}
+    	}
+    });
+
+    // file:src/parsing/iref.js
+    BoxParser.createFullBoxCtor("iref", function(stream) {
+    	var ret;
+    	var box;
+    	this.references = [];
+
+    	while (stream.getPosition() < this.start+this.size) {
+    		ret = BoxParser.parseOneBox(stream, true, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			if (this.version === 0) {
+    				box = new BoxParser.SingleItemTypeReferenceBox(ret.type, ret.size, ret.hdr_size, ret.start);
+    			} else {
+    				box = new BoxParser.SingleItemTypeReferenceBoxLarge(ret.type, ret.size, ret.hdr_size, ret.start);
+    			}
+    			if (box.write === BoxParser.Box.prototype.write && box.type !== "mdat") {
+    				Log.warn("BoxParser", box.type+" box writing not yet implemented, keeping unparsed data in memory for later write");
+    				box.parseDataAndRewind(stream);
+    			}
+    			box.parse(stream);
+    			this.references.push(box);
+    		} else {
+    			return;
+    		}
+    	}
+    });
+    // file:src/parsing/irot.js
+    BoxParser.createBoxCtor("irot", function(stream) {
+    	this.angle = stream.readUint8() & 0x3;
+    });
+
+    // file:src/parsing/ispe.js
+    BoxParser.createFullBoxCtor("ispe", function(stream) {
+    	this.image_width = stream.readUint32();
+    	this.image_height = stream.readUint32();
+    });// file:src/parsing/kind.js
+    BoxParser.createFullBoxCtor("kind", function(stream) {
+    	this.schemeURI = stream.readCString();
+    	this.value = stream.readCString();
+    });
+    // file:src/parsing/leva.js
+    BoxParser.createFullBoxCtor("leva", function(stream) {
+    	var count = stream.readUint8();
+    	this.levels = [];
+    	for (var i = 0; i < count; i++) {
+    		var level = {};
+    		this.levels[i] = level;
+    		level.track_ID = stream.readUint32();
+    		var tmp_byte = stream.readUint8();
+    		level.padding_flag = tmp_byte >> 7;
+    		level.assignment_type = tmp_byte & 0x7F;
+    		switch (level.assignment_type) {
+    			case 0:
+    				level.grouping_type = stream.readString(4);
+    				break;
+    			case 1:
+    				level.grouping_type = stream.readString(4);
+    				level.grouping_type_parameter = stream.readUint32();
+    				break;
+    			case 2:
+    				break;
+    			case 3:
+    				break;
+    			case 4:
+    				level.sub_track_id = stream.readUint32();
+    				break;
+    			default:
+    				Log.warn("BoxParser", "Unknown leva assignement type");
+    		}
+    	}
+    });
+
+    // file:src/parsing/lsel.js
+    BoxParser.createBoxCtor("lsel", function(stream) {
+    	this.layer_id = stream.readUint16();
+    });// file:src/parsing/maxr.js
+    BoxParser.createBoxCtor("maxr", function(stream) {
+    	this.period = stream.readUint32();
+    	this.bytes = stream.readUint32();
+    });
+
+    // file:src/parsing/mdcv.js
+    BoxParser.createBoxCtor("mdcv", function(stream) {
+        this.display_primaries = [];
+        this.display_primaries[0] = {};
+        this.display_primaries[0].x = stream.readUint16();
+        this.display_primaries[0].y = stream.readUint16();
+        this.display_primaries[1] = {};
+        this.display_primaries[1].x = stream.readUint16();
+        this.display_primaries[1].y = stream.readUint16();
+        this.display_primaries[2] = {};
+        this.display_primaries[2].x = stream.readUint16();
+        this.display_primaries[2].y = stream.readUint16();
+        this.white_point = {};
+        this.white_point.x = stream.readUint16();
+        this.white_point.y = stream.readUint16();
+        this.max_display_mastering_luminance = stream.readUint32();
+        this.min_display_mastering_luminance = stream.readUint32();
+    });
+
+    // file:src/parsing/mdhd.js
+    BoxParser.createFullBoxCtor("mdhd", function(stream) {
+    	if (this.version == 1) {
+    		this.creation_time = stream.readUint64();
+    		this.modification_time = stream.readUint64();
+    		this.timescale = stream.readUint32();
+    		this.duration = stream.readUint64();
+    	} else {
+    		this.creation_time = stream.readUint32();
+    		this.modification_time = stream.readUint32();
+    		this.timescale = stream.readUint32();
+    		this.duration = stream.readUint32();
+    	}
+    	this.parseLanguage(stream);
+    	stream.readUint16();
+    });
+
+    // file:src/parsing/mehd.js
+    BoxParser.createFullBoxCtor("mehd", function(stream) {
+    	if (this.flags & 0x1) {
+    		Log.warn("BoxParser", "mehd box incorrectly uses flags set to 1, converting version to 1");
+    		this.version = 1;
+    	}
+    	if (this.version == 1) {
+    		this.fragment_duration = stream.readUint64();
+    	} else {
+    		this.fragment_duration = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/meta.js
+    BoxParser.createFullBoxCtor("meta", function(stream) {
+    	this.boxes = [];
+    	BoxParser.ContainerBox.prototype.parse.call(this, stream);
+    });
+    // file:src/parsing/mfhd.js
+    BoxParser.createFullBoxCtor("mfhd", function(stream) {
+    	this.sequence_number = stream.readUint32();
+    });
+
+    // file:src/parsing/mfro.js
+    BoxParser.createFullBoxCtor("mfro", function(stream) {
+    	this._size = stream.readUint32();
+    });
+
+    // file:src/parsing/mvhd.js
+    BoxParser.createFullBoxCtor("mvhd", function(stream) {
+    	if (this.version == 1) {
+    		this.creation_time = stream.readUint64();
+    		this.modification_time = stream.readUint64();
+    		this.timescale = stream.readUint32();
+    		this.duration = stream.readUint64();
+    	} else {
+    		this.creation_time = stream.readUint32();
+    		this.modification_time = stream.readUint32();
+    		this.timescale = stream.readUint32();
+    		this.duration = stream.readUint32();
+    	}
+    	this.rate = stream.readUint32();
+    	this.volume = stream.readUint16()>>8;
+    	stream.readUint16();
+    	stream.readUint32Array(2);
+    	this.matrix = stream.readUint32Array(9);
+    	stream.readUint32Array(6);
+    	this.next_track_id = stream.readUint32();
+    });
+    // file:src/parsing/npck.js
+    BoxParser.createBoxCtor("npck", function(stream) {
+    	this.packetssent = stream.readUint32();
+    });
+
+    // file:src/parsing/nump.js
+    BoxParser.createBoxCtor("nump", function(stream) {
+    	this.packetssent = stream.readUint64();
+    });
+
+    // file:src/parsing/padb.js
+    BoxParser.createFullBoxCtor("padb", function(stream) {
+    	var sample_count = stream.readUint32();
+    	this.padbits = [];
+    	for (var i = 0; i < Math.floor((sample_count+1)/2); i++) {
+    		this.padbits = stream.readUint8();
+    	}
+    });
+
+    // file:src/parsing/pasp.js
+    BoxParser.createBoxCtor("pasp", function(stream) {
+    	this.hSpacing = stream.readUint32();
+    	this.vSpacing = stream.readUint32();
+    });// file:src/parsing/payl.js
+    BoxParser.createBoxCtor("payl", function(stream) {
+    	this.text = stream.readString(this.size - this.hdr_size);
+    });
+
+    // file:src/parsing/payt.js
+    BoxParser.createBoxCtor("payt", function(stream) {
+    	this.payloadID = stream.readUint32();
+    	var count = stream.readUint8();
+    	this.rtpmap_string = stream.readString(count);
+    });
+
+    // file:src/parsing/pdin.js
+    BoxParser.createFullBoxCtor("pdin", function(stream) {
+    	var count = (this.size - this.hdr_size)/8;
+    	this.rate = [];
+    	this.initial_delay = [];
+    	for (var i = 0; i < count; i++) {
+    		this.rate[i] = stream.readUint32();
+    		this.initial_delay[i] = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/pitm.js
+    BoxParser.createFullBoxCtor("pitm", function(stream) {
+    	if (this.version === 0) {
+    		this.item_id = stream.readUint16();
+    	} else {
+    		this.item_id = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/pixi.js
+    BoxParser.createFullBoxCtor("pixi", function(stream) {
+    	var i;
+    	this.num_channels = stream.readUint8();
+    	this.bits_per_channels = [];
+    	for (i = 0; i < this.num_channels; i++) {
+    		this.bits_per_channels[i] = stream.readUint8();
+    	}
+    });
+
+    // file:src/parsing/pmax.js
+    BoxParser.createBoxCtor("pmax", function(stream) {
+    	this.bytes = stream.readUint32();
+    });
+
+    // file:src/parsing/prft.js
+    BoxParser.createFullBoxCtor("prft", function(stream) {
+    	this.ref_track_id = stream.readUint32();
+    	this.ntp_timestamp = stream.readUint64();
+    	if (this.version === 0) {
+    		this.media_time = stream.readUint32();
+    	} else {
+    		this.media_time = stream.readUint64();
+    	}
+    });
+
+    // file:src/parsing/pssh.js
+    BoxParser.createFullBoxCtor("pssh", function(stream) {
+    	this.system_id = BoxParser.parseHex16(stream);
+    	if (this.version > 0) {
+    		var count = stream.readUint32();
+    		this.kid = [];
+    		for (var i = 0; i < count; i++) {
+    			this.kid[i] = BoxParser.parseHex16(stream);
+    		}
+    	}
+    	var datasize = stream.readUint32();
+    	if (datasize > 0) {
+    		this.data = stream.readUint8Array(datasize);
+    	}
+    });
+
+    // file:src/parsing/qt/clef.js
+    BoxParser.createFullBoxCtor("clef", function(stream) {
+    	this.width = stream.readUint32();
+    	this.height = stream.readUint32();
+    });// file:src/parsing/qt/enof.js
+    BoxParser.createFullBoxCtor("enof", function(stream) {
+    	this.width = stream.readUint32();
+    	this.height = stream.readUint32();
+    });// file:src/parsing/qt/prof.js
+    BoxParser.createFullBoxCtor("prof", function(stream) {
+    	this.width = stream.readUint32();
+    	this.height = stream.readUint32();
+    });// file:src/parsing/qt/tapt.js
+    BoxParser.createContainerBoxCtor("tapt", null, [ "clef", "prof", "enof"]);// file:src/parsing/rtp.js
+    BoxParser.createBoxCtor("rtp ", function(stream) {
+    	this.descriptionformat = stream.readString(4);
+    	this.sdptext = stream.readString(this.size - this.hdr_size - 4);
+    });
+
+    // file:src/parsing/saio.js
+    BoxParser.createFullBoxCtor("saio", function(stream) {
+    	if (this.flags & 0x1) {
+    		this.aux_info_type = stream.readUint32();
+    		this.aux_info_type_parameter = stream.readUint32();
+    	}
+    	var count = stream.readUint32();
+    	this.offset = [];
+    	for (var i = 0; i < count; i++) {
+    		if (this.version === 0) {
+    			this.offset[i] = stream.readUint32();
+    		} else {
+    			this.offset[i] = stream.readUint64();
+    		}
+    	}
+    });
+    // file:src/parsing/saiz.js
+    BoxParser.createFullBoxCtor("saiz", function(stream) {
+    	if (this.flags & 0x1) {
+    		this.aux_info_type = stream.readUint32();
+    		this.aux_info_type_parameter = stream.readUint32();
+    	}
+    	this.default_sample_info_size = stream.readUint8();
+    	var count = stream.readUint32();
+    	this.sample_info_size = [];
+    	if (this.default_sample_info_size === 0) {
+    		for (var i = 0; i < count; i++) {
+    			this.sample_info_size[i] = stream.readUint8();
+    		}
+    	}
+    });
+
+    // file:src/parsing/sampleentries/mett.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA, "mett", function(stream) {
+    	this.parseHeader(stream);
+    	this.content_encoding = stream.readCString();
+    	this.mime_format = stream.readCString();
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/sampleentries/metx.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA, "metx", function(stream) {
+    	this.parseHeader(stream);
+    	this.content_encoding = stream.readCString();
+    	this.namespace = stream.readCString();
+    	this.schema_location = stream.readCString();
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/sampleentries/sbtt.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE, "sbtt", function(stream) {
+    	this.parseHeader(stream);
+    	this.content_encoding = stream.readCString();
+    	this.mime_format = stream.readCString();
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/sampleentries/stpp.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE, "stpp", function(stream) {
+    	this.parseHeader(stream);
+    	this.namespace = stream.readCString();
+    	this.schema_location = stream.readCString();
+    	this.auxiliary_mime_types = stream.readCString();
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/sampleentries/stxt.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE, "stxt", function(stream) {
+    	this.parseHeader(stream);
+    	this.content_encoding = stream.readCString();
+    	this.mime_format = stream.readCString();
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/sampleentries/tx3g.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SUBTITLE, "tx3g", function(stream) {
+    	this.parseHeader(stream);
+    	this.displayFlags = stream.readUint32();
+    	this.horizontal_justification = stream.readInt8();
+    	this.vertical_justification = stream.readInt8();
+    	this.bg_color_rgba = stream.readUint8Array(4);
+    	this.box_record = stream.readInt16Array(4);
+    	this.style_record = stream.readUint8Array(12);
+    	this.parseFooter(stream);
+    });
+    // file:src/parsing/sampleentries/wvtt.js
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA, "wvtt", function(stream) {
+    	this.parseHeader(stream);
+    	this.parseFooter(stream);
+    });
+
+    // file:src/parsing/samplegroups/alst.js
+    BoxParser.createSampleGroupCtor("alst", function(stream) {
+    	var i;
+    	var roll_count = stream.readUint16();
+    	this.first_output_sample = stream.readUint16();
+    	this.sample_offset = [];
+    	for (i = 0; i < roll_count; i++) {
+    		this.sample_offset[i] = stream.readUint32();
+    	}
+    	var remaining = this.description_length - 4 - 4*roll_count;
+    	this.num_output_samples = [];
+    	this.num_total_samples = [];
+    	for (i = 0; i < remaining/4; i++) {
+    		this.num_output_samples[i] = stream.readUint16();
+    		this.num_total_samples[i] = stream.readUint16();
+    	}
+    });
+
+    // file:src/parsing/samplegroups/avll.js
+    BoxParser.createSampleGroupCtor("avll", function(stream) {
+    	this.layerNumber = stream.readUint8();
+    	this.accurateStatisticsFlag = stream.readUint8();
+    	this.avgBitRate = stream.readUint16();
+    	this.avgFrameRate = stream.readUint16();
+    });
+
+    // file:src/parsing/samplegroups/avss.js
+    BoxParser.createSampleGroupCtor("avss", function(stream) {
+    	this.subSequenceIdentifier = stream.readUint16();
+    	this.layerNumber = stream.readUint8();
+    	var tmp_byte = stream.readUint8();
+    	this.durationFlag = tmp_byte >> 7;
+    	this.avgRateFlag = (tmp_byte >> 6) & 0x1;
+    	if (this.durationFlag) {
+    		this.duration = stream.readUint32();
+    	}
+    	if (this.avgRateFlag) {
+    		this.accurateStatisticsFlag = stream.readUint8();
+    		this.avgBitRate = stream.readUint16();
+    		this.avgFrameRate = stream.readUint16();
+    	}
+    	this.dependency = [];
+    	var numReferences = stream.readUint8();
+    	for (var i = 0; i < numReferences; i++) {
+    		var dependencyInfo = {};
+    		this.dependency.push(dependencyInfo);
+    		dependencyInfo.subSeqDirectionFlag = stream.readUint8();
+    		dependencyInfo.layerNumber = stream.readUint8();
+    		dependencyInfo.subSequenceIdentifier = stream.readUint16();
+    	}
+    });
+
+    // file:src/parsing/samplegroups/dtrt.js
+    BoxParser.createSampleGroupCtor("dtrt", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/mvif.js
+    BoxParser.createSampleGroupCtor("mvif", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/prol.js
+    BoxParser.createSampleGroupCtor("prol", function(stream) {
+    	this.roll_distance = stream.readInt16();
+    });
+
+    // file:src/parsing/samplegroups/rap.js
+    BoxParser.createSampleGroupCtor("rap ", function(stream) {
+    	var tmp_byte = stream.readUint8();
+    	this.num_leading_samples_known = tmp_byte >> 7;
+    	this.num_leading_samples = tmp_byte & 0x7F;
+    });
+
+    // file:src/parsing/samplegroups/rash.js
+    BoxParser.createSampleGroupCtor("rash", function(stream) {
+    	this.operation_point_count = stream.readUint16();
+    	if (this.description_length !== 2+(this.operation_point_count === 1?2:this.operation_point_count*6)+9) {
+    		Log.warn("BoxParser", "Mismatch in "+this.grouping_type+" sample group length");
+    		this.data =  stream.readUint8Array(this.description_length-2);
+    	} else {
+    		if (this.operation_point_count === 1) {
+    			this.target_rate_share = stream.readUint16();
+    		} else {
+    			this.target_rate_share = [];
+    			this.available_bitrate = [];
+    			for (var i = 0; i < this.operation_point_count; i++) {
+    				this.available_bitrate[i] = stream.readUint32();
+    				this.target_rate_share[i] = stream.readUint16();
+    			}
+    		}
+    		this.maximum_bitrate = stream.readUint32();
+    		this.minimum_bitrate = stream.readUint32();
+    		this.discard_priority = stream.readUint8();
+    	}
+    });
+
+    // file:src/parsing/samplegroups/roll.js
+    BoxParser.createSampleGroupCtor("roll", function(stream) {
+    	this.roll_distance = stream.readInt16();
+    });
+
+    // file:src/parsing/samplegroups/samplegroup.js
+    BoxParser.SampleGroupEntry.prototype.parse = function(stream) {
+    	Log.warn("BoxParser", "Unknown Sample Group type: "+this.grouping_type);
+    	this.data =  stream.readUint8Array(this.description_length);
+    };
+
+    // file:src/parsing/samplegroups/scif.js
+    BoxParser.createSampleGroupCtor("scif", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/scnm.js
+    BoxParser.createSampleGroupCtor("scnm", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/seig.js
+    BoxParser.createSampleGroupCtor("seig", function(stream) {
+    	this.reserved = stream.readUint8();
+    	var tmp = stream.readUint8();
+    	this.crypt_byte_block = tmp >> 4;
+    	this.skip_byte_block = tmp & 0xF;
+    	this.isProtected = stream.readUint8();
+    	this.Per_Sample_IV_Size = stream.readUint8();
+    	this.KID = BoxParser.parseHex16(stream);
+    	this.constant_IV_size = 0;
+    	this.constant_IV = 0;
+    	if (this.isProtected === 1 && this.Per_Sample_IV_Size === 0) {
+    		this.constant_IV_size = stream.readUint8();
+    		this.constant_IV = stream.readUint8Array(this.constant_IV_size);
+    	}
+    });
+
+    // file:src/parsing/samplegroups/stsa.js
+    BoxParser.createSampleGroupCtor("stsa", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/sync.js
+    BoxParser.createSampleGroupCtor("sync", function(stream) {
+    	var tmp_byte = stream.readUint8();
+    	this.NAL_unit_type = tmp_byte & 0x3F;
+    });
+
+    // file:src/parsing/samplegroups/tele.js
+    BoxParser.createSampleGroupCtor("tele", function(stream) {
+    	var tmp_byte = stream.readUint8();
+    	this.level_independently_decodable = tmp_byte >> 7;
+    });
+
+    // file:src/parsing/samplegroups/tsas.js
+    BoxParser.createSampleGroupCtor("tsas", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/tscl.js
+    BoxParser.createSampleGroupCtor("tscl", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/samplegroups/vipr.js
+    BoxParser.createSampleGroupCtor("vipr", function(stream) {
+    	Log.warn("BoxParser", "Sample Group type: "+this.grouping_type+" not fully parsed");
+    });
+
+    // file:src/parsing/sbgp.js
+    BoxParser.createFullBoxCtor("sbgp", function(stream) {
+    	this.grouping_type = stream.readString(4);
+    	if (this.version === 1) {
+    		this.grouping_type_parameter = stream.readUint32();
+    	} else {
+    		this.grouping_type_parameter = 0;
+    	}
+    	this.entries = [];
+    	var entry_count = stream.readUint32();
+    	for (var i = 0; i < entry_count; i++) {
+    		var entry = {};
+    		this.entries.push(entry);
+    		entry.sample_count = stream.readInt32();
+    		entry.group_description_index = stream.readInt32();
+    	}
+    });
+
+    // file:src/parsing/schm.js
+    BoxParser.createFullBoxCtor("schm", function(stream) {
+    	this.scheme_type = stream.readString(4);
+    	this.scheme_version = stream.readUint32();
+    	if (this.flags & 0x000001) {
+    		this.scheme_uri = stream.readString(this.size - this.hdr_size - 8);
+    	}
+    });
+
+    // file:src/parsing/sdp.js
+    BoxParser.createBoxCtor("sdp ", function(stream) {
+    	this.sdptext = stream.readString(this.size - this.hdr_size);
+    });
+
+    // file:src/parsing/sdtp.js
+    BoxParser.createFullBoxCtor("sdtp", function(stream) {
+    	var tmp_byte;
+    	var count = (this.size - this.hdr_size);
+    	this.is_leading = [];
+    	this.sample_depends_on = [];
+    	this.sample_is_depended_on = [];
+    	this.sample_has_redundancy = [];
+    	for (var i = 0; i < count; i++) {
+    		tmp_byte = stream.readUint8();
+    		this.is_leading[i] = tmp_byte >> 6;
+    		this.sample_depends_on[i] = (tmp_byte >> 4) & 0x3;
+    		this.sample_is_depended_on[i] = (tmp_byte >> 2) & 0x3;
+    		this.sample_has_redundancy[i] = tmp_byte & 0x3;
+    	}
+    });
+
+    // file:src/parsing/senc.js
+    // Cannot be fully parsed because Per_Sample_IV_Size needs to be known
+    BoxParser.createFullBoxCtor("senc" /*, function(stream) {
+    	this.parseFullHeader(stream);
+    	var sample_count = stream.readUint32();
+    	this.samples = [];
+    	for (var i = 0; i < sample_count; i++) {
+    		var sample = {};
+    		// tenc.default_Per_Sample_IV_Size or seig.Per_Sample_IV_Size
+    		sample.InitializationVector = this.readUint8Array(Per_Sample_IV_Size*8);
+    		if (this.flags & 0x2) {
+    			sample.subsamples = [];
+    			subsample_count = stream.readUint16();
+    			for (var j = 0; j < subsample_count; j++) {
+    				var subsample = {};
+    				subsample.BytesOfClearData = stream.readUint16();
+    				subsample.BytesOfProtectedData = stream.readUint32();
+    				sample.subsamples.push(subsample);
+    			}
+    		}
+    		// TODO
+    		this.samples.push(sample);
+    	}
+    }*/);
+    // file:src/parsing/sgpd.js
+    BoxParser.createFullBoxCtor("sgpd", function(stream) {
+    	this.grouping_type = stream.readString(4);
+    	Log.debug("BoxParser", "Found Sample Groups of type "+this.grouping_type);
+    	if (this.version === 1) {
+    		this.default_length = stream.readUint32();
+    	} else {
+    		this.default_length = 0;
+    	}
+    	if (this.version >= 2) {
+    		this.default_group_description_index = stream.readUint32();
+    	}
+    	this.entries = [];
+    	var entry_count = stream.readUint32();
+    	for (var i = 0; i < entry_count; i++) {
+    		var entry;
+    		if (BoxParser[this.grouping_type+"SampleGroupEntry"]) {
+    			entry = new BoxParser[this.grouping_type+"SampleGroupEntry"](this.grouping_type);
+    		}  else {
+    			entry = new BoxParser.SampleGroupEntry(this.grouping_type);
+    		}
+    		this.entries.push(entry);
+    		if (this.version === 1) {
+    			if (this.default_length === 0) {
+    				entry.description_length = stream.readUint32();
+    			} else {
+    				entry.description_length = this.default_length;
+    			}
+    		} else {
+    			entry.description_length = this.default_length;
+    		}
+    		if (entry.write === BoxParser.SampleGroupEntry.prototype.write) {
+    			Log.info("BoxParser", "SampleGroup for type "+this.grouping_type+" writing not yet implemented, keeping unparsed data in memory for later write");
+    			// storing data
+    			entry.data = stream.readUint8Array(entry.description_length);
+    			// rewinding
+    			stream.position -= entry.description_length;
+    		}
+    		entry.parse(stream);
+    	}
+    });
+
+    // file:src/parsing/sidx.js
+    BoxParser.createFullBoxCtor("sidx", function(stream) {
+    	this.reference_ID = stream.readUint32();
+    	this.timescale = stream.readUint32();
+    	if (this.version === 0) {
+    		this.earliest_presentation_time = stream.readUint32();
+    		this.first_offset = stream.readUint32();
+    	} else {
+    		this.earliest_presentation_time = stream.readUint64();
+    		this.first_offset = stream.readUint64();
+    	}
+    	stream.readUint16();
+    	this.references = [];
+    	var count = stream.readUint16();
+    	for (var i = 0; i < count; i++) {
+    		var ref = {};
+    		this.references.push(ref);
+    		var tmp_32 = stream.readUint32();
+    		ref.reference_type = (tmp_32 >> 31) & 0x1;
+    		ref.referenced_size = tmp_32 & 0x7FFFFFFF;
+    		ref.subsegment_duration = stream.readUint32();
+    		tmp_32 = stream.readUint32();
+    		ref.starts_with_SAP = (tmp_32 >> 31) & 0x1;
+    		ref.SAP_type = (tmp_32 >> 28) & 0x7;
+    		ref.SAP_delta_time = tmp_32 & 0xFFFFFFF;
+    	}
+    });
+
+    // file:src/parsing/singleitemtypereference.js
+    BoxParser.SingleItemTypeReferenceBox = function(type, size, hdr_size, start) {
+    	BoxParser.Box.call(this, type, size);
+    	this.hdr_size = hdr_size;
+    	this.start = start;
+    };
+    BoxParser.SingleItemTypeReferenceBox.prototype = new BoxParser.Box();
+    BoxParser.SingleItemTypeReferenceBox.prototype.parse = function(stream) {
+    	this.from_item_ID = stream.readUint16();
+    	var count =  stream.readUint16();
+    	this.references = [];
+    	for(var i = 0; i < count; i++) {
+    		this.references[i] = stream.readUint16();
+    	}
+    };
+
+    // file:src/parsing/singleitemtypereferencelarge.js
+    BoxParser.SingleItemTypeReferenceBoxLarge = function(type, size, hdr_size, start) {
+    	BoxParser.Box.call(this, type, size);
+    	this.hdr_size = hdr_size;
+    	this.start = start;
+    };
+    BoxParser.SingleItemTypeReferenceBoxLarge.prototype = new BoxParser.Box();
+    BoxParser.SingleItemTypeReferenceBoxLarge.prototype.parse = function(stream) {
+    	this.from_item_ID = stream.readUint32();
+    	var count =  stream.readUint16();
+    	this.references = [];
+    	for(var i = 0; i < count; i++) {
+    		this.references[i] = stream.readUint32();
+    	}
+    };
+
+    // file:src/parsing/SmDm.js
+    BoxParser.createFullBoxCtor("SmDm", function(stream) {
+    	this.primaryRChromaticity_x = stream.readUint16();
+        this.primaryRChromaticity_y = stream.readUint16();
+        this.primaryGChromaticity_x = stream.readUint16();
+        this.primaryGChromaticity_y = stream.readUint16();
+        this.primaryBChromaticity_x = stream.readUint16();
+        this.primaryBChromaticity_y = stream.readUint16();
+        this.whitePointChromaticity_x = stream.readUint16();
+        this.whitePointChromaticity_y = stream.readUint16();
+        this.luminanceMax = stream.readUint32();
+        this.luminanceMin = stream.readUint32();
+    });
+
+    // file:src/parsing/smhd.js
+    BoxParser.createFullBoxCtor("smhd", function(stream) {
+    	this.balance = stream.readUint16();
+    	stream.readUint16();
+    });
+
+    // file:src/parsing/ssix.js
+    BoxParser.createFullBoxCtor("ssix", function(stream) {
+    	this.subsegments = [];
+    	var subsegment_count = stream.readUint32();
+    	for (var i = 0; i < subsegment_count; i++) {
+    		var subsegment = {};
+    		this.subsegments.push(subsegment);
+    		subsegment.ranges = [];
+    		var range_count = stream.readUint32();
+    		for (var j = 0; j < range_count; j++) {
+    			var range = {};
+    			subsegment.ranges.push(range);
+    			range.level = stream.readUint8();
+    			range.range_size = stream.readUint24();
+    		}
+    	}
+    });
+
+    // file:src/parsing/stco.js
+    BoxParser.createFullBoxCtor("stco", function(stream) {
+    	var entry_count;
+    	entry_count = stream.readUint32();
+    	this.chunk_offsets = [];
+    	if (this.version === 0) {
+    		for (var i = 0; i < entry_count; i++) {
+    			this.chunk_offsets.push(stream.readUint32());
+    		}
+    	}
+    });
+
+    // file:src/parsing/stdp.js
+    BoxParser.createFullBoxCtor("stdp", function(stream) {
+    	var count = (this.size - this.hdr_size)/2;
+    	this.priority = [];
+    	for (var i = 0; i < count; i++) {
+    		this.priority[i] = stream.readUint16();
+    	}
+    });
+
+    // file:src/parsing/sthd.js
+    BoxParser.createFullBoxCtor("sthd");
+
+    // file:src/parsing/stri.js
+    BoxParser.createFullBoxCtor("stri", function(stream) {
+    	this.switch_group = stream.readUint16();
+    	this.alternate_group = stream.readUint16();
+    	this.sub_track_id = stream.readUint32();
+    	var count = (this.size - this.hdr_size - 8)/4;
+    	this.attribute_list = [];
+    	for (var i = 0; i < count; i++) {
+    		this.attribute_list[i] = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/stsc.js
+    BoxParser.createFullBoxCtor("stsc", function(stream) {
+    	var entry_count;
+    	var i;
+    	entry_count = stream.readUint32();
+    	this.first_chunk = [];
+    	this.samples_per_chunk = [];
+    	this.sample_description_index = [];
+    	if (this.version === 0) {
+    		for(i=0; i<entry_count; i++) {
+    			this.first_chunk.push(stream.readUint32());
+    			this.samples_per_chunk.push(stream.readUint32());
+    			this.sample_description_index.push(stream.readUint32());
+    		}
+    	}
+    });
+
+    // file:src/parsing/stsd.js
+    BoxParser.createFullBoxCtor("stsd", function(stream) {
+    	var i;
+    	var ret;
+    	var entryCount;
+    	var box;
+    	this.entries = [];
+    	entryCount = stream.readUint32();
+    	for (i = 1; i <= entryCount; i++) {
+    		ret = BoxParser.parseOneBox(stream, true, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			if (BoxParser[ret.type+"SampleEntry"]) {
+    				box = new BoxParser[ret.type+"SampleEntry"](ret.size);
+    				box.hdr_size = ret.hdr_size;
+    				box.start = ret.start;
+    			} else {
+    				Log.warn("BoxParser", "Unknown sample entry type: "+ret.type);
+    				box = new BoxParser.SampleEntry(ret.type, ret.size, ret.hdr_size, ret.start);
+    			}
+    			if (box.write === BoxParser.SampleEntry.prototype.write) {
+    				Log.info("BoxParser", "SampleEntry "+box.type+" box writing not yet implemented, keeping unparsed data in memory for later write");
+    				box.parseDataAndRewind(stream);
+    			}
+    			box.parse(stream);
+    			this.entries.push(box);
+    		} else {
+    			return;
+    		}
+    	}
+    });
+
+    // file:src/parsing/stsg.js
+    BoxParser.createFullBoxCtor("stsg", function(stream) {
+    	this.grouping_type = stream.readUint32();
+    	var count = stream.readUint16();
+    	this.group_description_index = [];
+    	for (var i = 0; i < count; i++) {
+    		this.group_description_index[i] = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/stsh.js
+    BoxParser.createFullBoxCtor("stsh", function(stream) {
+    	var entry_count;
+    	var i;
+    	entry_count = stream.readUint32();
+    	this.shadowed_sample_numbers = [];
+    	this.sync_sample_numbers = [];
+    	if (this.version === 0) {
+    		for(i=0; i<entry_count; i++) {
+    			this.shadowed_sample_numbers.push(stream.readUint32());
+    			this.sync_sample_numbers.push(stream.readUint32());
+    		}
+    	}
+    });
+
+    // file:src/parsing/stss.js
+    BoxParser.createFullBoxCtor("stss", function(stream) {
+    	var i;
+    	var entry_count;
+    	entry_count = stream.readUint32();
+    	if (this.version === 0) {
+    		this.sample_numbers = [];
+    		for(i=0; i<entry_count; i++) {
+    			this.sample_numbers.push(stream.readUint32());
+    		}
+    	}
+    });
+
+    // file:src/parsing/stsz.js
+    BoxParser.createFullBoxCtor("stsz", function(stream) {
+    	var i;
+    	this.sample_sizes = [];
+    	if (this.version === 0) {
+    		this.sample_size = stream.readUint32();
+    		this.sample_count = stream.readUint32();
+    		for (i = 0; i < this.sample_count; i++) {
+    			if (this.sample_size === 0) {
+    				this.sample_sizes.push(stream.readUint32());
+    			} else {
+    				this.sample_sizes[i] = this.sample_size;
+    			}
+    		}
+    	}
+    });
+
+    // file:src/parsing/stts.js
+    BoxParser.createFullBoxCtor("stts", function(stream) {
+    	var entry_count;
+    	var i;
+    	var delta;
+    	entry_count = stream.readUint32();
+    	this.sample_counts = [];
+    	this.sample_deltas = [];
+    	if (this.version === 0) {
+    		for(i=0; i<entry_count; i++) {
+    			this.sample_counts.push(stream.readUint32());
+    			delta = stream.readInt32();
+    			if (delta < 0) {
+    				Log.warn("BoxParser", "File uses negative stts sample delta, using value 1 instead, sync may be lost!");
+    				delta = 1;
+    			}
+    			this.sample_deltas.push(delta);
+    		}
+    	}
+    });
+
+    // file:src/parsing/stvi.js
+    BoxParser.createFullBoxCtor("stvi", function(stream) {
+    	var tmp32 = stream.readUint32();
+    	this.single_view_allowed = tmp32 & 0x3;
+    	this.stereo_scheme = stream.readUint32();
+    	var length = stream.readUint32();
+    	this.stereo_indication_type = stream.readString(length);
+    	var ret;
+    	var box;
+    	this.boxes = [];
+    	while (stream.getPosition() < this.start+this.size) {
+    		ret = BoxParser.parseOneBox(stream, false, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			box = ret.box;
+    			this.boxes.push(box);
+    			this[box.type] = box;
+    		} else {
+    			return;
+    		}
+    	}
+    });
+
+    // file:src/parsing/styp.js
+    BoxParser.createBoxCtor("styp", function(stream) {
+    	BoxParser.ftypBox.prototype.parse.call(this, stream);
+    });
+
+    // file:src/parsing/stz2.js
+    BoxParser.createFullBoxCtor("stz2", function(stream) {
+    	var i;
+    	var sample_count;
+    	this.sample_sizes = [];
+    	if (this.version === 0) {
+    		this.reserved = stream.readUint24();
+    		this.field_size = stream.readUint8();
+    		sample_count = stream.readUint32();
+    		if (this.field_size === 4) {
+    			for (i = 0; i < sample_count; i+=2) {
+    				var tmp = stream.readUint8();
+    				this.sample_sizes[i] = (tmp >> 4) & 0xF;
+    				this.sample_sizes[i+1] = tmp & 0xF;
+    			}
+    		} else if (this.field_size === 8) {
+    			for (i = 0; i < sample_count; i++) {
+    				this.sample_sizes[i] = stream.readUint8();
+    			}
+    		} else if (this.field_size === 16) {
+    			for (i = 0; i < sample_count; i++) {
+    				this.sample_sizes[i] = stream.readUint16();
+    			}
+    		} else {
+    			Log.error("BoxParser", "Error in length field in stz2 box");
+    		}
+    	}
+    });
+
+    // file:src/parsing/subs.js
+    BoxParser.createFullBoxCtor("subs", function(stream) {
+    	var i,j;
+    	var entry_count;
+    	var subsample_count;
+    	entry_count = stream.readUint32();
+    	this.entries = [];
+    	for (i = 0; i < entry_count; i++) {
+    		var sampleInfo = {};
+    		this.entries[i] = sampleInfo;
+    		sampleInfo.sample_delta = stream.readUint32();
+    		sampleInfo.subsamples = [];
+    		subsample_count = stream.readUint16();
+    		if (subsample_count>0) {
+    			for (j = 0; j < subsample_count; j++) {
+    				var subsample = {};
+    				sampleInfo.subsamples.push(subsample);
+    				if (this.version == 1) {
+    					subsample.size = stream.readUint32();
+    				} else {
+    					subsample.size = stream.readUint16();
+    				}
+    				subsample.priority = stream.readUint8();
+    				subsample.discardable = stream.readUint8();
+    				subsample.codec_specific_parameters = stream.readUint32();
+    			}
+    		}
+    	}
+    });
+
+    // file:src/parsing/tenc.js
+    BoxParser.createFullBoxCtor("tenc", function(stream) {
+    	stream.readUint8(); // reserved
+    	if (this.version === 0) {
+    		stream.readUint8();
+    	} else {
+    		var tmp = stream.readUint8();
+    		this.default_crypt_byte_block = (tmp >> 4) & 0xF;
+    		this.default_skip_byte_block = tmp & 0xF;
+    	}
+    	this.default_isProtected = stream.readUint8();
+    	this.default_Per_Sample_IV_Size = stream.readUint8();
+    	this.default_KID = BoxParser.parseHex16(stream);
+    	if (this.default_isProtected === 1 && this.default_Per_Sample_IV_Size === 0) {
+    		this.default_constant_IV_size = stream.readUint8();
+    		this.default_constant_IV = stream.readUint8Array(this.default_constant_IV_size);
+    	}
+    });// file:src/parsing/tfdt.js
+    BoxParser.createFullBoxCtor("tfdt", function(stream) {
+    	if (this.version == 1) {
+    		this.baseMediaDecodeTime = stream.readUint64();
+    	} else {
+    		this.baseMediaDecodeTime = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/tfhd.js
+    BoxParser.createFullBoxCtor("tfhd", function(stream) {
+    	var readBytes = 0;
+    	this.track_id = stream.readUint32();
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TFHD_FLAG_BASE_DATA_OFFSET)) {
+    		this.base_data_offset = stream.readUint64();
+    		readBytes += 8;
+    	} else {
+    		this.base_data_offset = 0;
+    	}
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DESC)) {
+    		this.default_sample_description_index = stream.readUint32();
+    		readBytes += 4;
+    	} else {
+    		this.default_sample_description_index = 0;
+    	}
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DUR)) {
+    		this.default_sample_duration = stream.readUint32();
+    		readBytes += 4;
+    	} else {
+    		this.default_sample_duration = 0;
+    	}
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TFHD_FLAG_SAMPLE_SIZE)) {
+    		this.default_sample_size = stream.readUint32();
+    		readBytes += 4;
+    	} else {
+    		this.default_sample_size = 0;
+    	}
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TFHD_FLAG_SAMPLE_FLAGS)) {
+    		this.default_sample_flags = stream.readUint32();
+    		readBytes += 4;
+    	} else {
+    		this.default_sample_flags = 0;
+    	}
+    });
+
+    // file:src/parsing/tfra.js
+    BoxParser.createFullBoxCtor("tfra", function(stream) {
+    	this.track_ID = stream.readUint32();
+    	stream.readUint24();
+    	var tmp_byte = stream.readUint8();
+    	this.length_size_of_traf_num = (tmp_byte >> 4) & 0x3;
+    	this.length_size_of_trun_num = (tmp_byte >> 2) & 0x3;
+    	this.length_size_of_sample_num = (tmp_byte) & 0x3;
+    	this.entries = [];
+    	var number_of_entries = stream.readUint32();
+    	for (var i = 0; i < number_of_entries; i++) {
+    		if (this.version === 1) {
+    			this.time = stream.readUint64();
+    			this.moof_offset = stream.readUint64();
+    		} else {
+    			this.time = stream.readUint32();
+    			this.moof_offset = stream.readUint32();
+    		}
+    		this.traf_number = stream["readUint"+(8*(this.length_size_of_traf_num+1))]();
+    		this.trun_number = stream["readUint"+(8*(this.length_size_of_trun_num+1))]();
+    		this.sample_number = stream["readUint"+(8*(this.length_size_of_sample_num+1))]();
+    	}
+    });
+
+    // file:src/parsing/tkhd.js
+    BoxParser.createFullBoxCtor("tkhd", function(stream) {
+    	if (this.version == 1) {
+    		this.creation_time = stream.readUint64();
+    		this.modification_time = stream.readUint64();
+    		this.track_id = stream.readUint32();
+    		stream.readUint32();
+    		this.duration = stream.readUint64();
+    	} else {
+    		this.creation_time = stream.readUint32();
+    		this.modification_time = stream.readUint32();
+    		this.track_id = stream.readUint32();
+    		stream.readUint32();
+    		this.duration = stream.readUint32();
+    	}
+    	stream.readUint32Array(2);
+    	this.layer = stream.readInt16();
+    	this.alternate_group = stream.readInt16();
+    	this.volume = stream.readInt16()>>8;
+    	stream.readUint16();
+    	this.matrix = stream.readInt32Array(9);
+    	this.width = stream.readUint32();
+    	this.height = stream.readUint32();
+    });
+
+    // file:src/parsing/tmax.js
+    BoxParser.createBoxCtor("tmax", function(stream) {
+    	this.time = stream.readUint32();
+    });
+
+    // file:src/parsing/tmin.js
+    BoxParser.createBoxCtor("tmin", function(stream) {
+    	this.time = stream.readUint32();
+    });
+
+    // file:src/parsing/totl.js
+    BoxParser.createBoxCtor("totl",function(stream) {
+    	this.bytessent = stream.readUint32();
+    });
+
+    // file:src/parsing/tpay.js
+    BoxParser.createBoxCtor("tpay", function(stream) {
+    	this.bytessent = stream.readUint32();
+    });
+
+    // file:src/parsing/tpyl.js
+    BoxParser.createBoxCtor("tpyl", function(stream) {
+    	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/TrackGroup.js
+    BoxParser.TrackGroupTypeBox.prototype.parse = function(stream) {
+    	this.parseFullHeader(stream);
+    	this.track_group_id = stream.readUint32();
+    };
+
+    // file:src/parsing/trackgroups/msrc.js
+    BoxParser.createTrackGroupCtor("msrc");// file:src/parsing/TrakReference.js
+    BoxParser.TrackReferenceTypeBox = function(type, size, hdr_size, start) {
+    	BoxParser.Box.call(this, type, size);
+    	this.hdr_size = hdr_size;
+    	this.start = start;
+    };
+    BoxParser.TrackReferenceTypeBox.prototype = new BoxParser.Box();
+    BoxParser.TrackReferenceTypeBox.prototype.parse = function(stream) {
+    	this.track_ids = stream.readUint32Array((this.size-this.hdr_size)/4);
+    };
+
+    // file:src/parsing/tref.js
+    BoxParser.trefBox.prototype.parse = function(stream) {
+    	var ret;
+    	var box;
+    	while (stream.getPosition() < this.start+this.size) {
+    		ret = BoxParser.parseOneBox(stream, true, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			box = new BoxParser.TrackReferenceTypeBox(ret.type, ret.size, ret.hdr_size, ret.start);
+    			if (box.write === BoxParser.Box.prototype.write && box.type !== "mdat") {
+    				Log.info("BoxParser", "TrackReference "+box.type+" box writing not yet implemented, keeping unparsed data in memory for later write");
+    				box.parseDataAndRewind(stream);
+    			}
+    			box.parse(stream);
+    			this.boxes.push(box);
+    		} else {
+    			return;
+    		}
+    	}
+    };
+
+    // file:src/parsing/trep.js
+    BoxParser.createFullBoxCtor("trep", function(stream) {
+    	this.track_ID = stream.readUint32();
+    	this.boxes = [];
+    	while (stream.getPosition() < this.start+this.size) {
+    		ret = BoxParser.parseOneBox(stream, false, this.size - (stream.getPosition() - this.start));
+    		if (ret.code === BoxParser.OK) {
+    			box = ret.box;
+    			this.boxes.push(box);
+    		} else {
+    			return;
+    		}
+    	}
+    });
+
+    // file:src/parsing/trex.js
+    BoxParser.createFullBoxCtor("trex", function(stream) {
+    	this.track_id = stream.readUint32();
+    	this.default_sample_description_index = stream.readUint32();
+    	this.default_sample_duration = stream.readUint32();
+    	this.default_sample_size = stream.readUint32();
+    	this.default_sample_flags = stream.readUint32();
+    });
+
+    // file:src/parsing/trpy.js
+    BoxParser.createBoxCtor("trpy", function(stream) {
+    	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/trun.js
+    BoxParser.createFullBoxCtor("trun", function(stream) {
+    	var readBytes = 0;
+    	this.sample_count = stream.readUint32();
+    	readBytes+= 4;
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TRUN_FLAGS_DATA_OFFSET) ) {
+    		this.data_offset = stream.readInt32(); //signed
+    		readBytes += 4;
+    	} else {
+    		this.data_offset = 0;
+    	}
+    	if (this.size - this.hdr_size > readBytes && (this.flags & BoxParser.TRUN_FLAGS_FIRST_FLAG) ) {
+    		this.first_sample_flags = stream.readUint32();
+    		readBytes += 4;
+    	} else {
+    		this.first_sample_flags = 0;
+    	}
+    	this.sample_duration = [];
+    	this.sample_size = [];
+    	this.sample_flags = [];
+    	this.sample_composition_time_offset = [];
+    	if (this.size - this.hdr_size > readBytes) {
+    		for (var i = 0; i < this.sample_count; i++) {
+    			if (this.flags & BoxParser.TRUN_FLAGS_DURATION) {
+    				this.sample_duration[i] = stream.readUint32();
+    			}
+    			if (this.flags & BoxParser.TRUN_FLAGS_SIZE) {
+    				this.sample_size[i] = stream.readUint32();
+    			}
+    			if (this.flags & BoxParser.TRUN_FLAGS_FLAGS) {
+    				this.sample_flags[i] = stream.readUint32();
+    			}
+    			if (this.flags & BoxParser.TRUN_FLAGS_CTS_OFFSET) {
+    				if (this.version === 0) {
+    					this.sample_composition_time_offset[i] = stream.readUint32();
+    				} else {
+    					this.sample_composition_time_offset[i] = stream.readInt32(); //signed
+    				}
+    			}
+    		}
+    	}
+    });
+
+    // file:src/parsing/tsel.js
+    BoxParser.createFullBoxCtor("tsel", function(stream) {
+    	this.switch_group = stream.readUint32();
+    	var count = (this.size - this.hdr_size - 4)/4;
+    	this.attribute_list = [];
+    	for (var i = 0; i < count; i++) {
+    		this.attribute_list[i] = stream.readUint32();
+    	}
+    });
+
+    // file:src/parsing/txtC.js
+    BoxParser.createFullBoxCtor("txtC", function(stream) {
+    	this.config = stream.readCString();
+    });
+
+    // file:src/parsing/url.js
+    BoxParser.createFullBoxCtor("url ", function(stream) {
+    	if (this.flags !== 0x000001) {
+    		this.location = stream.readCString();
+    	}
+    });
+
+    // file:src/parsing/urn.js
+    BoxParser.createFullBoxCtor("urn ", function(stream) {
+    	this.name = stream.readCString();
+    	if (this.size - this.hdr_size - this.name.length - 1 > 0) {
+    		this.location = stream.readCString();
+    	}
+    });
+
+    // file:src/parsing/uuid/piff/piffLsm.js
+    BoxParser.createUUIDBox("a5d40b30e81411ddba2f0800200c9a66", true, false, function(stream) {
+        this.LiveServerManifest = stream.readString(this.size - this.hdr_size)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    });// file:src/parsing/uuid/piff/piffPssh.js
+    BoxParser.createUUIDBox("d08a4f1810f34a82b6c832d8aba183d3", true, false, function(stream) {
+    	this.system_id = BoxParser.parseHex16(stream);
+    	var datasize = stream.readUint32();
+    	if (datasize > 0) {
+    		this.data = stream.readUint8Array(datasize);
+    	}
+    });
+
+    // file:src/parsing/uuid/piff/piffSenc.js
+    BoxParser.createUUIDBox("a2394f525a9b4f14a2446c427c648df4", true, false /*, function(stream) {
+    	if (this.flags & 0x1) {
+    		this.AlgorithmID = stream.readUint24();
+    		this.IV_size = stream.readUint8();
+    		this.KID = BoxParser.parseHex16(stream);
+    	}
+    	var sample_count = stream.readUint32();
+    	this.samples = [];
+    	for (var i = 0; i < sample_count; i++) {
+    		var sample = {};
+    		sample.InitializationVector = this.readUint8Array(this.IV_size*8);
+    		if (this.flags & 0x2) {
+    			sample.subsamples = [];
+    			sample.NumberOfEntries = stream.readUint16();
+    			for (var j = 0; j < sample.NumberOfEntries; j++) {
+    				var subsample = {};
+    				subsample.BytesOfClearData = stream.readUint16();
+    				subsample.BytesOfProtectedData = stream.readUint32();
+    				sample.subsamples.push(subsample);
+    			}
+    		}
+    		this.samples.push(sample);
+    	}
+    }*/);
+    // file:src/parsing/uuid/piff/piffTenc.js
+    BoxParser.createUUIDBox("8974dbce7be74c5184f97148f9882554", true, false, function(stream) {
+    	this.default_AlgorithmID = stream.readUint24();
+    	this.default_IV_size = stream.readUint8();
+    	this.default_KID = BoxParser.parseHex16(stream);
+    });// file:src/parsing/uuid/piff/piffTfrf.js
+    BoxParser.createUUIDBox("d4807ef2ca3946958e5426cb9e46a79f", true, false, function(stream) {
+        this.fragment_count = stream.readUint8();
+        this.entries = [];
+
+        for (var i = 0; i < this.fragment_count; i++) {
+            var entry = {};
+            var absolute_time = 0;
+            var absolute_duration = 0;
+
+            if (this.version === 1) {
+                absolute_time = stream.readUint64();
+                absolute_duration = stream.readUint64();
+            } else {
+                absolute_time = stream.readUint32();
+                absolute_duration = stream.readUint32();
+            }
+
+            entry.absolute_time = absolute_time;
+            entry.absolute_duration = absolute_duration;
+
+            this.entries.push(entry);
+        }
+    });// file:src/parsing/uuid/piff/piffTfxd.js
+    BoxParser.createUUIDBox("6d1d9b0542d544e680e2141daff757b2", true, false, function(stream) {
+        if (this.version === 1) {
+           this.absolute_time = stream.readUint64();
+           this.duration = stream.readUint64();
+        } else {
+           this.absolute_time = stream.readUint32();
+           this.duration = stream.readUint32();
+        }
+    });// file:src/parsing/vmhd.js
+    BoxParser.createFullBoxCtor("vmhd", function(stream) {
+    	this.graphicsmode = stream.readUint16();
+    	this.opcolor = stream.readUint16Array(3);
+    });
+
+    // file:src/parsing/vpcC.js
+    BoxParser.createFullBoxCtor("vpcC", function (stream) {
+    	var tmp;
+    	if (this.version === 1) {
+    		this.profile = stream.readUint8();
+    		this.level = stream.readUint8();
+    		tmp = stream.readUint8();
+    		this.bitDepth = tmp >> 4;
+    		this.chromaSubsampling = (tmp >> 1) & 0x7;
+    		this.videoFullRangeFlag = tmp & 0x1;
+    		this.colourPrimaries = stream.readUint8();
+    		this.transferCharacteristics = stream.readUint8();
+    		this.matrixCoefficients = stream.readUint8();
+    		this.codecIntializationDataSize = stream.readUint16();
+    		this.codecIntializationData = stream.readUint8Array(this.codecIntializationDataSize);
+    	} else {
+    		this.profile = stream.readUint8();
+    		this.level = stream.readUint8();
+    		tmp = stream.readUint8();
+    		this.bitDepth = (tmp >> 4) & 0xF;
+    		this.colorSpace = tmp & 0xF;
+    		tmp = stream.readUint8();
+    		this.chromaSubsampling = (tmp >> 4) & 0xF;
+    		this.transferFunction = (tmp >> 1) & 0x7;
+    		this.videoFullRangeFlag = tmp & 0x1;
+    		this.codecIntializationDataSize = stream.readUint16();
+    		this.codecIntializationData = stream.readUint8Array(this.codecIntializationDataSize);
+    	}
+    });// file:src/parsing/vttC.js
+    BoxParser.createBoxCtor("vttC", function(stream) {
+    	this.text = stream.readString(this.size - this.hdr_size);
+    });
+
+    // file:src/box-codecs.js
+    BoxParser.SampleEntry.prototype.isVideo = function() {
+    	return false;
+    };
+
+    BoxParser.SampleEntry.prototype.isAudio = function() {
+    	return false;
+    };
+
+    BoxParser.SampleEntry.prototype.isSubtitle = function() {
+    	return false;
+    };
+
+    BoxParser.SampleEntry.prototype.isMetadata = function() {
+    	return false;
+    };
+
+    BoxParser.SampleEntry.prototype.isHint = function() {
+    	return false;
+    };
+
+    BoxParser.SampleEntry.prototype.getCodec = function() {
+    	return this.type.replace('.','');
+    };
+
+    BoxParser.SampleEntry.prototype.getWidth = function() {
+    	return "";
+    };
+
+    BoxParser.SampleEntry.prototype.getHeight = function() {
+    	return "";
+    };
+
+    BoxParser.SampleEntry.prototype.getChannelCount = function() {
+    	return "";
+    };
+
+    BoxParser.SampleEntry.prototype.getSampleRate = function() {
+    	return "";
+    };
+
+    BoxParser.SampleEntry.prototype.getSampleSize = function() {
+    	return "";
+    };
+
+    BoxParser.VisualSampleEntry.prototype.isVideo = function() {
+    	return true;
+    };
+
+    BoxParser.VisualSampleEntry.prototype.getWidth = function() {
+    	return this.width;
+    };
+
+    BoxParser.VisualSampleEntry.prototype.getHeight = function() {
+    	return this.height;
+    };
+
+    BoxParser.AudioSampleEntry.prototype.isAudio = function() {
+    	return true;
+    };
+
+    BoxParser.AudioSampleEntry.prototype.getChannelCount = function() {
+    	return this.channel_count;
+    };
+
+    BoxParser.AudioSampleEntry.prototype.getSampleRate = function() {
+    	return this.samplerate;
+    };
+
+    BoxParser.AudioSampleEntry.prototype.getSampleSize = function() {
+    	return this.samplesize;
+    };
+
+    BoxParser.SubtitleSampleEntry.prototype.isSubtitle = function() {
+    	return true;
+    };
+
+    BoxParser.MetadataSampleEntry.prototype.isMetadata = function() {
+    	return true;
+    };
+
+
+    BoxParser.decimalToHex = function(d, padding) {
+    	var hex = Number(d).toString(16);
+    	padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
+    	while (hex.length < padding) {
+    		hex = "0" + hex;
+    	}
+    	return hex;
+    };
+
+    BoxParser.avc1SampleEntry.prototype.getCodec =
+    BoxParser.avc2SampleEntry.prototype.getCodec =
+    BoxParser.avc3SampleEntry.prototype.getCodec =
+    BoxParser.avc4SampleEntry.prototype.getCodec = function() {
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	if (this.avcC) {
+    		return baseCodec+"."+BoxParser.decimalToHex(this.avcC.AVCProfileIndication)+
+    						  ""+BoxParser.decimalToHex(this.avcC.profile_compatibility)+
+    						  ""+BoxParser.decimalToHex(this.avcC.AVCLevelIndication);
+    	} else {
+    		return baseCodec;
+    	}
+    };
+
+    BoxParser.hev1SampleEntry.prototype.getCodec =
+    BoxParser.hvc1SampleEntry.prototype.getCodec = function() {
+    	var i;
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	if (this.hvcC) {
+    		baseCodec += '.';
+    		switch (this.hvcC.general_profile_space) {
+    			case 0:
+    				baseCodec += '';
+    				break;
+    			case 1:
+    				baseCodec += 'A';
+    				break;
+    			case 2:
+    				baseCodec += 'B';
+    				break;
+    			case 3:
+    				baseCodec += 'C';
+    				break;
+    		}
+    		baseCodec += this.hvcC.general_profile_idc;
+    		baseCodec += '.';
+    		var val = this.hvcC.general_profile_compatibility;
+    		var reversed = 0;
+    		for (i=0; i<32; i++) {
+    			reversed |= val & 1;
+    			if (i==31) break;
+    			reversed <<= 1;
+    			val >>=1;
+    		}
+    		baseCodec += BoxParser.decimalToHex(reversed, 0);
+    		baseCodec += '.';
+    		if (this.hvcC.general_tier_flag === 0) {
+    			baseCodec += 'L';
+    		} else {
+    			baseCodec += 'H';
+    		}
+    		baseCodec += this.hvcC.general_level_idc;
+    		var hasByte = false;
+    		var constraint_string = "";
+    		for (i = 5; i >= 0; i--) {
+    			if (this.hvcC.general_constraint_indicator[i] || hasByte) {
+    				constraint_string = "."+BoxParser.decimalToHex(this.hvcC.general_constraint_indicator[i], 0)+constraint_string;
+    				hasByte = true;
+    			}
+    		}
+    		baseCodec += constraint_string;
+    	}
+    	return baseCodec;
+    };
+
+    BoxParser.mp4aSampleEntry.prototype.getCodec = function() {
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	if (this.esds && this.esds.esd) {
+    		var oti = this.esds.esd.getOTI();
+    		var dsi = this.esds.esd.getAudioConfig();
+    		return baseCodec+"."+BoxParser.decimalToHex(oti)+(dsi ? "."+dsi: "");
+    	} else {
+    		return baseCodec;
+    	}
+    };
+
+    BoxParser.stxtSampleEntry.prototype.getCodec = function() {
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	if(this.mime_format) {
+    		return baseCodec + "." + this.mime_format;
+    	} else {
+    		return baseCodec
+    	}
+    };
+
+    BoxParser.av01SampleEntry.prototype.getCodec = function() {
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	var bitdepth;
+    	if (this.av1C.seq_profile === 2 && this.av1C.high_bitdepth === 1) {
+    		bitdepth = (this.av1C.twelve_bit === 1) ? "12" : "10";
+    	} else if ( this.av1C.seq_profile <= 2 ) {
+    		bitdepth = (this.av1C.high_bitdepth === 1) ? "10" : "08";
+    	}
+    	// TODO need to parse the SH to find color config
+    	return baseCodec+"."+this.av1C.seq_profile+"."+this.av1C.seq_level_idx_0+(this.av1C.seq_tier_0?"H":"M")+"."+bitdepth;//+"."+this.av1C.monochrome+"."+this.av1C.chroma_subsampling_x+""+this.av1C.chroma_subsampling_y+""+this.av1C.chroma_sample_position;
+    };
+
+
+    // file:src/box-write.js
+    /* 
+     * Copyright (c) Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    BoxParser.Box.prototype.writeHeader = function(stream, msg) {
+    	this.size += 8;
+    	if (this.size > MAX_SIZE) {
+    		this.size += 8;
+    	}
+    	if (this.type === "uuid") {
+    		this.size += 16;
+    	}
+    	Log.debug("BoxWriter", "Writing box "+this.type+" of size: "+this.size+" at position "+stream.getPosition()+(msg || ""));
+    	if (this.size > MAX_SIZE) {
+    		stream.writeUint32(1);
+    	} else {
+    		this.sizePosition = stream.getPosition();
+    		stream.writeUint32(this.size);
+    	}
+    	stream.writeString(this.type, null, 4);
+    	if (this.type === "uuid") {
+    		stream.writeUint8Array(this.uuid);
+    	}
+    	if (this.size > MAX_SIZE) {
+    		stream.writeUint64(this.size);
+    	} 
+    };
+
+    BoxParser.FullBox.prototype.writeHeader = function(stream) {
+    	this.size += 4;
+    	BoxParser.Box.prototype.writeHeader.call(this, stream, " v="+this.version+" f="+this.flags);
+    	stream.writeUint8(this.version);
+    	stream.writeUint24(this.flags);
+    };
+
+    BoxParser.Box.prototype.write = function(stream) {
+    	if (this.type === "mdat") {
+    		/* TODO: fix this */
+    		if (this.data) {
+    			this.size = this.data.length;
+    			this.writeHeader(stream);
+    			stream.writeUint8Array(this.data);
+    		}
+    	} else {
+    		this.size = (this.data ? this.data.length : 0);
+    		this.writeHeader(stream);
+    		if (this.data) {
+    			stream.writeUint8Array(this.data);
+    		}
+    	}
+    };
+
+    BoxParser.ContainerBox.prototype.write = function(stream) {
+    	this.size = 0;
+    	this.writeHeader(stream);
+    	for (var i=0; i<this.boxes.length; i++) {
+    		if (this.boxes[i]) {
+    			this.boxes[i].write(stream);
+    			this.size += this.boxes[i].size;
+    		}
+    	}
+    	/* adjusting the size, now that all sub-boxes are known */
+    	Log.debug("BoxWriter", "Adjusting box "+this.type+" with new size "+this.size);
+    	stream.adjustUint32(this.sizePosition, this.size);
+    };
+
+    BoxParser.TrackReferenceTypeBox.prototype.write = function(stream) {
+    	this.size = this.track_ids.length*4;
+    	this.writeHeader(stream);
+    	stream.writeUint32Array(this.track_ids);
+    };
+
+    // file:src/writing/avcC.js
+    BoxParser.avcCBox.prototype.write = function(stream) {
+    	var i;
+    	this.size = 7;
+    	for (i = 0; i < this.SPS.length; i++) {
+    		this.size += 2+this.SPS[i].length;
+    	}
+    	for (i = 0; i < this.PPS.length; i++) {
+    		this.size += 2+this.PPS[i].length;
+    	}
+    	if (this.ext) {
+    		this.size += this.ext.length;
+    	}
+    	this.writeHeader(stream);
+    	stream.writeUint8(this.configurationVersion);
+    	stream.writeUint8(this.AVCProfileIndication);
+    	stream.writeUint8(this.profile_compatibility);
+    	stream.writeUint8(this.AVCLevelIndication);
+    	stream.writeUint8(this.lengthSizeMinusOne + (63<<2));
+    	stream.writeUint8(this.SPS.length + (7<<5));
+    	for (i = 0; i < this.SPS.length; i++) {
+    		stream.writeUint16(this.SPS[i].length);
+    		stream.writeUint8Array(this.SPS[i].nalu);
+    	}
+    	stream.writeUint8(this.PPS.length);
+    	for (i = 0; i < this.PPS.length; i++) {
+    		stream.writeUint16(this.PPS[i].length);
+    		stream.writeUint8Array(this.PPS[i].nalu);
+    	}
+    	if (this.ext) {
+    		stream.writeUint8Array(this.ext);
+    	}
+    };
+
+    // file:src/writing/co64.js
+    BoxParser.co64Box.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+8*this.chunk_offsets.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.chunk_offsets.length);
+    	for(i=0; i<this.chunk_offsets.length; i++) {
+    		stream.writeUint64(this.chunk_offsets[i]);
+    	}
+    };
+
+    // file:src/writing/cslg.js
+    BoxParser.cslgBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4*5;
+    	this.writeHeader(stream);
+    	stream.writeInt32(this.compositionToDTSShift);
+    	stream.writeInt32(this.leastDecodeToDisplayDelta);
+    	stream.writeInt32(this.greatestDecodeToDisplayDelta);
+    	stream.writeInt32(this.compositionStartTime);
+    	stream.writeInt32(this.compositionEndTime);
+    };
+
+    // file:src/writing/ctts.js
+    BoxParser.cttsBox.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+8*this.sample_counts.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.sample_counts.length);
+    	for(i=0; i<this.sample_counts.length; i++) {
+    		stream.writeUint32(this.sample_counts[i]);
+    		if (this.version === 1) {
+    			stream.writeInt32(this.sample_offsets[i]); /* signed */
+    		} else {			
+    			stream.writeUint32(this.sample_offsets[i]); /* unsigned */
+    		}
+    	}
+    };
+
+    // file:src/writing/dref.js
+    BoxParser.drefBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4; //
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.entries.length);
+    	for (var i = 0; i < this.entries.length; i++) {
+    		this.entries[i].write(stream);
+    		this.size += this.entries[i].size;
+    	}	
+    	/* adjusting the size, now that all sub-boxes are known */
+    	Log.debug("BoxWriter", "Adjusting box "+this.type+" with new size "+this.size);
+    	stream.adjustUint32(this.sizePosition, this.size);
+    };
+
+    // file:src/writing/elng.js
+    BoxParser.elngBox.prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = this.extended_language.length;
+    	this.writeHeader(stream);
+    	stream.writeString(this.extended_language);
+    };
+
+    // file:src/writing/elst.js
+    BoxParser.elstBox.prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = 4+12*this.entries.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.entries.length);
+    	for (var i = 0; i < this.entries.length; i++) {
+    		var entry = this.entries[i];
+    		stream.writeUint32(entry.segment_duration);
+    		stream.writeInt32(entry.media_time);
+    		stream.writeInt16(entry.media_rate_integer);
+    		stream.writeInt16(entry.media_rate_fraction);
+    	}
+    };
+
+    // file:src/writing/emsg.js
+    BoxParser.emsgBox.prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = 4*4+this.message_data.length+(this.scheme_id_uri.length+1)+(this.value.length+1);
+    	this.writeHeader(stream);
+    	stream.writeCString(this.scheme_id_uri);
+    	stream.writeCString(this.value);
+    	stream.writeUint32(this.timescale);
+    	stream.writeUint32(this.presentation_time_delta);
+    	stream.writeUint32(this.event_duration);
+    	stream.writeUint32(this.id);
+    	stream.writeUint8Array(this.message_data);
+    };
+
+    // file:src/writing/ftyp.js
+    BoxParser.ftypBox.prototype.write = function(stream) {
+    	this.size = 8+4*this.compatible_brands.length;
+    	this.writeHeader(stream);
+    	stream.writeString(this.major_brand, null, 4);
+    	stream.writeUint32(this.minor_version);
+    	for (var i = 0; i < this.compatible_brands.length; i++) {
+    		stream.writeString(this.compatible_brands[i], null, 4);
+    	}
+    };
+
+    // file:src/writing/hdlr.js
+    BoxParser.hdlrBox.prototype.write = function(stream) {
+    	this.size = 5*4+this.name.length+1;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.writeHeader(stream);
+    	stream.writeUint32(0);
+    	stream.writeString(this.handler, null, 4);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeCString(this.name);
+    };
+
+    // file:src/writing/kind.js
+    BoxParser.kindBox.prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = (this.schemeURI.length+1)+(this.value.length+1);
+    	this.writeHeader(stream);
+    	stream.writeCString(this.schemeURI);
+    	stream.writeCString(this.value);
+    };
+
+    // file:src/writing/mdhd.js
+    BoxParser.mdhdBox.prototype.write = function(stream) {
+    	this.size = 4*4+2*2;
+    	this.flags = 0;
+    	this.version = 0;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.creation_time);
+    	stream.writeUint32(this.modification_time);
+    	stream.writeUint32(this.timescale);
+    	stream.writeUint32(this.duration);
+    	stream.writeUint16(this.language);
+    	stream.writeUint16(0);
+    };
+
+    // file:src/writing/mehd.js
+    BoxParser.mehdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.fragment_duration);
+    };
+
+    // file:src/writing/mfhd.js
+    BoxParser.mfhdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.sequence_number);
+    };
+
+    // file:src/writing/mvhd.js
+    BoxParser.mvhdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 23*4+2*2;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.creation_time);
+    	stream.writeUint32(this.modification_time);
+    	stream.writeUint32(this.timescale);
+    	stream.writeUint32(this.duration);
+    	stream.writeUint32(this.rate);
+    	stream.writeUint16(this.volume<<8);
+    	stream.writeUint16(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32Array(this.matrix);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(this.next_track_id);
+    };
+
+    // file:src/writing/sampleentry.js
+    BoxParser.SampleEntry.prototype.writeHeader = function(stream) {
+    	this.size = 8;
+    	BoxParser.Box.prototype.writeHeader.call(this, stream);
+    	stream.writeUint8(0);
+    	stream.writeUint8(0);
+    	stream.writeUint8(0);
+    	stream.writeUint8(0);
+    	stream.writeUint8(0);
+    	stream.writeUint8(0);
+    	stream.writeUint16(this.data_reference_index);
+    };
+
+    BoxParser.SampleEntry.prototype.writeFooter = function(stream) {
+    	for (var i=0; i<this.boxes.length; i++) {
+    		this.boxes[i].write(stream);
+    		this.size += this.boxes[i].size;
+    	}
+    	Log.debug("BoxWriter", "Adjusting box "+this.type+" with new size "+this.size);
+    	stream.adjustUint32(this.sizePosition, this.size);	
+    };
+
+    BoxParser.SampleEntry.prototype.write = function(stream) {
+    	this.writeHeader(stream);
+    	stream.writeUint8Array(this.data);
+    	this.size += this.data.length;
+    	Log.debug("BoxWriter", "Adjusting box "+this.type+" with new size "+this.size);
+    	stream.adjustUint32(this.sizePosition, this.size);	
+    };
+
+    BoxParser.VisualSampleEntry.prototype.write = function(stream) {
+    	this.writeHeader(stream);
+    	this.size += 2*7+6*4+32;
+    	stream.writeUint16(0); 
+    	stream.writeUint16(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint16(this.width);
+    	stream.writeUint16(this.height);
+    	stream.writeUint32(this.horizresolution);
+    	stream.writeUint32(this.vertresolution);
+    	stream.writeUint32(0);
+    	stream.writeUint16(this.frame_count);
+    	stream.writeUint8(Math.min(31, this.compressorname.length));
+    	stream.writeString(this.compressorname, null, 31);
+    	stream.writeUint16(this.depth);
+    	stream.writeInt16(-1);
+    	this.writeFooter(stream);
+    };
+
+    BoxParser.AudioSampleEntry.prototype.write = function(stream) {
+    	this.writeHeader(stream);
+    	this.size += 2*4+3*4;
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeUint16(this.channel_count);
+    	stream.writeUint16(this.samplesize);
+    	stream.writeUint16(0);
+    	stream.writeUint16(0);
+    	stream.writeUint32(this.samplerate<<16);
+    	this.writeFooter(stream);
+    };
+
+    BoxParser.stppSampleEntry.prototype.write = function(stream) {
+    	this.writeHeader(stream);
+    	this.size += this.namespace.length+1+
+    				 this.schema_location.length+1+
+    				 this.auxiliary_mime_types.length+1;
+    	stream.writeCString(this.namespace);
+    	stream.writeCString(this.schema_location);
+    	stream.writeCString(this.auxiliary_mime_types);
+    	this.writeFooter(stream);
+    };
+
+    // file:src/writing/samplegroups/samplegroup.js
+    BoxParser.SampleGroupEntry.prototype.write = function(stream) {
+    	stream.writeUint8Array(this.data);
+    };
+
+    // file:src/writing/sbgp.js
+    BoxParser.sbgpBox.prototype.write = function(stream) {
+    	this.version = 1;	
+    	this.flags = 0;
+    	this.size = 12+8*this.entries.length;
+    	this.writeHeader(stream);
+    	stream.writeString(this.grouping_type, null, 4);
+    	stream.writeUint32(this.grouping_type_parameter);
+    	stream.writeUint32(this.entries.length);
+    	for (var i = 0; i < this.entries.length; i++) {
+    		var entry = this.entries[i];
+    		stream.writeInt32(entry.sample_count);
+    		stream.writeInt32(entry.group_description_index);
+    	}
+    };
+
+    // file:src/writing/sgpd.js
+    BoxParser.sgpdBox.prototype.write = function(stream) {
+    	var i;
+    	var entry;
+    	// leave version as read
+    	// this.version;
+    	this.flags = 0;
+    	this.size = 12;
+    	for (i = 0; i < this.entries.length; i++) {
+    		entry = this.entries[i];
+    		if (this.version === 1) {
+    			if (this.default_length === 0) {
+    				this.size += 4;
+    			}
+    			this.size += entry.data.length;
+    		}
+    	}
+    	this.writeHeader(stream);
+    	stream.writeString(this.grouping_type, null, 4);
+    	if (this.version === 1) {
+    		stream.writeUint32(this.default_length);
+    	}
+    	if (this.version >= 2) {
+    		stream.writeUint32(this.default_sample_description_index);
+    	}
+    	stream.writeUint32(this.entries.length);
+    	for (i = 0; i < this.entries.length; i++) {
+    		entry = this.entries[i];
+    		if (this.version === 1) {
+    			if (this.default_length === 0) {
+    				stream.writeUint32(entry.description_length);
+    			}
+    		}
+    		entry.write(stream);
+    	}
+    };
+
+
+    // file:src/writing/sidx.js
+    BoxParser.sidxBox.prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = 4*4+2+2+12*this.references.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.reference_ID);
+    	stream.writeUint32(this.timescale);
+    	stream.writeUint32(this.earliest_presentation_time);
+    	stream.writeUint32(this.first_offset);
+    	stream.writeUint16(0);
+    	stream.writeUint16(this.references.length);
+    	for (var i = 0; i < this.references.length; i++) {
+    		var ref = this.references[i];
+    		stream.writeUint32(ref.reference_type << 31 | ref.referenced_size);
+    		stream.writeUint32(ref.subsegment_duration);
+    		stream.writeUint32(ref.starts_with_SAP << 31 | ref.SAP_type << 28 | ref.SAP_delta_time);
+    	}
+    };
+
+    // file:src/writing/stco.js
+    BoxParser.stcoBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+4*this.chunk_offsets.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.chunk_offsets.length);
+    	stream.writeUint32Array(this.chunk_offsets);
+    };
+
+    // file:src/writing/stsc.js
+    BoxParser.stscBox.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+12*this.first_chunk.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.first_chunk.length);
+    	for(i=0; i<this.first_chunk.length; i++) {
+    		stream.writeUint32(this.first_chunk[i]);
+    		stream.writeUint32(this.samples_per_chunk[i]);
+    		stream.writeUint32(this.sample_description_index[i]);
+    	}
+    };
+
+    // file:src/writing/stsd.js
+    BoxParser.stsdBox.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 0;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.entries.length);
+    	this.size += 4;
+    	for (i = 0; i < this.entries.length; i++) {
+    		this.entries[i].write(stream);
+    		this.size += this.entries[i].size;
+    	}
+    	/* adjusting the size, now that all sub-boxes are known */
+    	Log.debug("BoxWriter", "Adjusting box "+this.type+" with new size "+this.size);
+    	stream.adjustUint32(this.sizePosition, this.size);
+    };
+
+    // file:src/writing/stsh.js
+    BoxParser.stshBox.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+8*this.shadowed_sample_numbers.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.shadowed_sample_numbers.length);
+    	for(i=0; i<this.shadowed_sample_numbers.length; i++) {
+    		stream.writeUint32(this.shadowed_sample_numbers[i]);
+    		stream.writeUint32(this.sync_sample_numbers[i]);
+    	}
+    };
+
+    // file:src/writing/stss.js
+    BoxParser.stssBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+4*this.sample_numbers.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.sample_numbers.length);
+    	stream.writeUint32Array(this.sample_numbers);
+    };
+
+    // file:src/writing/stsz.js
+    BoxParser.stszBox.prototype.write = function(stream) {
+    	var i;
+    	var constant = true;
+    	this.version = 0;
+    	this.flags = 0;
+    	if (this.sample_sizes.length > 0) {
+    		i = 0;
+    		while (i+1 < this.sample_sizes.length) {
+    			if (this.sample_sizes[i+1] !==  this.sample_sizes[0]) {
+    				constant = false;
+    				break;
+    			} else {
+    				i++;
+    			}
+    		}
+    	} else {
+    		constant = false;
+    	}
+    	this.size = 8;
+    	if (!constant) {
+    		this.size += 4*this.sample_sizes.length;
+    	}
+    	this.writeHeader(stream);
+    	if (!constant) {
+    		stream.writeUint32(0);
+    	} else {
+    		stream.writeUint32(this.sample_sizes[0]);
+    	}
+    	stream.writeUint32(this.sample_sizes.length);
+    	if (!constant) {
+    		stream.writeUint32Array(this.sample_sizes);
+    	}	
+    };
+
+    // file:src/writing/stts.js
+    BoxParser.sttsBox.prototype.write = function(stream) {
+    	var i;
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4+8*this.sample_counts.length;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.sample_counts.length);
+    	for(i=0; i<this.sample_counts.length; i++) {
+    		stream.writeUint32(this.sample_counts[i]);
+    		stream.writeUint32(this.sample_deltas[i]);
+    	}
+    };
+
+    // file:src/writing/tfdt.js
+    BoxParser.tfdtBox.prototype.write = function(stream) {
+    	var UINT32_MAX = Math.pow(2, 32) - 1;
+    	// use version 1 if baseMediaDecodeTime does not fit 32 bits
+    	this.version = this.baseMediaDecodeTime > UINT32_MAX ? 1 : 0;
+    	this.flags = 0;
+    	this.size = 4;
+    	if (this.version === 1) {
+    		this.size += 4;
+    	}
+    	this.writeHeader(stream);
+    	if (this.version === 1) {
+    		stream.writeUint64(this.baseMediaDecodeTime);
+    	} else {
+    		stream.writeUint32(this.baseMediaDecodeTime);
+    	}
+    };
+
+    // file:src/writing/tfhd.js
+    BoxParser.tfhdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.size = 4;
+    	if (this.flags & BoxParser.TFHD_FLAG_BASE_DATA_OFFSET) {
+    		this.size += 8;
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DESC) {
+    		this.size += 4;
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DUR) {
+    		this.size += 4;
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_SIZE) {
+    		this.size += 4;
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_FLAGS) {
+    		this.size += 4;
+    	}
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.track_id);
+    	if (this.flags & BoxParser.TFHD_FLAG_BASE_DATA_OFFSET) {
+    		stream.writeUint64(this.base_data_offset);
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DESC) {
+    		stream.writeUint32(this.default_sample_description_index);
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_DUR) {
+    		stream.writeUint32(this.default_sample_duration);
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_SIZE) {
+    		stream.writeUint32(this.default_sample_size);
+    	}
+    	if (this.flags & BoxParser.TFHD_FLAG_SAMPLE_FLAGS) {
+    		stream.writeUint32(this.default_sample_flags);
+    	}
+    };
+
+    // file:src/writing/tkhd.js
+    BoxParser.tkhdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	//this.flags = 0;
+    	this.size = 4*18+2*4;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.creation_time);
+    	stream.writeUint32(this.modification_time);
+    	stream.writeUint32(this.track_id);
+    	stream.writeUint32(0);
+    	stream.writeUint32(this.duration);
+    	stream.writeUint32(0);
+    	stream.writeUint32(0);
+    	stream.writeInt16(this.layer);
+    	stream.writeInt16(this.alternate_group);
+    	stream.writeInt16(this.volume<<8);
+    	stream.writeUint16(0);
+    	stream.writeInt32Array(this.matrix);
+    	stream.writeUint32(this.width);
+    	stream.writeUint32(this.height);
+    };
+
+    // file:src/writing/trex.js
+    BoxParser.trexBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 0;
+    	this.size = 4*5;
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.track_id);
+    	stream.writeUint32(this.default_sample_description_index);
+    	stream.writeUint32(this.default_sample_duration);
+    	stream.writeUint32(this.default_sample_size);
+    	stream.writeUint32(this.default_sample_flags);
+    };
+
+    // file:src/writing/trun.js
+    BoxParser.trunBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.size = 4;
+    	if (this.flags & BoxParser.TRUN_FLAGS_DATA_OFFSET) {
+    		this.size += 4;
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_FIRST_FLAG) {
+    		this.size += 4;
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_DURATION) {
+    		this.size += 4*this.sample_duration.length;
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_SIZE) {
+    		this.size += 4*this.sample_size.length;
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_FLAGS) {
+    		this.size += 4*this.sample_flags.length;
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_CTS_OFFSET) {
+    		this.size += 4*this.sample_composition_time_offset.length;
+    	}
+    	this.writeHeader(stream);
+    	stream.writeUint32(this.sample_count);
+    	if (this.flags & BoxParser.TRUN_FLAGS_DATA_OFFSET) {
+    		this.data_offset_position = stream.getPosition();
+    		stream.writeInt32(this.data_offset); //signed
+    	}
+    	if (this.flags & BoxParser.TRUN_FLAGS_FIRST_FLAG) {
+    		stream.writeUint32(this.first_sample_flags);
+    	}
+    	for (var i = 0; i < this.sample_count; i++) {
+    		if (this.flags & BoxParser.TRUN_FLAGS_DURATION) {
+    			stream.writeUint32(this.sample_duration[i]);
+    		}
+    		if (this.flags & BoxParser.TRUN_FLAGS_SIZE) {
+    			stream.writeUint32(this.sample_size[i]);
+    		}
+    		if (this.flags & BoxParser.TRUN_FLAGS_FLAGS) {
+    			stream.writeUint32(this.sample_flags[i]);
+    		}
+    		if (this.flags & BoxParser.TRUN_FLAGS_CTS_OFFSET) {
+    			if (this.version === 0) {
+    				stream.writeUint32(this.sample_composition_time_offset[i]);
+    			} else {
+    				stream.writeInt32(this.sample_composition_time_offset[i]); //signed
+    			}
+    		}
+    	}		
+    };
+
+    // file:src/writing/url.js
+    BoxParser["url Box"].prototype.write = function(stream) {
+    	this.version = 0;	
+    	if (this.location) {
+    		this.flags = 0;
+    		this.size = this.location.length+1;
+    	} else {
+    		this.flags = 0x000001;
+    		this.size = 0;
+    	}
+    	this.writeHeader(stream);
+    	if (this.location) {
+    		stream.writeCString(this.location);
+    	}
+    };
+
+    // file:src/writing/urn.js
+    BoxParser["urn Box"].prototype.write = function(stream) {
+    	this.version = 0;	
+    	this.flags = 0;
+    	this.size = this.name.length+1+(this.location ? this.location.length+1 : 0);
+    	this.writeHeader(stream);
+    	stream.writeCString(this.name);
+    	if (this.location) {
+    		stream.writeCString(this.location);
+    	}
+    };
+
+    // file:src/writing/vmhd.js
+    BoxParser.vmhdBox.prototype.write = function(stream) {
+    	this.version = 0;
+    	this.flags = 1;
+    	this.size = 8;
+    	this.writeHeader(stream);
+    	stream.writeUint16(this.graphicsmode);
+    	stream.writeUint16Array(this.opcolor);
+    };
+
+    // file:src/box-unpack.js
+    /* 
+     * Copyright (c) Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    BoxParser.cttsBox.prototype.unpack = function(samples) {
+    	var i, j, k;
+    	k = 0;
+    	for (i = 0; i < this.sample_counts.length; i++) {
+    		for (j = 0; j < this.sample_counts[i]; j++) {
+    			samples[k].pts = samples[k].dts + this.sample_offsets[i];
+    			k++;
+    		}
+    	}
+    };
+
+    BoxParser.sttsBox.prototype.unpack = function(samples) {
+    	var i, j, k;
+    	k = 0;
+    	for (i = 0; i < this.sample_counts.length; i++) {
+    		for (j = 0; j < this.sample_counts[i]; j++) {
+    			if (k === 0) {
+    				samples[k].dts = 0;
+    			} else {
+    				samples[k].dts = samples[k-1].dts + this.sample_deltas[i];
+    			}
+    			k++;
+    		}
+    	}
+    };
+
+    BoxParser.stcoBox.prototype.unpack = function(samples) {
+    	var i;
+    	for (i = 0; i < this.chunk_offsets.length; i++) {
+    		samples[i].offset = this.chunk_offsets[i];
+    	}
+    };
+
+    BoxParser.stscBox.prototype.unpack = function(samples) {
+    	var i, j, k, l, m;
+    	l = 0;
+    	m = 0;
+    	for (i = 0; i < this.first_chunk.length; i++) {
+    		for (j = 0; j < (i+1 < this.first_chunk.length ? this.first_chunk[i+1] : Infinity); j++) {
+    			m++;
+    			for (k = 0; k < this.samples_per_chunk[i]; k++) {
+    				if (samples[l]) {
+    					samples[l].description_index = this.sample_description_index[i];
+    					samples[l].chunk_index = m;
+    				} else {
+    					return;
+    				}
+    				l++;
+    			}			
+    		}
+    	}
+    };
+
+    BoxParser.stszBox.prototype.unpack = function(samples) {
+    	var i;
+    	for (i = 0; i < this.sample_sizes.length; i++) {
+    		samples[i].size = this.sample_sizes[i];
+    	}
+    };
+    // file:src/box-diff.js
+
+    BoxParser.DIFF_BOXES_PROP_NAMES = [ "boxes", "entries", "references", "subsamples",
+    					 	 "items", "item_infos", "extents", "associations",
+    					 	 "subsegments", "ranges", "seekLists", "seekPoints",
+    					 	 "esd", "levels"];
+
+    BoxParser.DIFF_PRIMITIVE_ARRAY_PROP_NAMES = [ "compatible_brands", "matrix", "opcolor", "sample_counts", "sample_counts", "sample_deltas",
+    "first_chunk", "samples_per_chunk", "sample_sizes", "chunk_offsets", "sample_offsets", "sample_description_index", "sample_duration" ];
+
+    BoxParser.boxEqualFields = function(box_a, box_b) {
+    	if (box_a && !box_b) return false;
+    	var prop;
+    	for (prop in box_a) {
+    		if (BoxParser.DIFF_BOXES_PROP_NAMES.indexOf(prop) > -1) {
+    			continue;
+    		// } else if (excluded_fields && excluded_fields.indexOf(prop) > -1) {
+    		// 	continue;
+    		} else if (box_a[prop] instanceof BoxParser.Box || box_b[prop] instanceof BoxParser.Box) {
+    			continue;
+    		} else if (typeof box_a[prop] === "undefined" || typeof box_b[prop] === "undefined") {
+    			continue;
+    		} else if (typeof box_a[prop] === "function" || typeof box_b[prop] === "function") {
+    			continue;
+    		} else if (
+    			(box_a.subBoxNames && box_a.subBoxNames.indexOf(prop.slice(0,4)) > -1) ||
+    			(box_b.subBoxNames && box_b.subBoxNames.indexOf(prop.slice(0,4)) > -1))  {
+    			continue;
+    		} else {
+    			if (prop === "data" || prop === "start" || prop === "size" || prop === "creation_time" || prop === "modification_time") {
+    				continue;
+    			} else if (BoxParser.DIFF_PRIMITIVE_ARRAY_PROP_NAMES.indexOf(prop) > -1) {
+    				continue;
+    			} else {
+    				if (box_a[prop] !== box_b[prop]) {
+    					return false;
+    				}
+    			}
+    		}
+    	}
+    	return true;
+    };
+
+    BoxParser.boxEqual = function(box_a, box_b) {
+    	if (!BoxParser.boxEqualFields(box_a, box_b)) {
+    		return false;
+    	}
+    	for (var j = 0; j < BoxParser.DIFF_BOXES_PROP_NAMES.length; j++) {
+    		var name = BoxParser.DIFF_BOXES_PROP_NAMES[j];
+    		if (box_a[name] && box_b[name]) {
+    			if (!BoxParser.boxEqual(box_a[name], box_b[name])) {
+    				return false;
+    			}
+    		}
+    	}
+    	return true;
+    };// file:src/text-mp4.js
+
+    var XMLSubtitlein4Parser = function() {	
+    };
+
+    XMLSubtitlein4Parser.prototype.parseSample = function(sample) {
+    	var res = {};	
+    	var i;
+    	res.resources = [];
+    	var stream = new MP4BoxStream(sample.data.buffer);
+    	if (!sample.subsamples || sample.subsamples.length === 0) {
+    		res.documentString = stream.readString(sample.data.length);
+    	} else {
+    		res.documentString = stream.readString(sample.subsamples[0].size);
+    		if (sample.subsamples.length > 1) {
+    			for (i = 1; i < sample.subsamples.length; i++) {
+    				res.resources[i] = stream.readUint8Array(sample.subsamples[i].size);
+    			}
+    		}
+    	}
+    	if (typeof (DOMParser) !== "undefined") {
+    		res.document = (new DOMParser()).parseFromString(res.documentString, "application/xml");
+    	}
+    	return res;
+    };
+
+    var Textin4Parser = function() {	
+    };
+
+    Textin4Parser.prototype.parseSample = function(sample) {
+    	var textString;
+    	var stream = new MP4BoxStream(sample.data.buffer);
+    	textString = stream.readString(sample.data.length);
+    	return textString;
+    };
+
+    Textin4Parser.prototype.parseConfig = function(data) {
+    	var textString;
+    	var stream = new MP4BoxStream(data.buffer);
+    	stream.readUint32(); // version & flags
+    	textString = stream.readCString();
+    	return textString;
+    };
+
+    {
+    	exports.XMLSubtitlein4Parser = XMLSubtitlein4Parser;
+    	exports.Textin4Parser = Textin4Parser;
+    }
+    // file:src/isofile.js
+    /*
+     * Copyright (c) 2012-2013. Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    var ISOFile = function (stream) {
+    	/* MutiBufferStream object used to parse boxes */
+    	this.stream = stream || new MultiBufferStream();
+    	/* Array of all boxes (in order) found in the file */
+    	this.boxes = [];
+    	/* Array of all mdats */
+    	this.mdats = [];
+    	/* Array of all moofs */
+    	this.moofs = [];
+    	/* Boolean indicating if the file is compatible with progressive parsing (moov first) */
+    	this.isProgressive = false;
+    	/* Boolean used to fire moov start event only once */
+    	this.moovStartFound = false;
+    	/* Callback called when the moov parsing starts */
+    	this.onMoovStart = null;
+    	/* Boolean keeping track of the call to onMoovStart, to avoid double calls */
+    	this.moovStartSent = false;
+    	/* Callback called when the moov is entirely parsed */
+    	this.onReady = null;
+    	/* Boolean keeping track of the call to onReady, to avoid double calls */
+    	this.readySent = false;
+    	/* Callback to call when segments are ready */
+    	this.onSegment = null;
+    	/* Callback to call when samples are ready */
+    	this.onSamples = null;
+    	/* Callback to call when there is an error in the parsing or processing of samples */
+    	this.onError = null;
+    	/* Boolean indicating if the moov box run-length encoded tables of sample information have been processed */
+    	this.sampleListBuilt = false;
+    	/* Array of Track objects for which fragmentation of samples is requested */
+    	this.fragmentedTracks = [];
+    	/* Array of Track objects for which extraction of samples is requested */
+    	this.extractedTracks = [];
+    	/* Boolean indicating that fragmention is ready */
+    	this.isFragmentationInitialized = false;
+    	/* Boolean indicating that fragmented has started */
+    	this.sampleProcessingStarted = false;
+    	/* Number of the next 'moof' to generate when fragmenting */
+    	this.nextMoofNumber = 0;
+    	/* Boolean indicating if the initial list of items has been produced */
+    	this.itemListBuilt = false;
+    	/* Callback called when the sidx box is entirely parsed */
+    	this.onSidx = null;
+    	/* Boolean keeping track of the call to onSidx, to avoid double calls */
+    	this.sidxSent = false;
+    };
+
+    ISOFile.prototype.setSegmentOptions = function(id, user, options) {
+    	var trak = this.getTrackById(id);
+    	if (trak) {
+    		var fragTrack = {};
+    		this.fragmentedTracks.push(fragTrack);
+    		fragTrack.id = id;
+    		fragTrack.user = user;
+    		fragTrack.trak = trak;
+    		trak.nextSample = 0;
+    		fragTrack.segmentStream = null;
+    		fragTrack.nb_samples = 1000;
+    		fragTrack.rapAlignement = true;
+    		if (options) {
+    			if (options.nbSamples) fragTrack.nb_samples = options.nbSamples;
+    			if (options.rapAlignement) fragTrack.rapAlignement = options.rapAlignement;
+    		}
+    	}
+    };
+
+    ISOFile.prototype.unsetSegmentOptions = function(id) {
+    	var index = -1;
+    	for (var i = 0; i < this.fragmentedTracks.length; i++) {
+    		var fragTrack = this.fragmentedTracks[i];
+    		if (fragTrack.id == id) {
+    			index = i;
+    		}
+    	}
+    	if (index > -1) {
+    		this.fragmentedTracks.splice(index, 1);
+    	}
+    };
+
+    ISOFile.prototype.setExtractionOptions = function(id, user, options) {
+    	var trak = this.getTrackById(id);
+    	if (trak) {
+    		var extractTrack = {};
+    		this.extractedTracks.push(extractTrack);
+    		extractTrack.id = id;
+    		extractTrack.user = user;
+    		extractTrack.trak = trak;
+    		trak.nextSample = 0;
+    		extractTrack.nb_samples = 1000;
+    		extractTrack.samples = [];
+    		if (options) {
+    			if (options.nbSamples) extractTrack.nb_samples = options.nbSamples;
+    		}
+    	}
+    };
+
+    ISOFile.prototype.unsetExtractionOptions = function(id) {
+    	var index = -1;
+    	for (var i = 0; i < this.extractedTracks.length; i++) {
+    		var extractTrack = this.extractedTracks[i];
+    		if (extractTrack.id == id) {
+    			index = i;
+    		}
+    	}
+    	if (index > -1) {
+    		this.extractedTracks.splice(index, 1);
+    	}
+    };
+
+    ISOFile.prototype.parse = function() {
+    	var ret;
+    	var box;
+    	var parseBoxHeadersOnly = false;
+
+    	if (this.restoreParsePosition)	{
+    		if (!this.restoreParsePosition()) {
+    			return;
+    		}
+    	}
+
+    	while (true) {
+
+    		if (this.hasIncompleteMdat && this.hasIncompleteMdat()) {
+    			if (this.processIncompleteMdat()) {
+    				continue;
+    			} else {
+    				return;
+    			}
+    		} else {
+    			if (this.saveParsePosition)	{
+    				this.saveParsePosition();
+    			}
+    			ret = BoxParser.parseOneBox(this.stream, parseBoxHeadersOnly);
+    			if (ret.code === BoxParser.ERR_NOT_ENOUGH_DATA) {
+    				if (this.processIncompleteBox) {
+    					if (this.processIncompleteBox(ret)) {
+    						continue;
+    					} else {
+    						return;
+    					}
+    				} else {
+    					return;
+    				}
+    			} else {
+    				var box_type;
+    				/* the box is entirely parsed */
+    				box = ret.box;
+    				box_type = (box.type !== "uuid" ? box.type : box.uuid);
+    				/* store the box in the 'boxes' array to preserve box order (for file rewrite if needed)  */
+    				this.boxes.push(box);
+    				/* but also store box in a property for more direct access */
+    				switch (box_type) {
+    					case "mdat":
+    						this.mdats.push(box);
+    						break;
+    					case "moof":
+    						this.moofs.push(box);
+    						break;
+    					case "moov":
+    						this.moovStartFound = true;
+    						if (this.mdats.length === 0) {
+    							this.isProgressive = true;
+    						}
+    						/* no break */
+    						/* falls through */
+    					default:
+    						if (this[box_type] !== undefined) {
+    							Log.warn("ISOFile", "Duplicate Box of type: "+box_type+", overriding previous occurrence");
+    						}
+    						this[box_type] = box;
+    						break;
+    				}
+    				if (this.updateUsedBytes) {
+    					this.updateUsedBytes(box, ret);
+    				}
+    			}
+    		}
+    	}
+    };
+
+    ISOFile.prototype.checkBuffer = function (ab) {
+    	if (ab === null || ab === undefined) {
+    		throw("Buffer must be defined and non empty");
+    	}
+    	if (ab.fileStart === undefined) {
+    		throw("Buffer must have a fileStart property");
+    	}
+    	if (ab.byteLength === 0) {
+    		Log.warn("ISOFile", "Ignoring empty buffer (fileStart: "+ab.fileStart+")");
+    		this.stream.logBufferLevel();
+    		return false;
+    	}
+    	Log.info("ISOFile", "Processing buffer (fileStart: "+ab.fileStart+")");
+
+    	/* mark the bytes in the buffer as not being used yet */
+    	ab.usedBytes = 0;
+    	this.stream.insertBuffer(ab);
+    	this.stream.logBufferLevel();
+
+    	if (!this.stream.initialized()) {
+    		Log.warn("ISOFile", "Not ready to start parsing");
+    		return false;
+    	}
+    	return true;
+    };
+
+    /* Processes a new ArrayBuffer (with a fileStart property)
+       Returns the next expected file position, or undefined if not ready to parse */
+    ISOFile.prototype.appendBuffer = function(ab, last) {
+    	var nextFileStart;
+    	if (!this.checkBuffer(ab)) {
+    		return;
+    	}
+
+    	/* Parse whatever is in the existing buffers */
+    	this.parse();
+
+    	/* Check if the moovStart callback needs to be called */
+    	if (this.moovStartFound && !this.moovStartSent) {
+    		this.moovStartSent = true;
+    		if (this.onMoovStart) this.onMoovStart();
+    	}
+
+    	if (this.moov) {
+    		/* A moov box has been entirely parsed */
+
+    		/* if this is the first call after the moov is found we initialize the list of samples (may be empty in fragmented files) */
+    		if (!this.sampleListBuilt) {
+    			this.buildSampleLists();
+    			this.sampleListBuilt = true;
+    		}
+
+    		/* We update the sample information if there are any new moof boxes */
+    		this.updateSampleLists();
+
+    		/* If the application needs to be informed that the 'moov' has been found,
+    		   we create the information object and callback the application */
+    		if (this.onReady && !this.readySent) {
+    			this.readySent = true;
+    			this.onReady(this.getInfo());
+    		}
+
+    		/* See if any sample extraction or segment creation needs to be done with the available samples */
+    		this.processSamples(last);
+
+    		/* Inform about the best range to fetch next */
+    		if (this.nextSeekPosition) {
+    			nextFileStart = this.nextSeekPosition;
+    			this.nextSeekPosition = undefined;
+    		} else {
+    			nextFileStart = this.nextParsePosition;
+    		}
+    		if (this.stream.getEndFilePositionAfter) {
+    			nextFileStart = this.stream.getEndFilePositionAfter(nextFileStart);
+    		}
+    	} else {
+    		if (this.nextParsePosition) {
+    			/* moov has not been parsed but the first buffer was received,
+    			   the next fetch should probably be the next box start */
+    			nextFileStart = this.nextParsePosition;
+    		} else {
+    			/* No valid buffer has been parsed yet, we cannot know what to parse next */
+    			nextFileStart = 0;
+    		}
+    	}
+    	if (this.sidx) {
+    		if (this.onSidx && !this.sidxSent) {
+    			this.onSidx(this.sidx);
+    			this.sidxSent = true;
+    		}
+    	}
+    	if (this.meta) {
+    		if (this.flattenItemInfo && !this.itemListBuilt) {
+    			this.flattenItemInfo();
+    			this.itemListBuilt = true;
+    		}
+    		if (this.processItems) {
+    			this.processItems(this.onItem);
+    		}
+    	}
+
+    	if (this.stream.cleanBuffers) {
+    		Log.info("ISOFile", "Done processing buffer (fileStart: "+ab.fileStart+") - next buffer to fetch should have a fileStart position of "+nextFileStart);
+    		this.stream.logBufferLevel();
+    		this.stream.cleanBuffers();
+    		this.stream.logBufferLevel(true);
+    		Log.info("ISOFile", "Sample data size in memory: "+this.getAllocatedSampleDataSize());
+    	}
+    	return nextFileStart;
+    };
+
+    ISOFile.prototype.getInfo = function() {
+    	var i, j;
+    	var movie = {};
+    	var trak;
+    	var track;
+    	var sample_desc;
+    	var _1904 = (new Date('1904-01-01T00:00:00Z').getTime());
+
+    	if (this.moov) {
+    		movie.hasMoov = true;
+    		movie.duration = this.moov.mvhd.duration;
+    		movie.timescale = this.moov.mvhd.timescale;
+    		movie.isFragmented = (this.moov.mvex != null);
+    		if (movie.isFragmented && this.moov.mvex.mehd) {
+    			movie.fragment_duration = this.moov.mvex.mehd.fragment_duration;
+    		}
+    		movie.isProgressive = this.isProgressive;
+    		movie.hasIOD = (this.moov.iods != null);
+    		movie.brands = [];
+    		movie.brands.push(this.ftyp.major_brand);
+    		movie.brands = movie.brands.concat(this.ftyp.compatible_brands);
+    		movie.created = new Date(_1904+this.moov.mvhd.creation_time*1000);
+    		movie.modified = new Date(_1904+this.moov.mvhd.modification_time*1000);
+    		movie.tracks = [];
+    		movie.audioTracks = [];
+    		movie.videoTracks = [];
+    		movie.subtitleTracks = [];
+    		movie.metadataTracks = [];
+    		movie.hintTracks = [];
+    		movie.otherTracks = [];
+    		for (i = 0; i < this.moov.traks.length; i++) {
+    			trak = this.moov.traks[i];
+    			sample_desc = trak.mdia.minf.stbl.stsd.entries[0];
+    			track = {};
+    			movie.tracks.push(track);
+    			track.id = trak.tkhd.track_id;
+    			track.name = trak.mdia.hdlr.name;
+    			track.references = [];
+    			if (trak.tref) {
+    				for (j = 0; j < trak.tref.boxes.length; j++) {
+    					ref = {};
+    					track.references.push(ref);
+    					ref.type = trak.tref.boxes[j].type;
+    					ref.track_ids = trak.tref.boxes[j].track_ids;
+    				}
+    			}
+    			if (trak.edts) {
+    				track.edits = trak.edts.elst.entries;
+    			}
+    			track.created = new Date(_1904+trak.tkhd.creation_time*1000);
+    			track.modified = new Date(_1904+trak.tkhd.modification_time*1000);
+    			track.movie_duration = trak.tkhd.duration;
+    			track.movie_timescale = movie.timescale;
+    			track.layer = trak.tkhd.layer;
+    			track.alternate_group = trak.tkhd.alternate_group;
+    			track.volume = trak.tkhd.volume;
+    			track.matrix = trak.tkhd.matrix;
+    			track.track_width = trak.tkhd.width/(1<<16);
+    			track.track_height = trak.tkhd.height/(1<<16);
+    			track.timescale = trak.mdia.mdhd.timescale;
+    			track.cts_shift = trak.mdia.minf.stbl.cslg;
+    			track.duration = trak.mdia.mdhd.duration;
+    			track.samples_duration = trak.samples_duration;
+    			track.codec = sample_desc.getCodec();
+    			track.kind = (trak.udta && trak.udta.kinds.length ? trak.udta.kinds[0] : { schemeURI: "", value: ""});
+    			track.language = (trak.mdia.elng ? trak.mdia.elng.extended_language : trak.mdia.mdhd.languageString);
+    			track.nb_samples = trak.samples.length;
+    			track.size = trak.samples_size;
+    			track.bitrate = (track.size*8*track.timescale)/track.samples_duration;
+    			if (sample_desc.isAudio()) {
+    				track.type = "audio";
+    				movie.audioTracks.push(track);
+    				track.audio = {};
+    				track.audio.sample_rate = sample_desc.getSampleRate();
+    				track.audio.channel_count = sample_desc.getChannelCount();
+    				track.audio.sample_size = sample_desc.getSampleSize();
+    			} else if (sample_desc.isVideo()) {
+    				track.type = "video";
+    				movie.videoTracks.push(track);
+    				track.video = {};
+    				track.video.width = sample_desc.getWidth();
+    				track.video.height = sample_desc.getHeight();
+    			} else if (sample_desc.isSubtitle()) {
+    				track.type = "subtitles";
+    				movie.subtitleTracks.push(track);
+    			} else if (sample_desc.isHint()) {
+    				track.type = "metadata";
+    				movie.hintTracks.push(track);
+    			} else if (sample_desc.isMetadata()) {
+    				track.type = "metadata";
+    				movie.metadataTracks.push(track);
+    			} else {
+    				track.type = "metadata";
+    				movie.otherTracks.push(track);
+    			}
+    		}
+    	} else {
+    		movie.hasMoov = false;
+    	}
+    	movie.mime = "";
+    	if (movie.hasMoov && movie.tracks) {
+    		if (movie.videoTracks && movie.videoTracks.length > 0) {
+    			movie.mime += 'video/mp4; codecs=\"';
+    		} else if (movie.audioTracks && movie.audioTracks.length > 0) {
+    			movie.mime += 'audio/mp4; codecs=\"';
+    		} else {
+    			movie.mime += 'application/mp4; codecs=\"';
+    		}
+    		for (i = 0; i < movie.tracks.length; i++) {
+    			if (i !== 0) movie.mime += ',';
+    			movie.mime+= movie.tracks[i].codec;
+    		}
+    		movie.mime += '\"; profiles=\"';
+    		movie.mime += this.ftyp.compatible_brands.join();
+    		movie.mime += '\"';
+    	}
+    	return movie;
+    };
+
+    ISOFile.prototype.processSamples = function(last) {
+    	var i;
+    	var trak;
+    	if (!this.sampleProcessingStarted) return;
+
+    	/* For each track marked for fragmentation,
+    	   check if the next sample is there (i.e. if the sample information is known (i.e. moof has arrived) and if it has been downloaded)
+    	   and create a fragment with it */
+    	if (this.isFragmentationInitialized && this.onSegment !== null) {
+    		for (i = 0; i < this.fragmentedTracks.length; i++) {
+    			var fragTrak = this.fragmentedTracks[i];
+    			trak = fragTrak.trak;
+    			while (trak.nextSample < trak.samples.length && this.sampleProcessingStarted) {
+    				/* The sample information is there (either because the file is not fragmented and this is not the last sample,
+    				or because the file is fragmented and the moof for that sample has been received */
+    				Log.debug("ISOFile", "Creating media fragment on track #"+fragTrak.id +" for sample "+trak.nextSample);
+    				var result = this.createFragment(fragTrak.id, trak.nextSample, fragTrak.segmentStream);
+    				if (result) {
+    					fragTrak.segmentStream = result;
+    					trak.nextSample++;
+    				} else {
+    					/* The fragment could not be created because the media data is not there (not downloaded), wait for it */
+    					break;
+    				}
+    				/* A fragment is created by sample, but the segment is the accumulation in the buffer of these fragments.
+    				   It is flushed only as requested by the application (nb_samples) to avoid too many callbacks */
+    				if (trak.nextSample % fragTrak.nb_samples === 0 || (last || trak.nextSample >= trak.samples.length)) {
+    					Log.info("ISOFile", "Sending fragmented data on track #"+fragTrak.id+" for samples ["+Math.max(0,trak.nextSample-fragTrak.nb_samples)+","+(trak.nextSample-1)+"]");
+    					Log.info("ISOFile", "Sample data size in memory: "+this.getAllocatedSampleDataSize());
+    					if (this.onSegment) {
+    						this.onSegment(fragTrak.id, fragTrak.user, fragTrak.segmentStream.buffer, trak.nextSample, (last || trak.nextSample >= trak.samples.length));
+    					}
+    					/* force the creation of a new buffer */
+    					fragTrak.segmentStream = null;
+    					if (fragTrak !== this.fragmentedTracks[i]) {
+    						/* make sure we can stop fragmentation if needed */
+    						break;
+    					}
+    				}
+    			}
+    		}
+    	}
+
+    	if (this.onSamples !== null) {
+    		/* For each track marked for data export,
+    		   check if the next sample is there (i.e. has been downloaded) and send it */
+    		for (i = 0; i < this.extractedTracks.length; i++) {
+    			var extractTrak = this.extractedTracks[i];
+    			trak = extractTrak.trak;
+    			while (trak.nextSample < trak.samples.length && this.sampleProcessingStarted) {
+    				Log.debug("ISOFile", "Exporting on track #"+extractTrak.id +" sample #"+trak.nextSample);
+    				var sample = this.getSample(trak, trak.nextSample);
+    				if (sample) {
+    					trak.nextSample++;
+    					extractTrak.samples.push(sample);
+    				} else {
+    					break;
+    				}
+    				if (trak.nextSample % extractTrak.nb_samples === 0 || trak.nextSample >= trak.samples.length) {
+    					Log.debug("ISOFile", "Sending samples on track #"+extractTrak.id+" for sample "+trak.nextSample);
+    					if (this.onSamples) {
+    						this.onSamples(extractTrak.id, extractTrak.user, extractTrak.samples);
+    					}
+    					extractTrak.samples = [];
+    					if (extractTrak !== this.extractedTracks[i]) {
+    						/* check if the extraction needs to be stopped */
+    						break;
+    					}
+    				}
+    			}
+    		}
+    	}
+    };
+
+    /* Find and return specific boxes using recursion and early return */
+    ISOFile.prototype.getBox = function(type) {
+      var result = this.getBoxes(type, true);
+      return (result.length ? result[0] : null);
+    };
+
+    ISOFile.prototype.getBoxes = function(type, returnEarly) {
+      var result = [];
+      ISOFile._sweep.call(this, type, result, returnEarly);
+      return result;
+    };
+
+    ISOFile._sweep = function(type, result, returnEarly) {
+      if (this.type && this.type == type) result.push(this);
+      for (var box in this.boxes) {
+        if (result.length && returnEarly) return;
+        ISOFile._sweep.call(this.boxes[box], type, result, returnEarly);
+      }
+    };
+
+    ISOFile.prototype.getTrackSamplesInfo = function(track_id) {
+    	var track = this.getTrackById(track_id);
+    	if (track) {
+    		return track.samples;
+    	} else {
+    		return;
+    	}
+    };
+
+    ISOFile.prototype.getTrackSample = function(track_id, number) {
+    	var track = this.getTrackById(track_id);
+    	var sample = this.getSample(track, number);
+    	return sample;
+    };
+
+    /* Called by the application to release the resources associated to samples already forwarded to the application */
+    ISOFile.prototype.releaseUsedSamples = function (id, sampleNum) {
+    	var size = 0;
+    	var trak = this.getTrackById(id);
+    	if (!trak.lastValidSample) trak.lastValidSample = 0;
+    	for (var i = trak.lastValidSample; i < sampleNum; i++) {
+    		size+=this.releaseSample(trak, i);
+    	}
+    	Log.info("ISOFile", "Track #"+id+" released samples up to "+sampleNum+" (released size: "+size+", remaining: "+this.samplesDataSize+")");
+    	trak.lastValidSample = sampleNum;
+    };
+
+    ISOFile.prototype.start = function() {
+    	this.sampleProcessingStarted = true;
+    	this.processSamples(false);
+    };
+
+    ISOFile.prototype.stop = function() {
+    	this.sampleProcessingStarted = false;
+    };
+
+    /* Called by the application to flush the remaining samples (e.g. once the download is finished or when no more samples will be added) */
+    ISOFile.prototype.flush = function() {
+    	Log.info("ISOFile", "Flushing remaining samples");
+    	this.updateSampleLists();
+    	this.processSamples(true);
+    	this.stream.cleanBuffers();
+    	this.stream.logBufferLevel(true);
+    };
+
+    /* Finds the byte offset for a given time on a given track
+       also returns the time of the previous rap */
+    ISOFile.prototype.seekTrack = function(time, useRap, trak) {
+    	var j;
+    	var sample;
+    	var seek_offset = Infinity;
+    	var rap_seek_sample_num = 0;
+    	var seek_sample_num = 0;
+    	var timescale;
+
+    	if (trak.samples.length === 0) {
+    		Log.info("ISOFile", "No sample in track, cannot seek! Using time "+Log.getDurationString(0, 1) +" and offset: "+0);
+    		return { offset: 0, time: 0 };
+    	}
+
+    	for (j = 0; j < trak.samples.length; j++) {
+    		sample = trak.samples[j];
+    		if (j === 0) {
+    			seek_sample_num = 0;
+    			timescale = sample.timescale;
+    		} else if (sample.cts > time * sample.timescale) {
+    			seek_sample_num = j-1;
+    			break;
+    		}
+    		if (useRap && sample.is_sync) {
+    			rap_seek_sample_num = j;
+    		}
+    	}
+    	if (useRap) {
+    		seek_sample_num = rap_seek_sample_num;
+    	}
+    	time = trak.samples[seek_sample_num].cts;
+    	trak.nextSample = seek_sample_num;
+    	while (trak.samples[seek_sample_num].alreadyRead === trak.samples[seek_sample_num].size) {
+    		// No remaining samples to look for, all are downloaded.
+    		if (!trak.samples[seek_sample_num + 1]) {
+    			break;
+    		}
+    		seek_sample_num++;
+    	}
+    	seek_offset = trak.samples[seek_sample_num].offset+trak.samples[seek_sample_num].alreadyRead;
+    	Log.info("ISOFile", "Seeking to "+(useRap ? "RAP": "")+" sample #"+trak.nextSample+" on track "+trak.tkhd.track_id+", time "+Log.getDurationString(time, timescale) +" and offset: "+seek_offset);
+    	return { offset: seek_offset, time: time/timescale };
+    };
+
+    /* Finds the byte offset in the file corresponding to the given time or to the time of the previous RAP */
+    ISOFile.prototype.seek = function(time, useRap) {
+    	var moov = this.moov;
+    	var trak;
+    	var trak_seek_info;
+    	var i;
+    	var seek_info = { offset: Infinity, time: Infinity };
+    	if (!this.moov) {
+    		throw "Cannot seek: moov not received!";
+    	} else {
+    		for (i = 0; i<moov.traks.length; i++) {
+    			trak = moov.traks[i];
+    			trak_seek_info = this.seekTrack(time, useRap, trak);
+    			if (trak_seek_info.offset < seek_info.offset) {
+    				seek_info.offset = trak_seek_info.offset;
+    			}
+    			if (trak_seek_info.time < seek_info.time) {
+    				seek_info.time = trak_seek_info.time;
+    			}
+    		}
+    		Log.info("ISOFile", "Seeking at time "+Log.getDurationString(seek_info.time, 1)+" needs a buffer with a fileStart position of "+seek_info.offset);
+    		if (seek_info.offset === Infinity) {
+    			/* No sample info, in all tracks, cannot seek */
+    			seek_info = { offset: this.nextParsePosition, time: 0 };
+    		} else {
+    			/* check if the seek position is already in some buffer and
+    			 in that case return the end of that buffer (or of the last contiguous buffer) */
+    			/* TODO: Should wait until append operations are done */
+    			seek_info.offset = this.stream.getEndFilePositionAfter(seek_info.offset);
+    		}
+    		Log.info("ISOFile", "Adjusted seek position (after checking data already in buffer): "+seek_info.offset);
+    		return seek_info;
+    	}
+    };
+
+    ISOFile.prototype.equal = function(b) {
+    	var box_index = 0;
+    	while (box_index < this.boxes.length && box_index < b.boxes.length) {
+    		var a_box = this.boxes[box_index];
+    		var b_box = b.boxes[box_index];
+    		if (!BoxParser.boxEqual(a_box, b_box)) {
+    			return false;
+    		}
+    		box_index++;
+    	}
+    	return true;
+    };
+
+    {
+    	exports.ISOFile = ISOFile;
+    }
+    // file:src/isofile-advanced-parsing.js
+    /* position in the current buffer of the beginning of the last box parsed */
+    ISOFile.prototype.lastBoxStartPosition = 0;
+    /* indicator if the parsing is stuck in the middle of an mdat box */
+    ISOFile.prototype.parsingMdat = null;
+    /* next file position that the parser needs:
+        - 0 until the first buffer (i.e. fileStart ===0) has been received 
+        - otherwise, the next box start until the moov box has been parsed
+        - otherwise, the position of the next sample to fetch
+     */
+    ISOFile.prototype.nextParsePosition = 0;
+    /* keep mdat data */
+    ISOFile.prototype.discardMdatData = false;
+
+    ISOFile.prototype.processIncompleteBox = function(ret) {
+    	var box;
+    	var merged;
+    	var found;
+    	
+    	/* we did not have enough bytes in the current buffer to parse the entire box */
+    	if (ret.type === "mdat") { 
+    		/* we had enough bytes to get its type and size and it's an 'mdat' */
+    		
+    		/* special handling for mdat boxes, since we don't actually need to parse it linearly 
+    		   we create the box */
+    		box = new BoxParser[ret.type+"Box"](ret.size);	
+    		this.parsingMdat = box;
+    		this.boxes.push(box);
+    		this.mdats.push(box);			
+    		box.start = ret.start;
+    		box.hdr_size = ret.hdr_size;
+    		this.stream.addUsedBytes(box.hdr_size);
+
+    		/* indicate that the parsing should start from the end of the box */
+    		this.lastBoxStartPosition = box.start + box.size;
+     		/* let's see if we have the end of the box in the other buffers */
+    		found = this.stream.seek(box.start + box.size, false, this.discardMdatData);
+    		if (found) {
+    			/* found the end of the box */
+    			this.parsingMdat = null;
+    			/* let's see if we can parse more in this buffer */
+    			return true;
+    		} else {
+    			/* 'mdat' end not found in the existing buffers */
+    			/* determine the next position in the file to start parsing from */
+    			if (!this.moovStartFound) {
+    				/* moov not find yet, 
+    				   the file probably has 'mdat' at the beginning, and 'moov' at the end, 
+    				   indicate that the downloader should not try to download those bytes now */
+    				this.nextParsePosition = box.start + box.size;
+    			} else {
+    				/* we have the start of the moov box, 
+    				   the next bytes should try to complete the current 'mdat' */
+    				this.nextParsePosition = this.stream.findEndContiguousBuf();
+    			}
+    			/* not much we can do, wait for more buffers to arrive */
+    			return false;
+    		}
+    	} else {
+    		/* box is incomplete, we may not even know its type */
+    		if (ret.type === "moov") { 
+    			/* the incomplete box is a 'moov' box */
+    			this.moovStartFound = true;
+    			if (this.mdats.length === 0) {
+    				this.isProgressive = true;
+    			}
+    		}
+    		/* either it's not an mdat box (and we need to parse it, we cannot skip it)
+    		   (TODO: we could skip 'free' boxes ...)
+    			   or we did not have enough data to parse the type and size of the box, 
+    		   we try to concatenate the current buffer with the next buffer to restart parsing */
+    		merged = (this.stream.mergeNextBuffer ? this.stream.mergeNextBuffer() : false);
+    		if (merged) {
+    			/* The next buffer was contiguous, the merging succeeded,
+    			   we can now continue parsing, 
+    			   the next best position to parse is at the end of this new buffer */
+    			this.nextParsePosition = this.stream.getEndPosition();
+    			return true;
+    		} else {
+    			/* we cannot concatenate existing buffers because they are not contiguous or because there is no additional buffer */
+    			/* The next best position to parse is still at the end of this old buffer */
+    			if (!ret.type) {
+    				/* There were not enough bytes in the buffer to parse the box type and length,
+    				   the next fetch should retrieve those missing bytes, i.e. the next bytes after this buffer */
+    				this.nextParsePosition = this.stream.getEndPosition();
+    			} else {
+    				/* we had enough bytes to parse size and type of the incomplete box
+    				   if we haven't found yet the moov box, skip this one and try the next one 
+    				   if we have found the moov box, let's continue linear parsing */
+    				if (this.moovStartFound) {
+    					this.nextParsePosition = this.stream.getEndPosition();
+    				} else {
+    					this.nextParsePosition = this.stream.getPosition() + ret.size;
+    				}
+    			}
+    			return false;
+    		}
+    	}
+    };
+
+    ISOFile.prototype.hasIncompleteMdat = function () {
+    	return (this.parsingMdat !== null);
+    };
+
+    ISOFile.prototype.processIncompleteMdat = function () {
+    	var box;
+    	var found;
+    	
+    	/* we are in the parsing of an incomplete mdat box */
+    	box = this.parsingMdat;
+
+    	found = this.stream.seek(box.start + box.size, false, this.discardMdatData);
+    	if (found) {
+    		Log.debug("ISOFile", "Found 'mdat' end in buffered data");
+    		/* the end of the mdat has been found */ 
+    		this.parsingMdat = null;
+    		/* we can parse more in this buffer */
+    		return true;
+    	} else {
+    		/* we don't have the end of this mdat yet, 
+    		   indicate that the next byte to fetch is the end of the buffers we have so far, 
+    		   return and wait for more buffer to come */
+    		this.nextParsePosition = this.stream.findEndContiguousBuf();
+    		return false;
+    	}
+    };
+
+    ISOFile.prototype.restoreParsePosition = function() {
+    	/* Reposition at the start position of the previous box not entirely parsed */
+    	return this.stream.seek(this.lastBoxStartPosition, true, this.discardMdatData);
+    };
+
+    ISOFile.prototype.saveParsePosition = function() {
+    	/* remember the position of the box start in case we need to roll back (if the box is incomplete) */
+    	this.lastBoxStartPosition = this.stream.getPosition();	
+    };
+
+    ISOFile.prototype.updateUsedBytes = function(box, ret) {
+    	if (this.stream.addUsedBytes) {
+    		if (box.type === "mdat") {
+    			/* for an mdat box, only its header is considered used, other bytes will be used when sample data is requested */
+    			this.stream.addUsedBytes(box.hdr_size);
+    			if (this.discardMdatData) {
+    				this.stream.addUsedBytes(box.size-box.hdr_size);
+    			}
+    		} else {
+    			/* for all other boxes, the entire box data is considered used */
+    			this.stream.addUsedBytes(box.size);
+    		}	
+    	}
+    };
+    // file:src/isofile-advanced-creation.js
+    ISOFile.prototype.add = BoxParser.Box.prototype.add;
+    ISOFile.prototype.addBox = BoxParser.Box.prototype.addBox;
+
+    ISOFile.prototype.init = function (_options) {
+    	var options = _options || {}; 
+    	this.add("ftyp").set("major_brand", (options.brands && options.brands[0]) || "iso4")
+    							   .set("minor_version", 0)
+    							   .set("compatible_brands", options.brands || ["iso4"]);
+    	var moov = this.add("moov");
+    	moov.add("mvhd").set("timescale", options.timescale || 600)
+    					.set("rate", options.rate || 1<<16)
+    					.set("creation_time", 0)
+    					.set("modification_time", 0)
+    					.set("duration", options.duration || 0)
+    					.set("volume", (options.width) ? 0 : 0x0100)
+    					.set("matrix", [ 1<<16, 0, 0, 0, 1<<16, 0, 0, 0, 0x40000000])
+    					.set("next_track_id", 1);
+    	moov.add("mvex");
+    	return this;
+    };
+
+    ISOFile.prototype.addTrack = function (_options) {
+    	if (!this.moov) {
+    		this.init(_options);
+    	}
+
+    	var options = _options || {}; 
+    	options.width = options.width || 320;
+    	options.height = options.height || 320;
+    	options.id = options.id || this.moov.mvhd.next_track_id;
+    	options.type = options.type || "avc1";
+
+    	var trak = this.moov.add("trak");
+    	this.moov.mvhd.next_track_id = options.id+1;
+    	trak.add("tkhd").set("flags",BoxParser.TKHD_FLAG_ENABLED | 
+    								 BoxParser.TKHD_FLAG_IN_MOVIE | 
+    								 BoxParser.TKHD_FLAG_IN_PREVIEW)
+    					.set("creation_time",0)
+    					.set("modification_time", 0)
+    					.set("track_id", options.id)
+    					.set("duration", options.duration || 0)
+    					.set("layer", options.layer || 0)
+    					.set("alternate_group", 0)
+    					.set("volume", 1)
+    					.set("matrix", [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
+    					.set("width", options.width)
+    					.set("height", options.height);
+
+    	var mdia = trak.add("mdia");
+    	mdia.add("mdhd").set("creation_time", 0)
+    					.set("modification_time", 0)
+    					.set("timescale", options.timescale || 1)
+    					.set("duration", options.media_duration || 0)
+    					.set("language", options.language || "und");
+
+    	mdia.add("hdlr").set("handler", options.hdlr || "vide")
+    					.set("name", options.name || "Track created with MP4Box.js");
+
+    	mdia.add("elng").set("extended_language", options.language || "fr-FR");
+
+    	var minf = mdia.add("minf");
+    	if (BoxParser[options.type+"SampleEntry"] === undefined) return;
+    	var sample_description_entry = new BoxParser[options.type+"SampleEntry"]();
+    	sample_description_entry.data_reference_index = 1;
+    	var media_type = "";
+    	for (var mediaType in BoxParser.sampleEntryCodes) {
+    		var codes = BoxParser.sampleEntryCodes[mediaType];
+    		for (var i = 0; i < codes.length; i++) {
+    			if (codes.indexOf(options.type) > -1) {
+    				media_type = mediaType;
+    				break;
+    			}
+    		}
+    	}
+    	switch(media_type) {
+    		case "Visual":
+    			minf.add("vmhd").set("graphicsmode",0).set("opcolor", [ 0, 0, 0 ]);
+    			sample_description_entry.set("width", options.width)
+    						.set("height", options.height)
+    						.set("horizresolution", 0x48<<16)
+    						.set("vertresolution", 0x48<<16)
+    						.set("frame_count", 1)
+    						.set("compressorname", options.type+" Compressor")
+    						.set("depth", 0x18);
+    			if (options.avcDecoderConfigRecord) {
+    				var avcC = new BoxParser.avcCBox();
+    				var stream = new MP4BoxStream(options.avcDecoderConfigRecord);
+    				avcC.parse(stream);
+    				sample_description_entry.addBox(avcC);
+    			}
+    			break;
+    		case "Audio":
+    			minf.add("smhd").set("balance", options.balance || 0);
+    			sample_description_entry.set("channel_count", options.channel_count || 2)
+    						.set("samplesize", options.samplesize || 16)
+    						.set("samplerate", options.samplerate || 1<<16);
+    			break;
+    		case "Hint":
+    			minf.add("hmhd"); // TODO: add properties
+    			break;
+    		case "Subtitle":
+    			minf.add("sthd");
+    			switch (options.type) {
+    				case "stpp":
+    					sample_description_entry.set("namespace", options.namespace || "nonamespace")
+    								.set("schema_location", options.schema_location || "")
+    								.set("auxiliary_mime_types", options.auxiliary_mime_types || "");
+    					break;
+    			}
+    			break;
+    		case "Metadata":
+    			minf.add("nmhd");
+    			break;
+    		case "System":
+    			minf.add("nmhd");
+    			break;
+    		default:
+    			minf.add("nmhd");
+    			break;
+    	}
+    	if (options.description) {
+    		sample_description_entry.addBox(options.description);
+    	}
+    	if (options.description_boxes) {
+    		options.description_boxes.forEach(function (b) {
+    			sample_description_entry.addBox(b);
+    		});
+    	}
+    	minf.add("dinf").add("dref").addEntry((new BoxParser["url Box"]()).set("flags", 0x1));
+    	var stbl = minf.add("stbl");
+    	stbl.add("stsd").addEntry(sample_description_entry);
+    	stbl.add("stts").set("sample_counts", [])
+    					.set("sample_deltas", []);
+    	stbl.add("stsc").set("first_chunk", [])
+    					.set("samples_per_chunk", [])
+    					.set("sample_description_index", []);
+    	stbl.add("stco").set("chunk_offsets", []);
+    	stbl.add("stsz").set("sample_sizes", []);
+
+    	this.moov.mvex.add("trex").set("track_id", options.id)
+    							  .set("default_sample_description_index", options.default_sample_description_index || 1)
+    							  .set("default_sample_duration", options.default_sample_duration || 0)
+    							  .set("default_sample_size", options.default_sample_size || 0)
+    							  .set("default_sample_flags", options.default_sample_flags || 0);
+    	this.buildTrakSampleLists(trak);
+    	return options.id;
+    };
+
+    BoxParser.Box.prototype.computeSize = function(stream_) {
+    	var stream = stream_ || new DataStream();
+    	stream.endianness = DataStream.BIG_ENDIAN;
+    	this.write(stream);
+    };
+
+    ISOFile.prototype.addSample = function (track_id, data, _options) {
+    	var options = _options || {};
+    	var sample = {};
+    	var trak = this.getTrackById(track_id);
+    	if (trak === null) return;
+        sample.number = trak.samples.length;
+    	sample.track_id = trak.tkhd.track_id;
+    	sample.timescale = trak.mdia.mdhd.timescale;
+    	sample.description_index = (options.sample_description_index ? options.sample_description_index - 1: 0);
+    	sample.description = trak.mdia.minf.stbl.stsd.entries[sample.description_index];
+    	sample.data = data;
+    	sample.size = data.byteLength;
+    	sample.alreadyRead = sample.size;
+    	sample.duration = options.duration || 1;
+    	sample.cts = options.cts || 0;
+    	sample.dts = options.dts || 0;
+    	sample.is_sync = options.is_sync || false;
+    	sample.is_leading = options.is_leading || 0;
+    	sample.depends_on = options.depends_on || 0;
+    	sample.is_depended_on = options.is_depended_on || 0;
+    	sample.has_redundancy = options.has_redundancy || 0;
+    	sample.degradation_priority = options.degradation_priority || 0;
+    	sample.offset = 0;
+    	sample.subsamples = options.subsamples;
+    	trak.samples.push(sample);
+    	trak.samples_size += sample.size;
+    	trak.samples_duration += sample.duration;
+    	if (!trak.first_dts) {
+    		trak.first_dts = options.dts;
+    	}
+
+    	this.processSamples();
+    	
+    	var moof = this.createSingleSampleMoof(sample);
+    	this.addBox(moof);
+    	moof.computeSize();
+    	/* adjusting the data_offset now that the moof size is known*/
+    	moof.trafs[0].truns[0].data_offset = moof.size+8; //8 is mdat header
+    	this.add("mdat").data = new Uint8Array(data);
+    	return sample;
+    };
+
+    ISOFile.prototype.createSingleSampleMoof = function(sample) {
+    	var sample_flags = 0;
+    	if (sample.is_sync)
+    		sample_flags = (1 << 25);  // sample_depends_on_none (I picture)
+    	else
+    		sample_flags = (1 << 16);  // non-sync
+
+    	var moof = new BoxParser.moofBox();
+    	moof.add("mfhd").set("sequence_number", this.nextMoofNumber);
+    	this.nextMoofNumber++;
+    	var traf = moof.add("traf");
+    	var trak = this.getTrackById(sample.track_id);
+    	traf.add("tfhd").set("track_id", sample.track_id)
+    					.set("flags", BoxParser.TFHD_FLAG_DEFAULT_BASE_IS_MOOF);
+    	traf.add("tfdt").set("baseMediaDecodeTime", (sample.dts - trak.first_dts));
+    	traf.add("trun").set("flags", BoxParser.TRUN_FLAGS_DATA_OFFSET | BoxParser.TRUN_FLAGS_DURATION | 
+    				 				  BoxParser.TRUN_FLAGS_SIZE | BoxParser.TRUN_FLAGS_FLAGS | 
+    				 				  BoxParser.TRUN_FLAGS_CTS_OFFSET)
+    					.set("data_offset",0)
+    					.set("first_sample_flags",0)
+    					.set("sample_count",1)
+    					.set("sample_duration",[sample.duration])
+    					.set("sample_size",[sample.size])
+    					.set("sample_flags",[sample_flags])
+    					.set("sample_composition_time_offset", [sample.cts - sample.dts]);
+    	return moof;
+    };
+
+    // file:src/isofile-sample-processing.js
+    /* Index of the last moof box received */
+    ISOFile.prototype.lastMoofIndex = 0;
+
+    /* size of the buffers allocated for samples */
+    ISOFile.prototype.samplesDataSize = 0;
+
+    /* Resets all sample tables */
+    ISOFile.prototype.resetTables = function () {
+    	var i;
+    	var trak, stco, stsc, stsz, stts, ctts, stss;
+    	this.initial_duration = this.moov.mvhd.duration;
+    	this.moov.mvhd.duration = 0;
+    	for (i = 0; i < this.moov.traks.length; i++) {
+    		trak = this.moov.traks[i];
+    		trak.tkhd.duration = 0;
+    		trak.mdia.mdhd.duration = 0;
+    		stco = trak.mdia.minf.stbl.stco || trak.mdia.minf.stbl.co64;
+    		stco.chunk_offsets = [];
+    		stsc = trak.mdia.minf.stbl.stsc;
+    		stsc.first_chunk = [];
+    		stsc.samples_per_chunk = [];
+    		stsc.sample_description_index = [];
+    		stsz = trak.mdia.minf.stbl.stsz || trak.mdia.minf.stbl.stz2;
+    		stsz.sample_sizes = [];
+    		stts = trak.mdia.minf.stbl.stts;
+    		stts.sample_counts = [];
+    		stts.sample_deltas = [];
+    		ctts = trak.mdia.minf.stbl.ctts;
+    		if (ctts) {
+    			ctts.sample_counts = [];
+    			ctts.sample_offsets = [];
+    		}
+    		stss = trak.mdia.minf.stbl.stss;
+    		var k = trak.mdia.minf.stbl.boxes.indexOf(stss);
+    		if (k != -1) trak.mdia.minf.stbl.boxes[k] = null;
+    	}
+    };
+
+    ISOFile.initSampleGroups = function(trak, traf, sbgps, trak_sgpds, traf_sgpds) {
+    	var l;
+    	var k;
+    	var sample_group_info;
+    	var sample_group_key;
+    	function SampleGroupInfo(_type, _parameter, _sbgp) {
+    		this.grouping_type = _type;
+    		this.grouping_type_parameter = _parameter;
+    		this.sbgp = _sbgp;
+    		this.last_sample_in_run = -1;
+    		this.entry_index = -1;		
+    	}
+    	if (traf) {
+    		traf.sample_groups_info = [];
+    	} 
+    	if (!trak.sample_groups_info) {
+    		trak.sample_groups_info = [];
+    	}
+    	for (k = 0; k < sbgps.length; k++) {
+    		sample_group_key = sbgps[k].grouping_type +"/"+ sbgps[k].grouping_type_parameter;
+    		sample_group_info = new SampleGroupInfo(sbgps[k].grouping_type, sbgps[k].grouping_type_parameter, sbgps[k]);
+    		if (traf) {
+    			traf.sample_groups_info[sample_group_key] = sample_group_info;
+    		}
+    		if (!trak.sample_groups_info[sample_group_key]) {
+    			trak.sample_groups_info[sample_group_key] = sample_group_info;
+    		}
+    		for (l=0; l <trak_sgpds.length; l++) {
+    			if (trak_sgpds[l].grouping_type === sbgps[k].grouping_type) {
+    				sample_group_info.description = trak_sgpds[l];
+    				sample_group_info.description.used = true;
+    			}
+    		}
+    		if (traf_sgpds) {
+    			for (l=0; l <traf_sgpds.length; l++) {
+    				if (traf_sgpds[l].grouping_type === sbgps[k].grouping_type) {
+    					sample_group_info.fragment_description = traf_sgpds[l];
+    					sample_group_info.fragment_description.used = true;
+    					sample_group_info.is_fragment = true;
+    				}
+    			}			
+    		}
+    	}
+    	if (!traf) {
+    		for (k = 0; k < trak_sgpds.length; k++) {
+    			if (!trak_sgpds[k].used && trak_sgpds[k].version >= 2) {
+    				sample_group_key = trak_sgpds[k].grouping_type +"/0";
+    				sample_group_info = new SampleGroupInfo(trak_sgpds[k].grouping_type, 0);
+    				if (!trak.sample_groups_info[sample_group_key]) {
+    					trak.sample_groups_info[sample_group_key] = sample_group_info;
+    				}
+    			}
+    		}
+    	} else {
+    		if (traf_sgpds) {
+    			for (k = 0; k < traf_sgpds.length; k++) {
+    				if (!traf_sgpds[k].used && traf_sgpds[k].version >= 2) {
+    					sample_group_key = traf_sgpds[k].grouping_type +"/0";
+    					sample_group_info = new SampleGroupInfo(traf_sgpds[k].grouping_type, 0);
+    					sample_group_info.is_fragment = true;
+    					if (!traf.sample_groups_info[sample_group_key]) {
+    						traf.sample_groups_info[sample_group_key] = sample_group_info;
+    					}
+    				}
+    			}
+    		}
+    	}
+    };
+
+    ISOFile.setSampleGroupProperties = function(trak, sample, sample_number, sample_groups_info) {
+    	var k;
+    	var index;
+    	sample.sample_groups = [];
+    	for (k in sample_groups_info) {
+    		sample.sample_groups[k] = {};
+    		sample.sample_groups[k].grouping_type = sample_groups_info[k].grouping_type;
+    		sample.sample_groups[k].grouping_type_parameter = sample_groups_info[k].grouping_type_parameter;
+    		if (sample_number >= sample_groups_info[k].last_sample_in_run) {
+    			if (sample_groups_info[k].last_sample_in_run < 0) {
+    				sample_groups_info[k].last_sample_in_run = 0;
+    			}
+    			sample_groups_info[k].entry_index++;	
+    			if (sample_groups_info[k].entry_index <= sample_groups_info[k].sbgp.entries.length - 1) {
+    				sample_groups_info[k].last_sample_in_run += sample_groups_info[k].sbgp.entries[sample_groups_info[k].entry_index].sample_count;
+    			}
+    		}
+    		if (sample_groups_info[k].entry_index <= sample_groups_info[k].sbgp.entries.length - 1) {
+    			sample.sample_groups[k].group_description_index = sample_groups_info[k].sbgp.entries[sample_groups_info[k].entry_index].group_description_index;
+    		} else {
+    			sample.sample_groups[k].group_description_index = -1; // special value for not defined
+    		}
+    		if (sample.sample_groups[k].group_description_index !== 0) {
+    			var description;
+    			if (sample_groups_info[k].fragment_description) {
+    				description = sample_groups_info[k].fragment_description;
+    			} else {
+    				description = sample_groups_info[k].description;
+    			}
+    			if (sample.sample_groups[k].group_description_index > 0) {
+    				if (sample.sample_groups[k].group_description_index > 65535) {
+    					index = (sample.sample_groups[k].group_description_index >> 16)-1;
+    				} else {
+    					index = sample.sample_groups[k].group_description_index-1;
+    				}
+    				if (description && index >= 0) {
+    					sample.sample_groups[k].description = description.entries[index];
+    				}
+    			} else {
+    				if (description && description.version >= 2) {
+    					if (description.default_group_description_index > 0) {								
+    						sample.sample_groups[k].description = description.entries[description.default_group_description_index-1];
+    					}
+    				}
+    			}
+    		}
+    	}
+    };
+
+    ISOFile.process_sdtp = function (sdtp, sample, number) {
+    	if (!sample) {
+    		return;
+    	}
+    	if (sdtp) {
+    		sample.is_leading = sdtp.is_leading[number];
+    		sample.depends_on = sdtp.sample_depends_on[number];
+    		sample.is_depended_on = sdtp.sample_is_depended_on[number];
+    		sample.has_redundancy = sdtp.sample_has_redundancy[number];
+    	} else {
+    		sample.is_leading = 0;
+    		sample.depends_on = 0;
+    		sample.is_depended_on = 0;
+    		sample.has_redundancy = 0;
+    	}	
+    };
+
+    /* Build initial sample list from  sample tables */
+    ISOFile.prototype.buildSampleLists = function() {	
+    	var i;
+    	var trak;
+    	for (i = 0; i < this.moov.traks.length; i++) {
+    		trak = this.moov.traks[i];
+    		this.buildTrakSampleLists(trak);
+    	}
+    };
+
+    ISOFile.prototype.buildTrakSampleLists = function(trak) {	
+    	var j;
+    	var stco, stsc, stsz, stts, ctts, stss, stsd, subs, sbgps, sgpds, stdp;
+    	var chunk_run_index, chunk_index, last_chunk_in_run, offset_in_chunk, last_sample_in_chunk;
+    	var last_sample_in_stts_run, stts_run_index, last_sample_in_ctts_run, ctts_run_index, last_stss_index, subs_entry_index, last_subs_sample_index;
+
+    	trak.samples = [];
+    	trak.samples_duration = 0;
+    	trak.samples_size = 0;
+    	stco = trak.mdia.minf.stbl.stco || trak.mdia.minf.stbl.co64;
+    	stsc = trak.mdia.minf.stbl.stsc;
+    	stsz = trak.mdia.minf.stbl.stsz || trak.mdia.minf.stbl.stz2;
+    	stts = trak.mdia.minf.stbl.stts;
+    	ctts = trak.mdia.minf.stbl.ctts;
+    	stss = trak.mdia.minf.stbl.stss;
+    	stsd = trak.mdia.minf.stbl.stsd;
+    	subs = trak.mdia.minf.stbl.subs;
+    	stdp = trak.mdia.minf.stbl.stdp;
+    	sbgps = trak.mdia.minf.stbl.sbgps;
+    	sgpds = trak.mdia.minf.stbl.sgpds;
+    	
+    	last_sample_in_stts_run = -1;
+    	stts_run_index = -1;
+    	last_sample_in_ctts_run = -1;
+    	ctts_run_index = -1;
+    	last_stss_index = 0;
+    	subs_entry_index = 0;
+    	last_subs_sample_index = 0;		
+
+    	ISOFile.initSampleGroups(trak, null, sbgps, sgpds);
+
+    	if (typeof stsz === "undefined") {
+    		return;
+    	}
+
+    	/* we build the samples one by one and compute their properties */
+    	for (j = 0; j < stsz.sample_sizes.length; j++) {
+    		var sample = {};
+    		sample.number = j;
+    		sample.track_id = trak.tkhd.track_id;
+    		sample.timescale = trak.mdia.mdhd.timescale;
+    		sample.alreadyRead = 0;
+    		trak.samples[j] = sample;
+    		/* size can be known directly */
+    		sample.size = stsz.sample_sizes[j];
+    		trak.samples_size += sample.size;
+    		/* computing chunk-based properties (offset, sample description index)*/
+    		if (j === 0) {				
+    			chunk_index = 1; /* the first sample is in the first chunk (chunk indexes are 1-based) */
+    			chunk_run_index = 0; /* the first chunk is the first entry in the first_chunk table */
+    			sample.chunk_index = chunk_index;
+    			sample.chunk_run_index = chunk_run_index;
+    			last_sample_in_chunk = stsc.samples_per_chunk[chunk_run_index];
+    			offset_in_chunk = 0;
+
+    			/* Is there another entry in the first_chunk table ? */
+    			if (chunk_run_index + 1 < stsc.first_chunk.length) {
+    				/* The last chunk in the run is the chunk before the next first chunk */
+    				last_chunk_in_run = stsc.first_chunk[chunk_run_index+1]-1; 	
+    			} else {
+    				/* There is only one entry in the table, it is valid for all future chunks*/
+    				last_chunk_in_run = Infinity;
+    			}
+    		} else {
+    			if (j < last_sample_in_chunk) {
+    				/* the sample is still in the current chunk */
+    				sample.chunk_index = chunk_index;
+    				sample.chunk_run_index = chunk_run_index;
+    			} else {
+    				/* the sample is in the next chunk */
+    				chunk_index++;
+    				sample.chunk_index = chunk_index;
+    				/* reset the accumulated offset in the chunk */
+    				offset_in_chunk = 0;
+    				if (chunk_index <= last_chunk_in_run) ; else {
+    					chunk_run_index++;
+    					/* Is there another entry in the first_chunk table ? */
+    					if (chunk_run_index + 1 < stsc.first_chunk.length) {
+    						/* The last chunk in the run is the chunk before the next first chunk */
+    						last_chunk_in_run = stsc.first_chunk[chunk_run_index+1]-1; 	
+    					} else {
+    						/* There is only one entry in the table, it is valid for all future chunks*/
+    						last_chunk_in_run = Infinity;
+    					}
+    					
+    				}
+    				sample.chunk_run_index = chunk_run_index;
+    				last_sample_in_chunk += stsc.samples_per_chunk[chunk_run_index];
+    			}
+    		}
+
+    		sample.description_index = stsc.sample_description_index[sample.chunk_run_index]-1;
+    		sample.description = stsd.entries[sample.description_index];
+    		sample.offset = stco.chunk_offsets[sample.chunk_index-1] + offset_in_chunk; /* chunk indexes are 1-based */
+    		offset_in_chunk += sample.size;
+
+    		/* setting dts, cts, duration and rap flags */
+    		if (j > last_sample_in_stts_run) {
+    			stts_run_index++;
+    			if (last_sample_in_stts_run < 0) {
+    				last_sample_in_stts_run = 0;
+    			}
+    			last_sample_in_stts_run += stts.sample_counts[stts_run_index];				
+    		}
+    		if (j > 0) {
+    			trak.samples[j-1].duration = stts.sample_deltas[stts_run_index];
+    			trak.samples_duration += trak.samples[j-1].duration;
+    			sample.dts = trak.samples[j-1].dts + trak.samples[j-1].duration;
+    		} else {
+    			sample.dts = 0;
+    		}
+    		if (ctts) {
+    			if (j >= last_sample_in_ctts_run) {
+    				ctts_run_index++;
+    				if (last_sample_in_ctts_run < 0) {
+    					last_sample_in_ctts_run = 0;
+    				}
+    				last_sample_in_ctts_run += ctts.sample_counts[ctts_run_index];				
+    			}
+    			sample.cts = trak.samples[j].dts + ctts.sample_offsets[ctts_run_index];
+    		} else {
+    			sample.cts = sample.dts;
+    		}
+    		if (stss) {
+    			if (j == stss.sample_numbers[last_stss_index] - 1) { // sample numbers are 1-based
+    				sample.is_sync = true;
+    				last_stss_index++;
+    			} else {
+    				sample.is_sync = false;				
+    				sample.degradation_priority = 0;
+    			}
+    			if (subs) {
+    				if (subs.entries[subs_entry_index].sample_delta + last_subs_sample_index == j+1) {
+    					sample.subsamples = subs.entries[subs_entry_index].subsamples;
+    					last_subs_sample_index += subs.entries[subs_entry_index].sample_delta;
+    					subs_entry_index++;
+    				}
+    			}
+    		} else {
+    			sample.is_sync = true;
+    		}
+    		ISOFile.process_sdtp(trak.mdia.minf.stbl.sdtp, sample, sample.number);
+    		if (stdp) {
+    			sample.degradation_priority = stdp.priority[j];
+    		} else {
+    			sample.degradation_priority = 0;
+    		}
+    		if (subs) {
+    			if (subs.entries[subs_entry_index].sample_delta + last_subs_sample_index == j) {
+    				sample.subsamples = subs.entries[subs_entry_index].subsamples;
+    				last_subs_sample_index += subs.entries[subs_entry_index].sample_delta;
+    			}
+    		}
+    		if (sbgps.length > 0 || sgpds.length > 0) {
+    			ISOFile.setSampleGroupProperties(trak, sample, j, trak.sample_groups_info);
+    		}
+    	}
+    	if (j>0) {
+    		trak.samples[j-1].duration = Math.max(trak.mdia.mdhd.duration - trak.samples[j-1].dts, 0);
+    		trak.samples_duration += trak.samples[j-1].duration;
+    	}
+    };
+
+    /* Update sample list when new 'moof' boxes are received */
+    ISOFile.prototype.updateSampleLists = function() {	
+    	var i, j, k;
+    	var default_sample_description_index, default_sample_duration, default_sample_size, default_sample_flags;
+    	var last_run_position;
+    	var box, moof, traf, trak, trex;
+    	var sample;
+    	var sample_flags;
+    	
+    	if (this.moov === undefined) {
+    		return;
+    	}
+    	/* if the input file is fragmented and fetched in multiple downloads, we need to update the list of samples */
+    	while (this.lastMoofIndex < this.moofs.length) {
+    		box = this.moofs[this.lastMoofIndex];
+    		this.lastMoofIndex++;
+    		if (box.type == "moof") {
+    			moof = box;
+    			for (i = 0; i < moof.trafs.length; i++) {
+    				traf = moof.trafs[i];
+    				trak = this.getTrackById(traf.tfhd.track_id);
+    				trex = this.getTrexById(traf.tfhd.track_id);
+    				if (traf.tfhd.flags & BoxParser.TFHD_FLAG_SAMPLE_DESC) {
+    					default_sample_description_index = traf.tfhd.default_sample_description_index;
+    				} else {
+    					default_sample_description_index = (trex ? trex.default_sample_description_index: 1);
+    				}
+    				if (traf.tfhd.flags & BoxParser.TFHD_FLAG_SAMPLE_DUR) {
+    					default_sample_duration = traf.tfhd.default_sample_duration;
+    				} else {
+    					default_sample_duration = (trex ? trex.default_sample_duration : 0);
+    				}
+    				if (traf.tfhd.flags & BoxParser.TFHD_FLAG_SAMPLE_SIZE) {
+    					default_sample_size = traf.tfhd.default_sample_size;
+    				} else {
+    					default_sample_size = (trex ? trex.default_sample_size : 0);
+    				}
+    				if (traf.tfhd.flags & BoxParser.TFHD_FLAG_SAMPLE_FLAGS) {
+    					default_sample_flags = traf.tfhd.default_sample_flags;
+    				} else {
+    					default_sample_flags = (trex ? trex.default_sample_flags : 0);
+    				}
+    				traf.sample_number = 0;
+    				/* process sample groups */
+    				if (traf.sbgps.length > 0) {
+    					ISOFile.initSampleGroups(trak, traf, traf.sbgps, trak.mdia.minf.stbl.sgpds, traf.sgpds);
+    				}
+    				for (j = 0; j < traf.truns.length; j++) {
+    					var trun = traf.truns[j];
+    					for (k = 0; k < trun.sample_count; k++) {
+    						sample = {};
+    						sample.moof_number = this.lastMoofIndex;
+    						sample.number_in_traf = traf.sample_number;
+    						traf.sample_number++;
+    			            sample.number = trak.samples.length;
+    						traf.first_sample_index = trak.samples.length;
+    						trak.samples.push(sample);
+    						sample.track_id = trak.tkhd.track_id;
+    						sample.timescale = trak.mdia.mdhd.timescale;
+    						sample.description_index = default_sample_description_index-1;
+    						sample.description = trak.mdia.minf.stbl.stsd.entries[sample.description_index];
+    						sample.size = default_sample_size;
+    						if (trun.flags & BoxParser.TRUN_FLAGS_SIZE) {
+    							sample.size = trun.sample_size[k];
+    						}
+    						trak.samples_size += sample.size;
+    						sample.duration = default_sample_duration;
+    						if (trun.flags & BoxParser.TRUN_FLAGS_DURATION) {
+    							sample.duration = trun.sample_duration[k];
+    						}
+    						trak.samples_duration += sample.duration;
+    						if (trak.first_traf_merged || k > 0) {
+    							sample.dts = trak.samples[trak.samples.length-2].dts+trak.samples[trak.samples.length-2].duration;
+    						} else {
+    							if (traf.tfdt) {
+    								sample.dts = traf.tfdt.baseMediaDecodeTime;
+    							} else {
+    								sample.dts = 0;
+    							}
+    							trak.first_traf_merged = true;
+    						}
+    						sample.cts = sample.dts;
+    						if (trun.flags & BoxParser.TRUN_FLAGS_CTS_OFFSET) {
+    							sample.cts = sample.dts + trun.sample_composition_time_offset[k];
+    						}
+    						sample_flags = default_sample_flags;
+    						if (trun.flags & BoxParser.TRUN_FLAGS_FLAGS) {
+    							sample_flags = trun.sample_flags[k];
+    						} else if (k === 0 && (trun.flags & BoxParser.TRUN_FLAGS_FIRST_FLAG)) {
+    							sample_flags = trun.first_sample_flags;
+    						}
+    						sample.is_sync = ((sample_flags >> 16 & 0x1) ? false : true);
+    						sample.is_leading = (sample_flags >> 26 & 0x3);
+    						sample.depends_on = (sample_flags >> 24 & 0x3);
+    						sample.is_depended_on = (sample_flags >> 22 & 0x3);
+    						sample.has_redundancy = (sample_flags >> 20 & 0x3);
+    						sample.degradation_priority = (sample_flags & 0xFFFF);
+    						//ISOFile.process_sdtp(traf.sdtp, sample, sample.number_in_traf);
+    						var bdop = (traf.tfhd.flags & BoxParser.TFHD_FLAG_BASE_DATA_OFFSET) ? true : false;
+    						var dbim = (traf.tfhd.flags & BoxParser.TFHD_FLAG_DEFAULT_BASE_IS_MOOF) ? true : false;
+    						var dop = (trun.flags & BoxParser.TRUN_FLAGS_DATA_OFFSET) ? true : false;
+    						var bdo = 0;
+    						if (!bdop) {
+    							if (!dbim) {
+    								if (j === 0) { // the first track in the movie fragment
+    									bdo = moof.start; // the position of the first byte of the enclosing Movie Fragment Box
+    								} else {
+    									bdo = last_run_position; // end of the data defined by the preceding *track* (irrespective of the track id) fragment in the moof
+    								}
+    							} else {
+    								bdo = moof.start;
+    							}
+    						} else {
+    							bdo = traf.tfhd.base_data_offset;
+    						}
+    						if (j === 0 && k === 0) {
+    							if (dop) {
+    								sample.offset = bdo + trun.data_offset; // If the data-offset is present, it is relative to the base-data-offset established in the track fragment header
+    							} else {
+    								sample.offset = bdo; // the data for this run starts the base-data-offset defined by the track fragment header
+    							}
+    						} else {
+    							sample.offset = last_run_position; // this run starts immediately after the data of the previous run
+    						}
+    						last_run_position = sample.offset + sample.size;
+    						if (traf.sbgps.length > 0 || traf.sgpds.length > 0 ||
+    							trak.mdia.minf.stbl.sbgps.length > 0 || trak.mdia.minf.stbl.sgpds.length > 0) {
+    							ISOFile.setSampleGroupProperties(trak, sample, sample.number_in_traf, traf.sample_groups_info);
+    						}
+    					}
+    				}
+    				if (traf.subs) {
+    					trak.has_fragment_subsamples = true;
+    					var sample_index = traf.first_sample_index;
+    					for (j = 0; j < traf.subs.entries.length; j++) {
+    						sample_index += traf.subs.entries[j].sample_delta;
+    						sample = trak.samples[sample_index-1];
+    						sample.subsamples = traf.subs.entries[j].subsamples;
+    					}					
+    				}
+    			}
+    		}
+    	}	
+    };
+
+    /* Try to get sample data for a given sample:
+       returns null if not found
+       returns the same sample if already requested
+     */
+    ISOFile.prototype.getSample = function(trak, sampleNum) {	
+    	var buffer;
+    	var sample = trak.samples[sampleNum];
+    	
+    	if (!this.moov) {
+    		return null;
+    	}
+
+    	if (!sample.data) {
+    		/* Not yet fetched */
+    		sample.data = new Uint8Array(sample.size);
+    		sample.alreadyRead = 0;
+    		this.samplesDataSize += sample.size;
+    		Log.debug("ISOFile", "Allocating sample #"+sampleNum+" on track #"+trak.tkhd.track_id+" of size "+sample.size+" (total: "+this.samplesDataSize+")");
+    	} else if (sample.alreadyRead == sample.size) {
+    		/* Already fetched entirely */
+    		return sample;
+    	}
+
+    	/* The sample has only been partially fetched, we need to check in all buffers */
+    	while(true) {
+    		var index =	this.stream.findPosition(true, sample.offset + sample.alreadyRead, false);
+    		if (index > -1) {
+    			buffer = this.stream.buffers[index];
+    			var lengthAfterStart = buffer.byteLength - (sample.offset + sample.alreadyRead - buffer.fileStart);
+    			if (sample.size - sample.alreadyRead <= lengthAfterStart) {
+    				/* the (rest of the) sample is entirely contained in this buffer */
+
+    				Log.debug("ISOFile","Getting sample #"+sampleNum+" data (alreadyRead: "+sample.alreadyRead+" offset: "+
+    					(sample.offset+sample.alreadyRead - buffer.fileStart)+" read size: "+(sample.size - sample.alreadyRead)+" full size: "+sample.size+")");
+
+    				DataStream.memcpy(sample.data.buffer, sample.alreadyRead,
+    				                  buffer, sample.offset+sample.alreadyRead - buffer.fileStart, sample.size - sample.alreadyRead);
+
+    				/* update the number of bytes used in this buffer and check if it needs to be removed */
+    				buffer.usedBytes += sample.size - sample.alreadyRead;
+    				this.stream.logBufferLevel();
+
+    				sample.alreadyRead = sample.size;
+
+    				return sample;
+    			} else {
+    				/* the sample does not end in this buffer */
+
+    				if (lengthAfterStart === 0) return null;
+
+    				Log.debug("ISOFile","Getting sample #"+sampleNum+" partial data (alreadyRead: "+sample.alreadyRead+" offset: "+
+    					(sample.offset+sample.alreadyRead - buffer.fileStart)+" read size: "+lengthAfterStart+" full size: "+sample.size+")");
+
+    				DataStream.memcpy(sample.data.buffer, sample.alreadyRead,
+    				                  buffer, sample.offset+sample.alreadyRead - buffer.fileStart, lengthAfterStart);
+    				sample.alreadyRead += lengthAfterStart;
+
+    				/* update the number of bytes used in this buffer and check if it needs to be removed */
+    				buffer.usedBytes += lengthAfterStart;
+    				this.stream.logBufferLevel();
+
+    				/* keep looking in the next buffer */
+    			}
+    		} else {
+    			return null;
+    		}
+    	}
+    };
+
+    /* Release the memory used to store the data of the sample */
+    ISOFile.prototype.releaseSample = function(trak, sampleNum) {	
+    	var sample = trak.samples[sampleNum];
+    	if (sample.data) {
+    		this.samplesDataSize -= sample.size;
+    		sample.data = null;
+    		sample.alreadyRead = 0;
+    		return sample.size;
+    	} else {
+    		return 0;
+    	}
+    };
+
+    ISOFile.prototype.getAllocatedSampleDataSize = function() {
+    	return this.samplesDataSize;
+    };
+
+    /* Builds the MIME Type 'codecs' sub-parameters for the whole file */
+    ISOFile.prototype.getCodecs = function() {	
+    	var i;
+    	var codecs = "";
+    	for (i = 0; i < this.moov.traks.length; i++) {
+    		var trak = this.moov.traks[i];
+    		if (i>0) {
+    			codecs+=","; 
+    		}
+    		codecs += trak.mdia.minf.stbl.stsd.entries[0].getCodec();		
+    	}
+    	return codecs;
+    };
+
+    /* Helper function */
+    ISOFile.prototype.getTrexById = function(id) {	
+    	var i;
+    	if (!this.moov || !this.moov.mvex) return null;
+    	for (i = 0; i < this.moov.mvex.trexs.length; i++) {
+    		var trex = this.moov.mvex.trexs[i];
+    		if (trex.track_id == id) return trex;
+    	}
+    	return null;
+    };
+
+    /* Helper function */
+    ISOFile.prototype.getTrackById = function(id) {
+    	if (this.moov === undefined) {
+    		return null;
+    	}
+    	for (var j = 0; j < this.moov.traks.length; j++) {
+    		var trak = this.moov.traks[j];
+    		if (trak.tkhd.track_id == id) return trak;
+    	}
+    	return null;
+    };
+    // file:src/isofile-item-processing.js
+    ISOFile.prototype.items = [];
+    /* size of the buffers allocated for samples */
+    ISOFile.prototype.itemsDataSize = 0;
+
+    ISOFile.prototype.flattenItemInfo = function() {	
+    	var items = this.items;
+    	var i, j;
+    	var item;
+    	var meta = this.meta;
+    	if (meta === null || meta === undefined) return;
+    	if (meta.hdlr === undefined) return;
+    	if (meta.iinf === undefined) return;
+    	for (i = 0; i < meta.iinf.item_infos.length; i++) {
+    		item = {};
+    		item.id = meta.iinf.item_infos[i].item_ID;
+    		items[item.id] = item;
+    		item.ref_to = [];
+    		item.name = meta.iinf.item_infos[i].item_name;
+    		if (meta.iinf.item_infos[i].protection_index > 0) {
+    			item.protection = meta.ipro.protections[meta.iinf.item_infos[i].protection_index-1];
+    		}
+    		if (meta.iinf.item_infos[i].item_type) {
+    			item.type = meta.iinf.item_infos[i].item_type;
+    		} else {
+    			item.type = "mime";
+    		}
+    		item.content_type = meta.iinf.item_infos[i].content_type;
+    		item.content_encoding = meta.iinf.item_infos[i].content_encoding;
+    	}
+    	if (meta.iloc) {
+    		for(i = 0; i < meta.iloc.items.length; i++) {
+    			var itemloc = meta.iloc.items[i];
+    			item = items[itemloc.item_ID];
+    			if (itemloc.data_reference_index !== 0) {
+    				Log.warn("Item storage with reference to other files: not supported");
+    				item.source = meta.dinf.boxes[itemloc.data_reference_index-1];
+    			}
+    			switch(itemloc.construction_method) {
+    				case 0: // offset into the file referenced by the data reference index
+    				break;
+    				case 1: // offset into the idat box of this meta box
+    				Log.warn("Item storage with construction_method : not supported");
+    				break;
+    				case 2: // offset into another item
+    				Log.warn("Item storage with construction_method : not supported");
+    				break;
+    			}
+    			item.extents = [];
+    			item.size = 0;
+    			for (j = 0; j < itemloc.extents.length; j++) {
+    				item.extents[j] = {};
+    				item.extents[j].offset = itemloc.extents[j].extent_offset + itemloc.base_offset;
+    				item.extents[j].length = itemloc.extents[j].extent_length;
+    				item.extents[j].alreadyRead = 0;
+    				item.size += item.extents[j].length;
+    			}
+    		}
+    	}
+    	if (meta.pitm) {
+    		items[meta.pitm.item_id].primary = true;
+    	}
+    	if (meta.iref) {
+    		for (i=0; i <meta.iref.references.length; i++) {
+    			var ref = meta.iref.references[i];
+    			for (j=0; j<ref.references.length; j++) {
+    				items[ref.from_item_ID].ref_to.push({type: ref.type, id: ref.references[j]});
+    			}
+    		}
+    	}
+    	if (meta.iprp) {
+    		for (var k = 0; k < meta.iprp.ipmas.length; k++) {
+    			var ipma = meta.iprp.ipmas[k];
+    			for (i = 0; i < ipma.associations.length; i++) {
+    				var association = ipma.associations[i];
+    				item = items[association.id];
+    				if (item.properties === undefined) {
+    					item.properties = {};
+    					item.properties.boxes = [];
+    				}
+    				for (j = 0; j < association.props.length; j++) {
+    					var propEntry = association.props[j];
+    					if (propEntry.property_index > 0 && propEntry.property_index-1 < meta.iprp.ipco.boxes.length) {
+    						var propbox = meta.iprp.ipco.boxes[propEntry.property_index-1];
+    						item.properties[propbox.type] = propbox;
+    						item.properties.boxes.push(propbox);
+    					}
+    				}
+    			}
+    		}
+    	}
+    };
+
+    ISOFile.prototype.getItem = function(item_id) {	
+    	var buffer;
+    	var item;
+    	
+    	if (!this.meta) {
+    		return null;
+    	}
+
+     	item = this.items[item_id];
+    	if (!item.data && item.size) {
+    		/* Not yet fetched */
+    		item.data = new Uint8Array(item.size);
+    		item.alreadyRead = 0;
+    		this.itemsDataSize += item.size;
+    		Log.debug("ISOFile", "Allocating item #"+item_id+" of size "+item.size+" (total: "+this.itemsDataSize+")");
+    	} else if (item.alreadyRead === item.size) {
+    		/* Already fetched entirely */
+    		return item;
+    	}
+
+    	/* The item has only been partially fetched, we need to check in all buffers to find the remaining extents*/
+
+    	for (var i = 0; i < item.extents.length; i++) {
+    		var extent = item.extents[i];
+    		if (extent.alreadyRead === extent.length) {
+    			continue;
+    		} else {
+    			var index =	this.stream.findPosition(true, extent.offset + extent.alreadyRead, false);
+    			if (index > -1) {
+    				buffer = this.stream.buffers[index];
+    				var lengthAfterStart = buffer.byteLength - (extent.offset + extent.alreadyRead - buffer.fileStart);
+    				if (extent.length - extent.alreadyRead <= lengthAfterStart) {
+    					/* the (rest of the) extent is entirely contained in this buffer */
+
+    					Log.debug("ISOFile","Getting item #"+item_id+" extent #"+i+" data (alreadyRead: "+extent.alreadyRead+
+    						" offset: "+(extent.offset+extent.alreadyRead - buffer.fileStart)+" read size: "+(extent.length - extent.alreadyRead)+
+    						" full extent size: "+extent.length+" full item size: "+item.size+")");
+
+    					DataStream.memcpy(item.data.buffer, item.alreadyRead, 
+    					                  buffer, extent.offset+extent.alreadyRead - buffer.fileStart, extent.length - extent.alreadyRead);
+
+    					/* update the number of bytes used in this buffer and check if it needs to be removed */
+    					buffer.usedBytes += extent.length - extent.alreadyRead;
+    					this.stream.logBufferLevel();
+
+    					item.alreadyRead += (extent.length - extent.alreadyRead);
+    					extent.alreadyRead = extent.length;
+    				} else {
+    					/* the sample does not end in this buffer */
+
+    					Log.debug("ISOFile","Getting item #"+item_id+" extent #"+i+" partial data (alreadyRead: "+extent.alreadyRead+" offset: "+
+    						(extent.offset+extent.alreadyRead - buffer.fileStart)+" read size: "+lengthAfterStart+
+    						" full extent size: "+extent.length+" full item size: "+item.size+")");
+
+    					DataStream.memcpy(item.data.buffer, item.alreadyRead, 
+    					                  buffer, extent.offset+extent.alreadyRead - buffer.fileStart, lengthAfterStart);
+    					extent.alreadyRead += lengthAfterStart;
+    					item.alreadyRead += lengthAfterStart;
+
+    					/* update the number of bytes used in this buffer and check if it needs to be removed */
+    					buffer.usedBytes += lengthAfterStart;
+    					this.stream.logBufferLevel();
+    					return null;
+    				}
+    			} else {
+    				return null;
+    			}
+    		}
+    	}
+    	if (item.alreadyRead === item.size) {
+    		/* fetched entirely */
+    		return item;
+    	} else {
+    		return null;
+    	}
+    };
+
+    /* Release the memory used to store the data of the item */
+    ISOFile.prototype.releaseItem = function(item_id) {	
+    	var item = this.items[item_id];
+    	if (item.data) {
+    		this.itemsDataSize -= item.size;
+    		item.data = null;
+    		item.alreadyRead = 0;
+    		for (var i = 0; i < item.extents.length; i++) {
+    			var extent = item.extents[i];
+    			extent.alreadyRead = 0;
+    		}
+    		return item.size;
+    	} else {
+    		return 0;
+    	}
+    };
+
+
+    ISOFile.prototype.processItems = function(callback) {
+    	for(var i in this.items) {
+    		var item = this.items[i];
+    		this.getItem(item.id);
+    		if (callback && !item.sent) {
+    			callback(item);
+    			item.sent = true;
+    			item.data = null;
+    		}
+    	}
+    };
+
+    ISOFile.prototype.hasItem = function(name) {
+    	for(var i in this.items) {
+    		var item = this.items[i];
+    		if (item.name === name) {
+    			return item.id;
+    		}
+    	}
+    	return -1;
+    };
+
+    ISOFile.prototype.getMetaHandler = function() {
+    	if (!this.meta) {
+    		return null;
+    	} else {
+    		return this.meta.hdlr.handler;		
+    	}
+    };
+
+    ISOFile.prototype.getPrimaryItem = function() {
+    	if (!this.meta || !this.meta.pitm) {
+    		return null;
+    	} else {
+    		return this.getItem(this.meta.pitm.item_id);
+    	}
+    };
+
+    ISOFile.prototype.itemToFragmentedTrackFile = function(_options) {
+    	var options = _options || {};
+    	var item = null;
+    	if (options.itemId) {
+    		item = this.getItem(options.itemId);
+    	} else {
+    		item = this.getPrimaryItem();
+    	}
+    	if (item == null) return null;
+
+    	var file = new ISOFile();
+    	file.discardMdatData = false;
+    	// assuming the track type is the same as the item type
+    	var trackOptions = { type: item.type, description_boxes: item.properties.boxes};
+    	if (item.properties.ispe) {
+    		trackOptions.width = item.properties.ispe.image_width;
+    		trackOptions.height = item.properties.ispe.image_height;
+    	}
+    	var trackId = file.addTrack(trackOptions);
+    	if (trackId) {
+    		file.addSample(trackId, item.data);
+    		return file;
+    	} else {
+    		return null;
+    	}
+    };
+
+    // file:src/isofile-write.js
+    /* Rewrite the entire file */
+    ISOFile.prototype.write = function(outstream) {
+    	for (var i=0; i<this.boxes.length; i++) {
+    		this.boxes[i].write(outstream);
+    	}
+    };
+
+    ISOFile.prototype.createFragment = function(track_id, sampleNumber, stream_) {
+    	var trak = this.getTrackById(track_id);
+    	var sample = this.getSample(trak, sampleNumber);
+    	if (sample == null) {
+    		sample = trak.samples[sampleNumber];
+    		if (this.nextSeekPosition) {
+    			this.nextSeekPosition = Math.min(sample.offset+sample.alreadyRead,this.nextSeekPosition);
+    		} else {
+    			this.nextSeekPosition = trak.samples[sampleNumber].offset+sample.alreadyRead;
+    		}
+    		return null;
+    	}
+    	
+    	var stream = stream_ || new DataStream();
+    	stream.endianness = DataStream.BIG_ENDIAN;
+
+    	var moof = this.createSingleSampleMoof(sample);
+    	moof.write(stream);
+
+    	/* adjusting the data_offset now that the moof size is known*/
+    	moof.trafs[0].truns[0].data_offset = moof.size+8; //8 is mdat header
+    	Log.debug("MP4Box", "Adjusting data_offset with new value "+moof.trafs[0].truns[0].data_offset);
+    	stream.adjustUint32(moof.trafs[0].truns[0].data_offset_position, moof.trafs[0].truns[0].data_offset);
+    		
+    	var mdat = new BoxParser.mdatBox();
+    	mdat.data = sample.data;
+    	mdat.write(stream);
+    	return stream;
+    };
+
+    /* Modify the file and create the initialization segment */
+    ISOFile.writeInitializationSegment = function(ftyp, moov, total_duration, sample_duration) {
+    	var i;
+    	Log.debug("ISOFile", "Generating initialization segment");
+
+    	var stream = new DataStream();
+    	stream.endianness = DataStream.BIG_ENDIAN;
+    	ftyp.write(stream);
+    	
+    	/* we can now create the new mvex box */
+    	var mvex = moov.add("mvex");
+    	if (total_duration) {
+    		mvex.add("mehd").set("fragment_duration", total_duration);
+    	}
+    	for (i = 0; i < moov.traks.length; i++) {
+    		mvex.add("trex").set("track_id", moov.traks[i].tkhd.track_id)
+    						.set("default_sample_description_index", 1)
+    						.set("default_sample_duration", sample_duration)
+    						.set("default_sample_size", 0)
+    						.set("default_sample_flags", 1<<16);
+    	}
+    	moov.write(stream);
+
+    	return stream.buffer;
+
+    };
+
+    ISOFile.prototype.save = function(name) {
+    	var stream = new DataStream();
+    	stream.endianness = DataStream.BIG_ENDIAN;
+    	this.write(stream);
+    	stream.save(name);	
+    };
+
+    ISOFile.prototype.getBuffer = function() {
+    	var stream = new DataStream();
+    	stream.endianness = DataStream.BIG_ENDIAN;
+    	this.write(stream);
+    	return stream.buffer;
+    };
+
+    ISOFile.prototype.initializeSegmentation = function() {
+    	var i;
+    	var initSegs;
+    	var trak;
+    	var seg;
+    	if (this.onSegment === null) {
+    		Log.warn("MP4Box", "No segmentation callback set!");
+    	}
+    	if (!this.isFragmentationInitialized) {
+    		this.isFragmentationInitialized = true;		
+    		this.nextMoofNumber = 0;
+    		this.resetTables();
+    	}	
+    	initSegs = [];	
+    	for (i = 0; i < this.fragmentedTracks.length; i++) {
+    		var moov = new BoxParser.moovBox();
+    		moov.mvhd = this.moov.mvhd;
+    	    moov.boxes.push(moov.mvhd);
+    		trak = this.getTrackById(this.fragmentedTracks[i].id);
+    		moov.boxes.push(trak);
+    		moov.traks.push(trak);
+    		seg = {};
+    		seg.id = trak.tkhd.track_id;
+    		seg.user = this.fragmentedTracks[i].user;
+    		seg.buffer = ISOFile.writeInitializationSegment(this.ftyp, moov, (this.moov.mvex && this.moov.mvex.mehd ? this.moov.mvex.mehd.fragment_duration: undefined), (this.moov.traks[i].samples.length>0 ? this.moov.traks[i].samples[0].duration: 0));
+    		initSegs.push(seg);
+    	}
+    	return initSegs;
+    };
+
+    // file:src/box-print.js
+    /* 
+     * Copyright (c) Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    BoxParser.Box.prototype.printHeader = function(output) {
+    	this.size += 8;
+    	if (this.size > MAX_SIZE) {
+    		this.size += 8;
+    	}
+    	if (this.type === "uuid") {
+    		this.size += 16;
+    	}
+    	output.log(output.indent+"size:"+this.size);
+    	output.log(output.indent+"type:"+this.type);
+    };
+
+    BoxParser.FullBox.prototype.printHeader = function(output) {
+    	this.size += 4;
+    	BoxParser.Box.prototype.printHeader.call(this, output);
+    	output.log(output.indent+"version:"+this.version);
+    	output.log(output.indent+"flags:"+this.flags);
+    };
+
+    BoxParser.Box.prototype.print = function(output) {
+    	this.printHeader(output);
+    };
+
+    BoxParser.ContainerBox.prototype.print = function(output) {
+    	this.printHeader(output);
+    	for (var i=0; i<this.boxes.length; i++) {
+    		if (this.boxes[i]) {
+    			var prev_indent = output.indent;
+    			output.indent += " ";
+    			this.boxes[i].print(output);
+    			output.indent = prev_indent;
+    		}
+    	}
+    };
+
+    ISOFile.prototype.print = function(output) {
+    	output.indent = "";
+    	for (var i=0; i<this.boxes.length; i++) {
+    		if (this.boxes[i]) {
+    			this.boxes[i].print(output);
+    		}
+    	}	
+    };
+
+    BoxParser.mvhdBox.prototype.print = function(output) {
+    	BoxParser.FullBox.prototype.printHeader.call(this, output);
+    	output.log(output.indent+"creation_time: "+this.creation_time);
+    	output.log(output.indent+"modification_time: "+this.modification_time);
+    	output.log(output.indent+"timescale: "+this.timescale);
+    	output.log(output.indent+"duration: "+this.duration);
+    	output.log(output.indent+"rate: "+this.rate);
+    	output.log(output.indent+"volume: "+(this.volume>>8));
+    	output.log(output.indent+"matrix: "+this.matrix.join(", "));
+    	output.log(output.indent+"next_track_id: "+this.next_track_id);
+    };
+
+    BoxParser.tkhdBox.prototype.print = function(output) {
+    	BoxParser.FullBox.prototype.printHeader.call(this, output);
+    	output.log(output.indent+"creation_time: "+this.creation_time);
+    	output.log(output.indent+"modification_time: "+this.modification_time);
+    	output.log(output.indent+"track_id: "+this.track_id);
+    	output.log(output.indent+"duration: "+this.duration);
+    	output.log(output.indent+"volume: "+(this.volume>>8));
+    	output.log(output.indent+"matrix: "+this.matrix.join(", "));
+    	output.log(output.indent+"layer: "+this.layer);
+    	output.log(output.indent+"alternate_group: "+this.alternate_group);
+    	output.log(output.indent+"width: "+this.width);
+    	output.log(output.indent+"height: "+this.height);
+    };// file:src/mp4box.js
+    /*
+     * Copyright (c) 2012-2013. Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
+     * License: BSD-3-Clause (see LICENSE file)
+     */
+    var MP4Box = {};
+
+    MP4Box.createFile = function (_keepMdatData, _stream) {
+    	/* Boolean indicating if bytes containing media data should be kept in memory */
+    	var keepMdatData = (_keepMdatData !== undefined ? _keepMdatData : true);
+    	var file = new ISOFile(_stream);
+    	file.discardMdatData = (keepMdatData ? false : true);
+    	return file;
+    };
+
+    {
+    	exports.createFile = MP4Box.createFile;
+    }
+    }(mp4box_all));
+
+    /* eslint-disable no-undef */
+
+    /**
+     * Taken from https://github.com/w3c/webcodecs/blob/main/samples/mp4-decode/mp4_demuxer.js
+     */
+    class Writer {
+      constructor(size) {
+        this.data = new Uint8Array(size);
+        this.idx = 0;
+        this.size = size;
+      }
+
+      getData() {
+        if (this.idx !== this.size) throw new Error('Mismatch between size reserved and sized used');
+        return this.data.slice(0, this.idx);
+      }
+
+      writeUint8(value) {
+        this.data.set([value], this.idx);
+        this.idx += 1;
+      }
+
+      writeUint16(value) {
+        const arr = new Uint16Array(1);
+        arr[0] = value;
+        const buffer = new Uint8Array(arr.buffer);
+        this.data.set([buffer[1], buffer[0]], this.idx);
+        this.idx += 2;
+      }
+
+      writeUint8Array(value) {
+        this.data.set(value, this.idx);
+        this.idx += value.length;
+      }
+    }
+
+    /**
+     * Taken from https://github.com/w3c/webcodecs/blob/main/samples/mp4-decode/mp4_demuxer.js
+     *
+     * @param avccBox
+     * @returns {*}
+     */
+    const getExtradata = (avccBox) => {
+      let i;
+      let size = 7;
+      for (i = 0; i < avccBox.SPS.length; i += 1) {
+        // nalu length is encoded as a uint16.
+        size += 2 + avccBox.SPS[i].length;
+      }
+      for (i = 0; i < avccBox.PPS.length; i += 1) {
+        // nalu length is encoded as a uint16.
+        size += 2 + avccBox.PPS[i].length;
+      }
+
+      const writer = new Writer(size);
+
+      writer.writeUint8(avccBox.configurationVersion);
+      writer.writeUint8(avccBox.AVCProfileIndication);
+      writer.writeUint8(avccBox.profile_compatibility);
+      writer.writeUint8(avccBox.AVCLevelIndication);
+      // eslint-disable-next-line no-bitwise
+      writer.writeUint8(avccBox.lengthSizeMinusOne + (63 << 2));
+
+      // eslint-disable-next-line no-bitwise
+      writer.writeUint8(avccBox.nb_SPS_nalus + (7 << 5));
+      for (i = 0; i < avccBox.SPS.length; i += 1) {
+        writer.writeUint16(avccBox.SPS[i].length);
+        writer.writeUint8Array(avccBox.SPS[i].nalu);
+      }
+
+      writer.writeUint8(avccBox.nb_PPS_nalus);
+      for (i = 0; i < avccBox.PPS.length; i += 1) {
+        writer.writeUint16(avccBox.PPS[i].length);
+        writer.writeUint8Array(avccBox.PPS[i].nalu);
+      }
+
+      return writer.getData();
+    };
+
+    /**
+     * decodeVideo takes an url to a mp4 file and converts it into frames.
+     *
+     * The steps for this are:
+     *  1. Determine the codec for this video file and demux it into chunks.
+     *  2. Read the chunks with VideoDecoder as fast as possible.
+     *  3. Return an array of frames that we can efficiently draw to a canvas.
+     *
+     * @param src
+     * @param VideoDecoder
+     * @param EncodedVideoChunk
+     * @param emitFrame
+     * @param debug
+     * @returns {Promise<unknown>}
+     */
+    const decodeVideo = (src, emitFrame, { VideoDecoder, EncodedVideoChunk, debug }) => new Promise(
+      (resolve, reject) => {
+        if (debug) console.info('Decoding video from', src);
+
+        try {
+          // Uses mp4box for demuxing
+          const mp4boxfile = mp4box_all.createFile();
+
+          // Holds the codec value
+          let codec;
+
+          // Creates a VideoDecoder instance
+          const decoder = new VideoDecoder({
+            output: (frame) => {
+              createImageBitmap(frame, { resizeQuality: 'low' })
+                .then((bitmap) => {
+                  emitFrame(bitmap);
+                  frame.close();
+
+                  if (decoder.decodeQueueSize <= 0) {
+                    // Give it an extra half second to finish everything
+                    setTimeout(() => {
+                      if (decoder.state !== 'closed') {
+                        decoder.close();
+                        resolve();
+                      }
+                    }, 500);
+                  }
+                });
+            },
+            error: (e) => {
+              // eslint-disable-next-line no-console
+              console.error(e);
+              reject(e);
+            },
+          });
+
+          mp4boxfile.onReady = (info) => {
+            if (info && info.videoTracks && info.videoTracks[0]) {
+              ([{ codec }] = info.videoTracks);
+              if (debug) console.info('Video with codec:', codec);
+
+              // Gets the avccbox used for reading extradata
+              const avccBox = mp4boxfile.moov.traks[0].mdia.minf.stbl.stsd.entries[0].avcC;
+              const extradata = getExtradata(avccBox);
+
+              // configure decoder
+              decoder.configure({ codec, description: extradata });
+
+              // Setup mp4box file for breaking it into chunks
+              mp4boxfile.setExtractionOptions(info.videoTracks[0].id);
+              mp4boxfile.start();
+            } else reject(new Error('URL provided is not a valid mp4 video file.'));
+          };
+
+          mp4boxfile.onSamples = (track_id, ref, samples) => {
+            for (let i = 0; i < samples.length; i += 1) {
+              const sample = samples[i];
+              const type = sample.is_sync ? 'key' : 'delta';
+
+              const chunk = new EncodedVideoChunk({
+                type,
+                timestamp: sample.cts,
+                duration: sample.duration,
+                data: sample.data,
+              });
+
+              decoder.decode(chunk);
+            }
+          };
+
+          // Fetches the file into arraybuffers
+          fetch(src)
+            .then((res) => {
+              const reader = res.body.getReader();
+              let offset = 0;
+
+              function appendBuffers({ done, value }) {
+                if (done) {
+                  mp4boxfile.flush();
+                  return null;
+                }
+
+                const buf = value.buffer;
+                buf.fileStart = offset;
+                offset += buf.byteLength;
+                mp4boxfile.appendBuffer(buf);
+
+                return reader.read().then(appendBuffers);
+              }
+
+              return reader.read().then(appendBuffers);
+            });
+        } catch (e) {
+          reject(e);
+        }
+      },
+    );
+
+    /**
+     * The main function for decoding video. Deals with the polyfill cases first,
+     * then calls our decodeVideo.
+     *
+     * @param src
+     * @param emitFrame
+     * @param debug
+     * @returns {Promise<never>|Promise<void>|*}
+     */
+    var videoDecoder = (src, emitFrame, debug) => {
+      // If our browser supports WebCodecs natively
+      if (typeof VideoDecoder === 'function' && typeof EncodedVideoChunk === 'function') {
+        if (debug) console.info('WebCodecs is natively supported, using native version...');
+        return decodeVideo(src, emitFrame, { VideoDecoder, EncodedVideoChunk, debug });
+      }
+
+      // If our browser doesn't support WebCodecs, but we have a polyfill available
+      if (typeof LibAVWebCodecs === 'object' && typeof LibAVWebCodecs.load === 'function') {
+        if (debug) {
+          console.info(
+            'WebCodecs is not natively supported, but LibAVWebCodecs polyfill detected. Using polyfill...',
+          );
+        }
+        return ((typeof LibAV === 'object') ? LibAV.LibAV() : Promise.resolve())
+          .then(LibAVWebCodecs.load)
+          .then(() => decodeVideo(src, emitFrame, { ...LibAVWebCodecs, debug }));
+      }
+
+      // Otherwise, we do a promise reject
+      return Promise.reject(new Error(
+        'WebCodecs is not available, please try a different browser or supply the LibAVWebCodecs polyfill.',
+      ));
+    };
+
+    /* src/ScrollyVideo.svelte generated by Svelte v3.49.0 */
+
+    const { console: console_1 } = globals;
+    const file = "src/ScrollyVideo.svelte";
+
+    // (220:0) {:else}
+    function create_else_block(ctx) {
+    	let video_1;
+    	let video_1_is_paused = true;
+    	let video_1_updating = false;
+    	let video_1_animationframe;
+    	let mounted;
+    	let dispose;
+
+    	let video_1_levels = [
+    		{ tabindex: "0" },
+    		{ preload: "metadata" },
+    		{ autobuffer: "" },
+    		{ playsInline: true },
+    		{ "webkit-playsinline": "" },
+    		/*$$props*/ ctx[12]
+    	];
+
+    	let video_1_data = {};
+
+    	for (let i = 0; i < video_1_levels.length; i += 1) {
+    		video_1_data = assign(video_1_data, video_1_levels[i]);
+    	}
+
+    	function video_1_timeupdate_handler() {
+    		cancelAnimationFrame(video_1_animationframe);
+
+    		if (!video_1.paused) {
+    			video_1_animationframe = raf(video_1_timeupdate_handler);
+    			video_1_updating = true;
+    		}
+
+    		/*video_1_timeupdate_handler*/ ctx[28].call(video_1);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			video_1 = element("video");
+    			set_attributes(video_1, video_1_data);
+    			toggle_class(video_1, "cover", /*cover*/ ctx[0]);
+    			add_location(video_1, file, 221, 2, 6746);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, video_1, anchor);
+    			/*video_1_binding*/ ctx[25](video_1);
+    			video_1.muted = /*muted*/ ctx[8];
+
+    			if (!isNaN(/*playbackRate*/ ctx[7])) {
+    				video_1.playbackRate = /*playbackRate*/ ctx[7];
+    			}
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(video_1, "volumechange", /*video_1_volumechange_handler*/ ctx[26]),
+    					listen_dev(video_1, "play", /*video_1_play_pause_handler*/ ctx[27]),
+    					listen_dev(video_1, "pause", /*video_1_play_pause_handler*/ ctx[27]),
+    					listen_dev(video_1, "timeupdate", video_1_timeupdate_handler),
+    					listen_dev(video_1, "ratechange", /*video_1_ratechange_handler*/ ctx[29])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			set_attributes(video_1, video_1_data = get_spread_update(video_1_levels, [
+    				{ tabindex: "0" },
+    				{ preload: "metadata" },
+    				{ autobuffer: "" },
+    				{ playsInline: true },
+    				{ "webkit-playsinline": "" },
+    				dirty[0] & /*$$props*/ 4096 && /*$$props*/ ctx[12]
+    			]));
+
+    			if (dirty[0] & /*muted*/ 256) {
+    				video_1.muted = /*muted*/ ctx[8];
+    			}
+
+    			if (dirty[0] & /*paused*/ 64 && video_1_is_paused !== (video_1_is_paused = /*paused*/ ctx[6])) {
+    				video_1[video_1_is_paused ? "pause" : "play"]();
+    			}
+
+    			if (!video_1_updating && dirty[0] & /*currentTime*/ 32 && !isNaN(/*currentTime*/ ctx[5])) {
+    				video_1.currentTime = /*currentTime*/ ctx[5];
+    			}
+
+    			video_1_updating = false;
+
+    			if (dirty[0] & /*playbackRate*/ 128 && !isNaN(/*playbackRate*/ ctx[7])) {
+    				video_1.playbackRate = /*playbackRate*/ ctx[7];
+    			}
+
+    			toggle_class(video_1, "cover", /*cover*/ ctx[0]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(video_1);
+    			/*video_1_binding*/ ctx[25](null);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(220:0) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (214:0) {#if usewebcodecs && numVideoFrames}
+    function create_if_block(ctx) {
+    	let canvas_1;
+
+    	const block = {
+    		c: function create() {
+    			canvas_1 = element("canvas");
+    			toggle_class(canvas_1, "cover", /*cover*/ ctx[0]);
+    			add_location(canvas_1, file, 218, 2, 6631);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, canvas_1, anchor);
+    			/*canvas_1_binding*/ ctx[24](canvas_1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*cover*/ 1) {
+    				toggle_class(canvas_1, "cover", /*cover*/ ctx[0]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(canvas_1);
+    			/*canvas_1_binding*/ ctx[24](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(214:0) {#if usewebcodecs && numVideoFrames}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let scrolling = false;
+
+    	let clear_scrolling = () => {
+    		scrolling = false;
+    	};
+
+    	let scrolling_timeout;
+    	let if_block_anchor;
+    	let mounted;
+    	let dispose;
+    	add_render_callback(/*onwindowresize*/ ctx[22]);
+    	add_render_callback(/*onwindowscroll*/ ctx[23]);
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*usewebcodecs*/ ctx[1] && /*numVideoFrames*/ ctx[4]) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    			this.c = noop;
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(window, "scroll", /*updateScrollPercentage*/ ctx[11], false, false, false),
+    					listen_dev(window, "resize", /*onwindowresize*/ ctx[22]),
+    					listen_dev(window, "scroll", () => {
+    						scrolling = true;
+    						clearTimeout(scrolling_timeout);
+    						scrolling_timeout = setTimeout(clear_scrolling, 100);
+    						/*onwindowscroll*/ ctx[23]();
+    					})
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*scrollY*/ 1024 && !scrolling) {
+    				scrolling = true;
+    				clearTimeout(scrolling_timeout);
+    				scrollTo(window.pageXOffset, /*scrollY*/ ctx[10]);
+    				scrolling_timeout = setTimeout(clear_scrolling, 100);
+    			}
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const frameThreshold = 0.1;
+
+    function instance($$self, $$props, $$invalidate) {
+    	let context;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('scrolly-video', slots, []);
+    	let { transitionspeed = 8 } = $$props;
+    	let { cover = true } = $$props;
+    	let { sticky = true } = $$props;
+    	let { full = true } = $$props;
+    	let { usewebcodecs = false } = $$props;
+    	let { src } = $$props;
+    	let { debug } = $$props;
+    	let { startheight = 0 } = $$props;
+    	let { endheight = 0 } = $$props;
+
+    	// variable to hold the DOM video element
+    	let video;
+
+    	// variable to hold the canvas element
+    	let canvas;
+
+    	// number of videoFrames
+    	let numVideoFrames = 0;
+
+    	let frameRate = 0;
+
+    	// The targetTime in seconds for the video to transition to
+    	let targetTime = 0;
+
+    	// Video status variables
+    	let transitioning = false;
+
+    	let currentTime = 0;
+    	let paused = true;
+    	let playbackRate = 1;
+    	let muted = true;
+
+    	// Document status variables
+    	let innerHeight = 0;
+
+    	let scrollY = 0;
+
+    	// Webcodecs has given us frames for this video, try to go faster
+    	const frames = [];
+
+    	const emitFrame = frame => {
+    		frames.push(frame);
+    	};
+
+    	// Browser
+    	const browserEngine = new UAParser().getEngine();
+
+    	// If we want to use WebCodecs to split apart the frames.
+    	if (usewebcodecs) {
+    		videoDecoder(src, emitFrame, debug).then(() => {
+    			const { duration } = video;
+    			$$invalidate(4, numVideoFrames = frames.length);
+    			frameRate = numVideoFrames / duration;
+    			console.log(numVideoFrames);
+    			if (debug) console.info('Received', numVideoFrames, 'frames');
+
+    			// Waits for canvas to be available, and then draws the initial image.
+    			const waitForCanvas = setInterval(
+    				() => {
+    					if (!canvas) return;
+    					clearInterval(waitForCanvas);
+    					const currFrame = frames[Math.floor(currentTime * frameRate)];
+
+    					if (currFrame) {
+    						$$invalidate(3, canvas.width = currFrame.width, canvas);
+    						$$invalidate(3, canvas.height = currFrame.height, canvas);
+    						context.drawImage(currFrame, 0, 0, currFrame.width, currFrame.height);
+    					}
+    				},
+    				10
+    			);
+    		});
+    	}
+
+    	// Recursively transition to the target time
+    	const transitionToTargetTime = () => {
+    		// If we are already close enough to our target, pause the video and return.
+    		// This is the base case of the recursive function
+    		if (Math.abs(currentTime - targetTime) < frameThreshold) {
+    			$$invalidate(6, paused = true);
+    			transitioning = false;
+    			return;
+    		}
+
+    		// Detect safari
+    		// eslint-disable-next-line no-undef
+    		const isSafari = browserEngine.name === 'WebKit';
+
+    		if (canvas) {
+    			const transitionForward = targetTime - currentTime;
+    			$$invalidate(5, currentTime += transitionForward / (64 / transitionspeed));
+    			const currFrame = frames[Math.floor(currentTime * frameRate)];
+
+    			if (currFrame) {
+    				$$invalidate(3, canvas.width = currFrame.width, canvas);
+    				$$invalidate(3, canvas.height = currFrame.height, canvas);
+    				context.drawImage(currFrame, 0, 0, currFrame.width, currFrame.height);
+    			}
+    		} else if (isSafari || targetTime - currentTime < 0) {
+    			// We can't use a negative playbackRate, so if the video needs to go backwards,
+    			// We have to use the inefficient method of modifying currentTime rapidly to
+    			// get an effect.
+    			$$invalidate(6, paused = true);
+
+    			const transitionForward = targetTime - currentTime;
+    			$$invalidate(5, currentTime += transitionForward / (64 / transitionspeed));
+    		} else {
+    			// Otherwise, we play the video and adjust the playbackRate to get a smoother
+    			// animation effect.
+    			$$invalidate(7, playbackRate = Math.max(Math.min((targetTime - currentTime) * 4, transitionspeed, 16), 1));
+
+    			$$invalidate(6, paused = false);
+    		}
+
+    		// Recursively calls ourselves until the animation is done.
+    		// eslint-disable-next-line no-undef
+    		if (typeof requestAnimationFrame === 'function') {
+    			requestAnimationFrame(transitionToTargetTime);
+    		}
+    	};
+
+    	function setCurrentTime(setTime) {
+    		targetTime = Math.max(Math.min(setTime, video.duration), 0);
+    		if (transitioning) return;
+    		$$invalidate(6, paused = false);
+    		transitioning = true;
+    		transitionToTargetTime();
+    	}
+
+    	function setCurrentTimePercent(setPercentage) {
+    		targetTime = Math.max(Math.min(setPercentage, 1), 0) * (numVideoFrames / frameRate || video.duration);
+    		if (transitioning) return;
+    		$$invalidate(6, paused = false);
+    		transitioning = true;
+    		transitionToTargetTime();
+    	}
+
+    	// Used for internally setting the scroll percentage based on built-in listeners
+    	// TODO make this configurable
+    	const updateScrollPercentage = () => {
+    		const start = parseFloat(startheight);
+    		const end = parseFloat(endheight);
+
+    		if (scrollY + innerHeight > start) {
+    			const percent = (scrollY - start + innerHeight) / (end - start + innerHeight) * 2;
+    			setCurrentTimePercent(percent);
+    		}
+    	};
+
+    	function onwindowresize() {
+    		$$invalidate(9, innerHeight = window.innerHeight);
+    	}
+
+    	function onwindowscroll() {
+    		$$invalidate(10, scrollY = window.pageYOffset);
+    	}
+
+    	function canvas_1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			canvas = $$value;
+    			$$invalidate(3, canvas);
+    		});
+    	}
+
+    	function video_1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			video = $$value;
+    			$$invalidate(2, video);
+    		});
+    	}
+
+    	function video_1_volumechange_handler() {
+    		muted = this.muted;
+    		$$invalidate(8, muted);
+    	}
+
+    	function video_1_play_pause_handler() {
+    		paused = this.paused;
+    		$$invalidate(6, paused);
+    	}
+
+    	function video_1_timeupdate_handler() {
+    		currentTime = this.currentTime;
+    		$$invalidate(5, currentTime);
+    	}
+
+    	function video_1_ratechange_handler() {
+    		playbackRate = this.playbackRate;
+    		$$invalidate(7, playbackRate);
+    	}
+
+    	$$self.$$set = $$new_props => {
+    		$$invalidate(12, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    		if ('transitionspeed' in $$new_props) $$invalidate(13, transitionspeed = $$new_props.transitionspeed);
+    		if ('cover' in $$new_props) $$invalidate(0, cover = $$new_props.cover);
+    		if ('sticky' in $$new_props) $$invalidate(14, sticky = $$new_props.sticky);
+    		if ('full' in $$new_props) $$invalidate(15, full = $$new_props.full);
+    		if ('usewebcodecs' in $$new_props) $$invalidate(1, usewebcodecs = $$new_props.usewebcodecs);
+    		if ('src' in $$new_props) $$invalidate(16, src = $$new_props.src);
+    		if ('debug' in $$new_props) $$invalidate(17, debug = $$new_props.debug);
+    		if ('startheight' in $$new_props) $$invalidate(18, startheight = $$new_props.startheight);
+    		if ('endheight' in $$new_props) $$invalidate(19, endheight = $$new_props.endheight);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		UAParser,
+    		videoDecoder,
+    		transitionspeed,
+    		cover,
+    		sticky,
+    		full,
+    		usewebcodecs,
+    		src,
+    		debug,
+    		startheight,
+    		endheight,
+    		frameThreshold,
+    		video,
+    		canvas,
+    		numVideoFrames,
+    		frameRate,
+    		targetTime,
+    		transitioning,
+    		currentTime,
+    		paused,
+    		playbackRate,
+    		muted,
+    		innerHeight,
+    		scrollY,
+    		frames,
+    		emitFrame,
+    		browserEngine,
+    		transitionToTargetTime,
+    		setCurrentTime,
+    		setCurrentTimePercent,
+    		updateScrollPercentage,
+    		context
+    	});
+
+    	$$self.$inject_state = $$new_props => {
+    		$$invalidate(12, $$props = assign(assign({}, $$props), $$new_props));
+    		if ('transitionspeed' in $$props) $$invalidate(13, transitionspeed = $$new_props.transitionspeed);
+    		if ('cover' in $$props) $$invalidate(0, cover = $$new_props.cover);
+    		if ('sticky' in $$props) $$invalidate(14, sticky = $$new_props.sticky);
+    		if ('full' in $$props) $$invalidate(15, full = $$new_props.full);
+    		if ('usewebcodecs' in $$props) $$invalidate(1, usewebcodecs = $$new_props.usewebcodecs);
+    		if ('src' in $$props) $$invalidate(16, src = $$new_props.src);
+    		if ('debug' in $$props) $$invalidate(17, debug = $$new_props.debug);
+    		if ('startheight' in $$props) $$invalidate(18, startheight = $$new_props.startheight);
+    		if ('endheight' in $$props) $$invalidate(19, endheight = $$new_props.endheight);
+    		if ('video' in $$props) $$invalidate(2, video = $$new_props.video);
+    		if ('canvas' in $$props) $$invalidate(3, canvas = $$new_props.canvas);
+    		if ('numVideoFrames' in $$props) $$invalidate(4, numVideoFrames = $$new_props.numVideoFrames);
+    		if ('frameRate' in $$props) frameRate = $$new_props.frameRate;
+    		if ('targetTime' in $$props) targetTime = $$new_props.targetTime;
+    		if ('transitioning' in $$props) transitioning = $$new_props.transitioning;
+    		if ('currentTime' in $$props) $$invalidate(5, currentTime = $$new_props.currentTime);
+    		if ('paused' in $$props) $$invalidate(6, paused = $$new_props.paused);
+    		if ('playbackRate' in $$props) $$invalidate(7, playbackRate = $$new_props.playbackRate);
+    		if ('muted' in $$props) $$invalidate(8, muted = $$new_props.muted);
+    		if ('innerHeight' in $$props) $$invalidate(9, innerHeight = $$new_props.innerHeight);
+    		if ('scrollY' in $$props) $$invalidate(10, scrollY = $$new_props.scrollY);
+    		if ('context' in $$props) context = $$new_props.context;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*canvas*/ 8) {
+    			context = canvas && canvas.getContext('2d');
+    		}
+
+    		if ($$self.$$.dirty[0] & /*video, canvas, sticky, full*/ 49164) {
+    			{
+    				if (video || canvas) {
+    					// Use JS to reach up to the shadow root host and set the styles if
+    					// this element is supposed to be sticky.
+    					const host = video && video.parentNode.host || canvas && canvas.parentNode.host;
+
+    					if (host) {
+    						if (sticky) {
+    							host.style.display = 'block';
+    							host.style.position = 'sticky';
+    							host.style.top = '0';
+    						}
+
+    						if (full) {
+    							host.style.width = '100%';
+    							host.style.height = '100vh';
+    							host.style.overflow = 'hidden';
+    						}
+    					}
+    				}
+    			}
+    		}
+    	};
+
+    	$$props = exclude_internal_props($$props);
+
+    	return [
+    		cover,
+    		usewebcodecs,
+    		video,
+    		canvas,
+    		numVideoFrames,
+    		currentTime,
+    		paused,
+    		playbackRate,
+    		muted,
+    		innerHeight,
+    		scrollY,
+    		updateScrollPercentage,
+    		$$props,
+    		transitionspeed,
+    		sticky,
+    		full,
+    		src,
+    		debug,
+    		startheight,
+    		endheight,
+    		setCurrentTime,
+    		setCurrentTimePercent,
+    		onwindowresize,
+    		onwindowscroll,
+    		canvas_1_binding,
+    		video_1_binding,
+    		video_1_volumechange_handler,
+    		video_1_play_pause_handler,
+    		video_1_timeupdate_handler,
+    		video_1_ratechange_handler
+    	];
+    }
+
+    class ScrollyVideo extends SvelteElement {
+    	constructor(options) {
+    		super();
+    		this.shadowRoot.innerHTML = `<style>video{display:block;position:sticky;object-fit:cover}.cover{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);min-width:100%;min-height:100%;width:auto;height:100vh}</style>`;
+
+    		init(
+    			this,
+    			{
+    				target: this.shadowRoot,
+    				props: attribute_to_object(this.attributes),
+    				customElement: true
+    			},
+    			instance,
+    			create_fragment,
+    			safe_not_equal,
+    			{
+    				transitionspeed: 13,
+    				cover: 0,
+    				sticky: 14,
+    				full: 15,
+    				usewebcodecs: 1,
+    				src: 16,
+    				debug: 17,
+    				startheight: 18,
+    				endheight: 19,
+    				setCurrentTime: 20,
+    				setCurrentTimePercent: 21
+    			},
+    			null,
+    			[-1, -1]
+    		);
+
+    		const { ctx } = this.$$;
+    		const props = this.attributes;
+
+    		if (/*src*/ ctx[16] === undefined && !('src' in props)) {
+    			console_1.warn("<scrolly-video> was created without expected prop 'src'");
+    		}
+
+    		if (/*debug*/ ctx[17] === undefined && !('debug' in props)) {
+    			console_1.warn("<scrolly-video> was created without expected prop 'debug'");
+    		}
+
+    		if (options) {
+    			if (options.target) {
+    				insert_dev(options.target, this, options.anchor);
+    			}
+
+    			if (options.props) {
+    				this.$set(options.props);
+    				flush();
+    			}
+    		}
+    	}
+
+    	static get observedAttributes() {
+    		return [
+    			"transitionspeed",
+    			"cover",
+    			"sticky",
+    			"full",
+    			"usewebcodecs",
+    			"src",
+    			"debug",
+    			"startheight",
+    			"endheight",
+    			"setCurrentTime",
+    			"setCurrentTimePercent"
+    		];
+    	}
+
+    	get transitionspeed() {
+    		return this.$$.ctx[13];
+    	}
+
+    	set transitionspeed(transitionspeed) {
+    		this.$$set({ transitionspeed });
+    		flush();
+    	}
+
+    	get cover() {
+    		return this.$$.ctx[0];
+    	}
+
+    	set cover(cover) {
+    		this.$$set({ cover });
+    		flush();
+    	}
+
+    	get sticky() {
+    		return this.$$.ctx[14];
+    	}
+
+    	set sticky(sticky) {
+    		this.$$set({ sticky });
+    		flush();
+    	}
+
+    	get full() {
+    		return this.$$.ctx[15];
+    	}
+
+    	set full(full) {
+    		this.$$set({ full });
+    		flush();
+    	}
+
+    	get usewebcodecs() {
+    		return this.$$.ctx[1];
+    	}
+
+    	set usewebcodecs(usewebcodecs) {
+    		this.$$set({ usewebcodecs });
+    		flush();
+    	}
+
+    	get src() {
+    		return this.$$.ctx[16];
+    	}
+
+    	set src(src) {
+    		this.$$set({ src });
+    		flush();
+    	}
+
+    	get debug() {
+    		return this.$$.ctx[17];
+    	}
+
+    	set debug(debug) {
+    		this.$$set({ debug });
+    		flush();
+    	}
+
+    	get startheight() {
+    		return this.$$.ctx[18];
+    	}
+
+    	set startheight(startheight) {
+    		this.$$set({ startheight });
+    		flush();
+    	}
+
+    	get endheight() {
+    		return this.$$.ctx[19];
+    	}
+
+    	set endheight(endheight) {
+    		this.$$set({ endheight });
+    		flush();
+    	}
+
+    	get setCurrentTime() {
+    		return this.$$.ctx[20];
+    	}
+
+    	set setCurrentTime(value) {
+    		throw new Error("<scrolly-video>: Cannot set read-only property 'setCurrentTime'");
+    	}
+
+    	get setCurrentTimePercent() {
+    		return this.$$.ctx[21];
+    	}
+
+    	set setCurrentTimePercent(value) {
+    		throw new Error("<scrolly-video>: Cannot set read-only property 'setCurrentTimePercent'");
+    	}
+    }
+
+    customElements.define("scrolly-video", ScrollyVideo);
+
+    return ScrollyVideo;
+
+})();
 //# sourceMappingURL=scrolly-video.js.map
