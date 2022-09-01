@@ -404,7 +404,7 @@
               location.zoom = location.zoom - 0.7;
 
               if (["neighborhood", "z"].includes(chapter.id)) {
-              // location.zoom = location.zoom - 0;
+              location.zoom = location.zoom - 0;
               }
             }
             map[chapter.mapAnimation || "flyTo"](location);
