@@ -326,7 +326,10 @@
           document.getElementById("startVid").parentElement.parentElement
             .parentElement;
         const startheight =
-          startVid.getBoundingClientRect().top + window.scrollY;
+          startVid.getBoundingClientRect().top +
+          window.scrollY +
+          0.1 * window.innerHeight;
+          //accounting for 90vh so we don't start vid early
         const endheight =
           startVid.getBoundingClientRect().bottom + window.scrollY;
         return {
@@ -335,14 +338,7 @@
         };
       }
 
-      const startVid =
-        document.getElementById("startVid").parentElement.parentElement
-          .parentElement;
-      const startheight = startVid.getBoundingClientRect().top + window.scrollY;
-      const endheight =
-        startVid.getBoundingClientRect().bottom + window.scrollY;
-
-      const fullVid = "DJI_0951_trimmed_encode.mp4";
+      // const fullVid = "DJI_0951_trimmed_encode.mp4";
       const mobileVid = "DJI_0951_trimmed_encode_smaller.mp4";
 
       const vidContainer = document.getElementById("vidContainer");
@@ -397,7 +393,7 @@
             let location = { ...chapter.location };
             if (window.innerWidth <= 750 || window.innerHeight <= 750) {
               if (["neighborhood", "z"].includes(chapter.id)) {
-                location.zoom = location.zoom - 0.3;
+                location.zoom = location.zoom - 0.4;
               } else {
                 location.zoom = location.zoom - 0.7;
               }

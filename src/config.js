@@ -414,7 +414,7 @@ const config = {
       description:
         "Residents like Lamar Mabry live with the dread of what the pollution may be doing to them.",
       location: {
-        center: [-86.801945, 33.56015],
+        center: [-86.801935, 33.560152],
         zoom: 19.4,
         pitch: 0,
         bearing: 2,
@@ -442,7 +442,7 @@ const config = {
       description:
         "Mabry fears that letting his grandchildren play in the backyard could harm their health.<span id='startVid'></span>",
       location: {
-        center: [-86.801945, 33.56015],
+        center: [-86.801935, 33.560152],
         zoom: 19.4,
         pitch: 0,
         bearing: 2,
