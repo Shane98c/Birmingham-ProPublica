@@ -13,11 +13,6 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/scrollama"></script>
-    <script type="text/javascript" src="libav-3.8.5.1-default.js"></script>
-    <script
-      type="text/javascript"
-      src="libavjs-webcodecs-polyfill.min.js"
-    ></script>
     <script defer src="scrolly-video.js"></script>
 
     <style>
@@ -347,10 +342,15 @@
       const endheight =
         startVid.getBoundingClientRect().bottom + window.scrollY;
 
+      const fullVid = "DJI_0951_trimmed_encode.mp4";
+      const mobileVid = "DJI_0951_trimmed_encode_smaller.mp4";
+
       const vidContainer = document.getElementById("vidContainer");
       const vid = document.createElement("scrolly-video");
-      vid.setAttribute("src", "DJI_0951_trimmed_encode_smaller.mp4");
-      vid.setAttribute("debug", "true");
+      // vid.setAttribute("src", (window.innerWidth <= 750 || window.innerHeight <= 750) ? mobileVid : fullVid);
+      vid.setAttribute("src", mobileVid);
+
+      vid.setAttribute("debug", "false");
       // vid.setAttribute("usewebcodecs", true);
       vid.setAttribute("startheight", getVidLocations().startheight);
       vid.setAttribute("endheight", getVidLocations().endheight);
@@ -396,10 +396,13 @@
             //handle mobile
             let location = { ...chapter.location };
             if (window.innerWidth <= 750 || window.innerHeight <= 750) {
-              // if (!["neighborhood", "z"].includes(chapter.id)) {
-              location.zoom = location.zoom - 0.7;
-              // }
+              if (["neighborhood", "z"].includes(chapter.id)) {
+                location.zoom = location.zoom - 0.3;
+              } else {
+                location.zoom = location.zoom - 0.7;
+              }
             }
+            console.log(location.zoom);
             map[chapter.mapAnimation || "flyTo"](location);
             if (chapter.callback) {
               window[chapter.callback]();
@@ -426,6 +429,13 @@
               map.fitBounds(config.start.bounds);
             }
           });
+      });
+      window.addEventListener("resize", function () {
+        if (document.getElementById("scrolly-vid")) {
+          const vid = document.getElementById("scrolly-vid");
+          vid.setAttribute("startheight", getVidLocations().startheight);
+          vid.setAttribute("endheight", getVidLocations().endheight);
+        }
       });
     </script>
   </body>
