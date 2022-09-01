@@ -3758,15 +3758,15 @@
     			}
     		}
     	}
-    	if (size < hdr_size) {
+    	if (size !== 0 && size < hdr_size) {
     		Log.error("BoxParser", "Box of type "+type+" has an invalid size "+size+" (too small to be a box)");
     		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
     	}
-    	if (parentSize && size > parentSize) {
+    	if (size !== 0 && parentSize && size > parentSize) {
     		Log.error("BoxParser", "Box of type '"+type+"' has a size "+size+" greater than its container size "+parentSize);
     		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
     	}
-    	if (start + size > stream.getEndPosition()) {
+    	if (size !== 0 && start + size > stream.getEndPosition()) {
     		stream.seek(start);
     		Log.info("BoxParser", "Not enough data in stream to parse the entire '"+type+"' box");
     		return { code: BoxParser.ERR_NOT_ENOUGH_DATA, type: type, size: size, hdr_size: hdr_size, start: start };
@@ -3807,7 +3807,7 @@
     		stream.seek(box.start+box.size);
     	} else if (diff > 0) {
     		Log.error("BoxParser", "Parsing of box '"+box_type+"' read "+diff+" more bytes than the indicated box data size, seeking backwards");
-    		stream.seek(box.start+box.size);
+    		if (box.size !== 0) stream.seek(box.start+box.size);
     	}
     	return { code: BoxParser.OK, box: box, size: box.size };
     };
@@ -3968,9 +3968,16 @@
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "av01");
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "hvc1");
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "hev1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vvc1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vvi1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vvs1");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vvcN");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vp08");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, "vp09");
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"mp4a");
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"ac-3");
     BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"ec-3");
+    BoxParser.createSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_AUDIO, 	"Opus");
 
     // Encrypted sample entries
     BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_VISUAL, 	"encv");
@@ -3979,8 +3986,6 @@
     BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_SYSTEM, 	"encs");
     BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_TEXT, 		"enct");
     BoxParser.createEncryptedSampleEntryCtor(BoxParser.SAMPLE_ENTRY_TYPE_METADATA, 	"encm");
-
-
     // file:src/parsing/a1lx.js
     BoxParser.createBoxCtor("a1lx", function(stream) {
     	var large_size = stream.readUint8() & 1;
@@ -4282,6 +4287,24 @@
     // file:src/parsing/dmed.js
     BoxParser.createBoxCtor("dmed", function(stream) {
     	this.bytessent = stream.readUint64();
+    });
+
+    // file:src/parsing/dOps.js
+    BoxParser.createBoxCtor("dOps", function(stream) {
+    	this.Version = stream.readUint8();
+    	this.OutputChannelCount = stream.readUint8();
+    	this.PreSkip = stream.readUint16();
+    	this.InputSampleRate = stream.readUint32();
+    	this.OutputGain = stream.readInt16();
+    	this.ChannelMappingFamily = stream.readUint8();
+    	if (this.ChannelMappingFamily !== 0) {
+    		this.StreamCount = stream.readUint8();
+    		this.CoupledCount = stream.readUint8();
+    		this.ChannelMapping = [];
+    		for (var i = 0; i < this.OutputChannelCount; i++) {
+    			this.ChannelMapping[i] = stream.readUint8();
+    		}
+    	}
     });
 
     // file:src/parsing/dref.js
@@ -6027,6 +6050,141 @@
     	this.text = stream.readString(this.size - this.hdr_size);
     });
 
+    // file:src/parsing/vvcC.js
+    BoxParser.createFullBoxCtor("vvcC", function (stream) {
+      var i, j;
+
+      // helper object to simplify extracting individual bits
+      var bitReader = {
+        held_bits: undefined,
+        num_held_bits: 0,
+
+        stream_read_1_bytes: function (strm) {
+          this.held_bits = strm.readUint8();
+          this.num_held_bits = 1 * 8;
+        },
+        stream_read_2_bytes: function (strm) {
+          this.held_bits = strm.readUint16();
+          this.num_held_bits = 2 * 8;
+        },
+
+        extract_bits: function (num_bits) {
+          var ret = (this.held_bits >> (this.num_held_bits - num_bits)) & ((1 << num_bits) - 1);
+          this.num_held_bits -= num_bits;
+          return ret;
+        }
+      };
+
+      // VvcDecoderConfigurationRecord
+      bitReader.stream_read_1_bytes(stream);
+      bitReader.extract_bits(5);  // reserved
+      this.lengthSizeMinusOne = bitReader.extract_bits(2);
+      this.ptl_present_flag = bitReader.extract_bits(1);
+
+      if (this.ptl_present_flag) {
+        bitReader.stream_read_2_bytes(stream);
+        this.ols_idx = bitReader.extract_bits(9);
+        this.num_sublayers = bitReader.extract_bits(3);
+        this.constant_frame_rate = bitReader.extract_bits(2);
+        this.chroma_format_idc = bitReader.extract_bits(2);
+
+        bitReader.stream_read_1_bytes(stream);
+        this.bit_depth_minus8 = bitReader.extract_bits(3);
+        bitReader.extract_bits(5);  // reserved
+
+        // VvcPTLRecord
+        {
+          bitReader.stream_read_2_bytes(stream);
+          bitReader.extract_bits(2);  // reserved
+          this.num_bytes_constraint_info = bitReader.extract_bits(6);
+          this.general_profile_idc = bitReader.extract_bits(7);
+          this.general_tier_flag = bitReader.extract_bits(1);
+
+          this.general_level_idc = stream.readUint8();
+
+          bitReader.stream_read_1_bytes(stream);
+          this.ptl_frame_only_constraint_flag = bitReader.extract_bits(1);
+          this.ptl_multilayer_enabled_flag = bitReader.extract_bits(1);
+
+          this.general_constraint_info = new Uint8Array(this.num_bytes_constraint_info);
+          if (this.num_bytes_constraint_info) {
+            for (i = 0; i < this.num_bytes_constraint_info - 1; i++) {
+              var cnstr1 = bitReader.extract_bits(6);
+              bitReader.stream_read_1_bytes(stream);
+              var cnstr2 = bitReader.extract_bits(2);
+
+              this.general_constraint_info[i] = ((cnstr1 << 2) | cnstr2);
+            }
+            this.general_constraint_info[this.num_bytes_constraint_info - 1] = bitReader.extract_bits(6);
+          } else {
+            //forbidden in spec!
+            bitReader.extract_bits(6);
+          }
+
+          bitReader.stream_read_1_bytes(stream);
+          this.ptl_sublayer_present_mask = 0;
+          for (j = this.num_sublayers - 2; j >= 0; --j) {
+            var val = bitReader.extract_bits(1);
+            this.ptl_sublayer_present_mask |= val << j;
+          }
+          for (j = this.num_sublayers; j <= 8 && this.num_sublayers > 1; ++j) {
+            bitReader.extract_bits(1);  // ptl_reserved_zero_bit
+          }
+
+          for (j = this.num_sublayers - 2; j >= 0; --j) {
+            if (this.ptl_sublayer_present_mask & (1 << j)) {
+              this.sublayer_level_idc[j] = stream.readUint8();
+            }
+          }
+
+          this.ptl_num_sub_profiles = stream.readUint8();
+          this.general_sub_profile_idc = [];
+          if (this.ptl_num_sub_profiles) {
+            for (i = 0; i < this.ptl_num_sub_profiles; i++) {
+              this.general_sub_profile_idc.push(stream.readUint32());
+            }
+          }
+        }  // end VvcPTLRecord
+
+        this.max_picture_width = stream.readUint16();
+        this.max_picture_height = stream.readUint16();
+        this.avg_frame_rate = stream.readUint16();
+      }
+
+      var VVC_NALU_OPI = 12;
+      var VVC_NALU_DEC_PARAM = 13;
+
+      this.nalu_arrays = [];
+      var num_of_arrays = stream.readUint8();
+      for (i = 0; i < num_of_arrays; i++) {
+        var nalu_array = [];
+        this.nalu_arrays.push(nalu_array);
+
+        bitReader.stream_read_1_bytes(stream);
+        nalu_array.completeness = bitReader.extract_bits(1);
+        bitReader.extract_bits(2);  // reserved
+        nalu_array.nalu_type = bitReader.extract_bits(5);
+
+        var numNalus = 1;
+        if (nalu_array.nalu_type != VVC_NALU_DEC_PARAM && nalu_array.nalu_type != VVC_NALU_OPI) {
+          numNalus = stream.readUint16();
+        }
+
+        for (j = 0; j < numNalus; j++) {
+          var len = stream.readUint16();
+          nalu_array.push({
+            data: stream.readUint8Array(len),
+            length: len
+          });
+        }
+      }
+    });
+    // file:src/parsing/vvnC.js
+    BoxParser.createFullBoxCtor("vvnC", function (stream) {
+      // VvcNALUConfigBox
+      var tmp = strm.readUint8();
+      this.lengthSizeMinusOne = (tmp & 0x3);
+    });
     // file:src/box-codecs.js
     BoxParser.SampleEntry.prototype.isVideo = function() {
     	return false;
@@ -6183,6 +6341,67 @@
     	return baseCodec;
     };
 
+    BoxParser.vvc1SampleEntry.prototype.getCodec =
+    BoxParser.vvi1SampleEntry.prototype.getCodec = function () {
+    	var i;
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	if (this.vvcC) {
+    		baseCodec += '.' + this.vvcC.general_profile_idc;
+    		if (this.vvcC.general_tier_flag) {
+    			baseCodec += '.H';
+    		} else {
+    			baseCodec += '.L';
+    		}
+    		baseCodec += this.vvcC.general_level_idc;
+
+    		var constraint_string = "";
+    		if (this.vvcC.general_constraint_info) {
+    			var bytes = [];
+    			var byte = 0;
+    			byte |= this.vvcC.ptl_frame_only_constraint << 7;
+    			byte |= this.vvcC.ptl_multilayer_enabled << 6;
+    			var last_nonzero;
+    			for (i = 0; i < this.vvcC.general_constraint_info.length; ++i) {
+    				byte |= (this.vvcC.general_constraint_info[i] >> 2) & 0x3f;
+    				bytes.push(byte);
+    				if (byte) {
+    					last_nonzero = i;
+    				}
+
+    				byte = (this.vvcC.general_constraint_info[i] >> 2) & 0x03;
+    			}
+
+    			if (last_nonzero === undefined) {
+    				constraint_string = ".CA";
+    			}
+    			else {
+    				constraint_string = ".C";
+    				var base32_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+    				var held_bits = 0;
+    				var num_held_bits = 0;
+    				for (i = 0; i <= last_nonzero; ++i) {
+    					held_bits = (held_bits << 8) | bytes[i];
+    					num_held_bits += 8;
+
+    					while (num_held_bits >= 5) {
+    						var val = (held_bits >> (num_held_bits - 5)) & 0x1f;
+    						constraint_string += base32_chars[val];
+
+    						num_held_bits -= 5;
+    						held_bits &= (1 << num_held_bits) - 1;
+    					}
+    				}
+    				if (num_held_bits) {
+    					held_bits <<= (5 - num_held_bits);  // right-pad with zeros to 5 bits (is this correct?)
+    					constraint_string += base32_chars[held_bits & 0x1f];
+    				}
+    			}
+    		}
+    		baseCodec += constraint_string;
+    	}
+    	return baseCodec;
+    };
+
     BoxParser.mp4aSampleEntry.prototype.getCodec = function() {
     	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
     	if (this.esds && this.esds.esd) {
@@ -6203,8 +6422,26 @@
     	}
     };
 
+    BoxParser.vp08SampleEntry.prototype.getCodec =
+    BoxParser.vp09SampleEntry.prototype.getCodec = function() {
+    	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	var level = this.vpcC.level;
+    	if (level == 0) {
+    		level = "00";
+    	}
+    	var bitDepth = this.vpcC.bitDepth;
+    	if (bitDepth == 8) {
+    		bitDepth = "08";
+    	}
+    	return baseCodec + ".0" + this.vpcC.profile + "." + level + "." + bitDepth;
+    };
+
     BoxParser.av01SampleEntry.prototype.getCodec = function() {
     	var baseCodec = BoxParser.SampleEntry.prototype.getCodec.call(this);
+    	var level = this.av1C.seq_level_idx_0;
+    	if (level < 10) {
+    		level = "0" + level;
+    	}
     	var bitdepth;
     	if (this.av1C.seq_profile === 2 && this.av1C.high_bitdepth === 1) {
     		bitdepth = (this.av1C.twelve_bit === 1) ? "12" : "10";
@@ -6212,10 +6449,8 @@
     		bitdepth = (this.av1C.high_bitdepth === 1) ? "10" : "08";
     	}
     	// TODO need to parse the SH to find color config
-    	return baseCodec+"."+this.av1C.seq_profile+"."+this.av1C.seq_level_idx_0+(this.av1C.seq_tier_0?"H":"M")+"."+bitdepth;//+"."+this.av1C.monochrome+"."+this.av1C.chroma_subsampling_x+""+this.av1C.chroma_subsampling_y+""+this.av1C.chroma_sample_position;
+    	return baseCodec+"."+this.av1C.seq_profile+"."+level+(this.av1C.seq_tier_0?"H":"M")+"."+bitdepth;//+"."+this.av1C.monochrome+"."+this.av1C.chroma_subsampling_x+""+this.av1C.chroma_subsampling_y+""+this.av1C.chroma_sample_position;
     };
-
-
     // file:src/box-write.js
     /* 
      * Copyright (c) Telecom ParisTech/TSI/MM/GPAC Cyril Concolato
@@ -6669,6 +6904,15 @@
     	}
     };
 
+    // file:src/writing/smhd.js
+    BoxParser.smhdBox.prototype.write = function(stream) {
+      this.version = 0;
+      this.flags = 1;
+      this.size = 4;
+      this.writeHeader(stream);
+      stream.writeUint16(this.balance);
+      stream.writeUint16(0);
+    };
     // file:src/writing/stco.js
     BoxParser.stcoBox.prototype.write = function(stream) {
     	this.version = 0;
@@ -7434,6 +7678,7 @@
     	var movie = {};
     	var trak;
     	var track;
+    	var ref;
     	var sample_desc;
     	var _1904 = (new Date('1904-01-01T00:00:00Z').getTime());
 
@@ -7980,8 +8225,8 @@
     					.set("alternate_group", 0)
     					.set("volume", 1)
     					.set("matrix", [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
-    					.set("width", options.width)
-    					.set("height", options.height);
+    					.set("width", options.width << 16)
+    					.set("height", options.height << 16);
 
     	var mdia = trak.add("mdia");
     	mdia.add("mdhd").set("creation_time", 0)
@@ -8145,7 +8390,7 @@
     	var trak = this.getTrackById(sample.track_id);
     	traf.add("tfhd").set("track_id", sample.track_id)
     					.set("flags", BoxParser.TFHD_FLAG_DEFAULT_BASE_IS_MOOF);
-    	traf.add("tfdt").set("baseMediaDecodeTime", (sample.dts - trak.first_dts));
+    	traf.add("tfdt").set("baseMediaDecodeTime", (sample.dts - (trak.first_dts || 0)));
     	traf.add("trun").set("flags", BoxParser.TRUN_FLAGS_DATA_OFFSET | BoxParser.TRUN_FLAGS_DURATION | 
     				 				  BoxParser.TRUN_FLAGS_SIZE | BoxParser.TRUN_FLAGS_FLAGS | 
     				 				  BoxParser.TRUN_FLAGS_CTS_OFFSET)
@@ -9460,7 +9705,7 @@
     const { console: console_1 } = globals;
     const file = "src/ScrollyVideo.svelte";
 
-    // (220:0) {:else}
+    // (223:0) {:else}
     function create_else_block(ctx) {
     	let video_1;
     	let video_1_is_paused = true;
@@ -9500,7 +9745,7 @@
     			video_1 = element("video");
     			set_attributes(video_1, video_1_data);
     			toggle_class(video_1, "cover", /*cover*/ ctx[0]);
-    			add_location(video_1, file, 221, 2, 6746);
+    			add_location(video_1, file, 224, 2, 6763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, video_1, anchor);
@@ -9565,14 +9810,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(220:0) {:else}",
+    		source: "(223:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:0) {#if usewebcodecs && numVideoFrames}
+    // (217:0) {#if usewebcodecs && numVideoFrames}
     function create_if_block(ctx) {
     	let canvas_1;
 
@@ -9580,7 +9825,7 @@
     		c: function create() {
     			canvas_1 = element("canvas");
     			toggle_class(canvas_1, "cover", /*cover*/ ctx[0]);
-    			add_location(canvas_1, file, 218, 2, 6631);
+    			add_location(canvas_1, file, 221, 2, 6646);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, canvas_1, anchor);
@@ -9601,7 +9846,7 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(214:0) {#if usewebcodecs && numVideoFrames}",
+    		source: "(217:0) {#if usewebcodecs && numVideoFrames}",
     		ctx
     	});
 
@@ -9754,12 +9999,14 @@
 
     	// If we want to use WebCodecs to split apart the frames.
     	if (usewebcodecs) {
+    		console.log(src);
+
     		videoDecoder(src, emitFrame, debug).then(() => {
     			const { duration } = video;
     			$$invalidate(4, numVideoFrames = frames.length);
     			frameRate = numVideoFrames / duration;
     			console.log(numVideoFrames);
-    			if (debug) console.info('Received', numVideoFrames, 'frames');
+    			if (debug) console.info("Received", numVideoFrames, "frames");
 
     			// Waits for canvas to be available, and then draws the initial image.
     			const waitForCanvas = setInterval(
@@ -9791,7 +10038,7 @@
 
     		// Detect safari
     		// eslint-disable-next-line no-undef
-    		const isSafari = browserEngine.name === 'WebKit';
+    		const isSafari = browserEngine.name === "WebKit";
 
     		if (canvas) {
     			const transitionForward = targetTime - currentTime;
@@ -9821,7 +10068,7 @@
 
     		// Recursively calls ourselves until the animation is done.
     		// eslint-disable-next-line no-undef
-    		if (typeof requestAnimationFrame === 'function') {
+    		if (typeof requestAnimationFrame === "function") {
     			requestAnimationFrame(transitionToTargetTime);
     		}
     	};
@@ -9848,9 +10095,17 @@
     		const start = parseFloat(startheight);
     		const end = parseFloat(endheight);
 
+    		if (debug) {
+    			console.log("start: ", start, "end: ", end, "scrollY: ", scrollY);
+    		}
+
     		if (scrollY + innerHeight > start) {
     			const percent = (scrollY - start + innerHeight) / (end - start + innerHeight) * 2;
-    			setCurrentTimePercent(percent);
+    			if (debug) console.log("percent: ", percent);
+
+    			if (percent <= 1 && percent >= 0) {
+    				setCurrentTimePercent(percent);
+    			}
     		}
     	};
 
@@ -9976,7 +10231,7 @@
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*canvas*/ 8) {
-    			context = canvas && canvas.getContext('2d');
+    			context = canvas && canvas.getContext("2d");
     		}
 
     		if ($$self.$$.dirty[0] & /*video, canvas, sticky, full*/ 49164) {
@@ -9988,15 +10243,15 @@
 
     					if (host) {
     						if (sticky) {
-    							host.style.display = 'block';
-    							host.style.position = 'sticky';
-    							host.style.top = '0';
+    							host.style.display = "block";
+    							host.style.position = "sticky";
+    							host.style.top = "0";
     						}
 
     						if (full) {
-    							host.style.width = '100%';
-    							host.style.height = '100vh';
-    							host.style.overflow = 'hidden';
+    							host.style.width = "100%";
+    							host.style.height = "100vh";
+    							host.style.overflow = "hidden";
     						}
     					}
     				}
