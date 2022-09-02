@@ -325,13 +325,12 @@
       story.appendChild(features);
 
       function getVidLocations() {
-        const startVid =
-          document.getElementById("z");
+        const startVid = document.getElementById("z");
         const startheight =
           startVid.getBoundingClientRect().top +
           window.scrollY +
           0.1 * window.innerHeight;
-          //accounting for 90vh so we don't start vid early
+        //accounting for 90vh so we don't start vid early
         const endheight =
           startVid.getBoundingClientRect().bottom + window.scrollY;
         return {
@@ -428,10 +427,11 @@
           });
       });
       window.addEventListener("resize", function () {
-        if (document.getElementById("scrolly-vid")) {
-          const vid = document.getElementById("scrolly-vid");
-          vid.setAttribute("startheight", getVidLocations().startheight);
-          vid.setAttribute("endheight", getVidLocations().endheight);
+        const vid = document.getElementById("scrolly-vid");
+        if (vid) {
+          const { startheight, endheight } = getVidLocations();
+          vid.setAttribute("startheight", startheight);
+          vid.setAttribute("endheight", endheight);
         }
       });
     </script>
