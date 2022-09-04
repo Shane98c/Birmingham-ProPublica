@@ -339,19 +339,23 @@
         };
       }
 
-      // const fullVid = "DJI_0951_trimmed_encode.mp4";
-      const mobileVid = "DJI_0951_trimmed_encode_smaller.mp4";
+      const mobileVid =
+        "https://propublica.s3.amazonaws.com/projects/graphics/birmingham-drone/DJI_0951_trimmed_encode_smaller.mp4#t=0.1";
 
       const vidContainer = document.getElementById("vidContainer");
       const vid = document.createElement("scrolly-video");
-      // vid.setAttribute("src", (window.innerWidth <= 750 || window.innerHeight <= 750) ? mobileVid : fullVid);
       vid.setAttribute("src", mobileVid);
-      // vid.setAttribute("debug", false)
-      vid.setAttribute("transitionspeed", 15); //max this out so video stays more closely attached to scroll.
-      // vid.setAttribute("usewebcodecs", true);
+      // vid.setAttribute("debug", "false");
+      if (
+        typeof VideoDecoder === "function" &&
+        typeof EncodedVideoChunk === "function"
+      ) {
+        vid.setAttribute("usewebcodecs", true);
+      }
       vid.setAttribute("startheight", getVidLocations().startheight);
       vid.setAttribute("endheight", getVidLocations().endheight);
       vid.setAttribute("id", "scrolly-vid");
+      vid.setAttribute("transitionspeed", 15); //max this out so video stays more closely attached to scroll.
 
       vidContainer.appendChild(vid);
 

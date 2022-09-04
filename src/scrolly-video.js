@@ -9705,7 +9705,7 @@
     const { console: console_1, window: window_1 } = globals;
     const file = "src/ScrollyVideo.svelte";
 
-    // (224:0) {:else}
+    // (235:0) {:else}
     function create_else_block(ctx) {
     	let video_1;
     	let video_1_is_paused = true;
@@ -9716,11 +9716,11 @@
 
     	let video_1_levels = [
     		{ tabindex: "0" },
-    		{ preload: "metadata" },
+    		{ preload: /*preload*/ ctx[11] },
     		{ autobuffer: "" },
     		{ playsInline: true },
     		{ "webkit-playsinline": "" },
-    		/*$$props*/ ctx[12]
+    		/*$$props*/ ctx[13]
     	];
 
     	let video_1_data = {};
@@ -9737,7 +9737,7 @@
     			video_1_updating = true;
     		}
 
-    		/*video_1_timeupdate_handler*/ ctx[28].call(video_1);
+    		/*video_1_timeupdate_handler*/ ctx[29].call(video_1);
     	}
 
     	const block = {
@@ -9745,11 +9745,11 @@
     			video_1 = element("video");
     			set_attributes(video_1, video_1_data);
     			toggle_class(video_1, "cover", /*cover*/ ctx[0]);
-    			add_location(video_1, file, 225, 2, 6835);
+    			add_location(video_1, file, 236, 2, 7203);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, video_1, anchor);
-    			/*video_1_binding*/ ctx[25](video_1);
+    			/*video_1_binding*/ ctx[26](video_1);
     			video_1.muted = /*muted*/ ctx[8];
 
     			if (!isNaN(/*playbackRate*/ ctx[7])) {
@@ -9758,11 +9758,11 @@
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(video_1, "volumechange", /*video_1_volumechange_handler*/ ctx[26]),
-    					listen_dev(video_1, "play", /*video_1_play_pause_handler*/ ctx[27]),
-    					listen_dev(video_1, "pause", /*video_1_play_pause_handler*/ ctx[27]),
+    					listen_dev(video_1, "volumechange", /*video_1_volumechange_handler*/ ctx[27]),
+    					listen_dev(video_1, "play", /*video_1_play_pause_handler*/ ctx[28]),
+    					listen_dev(video_1, "pause", /*video_1_play_pause_handler*/ ctx[28]),
     					listen_dev(video_1, "timeupdate", video_1_timeupdate_handler),
-    					listen_dev(video_1, "ratechange", /*video_1_ratechange_handler*/ ctx[29])
+    					listen_dev(video_1, "ratechange", /*video_1_ratechange_handler*/ ctx[30])
     				];
 
     				mounted = true;
@@ -9771,11 +9771,11 @@
     		p: function update(ctx, dirty) {
     			set_attributes(video_1, video_1_data = get_spread_update(video_1_levels, [
     				{ tabindex: "0" },
-    				{ preload: "metadata" },
+    				{ preload: /*preload*/ ctx[11] },
     				{ autobuffer: "" },
     				{ playsInline: true },
     				{ "webkit-playsinline": "" },
-    				dirty[0] & /*$$props*/ 4096 && /*$$props*/ ctx[12]
+    				dirty[0] & /*$$props*/ 8192 && /*$$props*/ ctx[13]
     			]));
 
     			if (dirty[0] & /*muted*/ 256) {
@@ -9800,7 +9800,7 @@
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(video_1);
-    			/*video_1_binding*/ ctx[25](null);
+    			/*video_1_binding*/ ctx[26](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -9810,14 +9810,14 @@
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(224:0) {:else}",
+    		source: "(235:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:0) {#if usewebcodecs && numVideoFrames}
+    // (229:0) {#if usewebcodecs && numVideoFrames}
     function create_if_block(ctx) {
     	let canvas_1;
 
@@ -9825,11 +9825,11 @@
     		c: function create() {
     			canvas_1 = element("canvas");
     			toggle_class(canvas_1, "cover", /*cover*/ ctx[0]);
-    			add_location(canvas_1, file, 222, 2, 6718);
+    			add_location(canvas_1, file, 233, 2, 7086);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, canvas_1, anchor);
-    			/*canvas_1_binding*/ ctx[24](canvas_1);
+    			/*canvas_1_binding*/ ctx[25](canvas_1);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*cover*/ 1) {
@@ -9838,7 +9838,7 @@
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(canvas_1);
-    			/*canvas_1_binding*/ ctx[24](null);
+    			/*canvas_1_binding*/ ctx[25](null);
     		}
     	};
 
@@ -9846,7 +9846,7 @@
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(218:0) {#if usewebcodecs && numVideoFrames}",
+    		source: "(229:0) {#if usewebcodecs && numVideoFrames}",
     		ctx
     	});
 
@@ -9864,8 +9864,8 @@
     	let if_block_anchor;
     	let mounted;
     	let dispose;
-    	add_render_callback(/*onwindowresize*/ ctx[22]);
-    	add_render_callback(/*onwindowscroll*/ ctx[23]);
+    	add_render_callback(/*onwindowresize*/ ctx[23]);
+    	add_render_callback(/*onwindowscroll*/ ctx[24]);
 
     	function select_block_type(ctx, dirty) {
     		if (/*usewebcodecs*/ ctx[1] && /*numVideoFrames*/ ctx[4]) return create_if_block;
@@ -9890,13 +9890,13 @@
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(window_1, "scroll", /*updateScrollPercentage*/ ctx[11], false, false, false),
-    					listen_dev(window_1, "resize", /*onwindowresize*/ ctx[22]),
+    					listen_dev(window_1, "scroll", /*updateScrollPercentage*/ ctx[12], false, false, false),
+    					listen_dev(window_1, "resize", /*onwindowresize*/ ctx[23]),
     					listen_dev(window_1, "scroll", () => {
     						scrolling = true;
     						clearTimeout(scrolling_timeout);
     						scrolling_timeout = setTimeout(clear_scrolling, 100);
-    						/*onwindowscroll*/ ctx[23]();
+    						/*onwindowscroll*/ ctx[24]();
     					})
     				];
 
@@ -9959,6 +9959,11 @@
     	let { debug } = $$props;
     	let { startheight = 0 } = $$props;
     	let { endheight = 0 } = $$props;
+    	const ua = window.navigator.userAgent;
+    	const iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+    	const webkit = !!ua.match(/WebKit/i);
+    	const iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+    	let preload = iOSSafari ? "metadata" : "auto";
 
     	// variable to hold the DOM video element
     	let video;
@@ -9999,8 +10004,6 @@
 
     	// If we want to use WebCodecs to split apart the frames.
     	if (usewebcodecs) {
-    		console.log(src);
-
     		videoDecoder(src, emitFrame, debug).then(() => {
     			const { duration } = video;
     			$$invalidate(4, numVideoFrames = frames.length);
@@ -10023,6 +10026,8 @@
     				},
     				10
     			);
+    		}).catch(e => {
+    			if (debug) console.log(e);
     		});
     	}
 
@@ -10097,6 +10102,8 @@
 
     		if (debug) {
     			console.log(window.innerHeight, innerHeight);
+
+    			//internal innerHeight is sometimes very wrong, not sure why
     			console.log("start: ", start, "end: ", end, "scrollY: ", scrollY);
     		}
 
@@ -10153,16 +10160,16 @@
     	}
 
     	$$self.$$set = $$new_props => {
-    		$$invalidate(12, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
-    		if ('transitionspeed' in $$new_props) $$invalidate(13, transitionspeed = $$new_props.transitionspeed);
+    		$$invalidate(13, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    		if ('transitionspeed' in $$new_props) $$invalidate(14, transitionspeed = $$new_props.transitionspeed);
     		if ('cover' in $$new_props) $$invalidate(0, cover = $$new_props.cover);
-    		if ('sticky' in $$new_props) $$invalidate(14, sticky = $$new_props.sticky);
-    		if ('full' in $$new_props) $$invalidate(15, full = $$new_props.full);
+    		if ('sticky' in $$new_props) $$invalidate(15, sticky = $$new_props.sticky);
+    		if ('full' in $$new_props) $$invalidate(16, full = $$new_props.full);
     		if ('usewebcodecs' in $$new_props) $$invalidate(1, usewebcodecs = $$new_props.usewebcodecs);
-    		if ('src' in $$new_props) $$invalidate(16, src = $$new_props.src);
-    		if ('debug' in $$new_props) $$invalidate(17, debug = $$new_props.debug);
-    		if ('startheight' in $$new_props) $$invalidate(18, startheight = $$new_props.startheight);
-    		if ('endheight' in $$new_props) $$invalidate(19, endheight = $$new_props.endheight);
+    		if ('src' in $$new_props) $$invalidate(17, src = $$new_props.src);
+    		if ('debug' in $$new_props) $$invalidate(18, debug = $$new_props.debug);
+    		if ('startheight' in $$new_props) $$invalidate(19, startheight = $$new_props.startheight);
+    		if ('endheight' in $$new_props) $$invalidate(20, endheight = $$new_props.endheight);
     	};
 
     	$$self.$capture_state = () => ({
@@ -10178,6 +10185,11 @@
     		startheight,
     		endheight,
     		frameThreshold,
+    		ua,
+    		iOS,
+    		webkit,
+    		iOSSafari,
+    		preload,
     		video,
     		canvas,
     		numVideoFrames,
@@ -10201,16 +10213,17 @@
     	});
 
     	$$self.$inject_state = $$new_props => {
-    		$$invalidate(12, $$props = assign(assign({}, $$props), $$new_props));
-    		if ('transitionspeed' in $$props) $$invalidate(13, transitionspeed = $$new_props.transitionspeed);
+    		$$invalidate(13, $$props = assign(assign({}, $$props), $$new_props));
+    		if ('transitionspeed' in $$props) $$invalidate(14, transitionspeed = $$new_props.transitionspeed);
     		if ('cover' in $$props) $$invalidate(0, cover = $$new_props.cover);
-    		if ('sticky' in $$props) $$invalidate(14, sticky = $$new_props.sticky);
-    		if ('full' in $$props) $$invalidate(15, full = $$new_props.full);
+    		if ('sticky' in $$props) $$invalidate(15, sticky = $$new_props.sticky);
+    		if ('full' in $$props) $$invalidate(16, full = $$new_props.full);
     		if ('usewebcodecs' in $$props) $$invalidate(1, usewebcodecs = $$new_props.usewebcodecs);
-    		if ('src' in $$props) $$invalidate(16, src = $$new_props.src);
-    		if ('debug' in $$props) $$invalidate(17, debug = $$new_props.debug);
-    		if ('startheight' in $$props) $$invalidate(18, startheight = $$new_props.startheight);
-    		if ('endheight' in $$props) $$invalidate(19, endheight = $$new_props.endheight);
+    		if ('src' in $$props) $$invalidate(17, src = $$new_props.src);
+    		if ('debug' in $$props) $$invalidate(18, debug = $$new_props.debug);
+    		if ('startheight' in $$props) $$invalidate(19, startheight = $$new_props.startheight);
+    		if ('endheight' in $$props) $$invalidate(20, endheight = $$new_props.endheight);
+    		if ('preload' in $$props) $$invalidate(11, preload = $$new_props.preload);
     		if ('video' in $$props) $$invalidate(2, video = $$new_props.video);
     		if ('canvas' in $$props) $$invalidate(3, canvas = $$new_props.canvas);
     		if ('numVideoFrames' in $$props) $$invalidate(4, numVideoFrames = $$new_props.numVideoFrames);
@@ -10235,7 +10248,7 @@
     			context = canvas && canvas.getContext("2d");
     		}
 
-    		if ($$self.$$.dirty[0] & /*video, canvas, sticky, full*/ 49164) {
+    		if ($$self.$$.dirty[0] & /*video, canvas, sticky, full*/ 98316) {
     			{
     				if (video || canvas) {
     					// Use JS to reach up to the shadow root host and set the styles if
@@ -10274,6 +10287,7 @@
     		muted,
     		innerHeight,
     		scrollY,
+    		preload,
     		updateScrollPercentage,
     		$$props,
     		transitionspeed,
@@ -10312,17 +10326,17 @@
     			create_fragment,
     			safe_not_equal,
     			{
-    				transitionspeed: 13,
+    				transitionspeed: 14,
     				cover: 0,
-    				sticky: 14,
-    				full: 15,
+    				sticky: 15,
+    				full: 16,
     				usewebcodecs: 1,
-    				src: 16,
-    				debug: 17,
-    				startheight: 18,
-    				endheight: 19,
-    				setCurrentTime: 20,
-    				setCurrentTimePercent: 21
+    				src: 17,
+    				debug: 18,
+    				startheight: 19,
+    				endheight: 20,
+    				setCurrentTime: 21,
+    				setCurrentTimePercent: 22
     			},
     			null,
     			[-1, -1]
@@ -10331,11 +10345,11 @@
     		const { ctx } = this.$$;
     		const props = this.attributes;
 
-    		if (/*src*/ ctx[16] === undefined && !('src' in props)) {
+    		if (/*src*/ ctx[17] === undefined && !('src' in props)) {
     			console_1.warn("<scrolly-video> was created without expected prop 'src'");
     		}
 
-    		if (/*debug*/ ctx[17] === undefined && !('debug' in props)) {
+    		if (/*debug*/ ctx[18] === undefined && !('debug' in props)) {
     			console_1.warn("<scrolly-video> was created without expected prop 'debug'");
     		}
 
@@ -10368,7 +10382,7 @@
     	}
 
     	get transitionspeed() {
-    		return this.$$.ctx[13];
+    		return this.$$.ctx[14];
     	}
 
     	set transitionspeed(transitionspeed) {
@@ -10386,7 +10400,7 @@
     	}
 
     	get sticky() {
-    		return this.$$.ctx[14];
+    		return this.$$.ctx[15];
     	}
 
     	set sticky(sticky) {
@@ -10395,7 +10409,7 @@
     	}
 
     	get full() {
-    		return this.$$.ctx[15];
+    		return this.$$.ctx[16];
     	}
 
     	set full(full) {
@@ -10413,7 +10427,7 @@
     	}
 
     	get src() {
-    		return this.$$.ctx[16];
+    		return this.$$.ctx[17];
     	}
 
     	set src(src) {
@@ -10422,7 +10436,7 @@
     	}
 
     	get debug() {
-    		return this.$$.ctx[17];
+    		return this.$$.ctx[18];
     	}
 
     	set debug(debug) {
@@ -10431,7 +10445,7 @@
     	}
 
     	get startheight() {
-    		return this.$$.ctx[18];
+    		return this.$$.ctx[19];
     	}
 
     	set startheight(startheight) {
@@ -10440,7 +10454,7 @@
     	}
 
     	get endheight() {
-    		return this.$$.ctx[19];
+    		return this.$$.ctx[20];
     	}
 
     	set endheight(endheight) {
@@ -10449,7 +10463,7 @@
     	}
 
     	get setCurrentTime() {
-    		return this.$$.ctx[20];
+    		return this.$$.ctx[21];
     	}
 
     	set setCurrentTime(value) {
@@ -10457,7 +10471,7 @@
     	}
 
     	get setCurrentTimePercent() {
-    		return this.$$.ctx[21];
+    		return this.$$.ctx[22];
     	}
 
     	set setCurrentTimePercent(value) {
