@@ -5,6 +5,7 @@ const config = {
   theme: "dark",
   start: {
     center: [-86.80453, 32.5635],
+    zoom: 6.5,
     bounds: [
       [-92.1535, 29.1384],
       [-81.4155, 35.8538],
@@ -19,10 +20,10 @@ const config = {
         "Throughout the 20th century, Birmingham was a hub for iron and steel production, which required coke to fuel smelters.",
       location: {
         center: [-86.80453, 33.5635],
-        zoom: 11.5,
+        zoom: 13.5,
         pitch: 0,
         bearing: 0,
-        speed: 0.2,
+        speed: 0.4,
       },
       mapAnimation: "flyTo",
       callback: "revertZ",
@@ -376,6 +377,7 @@ const config = {
         {
           layer: "drone",
           opacity: 0,
+          duration: 1000,
         },
         {
           layer: "coke-plant-smoke",
@@ -415,7 +417,7 @@ const config = {
         "Residents like Lamar Mabry live with the dread of what the pollution may be doing to them.",
       location: {
         center: [-86.801935, 33.560152],
-        zoom: 19.4,
+        zoom: 19.2,
         pitch: 0,
         bearing: 2,
       },
@@ -430,7 +432,7 @@ const config = {
         {
           layer: "drone",
           opacity: 1,
-          duration: 2000,
+          duration: 4000,
         },
       ],
       onChapterExit: [],
@@ -443,7 +445,7 @@ const config = {
         "Mabry fears that letting his grandchildren play in the backyard could harm their health.<span id='startVid'></span>",
       location: {
         center: [-86.801935, 33.560152],
-        zoom: 19.4,
+        zoom: 19.2,
         pitch: 0,
         bearing: 2,
       },
